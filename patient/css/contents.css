@@ -118,7 +118,7 @@ hr.line{display: block;background-color: #f8f9fa;height:2.2222vw;border:0;margin
 .modals .box{position: absolute;left:50%;top:50%;transform:scale(0) translate(-50%, -50%);transform-origin:left top;opacity: 0;width:86.6667vw;background: #fff;border-radius: 6.6667vw;overflow: hidden;transition: all 0.3s ease-out 0s;}
 .modals .box .mod_hade{padding:6.6667vw 6.6667vw 0;}
 .modals .box .mod_hade p{padding-bottom: 5.5556vw;color: #212529;line-height: 1.43;font-size: 3.8889vw;font-weight: bold;border-bottom: 1px solid  #e9ecef;}
-.modals .box .mod_body{padding:6.6667vw 6.6667vw 8.8889vw;color: #212529;line-height: 1.5;}
+.modals .box .mod_body{padding:6.6667vw 6.6667vw 8.8889vw;color: #212529;line-height: 1.5;word-break:keep-all;}
 .modals .box .mod_body .tx{margin-top: 3.3333vw;color: #868e96;font-size: 3.6111vw;}
 .modals .box .mod_bott button{width:100%;background-color: #f8f9fa;height:13.3333vw;line-height:13.3333vw;color: #212529;font-weight: bold;font-size: 3.8889vw;}
 .modals .box .mod_bott .tfcell{border-left:1px solid #c9c9c9}
@@ -196,7 +196,7 @@ hr.line{display: block;background-color: #f8f9fa;height:2.2222vw;border:0;margin
 .join_ok .ok_text > div h1{margin-top:11.1111vw;color: #212529;font-weight: bold;font-size: 7.2222vw;}
 .join_ok .ok_text > div p{margin-top:4.4444vw;color: #5280e2;font-weight: bold;font-size: 5vw;}
 .join_ok .ok_text > div p.s{color: #868e96;font-weight: normal;font-size: 3.8889vw;}
-.join_ok .text_box{padding: 5.5556vw 11.1111vw;border-radius: 6.6667vw;background-color: #f8f9fa;color: #868e96;font-size: 3.8889vw;position: absolute;bottom:26.6667vw;left:6.6667vw;right:6.6667vw;}
+.join_ok .text_box{padding: 5.5556vw 11.1111vw;border-radius: 6.6667vw;background-color: #f8f9fa;color: #868e96;font-size: 3.8889vw;word-break:keep-all;position: absolute;bottom:26.6667vw;left:6.6667vw;right:6.6667vw;}
 .join_ok .bottom_btn{left:6.6667vw;right:6.6667vw;}
 
 /* 문진정보 */
