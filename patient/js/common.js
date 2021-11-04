@@ -114,6 +114,12 @@
     }      
     $(window).scroll(function() {headbg();});
     /* 페이지 헤드 스크롤에 따라 배경색 변경 */
+
+    
+    var category_tab = new Swiper(".category_tab .swiper", {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+    });
 });
 
 /* 모달 팝업창 */
