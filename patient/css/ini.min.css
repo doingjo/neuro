@@ -40,6 +40,7 @@ body{-webkit-user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-
 
 .mt8{margin-top:2.2222vw !important;}
 .mt10{margin-top:2.7778vw !important;}
+.mt12{margin-top:3.3333vw !important;}
 
 input, textarea {appearance: none;-webkit-appearance: none;-webkit-border-radius: 0;}
 select {-webkit-appearance: none;-moz-appearance: none; appearance: none;background: #fff url('../images/icon-arrow-down.svg') no-repeat 98% center;background-size:4.4444vw;padding-right: 6.6667vw;}

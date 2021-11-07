@@ -31,6 +31,17 @@
     });
     /* 라디오 버튼 - 문진 정보 */
 
+    
+    $('.check_mark input[type="checkbox"]').change(function () {
+      if($(this).prop("checked")) { 
+        $(this).closest('.check_mark').addClass('on').parent().siblings().find('.check_mark').removeClass("on");
+        $(this).closest('.check_mark').find('.input').show();
+      }else{
+        $(this).closest('.check_mark').removeClass("on");
+        $(this).closest('.check_mark').find('.input').hide();
+      }
+    });
+
     /* 탭메뉴 */
     $('.tab_default li > span').on("click", function(e) {
       var index = $(this).parent().index();
@@ -66,6 +77,18 @@
       return false;
     });
     /* 도움말 팝업 */
+
+    /* 비밀번호 타입 변경 */    
+    $('.pwshow').on('click', function () {
+      var type = $(this).parents('.tixed').find('.pwinput'); 
+      if(type.attr('type') == 'password'){
+        type.attr('type', 'text')
+      }else{
+        type.attr('type', 'password')
+      }
+      return false;
+    });
+    /* 비밀번호 타입 변경 */    
 
     /* 검색창 입력값 지우는 버튼 */
     $(".search_box input").on("propertychange change keyup paste input", function(){
@@ -136,3 +159,9 @@ function modals_show(id){
   }, 200);
 }
 /* 모달 팝업창 */
+
+
+function resize(obj) {
+  obj.style.height = "1px";
+  obj.style.height = (12+obj.scrollHeight)+"px";
+}
