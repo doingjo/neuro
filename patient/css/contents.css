@@ -150,7 +150,7 @@ hr.line{display: block;background-color: #f8f9fa;height:2.2222vw;border:0;margin
 .radio_selection.on .input{color: #212529;}
 
 /* select */
-.default_select{height: 15.5556vw;line-height: 15.5556vw;padding-left:5.5556vw;border-radius: 3.3333vw;border: solid 0.2778vw #dee2e6;font-size: 4.4444vw;font-weight: bold;line-height: 1.5;color: #212529;background-position: 78vw center;}
+.default_select{width:100%;height: 15.5556vw;line-height: 15.5556vw;padding-left:5.5556vw;border-radius: 3.3333vw;border: solid 0.2778vw #dee2e6;font-size: 4.4444vw;font-weight: bold;line-height: 1.5;color: #212529;background-position: 78vw center;}
 
 /* modals */
 .modals{display: none;position: fixed;left:0;right:0;top:0;bottom:0;z-index: 510;}
@@ -224,7 +224,7 @@ hr.line{display: block;background-color: #f8f9fa;height:2.2222vw;border:0;margin
 .close_page .page_close{position: absolute;top:11.1111vw;left:6.6667vw;display: inline-block;width:6.6667vw;height:6.6667vw;font-size: 0;background:url('../images/icon-navigation-close.svg')no-repeat center center;background-size: 100%;}
 .close_page .page{padding:26.6667vw 8.8889vw 22.2222vw;}
 .close_page .page h1{font-size: 6.1111vw;font-weight: bold;color: #212529;}
-.close_page .page .titles{font-size: 3.8889vw;font-weight: 500;color: #212529; line-height: 1.43;margin:4.4444vw 0 8.8889vw;}
+.close_page .page .titles{font-size: 3.8889vw;font-weight: 500;color: #212529; line-height: 1.43;word-break: keep-all; margin:4.4444vw 0 8.8889vw;}
 .close_page .page .tab_default{margin:0 -1.1111vw;}
 .bottom_btn{position: absolute;left:8.8889vw;right:8.8889vw;bottom: 6.6667vw;}
 
@@ -335,14 +335,14 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .leave .leave_list li{margin-top:2.2222vw;}
 .leave .leave_list li:first-child{margin-top:0}
 .leave .leave_text{border-radius: 3.3333vw;background-color: #f8f9fa;padding: 5.5556vw 5.8333vw;margin:8.8889vw 0 18.0556vw;}
-.leave .leave_text li{margin-top:3.3333vw; font-size: 3.6111vw;line-height: 1.38;color: #868e96;padding-left:2.2222vw;position: relative;}
+.leave .leave_text li{margin-top:3.3333vw; font-size: 3.6111vw;line-height: 1.38;color: #868e96;word-break:keep-all; padding-left:2.2222vw;position: relative;}
 .leave .leave_text li:first-child{margin-top:0}
 .leave .leave_text li::before{content: '';position: absolute;top:1.9444vw;left:0;z-index: 1;width:0.8333vw;height:0.8333vw;background: #adb5bd;border-radius: 100%;}
 .leavebtn{display: block;font-size: 3.8889vw;margin-top:8.8889vw;font-weight: 500;line-height: 1.43;text-align: center;color: #adb5bd;}
 
 .setpage{margin-top:6.6667vw;}
 .setpage .ti{font-size: 6.1111vw;font-weight: bold;line-height: 1.45;color: #212529;}
-.setpage .tis{margin: 4.4444vw 0 0;font-size: 3.8889vw;line-height: 1.43;color: #343a40;}
+.setpage .tis{margin: 4.4444vw 0 0;font-size: 3.8889vw;line-height: 1.43;color: #343a40;word-break: keep-all;}
 
 /* 센터/병원 정보 */
 .hospital{margin-top:11.1111vw;}
