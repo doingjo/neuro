@@ -162,11 +162,13 @@
       spaceBetween: 0,
       centeredSlides: true,
     });
-    var dayWeek = new Swiper(".day_week", {
-      slidesPerView: 7,
-      spaceBetween: 0,
-    });
-    dayWeek.slideTo($('.day_week .swiper-slide').length,0)
+    if($('.day_week').length){
+      var dayWeek = new Swiper(".day_week", {
+        slidesPerView: 7,
+        spaceBetween: 0,
+      });
+      dayWeek.slideTo($('.day_week .swiper-slide').length,0);
+    }
 });
 
 /* 모달 팝업창 */
