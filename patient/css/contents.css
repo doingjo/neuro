@@ -755,9 +755,11 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 
 .inquire_f{padding: 6.6667vw 6.6667vw 5.5556vw;border-radius: 3.3333vw;border: solid 1px #dee2e6;background-color: #fff;}
 .inquire_f textarea{outline: none;width:100%;height: 32.2222vw;border:0;resize: none; font-size: 3.8889vw;}
-.inquire_f .preview ol li{margin-top:1.6667vw;position:relative;padding: 3.8889vw 5.5556vw 3.8889vw 12.3333vw;background-color: #f8f9fa;}
+.inquire_f .preview ol li{margin-top:1.6667vw;position:relative;padding: 3.8889vw 11.1111vw 3.8889vw 3.8889vw;background-color: #f8f9fa;}
+.inquire_f .preview ol li.isimg{padding: 3.8889vw 11.1111vw 3.8889vw 12.3333vw;}
 .inquire_f .preview ol li img{position: absolute;left:3.5556vw;top:3.8889vw;width:5.5556vw;height:5.5556vw;}
 .inquire_f .preview ol li p{width:100%;font-family: Roboto;font-size: 3.8889vw;line-height: 1.43;color: #868e96;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+.inquire_f .preview ol li span{position: absolute;right:5.5556vw;top:50%;margin-top:-2.2222vw;display: inline-block;width: 4.4444vw;height: 4.4444vw;cursor: pointer;background:url('../images/icon-ui-delete.svg') no-repeat center top;background-size:  100% auto;}
 .inquire_f .bunt{margin-top:5.5556vw;border-top:1px solid #e9ecef;padding-top:5.5556vw;position: relative;text-align:right;}
 .inquire_f .bunt .btn{display: inline-block;width: 28.6111vw;height: 11.1111vw;line-height: 11.1111vw;border-radius: 2.2222vw;background-color: #5280e2;font-size: 3.8889vw;font-weight: 500;text-align: center;color: #fff;}
 .inquire_f .bunt label{display: inline-block;width: 11.1111vw;height: 11.1111vw;padding: 2.7778vw;border-radius: 5.5556vw;border: solid 0.2778vw #e9ecef;position: absolute;left:0;top:5.5556vw;}
