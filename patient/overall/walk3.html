@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src='../js/progressbar.js'></script><!-- 밸런스 차트 있을 시 추가 -->
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>기간 조회</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="period_search">
+            <input type="text" name="" id="" value="2021.10.3 - 2021.10.3">
+            <a href="#" class="btn">검색</a>
+          </div>
+          <p class="over_ti">GCT 밸런스</p>
+          <div class="over_box mb" style="padding-left:7.4444vw;padding-right:0">
+            <div id="balance" style=" width: 100%;">
+              <div class="balance clear">
+                <div><strong>L치우침</strong></div>
+                <div><strong>정상</strong><span class="bg"></span></div>
+                <div><strong>R치우침</strong></div>
+              </div>
+              <svg id="balancesvg" style="width: 100%;">
+              </svg>
+              <a href="#" class="more">펼쳐보기</a>
+            </div>
+            <script>
+              const balanceData = [
+                { value : 3, day : "08" },
+                { value : 2, day : "09" },
+                { value : 2, day : "10" },
+                { value : 2, day : "11" },
+                { value : '', day : "12" },
+                { value : 1, day : "13" },
+                { value : 4, day : "14" },
+                { value : 3, day : "15" },
+                { value : null, day : "16" },
+                { value : 2, day : "17" },
+                { value : 4, day : "18" },
+                { value : 5, day : "19" },
+                { value : 3, day : "20" }
+              ];
+              balance(balanceData)
+            </script>
+          </div>
+          <p class="over_ti">보행 주기</p>
+          <div class="over_box mb bachart_box">
+            <div class="ba_ti clear">
+              <div>왼발<span style="left:60%"><s>표준</s></span></div>
+              <div>오른발<span style="left:60%"><s>표준</s></span></div>
+            </div>
+            <div id="bachart">
+            </div>
+            <script>
+              const bachartData = [
+                { left : 60, right : 60, day : '08' },
+                { left : 60, right : 60, day : "09" },
+                { left : 60, right : 60, day : "10" },
+                { left : 60, right : 60, day : "11" },
+                { left : null, right : null, day : "12" },
+                { left : 60, right : 60, day : "13" },
+                { left : 60, right : 60, day : "14" },
+                { left : 60, right : 60, day : "15" },
+                { left : '', right : '', day : "16" },
+                { left : 60, right : 60, day : "17" },
+                { left : 60, right : 60, day : "18" },
+                { left : 60, right : 60, day : "19" },
+                { left : 60, right : 60, day : "20" },
+              ];
+              bachart(bachartData,'bachart')
+            </script>
+            <a href="#" class="more">펼쳐보기</a>
+          </div>
+          <p class="over_ti">시작/종료일 GCT 밸런스 비교</p>
+          <div class="balance_sw">
+            <div class="swiper aotoswiperc">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="ti">좌/우 GCT 밸런스
+                      <a href="#" class="tip_icon">설명</a>
+                      <div class="tip_pop">
+                        <div class="tip_poph">
+                          보행 길이 (Gait Length)
+                        </div>
+                        <div class="tip_popb">
+                          <p>01. 보장 (Step Length)</p>
+                          <div class="tx">보장은 양발이 동시에 디딜 때 두 발 사이의 거리이며 한쪽 발의 뒤꿈치와 반대편 발의 뒤꿈치 사이의 거리를 의미합니다.</div>
+                          <p>02. 활보장 (Stirde Length)</p>
+                          <div class="tx">활보장은 입각기와 유각기 전체 보행주기의 거리로 한 발의 입각기 초기 접지점에서 같은 발의 말기 유각기 접지점 사이의 거리입니다.</div>
+                        </div>
+                      </div>
+                      <span class="data">2021.10.15</span>
+                    </div>
+                    <div class="probar">
+                      <div id="points1" class="semicircle">
+                        <svg width="100%" height="100%" viewBox="-5 -5 110 63" xmlns="http://www.w3.org/2000/svg">
+                          <path id="placeholder" d="M 50,50 m -47,0 a 47,47 0 1 1 94,0" stroke="#21d0b3" stroke-width="15" stroke-linecap="round" fill-opacity="0"></path>
+                          <path id="sports1" d="M 50,50 m -47,0 a 47,47 0 1 1 94,0" stroke="#5280e2" stroke-linecap="round" stroke-width="15" fill-opacity="0"></path>
+                        </svg>
+                      </div>
+                      <div class="text">오른쪽으로 치우침</div>
+                    </div>
+                    <script>probar(60,'sports1','points1')</script>
+                    <div class="over_data tfixed pb0">
+                      <div class="tfcell">
+                        <p class="ti">왼발 GCT(ms)</p>
+                        <div class="data">300</div>
+                      </div>
+                      <div class="tfcell">
+                        <p class="ti">오른발 GTC(ms)</p>
+                        <div class="data">280</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="ti">좌/우 GCT 밸런스
+                      <a href="#" class="tip_icon">설명</a>
+                      <div class="tip_pop">
+                        <div class="tip_poph">
+                          보행 길이 (Gait Length)
+                        </div>
+                        <div class="tip_popb">
+                          <p>01. 보장 (Step Length)</p>
+                          <div class="tx">보장은 양발이 동시에 디딜 때 두 발 사이의 거리이며 한쪽 발의 뒤꿈치와 반대편 발의 뒤꿈치 사이의 거리를 의미합니다.</div>
+                          <p>02. 활보장 (Stirde Length)</p>
+                          <div class="tx">활보장은 입각기와 유각기 전체 보행주기의 거리로 한 발의 입각기 초기 접지점에서 같은 발의 말기 유각기 접지점 사이의 거리입니다.</div>
+                        </div>
+                      </div>
+                      <span class="data">2021.10.15</span>
+                    </div>
+                    <div class="probar">
+                      <div id="points2" class="semicircle">
+                        <svg width="100%" height="100%" viewBox="-5 -5 110 63" xmlns="http://www.w3.org/2000/svg">
+                          <path id="placeholder" d="M 50,50 m -47,0 a 47,47 0 1 1 94,0" stroke="#21d0b3" stroke-width="15" stroke-linecap="round" fill-opacity="0"></path>
+                          <path id="sports2" d="M 50,50 m -47,0 a 47,47 0 1 1 94,0" stroke="#5280e2" stroke-linecap="round" stroke-width="15" fill-opacity="0"></path>
+                        </svg>
+                      </div>
+                      <div class="text">오른쪽으로 치우침</div>
+                    </div>
+                    <script>probar(40,'sports2','points2')</script>
+                    <div class="over_data tfixed pb0">
+                      <div class="tfcell">
+                        <p class="ti">왼발 GCT(ms)</p>
+                        <div class="data">300</div>
+                      </div>
+                      <div class="tfcell">
+                        <p class="ti">오른발 GTC(ms)</p>
+                        <div class="data">280</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="ti">좌/우 GCT 밸런스
+                      <a href="#" class="tip_icon">설명</a>
+                      <div class="tip_pop">
+                        <div class="tip_poph">
+                          보행 길이 (Gait Length)
+                        </div>
+                        <div class="tip_popb">
+                          <p>01. 보장 (Step Length)</p>
+                          <div class="tx">보장은 양발이 동시에 디딜 때 두 발 사이의 거리이며 한쪽 발의 뒤꿈치와 반대편 발의 뒤꿈치 사이의 거리를 의미합니다.</div>
+                          <p>02. 활보장 (Stirde Length)</p>
+                          <div class="tx">활보장은 입각기와 유각기 전체 보행주기의 거리로 한 발의 입각기 초기 접지점에서 같은 발의 말기 유각기 접지점 사이의 거리입니다.</div>
+                        </div>
+                      </div>
+                      <span class="data">2021.10.15</span>
+                    </div>
+                    <div class="probar">
+                      <div id="points3" class="semicircle">
+                        <svg width="100%" height="100%" viewBox="-5 -5 110 63" xmlns="http://www.w3.org/2000/svg">
+                          <path id="placeholder" d="M 50,50 m -47,0 a 47,47 0 1 1 94,0" stroke="#21d0b3" stroke-width="15" stroke-linecap="round" fill-opacity="0"></path>
+                          <path id="sports3" d="M 50,50 m -47,0 a 47,47 0 1 1 94,0" stroke="#5280e2" stroke-linecap="round" stroke-width="15" fill-opacity="0"></path>
+                        </svg>
+                      </div>
+                      <div class="text">오른쪽으로 치우침</div>
+                    </div>
+                    <script>probar(80,'sports3','points3')</script>
+                    <div class="over_data tfixed pb0">
+                      <div class="tfcell">
+                        <p class="ti">왼발 GCT(ms)</p>
+                        <div class="data">300</div>
+                      </div>
+                      <div class="tfcell">
+                        <p class="ti">오른발 GTC(ms)</p>
+                        <div class="data">280</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src='../js/progressbar.js'></script><!-- 밸런스 차트 있을 시 추가 -->
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>제자리 서기</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <a href="#" class="cord_btn"><span>기간 조회</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="walk_wr">
+            <div class="ti">2021.10</div>
+            <div class="swiper day_week">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><span class="liwa">일</span><span class="liday">3</span></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">월</span><span class="liday">3</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">화</span><span class="liday">4</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">수</span><span class="liday">5</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">목</span><span class="liday">6</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">금</span><span class="liday">7</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">토</span><span class="liday">8</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">일</span><span class="liday">9</span></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">월</span><span class="liday">10</span></a></a></div>
+                <div class="swiper-slide"><a href="#" class="on"><span class="liwa">화</span><span class="liday">11</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">수</span><span class="liday">12</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">목</span><span class="liday">13</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">금</span><span class="liday">14</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">토</span><span class="liday">15</span></a></a></div>
+              </div>
+            </div>
+          </div>
+          <hr class="line full mt" />
+          <div class="swiper walk_category aotoswiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><a href="#" class="on">전체</a></div>
+              <div class="swiper-slide"><a href="#">1세트</a></div>
+              <div class="swiper-slide"><a href="#">2세트</a></div>
+              <div class="swiper-slide"><a href="#">3세트</a></div>
+              <div class="swiper-slide"><a href="#">4세트</a></div>
+              <div class="swiper-slide"><a href="#">5세트</a></div>
+            </div>
+          </div>
+          <div class="over_box">
+            <div class="ti mb12">운동 시간
+              <div class="tx">13:55:00~14:55:00 8세트</div>
+            </div>
+            <div class="data_n">22’</div>
+          </div>
+          <div class="over_box">
+            <div class="ti mb12">평균 밸런스(%)</div>
+            <div id="bc1" class="bcpm mt24">
+              <div class="clear">
+                <div class="til">좌 : 우</div>
+                <div class="tir">50 : 50</div>
+              </div>
+              <div class="chw">
+                <span class="a" style="left:50%"><span>표준 50 : 50</span></span>
+                <span class="b" style="left:50%"></span>
+                <div class="ch" style="background-color: #21d0b3">
+                  <span class="g" style="width:50%;background-color: #5280e2"></span>
+                </div>
+              </div>
+            </div>
+            <div id="bc2" class="bcpm">
+              <div class="clear">
+                <div class="til">앞 : 뒤</div>
+                <div class="tir">47 : 53</div>
+              </div>
+              <div class="chw">
+                <span class="a" style="left:40%"><span>표준 40 : 60</span></span>
+                <span class="b" style="left:40%"></span>
+                <div class="ch" style="background-color: #21d0b3">
+                  <span class="g" style="width:47%;background-color: #5280e2"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="over_box">
+            <div class="ti mb12">자세 분석</div>
+            <div id="bc3" class="bcpm mt24">
+              <div class="clear">
+                <div class="til">운동 점수</div>
+                <div class="tir">50</div>
+              </div>
+              <div class="chw">
+                <span class="a" style="left:70%"><span>평균 70</span></span>
+                <span class="b" style="left:70%"></span>
+                <div class="ch" style="background-color: #f1f3f5">
+                  <span class="g" style="width:50%;background-color: #e67700"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="over_box">
+            <div class="ti mb12">밸런스 분석</div>
+            <div class="tx c0">오른쪽으로 쏠리는 경향을 보입니다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

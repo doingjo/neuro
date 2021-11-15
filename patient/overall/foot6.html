@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src='../js/progressbar.js'></script><!-- 밸런스 차트 있을 시 추가 -->
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>기간 조회</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="period_search">
+            <input type="text" name="" id="" value="2021.10.3 - 2021.10.3">
+            <a href="#" class="btn" onclick="modals_show('modals')">검색</a>
+          </div>
+          <p class="over_ti">자세 분석 점수 </p>
+          <div class="over_box">
+            <div class="averchart">
+              <div class="barchart">
+                <ul id="barchart1" class="clear average"></ul>
+              </div>
+              <div class="averline"><span class="line"></span><span class="tx">평균</span></div>
+            </div>
+            <script>
+              const bardata1 = [
+                  {name: 17, value: 10},
+                  {name: 18, value: 29},
+                  {name: 19, value: 32},
+                  {name: 20, value: 70},
+                  {name: 21, value: 80},
+                  {name: 22, value: 0},
+                  {name: 23, value: 70},
+                  {name: 24, value: 80},
+                  {name: 25, value: 100}
+                ];
+                barchart(bardata1, 'barchart1', 70);
+                $('#barchart1 li').eq(3).addClass('on')
+            </script>
+          </div>
+          <p class="over_ti">흔들림 정도 <span class="t">* 좋은 균형감 : 20% 이하</span></p>
+          <div class="over_box">
+              <div class="linechat">
+                <div id="linechat1" class="wlinechat">
+                  <ul class="bar_tip"></ul>
+                  <ul class="clear linechatli"></ul>
+                </div>
+              </div>
+              <script>
+               const linechat_data1 = [
+                  { value : 30, day : 1 },
+                  { value : 10, day : 2 },
+                  { value : 0, day : 3 },
+                  { value : 40, day : 4 },
+                  { value : 20, day : 5 },
+                  { value : 15, day : 6 },
+                  { value : 5, day : 7 },
+                  { value : 10, day : 8 },
+                  { value : 25, day : 9 }
+                ];
+                linechat(linechat_data1, 'linechat1', '%', 3);
+              </script>
+          </div>
+          <p class="over_ti">외발 서기 시간</span></p>
+          <div class="over_box">
+              <div class="linechat">
+                <div id="linechat2" class="wlinechat">
+                  <ul class="bar_tip"></ul>
+                  <ul class="clear linechatli"></ul>
+                </div>
+              </div>
+              <script>
+               const linechat_data2 = [
+                  { value : 30, day : 1 },
+                  { value : 10, day : 2 },
+                  { value : 9, day : 3 },
+                  { value : 40, day : 4 },
+                  { value : 20, day : 5 },
+                  { value : 15, day : 6 },
+                  { value : 5, day : 7 },
+                  { value : 10, day : 8 },
+                  { value : 25, day : 9 }
+                ];
+                linechat(linechat_data2, 'linechat2', '초', 3);
+              </script>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modals" id="modals">
+      <div class="box">
+        <div class="mod_hade">
+          <p>안내</p>
+        </div>
+        <div class="mod_body">
+          조회는 최대 1개월까지 조회 할 수 있습니다.
+        </div>
+        <div class="mod_bott">
+          <button onclick="modals_close('modals')">확인</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

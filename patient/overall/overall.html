@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page overall_main">
+      <div class="page">
+        <div class="overall_head">
+          <div class="back_btn"><a href="#"><span>뒤로가기</span></a></div>
+          <h1>정수화님<br /><span>NEUROGAIT</span> 종합 결과</h1>
+          <p>2021.10.03 - 2021.10.13</p>
+          <ul class="overall_data">
+            <li>
+              <div class="ti">보행 운동 평균 등급</div>
+              <div class="tx">약한 왼쪽 치우침</div>
+              <div class="imo"><img src="../images/shape.svg" width="100%" alt=""></div>
+            </li>
+            <li>
+              <div class="ti">밸런스 운동 평균 등급</div>
+              <div class="num"><strong></strong> / <span>5</span></div>
+              <div class="pie" datanum="60"></div>
+              <script>
+                const main_balanceData = {
+                  all:5, //전체 등급
+                  value:3, // 본인 등급
+                }
+                mainBalanceData(main_balanceData)
+              </script>
+            </li>
+          </ul>
+        </div>
+        <div class="container">
+          <div class="over_data tfixed">
+            <div class="tfcell">
+              <p class="ti">총 운동 횟수(회)</p>
+              <div class="data">4</div>
+            </div>
+            <div class="tfcell">
+              <p class="ti">총 운동 시간(분)</p>
+              <div class="data">500</div>
+            </div>
+          </div>
+          <div class="over_box">
+            <div class="ti">
+              운동 수행 순위
+              <a href="#" class="btn">전체보기</a>
+            </div>
+            <div id="bubble_chart" class="chart"></div>
+            <ul class="bubble_texts"></ul>
+            <script>
+              var bubbleData = {
+                'children': [
+                  {'name': '1 보행', 'value': 32, 'color':'#0fb095'},
+                  {'name': '2 제자리 서기', 'value': 15, 'color':'#5280e2'},
+                  {'name': '3 스쿼트', 'value': 10, 'color':'#4dbffd'},
+                  {'name': '4 왼발 외발서기', 'value': 5, 'color':'#21d0b3'},
+                  {'name': '5 오른발 외발서기', 'value': 3, 'color':'#2f455c'}
+                ]
+              }
+              bubble(bubbleData)
+            </script>
+          </div>
+          <div class="over_box">
+            <div class="ti mb12">
+              운동 요일 순위
+            </div>
+            <div class="barchart">
+              <ul id="barchart" class="clear"></ul>
+            </div>
+            <script>
+              const bardata = [
+                  {name: '일', value: 10},
+                  {name: '월', value: 29},
+                  {name: '화', value: 32},
+                  {name: '수', value: 25},
+                  {name: '목', value: 23},
+                  {name: '금', value: 15},
+                  {name: '토', value: 15}
+                ];
+                barchart(bardata, 'barchart');
+            </script>
+          </div>
+          <div class="over_box">
+            <div class="ti">운동별 결과 보기</div>
+            <div class="tis">보행 운동</div>
+            <div class="swiper aotoswiper mainswiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">보행</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">제자리 서기</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">스쿼트</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">왼발 외발서기</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">오른발 외발서기</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">계단 오르기/내리기</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tis mt24">밸런스 운동</div>
+            <div class="swiper aotoswiper mainswiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">왼발 외발서기</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">오른발 외발서기</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">계단 오르기/내리기</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">보행</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">제자리 서기</span>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="sports_ions">
+                    <i><img src="../images/ranking@2x.png" alt=""></i>
+                    <span class="tx">스쿼트</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
