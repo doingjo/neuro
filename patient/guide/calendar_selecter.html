@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+        <link rel="stylesheet" href="../css/Montserrat.css">
+    </noscript>
+
+<script type="text/javascript" src="../js/moment.min.js"></script>
+<script type="text/javascript" src="../js/daterangepicker.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
+
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+
+
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page setup">
+      <div class="page">
+        <div class="page_head">
+          <h1>달력 선택기</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+
+            <input type="text" id="calendar" name="" value="" />
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+$(function() {
+
+    daterangepicker();
+
+});//function
+
+function daterangepicker(){
+  $('#calendar').daterangepicker({
+    autoUpdateInput:true,
+    "locale": {
+      "format": "YYYY.MM.DD",
+      "separator": " - ",
+      "applyLabel": "선택완료",
+      "cancelLabel": "취소",
+      "daysOfWeek": [ "일","월","화","수","목","금","토" ],
+      "monthNames": [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
+      "firstDay": 0,
+      "startDate": new Date(),
+      "endDate": new Date(),
+      "drops": "auto"
+    },
+    }, function(start, end, label){
+      console.log(start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD'));
+  });
+  $('.daterangepicker').wrap('<div class="wrap-layer"></div>').before('<div class="dimmed"></div>');
+  $('.daterangepicker').prepend('<div class="header"><div class="date"></div><button class="btn-prev"></button><button class="btn-next"></button></div>');
+  $('#calendar').trigger('click');
+  var first = $('.drp-calendar.left .month').text(),
+      last = $('.drp-calendar.right .month').text();
+  $('.date').html(first+' - '+last);
+
+  $('.btn-prev').on('click', function(){
+      $('.prev').trigger('click');
+          first = $('.drp-calendar.left .month').text();
+          last = $('.drp-calendar.right .month').text();
+      $('.date').html(first+' - '+last);
+  });
+  $('.btn-next').on('click', function(){
+      $('.next').trigger('click');
+          first = $('.drp-calendar.left .month').text();
+          last = $('.drp-calendar.right .month').text();
+      $('.date').html(first+' - '+last);
+  });
+  $('#calendar').on('focus', function(){
+    $('.daterangepicker').wrap('<div class="wrap-layer"></div>').before('<div class="dimmed"></div>');
+  });
+  $(document).on('click', '.dimmed, .drp-buttons .btn', function(){
+    $('.dimmed').remove();
+    $('.daterangepicker').unwrap();
+  });
+}
+
+
+</script>
+
+</body>
+</html>
