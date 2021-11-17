@@ -316,11 +316,12 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .page.nodata .container{height: calc(100% - 0.5556vw);padding:0 6.6667vw;}
 .page.nodata .container .no_data{height: calc(100% - 16.1667vw);display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;}
 .page.nodata .container .no_data > div{position: relative;}
-.page.nodata .container .no_data > div::before{content: '';display: inline-block;width: 13.3333vw; height: 13.3333vw; margin: 0 auto 6.6667vw;border-radius: 6.6667vw;background-color: #c8dbef;}
+.page.nodata .container .no_data > div span.one{display: inline-block;width: 13.3333vw; height: 13.3333vw; margin: 0 auto 6.6667vw;border-radius: 6.6667vw;background-color: #c8dbef;}
+.page.nodata .container .no_data > div span.box{display: inline-block;border-radius:0;width: 22.2222vw;height: 22.2222vw;margin-bottom: 11.1111vw;background-color: #d8d8d8;margin: 0 auto 6.6667vw;background-color: #c8dbef;}
 .page.nodata .container .no_data > div p{color: #212529;font-size: 4.4444vw;font-weight: bold;margin-bottom:4.7222vw;}
 .page.nodata .container .no_data > div a{display: inline-block;height:13.3333vw;line-height: 13.3333vw;padding:0 5.5556vw;text-align: center;border-radius: 7.7778vw;border: solid 1px #e9ecef;background-color: #fff;font-size: 3.8889vw;font-weight: 500;color: #868e96}
+.page.nodata .container .no_data > div div{margin: 4.4444vw 0 0;font-size: 3.8889vw;line-height: 1.43;text-align: center;color: #343a40;}
 .page.nodata .container .no_data.hospital{height:100%;margin-top:0}
-.page.nodata .container .no_data.hospital > div::before{border-radius:0;width: 22.2222vw;height: 22.2222vw;margin-bottom: 11.1111vw;background-color: #d8d8d8;}
 .page.nodata .container .no_data.hospital > div p{font-size: 7.2222vw;}
 .board_view .head{border-bottom: 1px solid #212121;padding-bottom: 5.5556vw;}
 .board_view .title{font-size: 5.0000vw;font-weight: 500;line-height: 1.44;color: rgba(0, 0, 0, 0.87);}
@@ -418,6 +419,13 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 /* 백업버튼 */
 .backup_btn{display: block;margin-bottom:8.8889vw;padding: 5.5556vw;border-radius: 3.3333vw;border: solid 1px #e9ecef;background-color: #f8f9fa;font-size: 3.8889vw;font-weight: 500;line-height: 1.43;color: rgba(0, 0, 0, 0.87);position: relative;}
 .backup_btn::after{content: '';display: inline-block;width:6.6667vw;height:6.6667vw;position: absolute;right:5.5556vw;top:50%;margin-top:-3.3333vw;background:url('../images/icon-ui-cloud.svg')no-repeat center center;background-size: 100%;}
+
+.medical_list li{padding:6.6667vw 0 6.6667vw 11.6667vw;border-top:1px solid #e9ecef;position: relative;}
+.medical_list li:first-child{border-top:0;}
+.medical_list li .no{position: absolute;left:1.1111vw;top:6.6667vw;font-family: Montserrat;font-size: 4.4444vw;font-weight: bold;line-height: 1.5;text-align: center;color: #212529;}
+.medical_list li .ti{font-size: 4.4444vw;color: #212529;word-break:keep-all}
+.medical_list li .box{height: 11.1111vw;line-height: 11.1111vw;margin-top:4.4444vw;border-radius: 2.2222vw;border: solid 1px #e9ecef;background-color: #fff;font-size: 3.8889vw;font-weight: 500;text-align: center;color: #5280e2;}
+.medical_list li .txbox{margin-top:2.2222vw;padding: 4.7222vw 4.7222vw 4.4444vw;border-radius: 2.2222vw;border: solid 1px #e9ecef;background-color: #f8f9fa;font-size: 3.6111vw;line-height: 1.38;color: #343a40;word-break:keep-all}
 
 /* 알림 */
 .noti_list{margin-top:6.6667vw}
@@ -807,7 +815,7 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .schedule_list > ul > li .card.end .tx{opacity: 0.3;}
 .schedule_list .no_data{padding:17.7778vw 0 17.7778vw;display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;}
 .schedule_list .no_data > div{position: relative;}
-.schedule_list .no_data > div::before{content: '';display: inline-block;width: 11.6667vw;height: 11.6667vw;margin: 0 41.6667vw 4.4444vw;border-radius: 4.4444vw;margin-bottom:4.4444vw;background-color: #ced4da;}
+.schedule_list .no_data > div span.one{display: inline-block;width: 11.6667vw;height: 11.6667vw;margin: 0 41.6667vw 4.4444vw;border-radius: 4.4444vw;margin-bottom:4.4444vw;background-color: #ced4da;}
 .schedule_list .no_data > div p{font-size: 3.8889vw;line-height: 1.43;text-align: center;color: #555;}
 .schedule_add{padding:6.6667vw 0 22.2222vw;}
 .schedule_add h2{font-size: 6.1111vw;font-weight: bold;line-height: 1.45;color: #212529;}
@@ -819,8 +827,13 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .schedule_add .sports_drag{margin-top:11.1111vw;}
 .schedule_add .sports_drag li{margin-top:2.2222vw;padding: 6.1111vw 5.8333vw 6.1111vw 5.5556vw;border-radius: 3.3333vw;border: solid 1px #e9ecef;background-color: #fff;font-size: 3.8889vw;font-weight: 500;color: #212529;position: relative;}
 .schedule_add .sports_drag li:first-child{margin-top:0;}
+.schedule_add .sports_drag li .handle{display: inline-block;width:5.5556vw;height:5.5556vw;position: absolute;right:5.8333vw;top:50%;margin-top:-2.7778vw;}
+.schedule_add .sports_drag li .handle::before{content:'';position: absolute;right:0.5556vw;top:1.6667vw;display: inline-block;width: 4.4444vw;height: 0.5556vw;border-radius: 0.8333vw;background-color: #868e96;}
+.schedule_add .sports_drag li .handle::after{content:'';position: absolute;right:0.5556vw;bottom:1.6667vw;display: inline-block;width: 4.4444vw;height: 0.5556vw;border-radius: 0.8333vw;background-color: #868e96;}
+/*
 .schedule_add .sports_drag li::before{content:'';position: absolute;right:6.3889vw;top:7.7778vw;display: inline-block;width: 4.4444vw;height: 0.5556vw;border-radius: 0.8333vw;background-color: #868e96;}
 .schedule_add .sports_drag li::after{content:'';position: absolute;right:6.3889vw;top:9.4444vw;display: inline-block;width: 4.4444vw;height: 0.5556vw;border-radius: 0.8333vw;background-color: #868e96;}
+*/
 .schedule_add .sports_drag.dragin li{background: #f8f9fa;border: solid 1px #e9ecef;color: #adb5bd;}
 .schedule_add .sports_drag.dragin li::before,
 .schedule_add .sports_drag.dragin li::after{opacity: 0.5;}
