@@ -78,20 +78,22 @@ function daterangepicker(){
     }, function(start, end, label){
       console.log(start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD'));
   });
+
+  /* 눌리고 시작할 때 *
   $('.daterangepicker').wrap('<div class="wrap-layer"></div>').before('<div class="dimmed"></div>');
   $('.daterangepicker').prepend('<div class="header"><div class="date"></div><button class="btn-prev"></button><button class="btn-next"></button></div>');
   $('#calendar').trigger('click');
   var first = $('.drp-calendar.left .month').text(),
       last = $('.drp-calendar.right .month').text();
   $('.date').html(first+' - '+last);
-
-  $('.btn-prev').on('click', function(){
+  /* //눌리고 시작할 때 */
+  $(document).on('click', '.btn-prev', function(){
       $('.prev').trigger('click');
           first = $('.drp-calendar.left .month').text();
           last = $('.drp-calendar.right .month').text();
       $('.date').html(first+' - '+last);
   });
-  $('.btn-next').on('click', function(){
+  $(document).on('click', '.btn-next', function(){
       $('.next').trigger('click');
           first = $('.drp-calendar.left .month').text();
           last = $('.drp-calendar.right .month').text();
@@ -99,10 +101,15 @@ function daterangepicker(){
   });
   $('#calendar').on('focus', function(){
     $('.daterangepicker').wrap('<div class="wrap-layer"></div>').before('<div class="dimmed"></div>');
+    $('.daterangepicker').prepend('<div class="header"><div class="date"></div><button class="btn-prev"></button><button class="btn-next"></button></div>');
+    var first = $('.drp-calendar.left .month').text(),
+        last = $('.drp-calendar.right .month').text();
+    $('.date').html(first+' - '+last);
   });
   $(document).on('click', '.dimmed, .drp-buttons .btn', function(){
     $('.dimmed').remove();
     $('.daterangepicker').unwrap();
+    $('.header').remove();
   });
 }
 
