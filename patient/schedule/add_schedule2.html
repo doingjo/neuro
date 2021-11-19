@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src='../js/progressbar.js'></script><!-- 밸런스 차트 있을 시 추가 -->
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>스케쥴 추가</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="schedule_add">
+            <h2>요일 및 세트선택</h2>
+            <div class="tx">운동마다 진행할 요일/세트를 다르게 지정할 수 있어요.</div>
+            <div class="category_tab">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide bin"></div>
+                  <div class="swiper-slide">
+                    <a href="#" class="box on">보행</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="box">양발 밸런스</a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="box">운동목록3</a>
+                  </div>
+                  <div class="swiper-slide bin"></div>
+                </div>
+              </div>
+            </div>
+            <hr class="line_box" />
+            <div class="sports_set">
+              <div class="ti">요일지정(복수선택가능)</div>
+              <div class="set_tab">
+                <div class="swiper aotoswiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide bin"></div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Sunday" />
+                        <label for="Sunday">일</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Monday" />
+                        <label for="Monday">월</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Tuesday" />
+                        <label for="Tuesday">화</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Wednesday" />
+                        <label for="Wednesday">수</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="thursday" />
+                        <label for="thursday">목</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Friday" />
+                        <label for="Friday">금</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Saturday" />
+                        <label for="Saturday">토</label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ti">세트지정</div>
+              <div class="set_tab">
+                <div class="swiper aotoswiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide bin"></div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set1" />
+                        <label for="set1">1세트</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set2" />
+                        <label for="set2">2세트</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set3" />
+                        <label for="set3">3세트</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set4" />
+                        <label for="set4">4세트</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set5" />
+                        <label for="set5">5세트</label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ti">최대시간</div>
+              <div class="set_tab">
+                <div class="swiper aotoswiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide bin"></div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="time" id="time1" />
+                        <label for="time1">1분</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="time" id="time5" />
+                        <label for="time5">5분</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="time" id="time10" />
+                        <label for="time10">10분</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="time" id="time15" />
+                        <label for="time15">15분</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="time" id="time30" />
+                        <label for="time30">30분</label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom_btn"><a href="#" class="button_default r">추가</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+        <link rel="stylesheet" href="../css/Montserrat.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>스케쥴</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <div class="hselect">
+            <select name="" id="" class="form_select">
+              <option value="month">월간</option>
+              <option value="week">주간</option>
+            </select>
+          </div>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div id='calendar'></div>
+          <hr class="line full" />
+          <div class="schedule_list">
+            <h2>10.01</h2>
+            <hr class="line_box" />
+            <ul>
+              <li>
+                <a href="#" class="card ing">
+                  <span class="icon"></span>
+                  <span class="state">진행중</span>
+                  <div class="ti">무릎 들어올리기</div>
+                  <div class="tx">[운동 부위]<br />무릎, 엉덩이, 허벅지</div>
+                  <ol class="txlist">
+                    <li>1. 무릎 천천리 올리기</li>
+                    <li>2. 골반 높이까지 올리세요</li>
+                    <li>3. 자세한 설명이 들어가는 영역입니다.</li>
+                  </ol>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card ing">
+                  <span class="icon"></span>
+                  <span class="state">진행중</span>
+                  <div class="ti">앉았다 일어서기</div>
+                  <div class="tx">[운동 부위]<br />무릎, 엉덩이, 허벅지</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card ing">
+                  <span class="icon"></span>
+                  <span class="state">진행중</span>
+                  <div class="ti">무릎 들어올리기</div>
+                  <div class="tx">[운동 부위]<br />무릎, 엉덩이, 허벅지</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card end">
+                  <span class="icon"></span>
+                  <span class="state">종료</span>
+                  <div class="ti">무릎 들어올리기</div>
+                  <div class="tx">[운동 부위]<br />무릎, 엉덩이, 허벅지</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="bottom_btn"><a href="#" class="button_default r">스케쥴  추가</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var $targetOld = null;
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        headerToolbar: {
+          left: 'prev',
+          center: 'title',
+          right: 'next'
+        },
+        footerToolbar: {
+          right: 'dayGridMonth,timeGridWeek,today'
+        },
+        fixedWeekCount: false,
+        views: {
+          dayGridMonth: {
+              titleFormat : function(date) {
+                var month = '0'+(date.date.month +1);
+                return date.date.year +". "+month.slice(-2);
+              },
+              dayHeaderContent: ({date}) => {
+                  var weekdays = ['일','월','화','수','목','금','토']
+                  return weekdays[date.getDay()]
+              },
+              navLinks: true,
+              navLinkDayClick: function(date, jsEvent) {
+                var year = date.getFullYear(),
+                    month = parseInt(date.getMonth())+1,
+                    day = date.getDate();
+                $('.fc-daygrid-day-number').removeClass('bg');
+                jsEvent.srcElement.classList.add('bg');
+  
+                console.log(year+'-'+month+'-'+day);
+              },
+          },
+          timeGridWeek: {
+              titleFormat : function(date) {
+                var startM = '0'+(date.date.month +1),
+                    startD = (date.date.day),
+                    endM = '0'+(date.end.month +1),
+                    endD = (date.end.day);
+                return startM.slice(-2)+'.'+startD+' ~ '+endM.slice(-2)+'.'+endD
+              },
+              dayHeaderContent: ({date}) => {
+                  var weekdays = ['일','월','화','수','목','금','토']
+                  return {html: `<div class="col-header">${weekdays[date.getDay()]}</div><div class="col-day col-day`+date.getDate()+`">${date.getDate()}</div>`}
+              },
+              navLinks: true,
+              navLinkDayClick: function(date) {
+                var year = date.getFullYear(),
+                    month = parseInt(date.getMonth())+1,
+                    day = date.getDate();
+                $('.col-day').removeClass('bg');
+                $('.col-day'+day).addClass('bg');
+  
+                console.log(year+'-'+month+'-'+day);
+              },
+          }
+        },
+        height: 'auto',
+        events: [
+          {
+            start: '2021-11-19',
+            end: '2021-11-28',
+            display: 'background',
+          },
+          {
+            start: '2021-11-06',
+            end: '2021-11-08',
+            display: 'background',
+          }
+        ]
+      });
+      calendar.render();
+    });
+    $('.hselect select').change(function() {
+      if($(this).val() == 'month'){
+        $('.fc-dayGridMonth-button').trigger('click');
+      }else{
+        $('.fc-timeGridWeek-button').trigger('click');
+      }
+    })
+  </script>  
+</body>
+</html>

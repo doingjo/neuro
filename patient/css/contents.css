@@ -225,6 +225,8 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .default_page .page_head .back_btn span{display: inline-block;width:6.6667vw;height:6.6667vw;font-size: 0;background:url('../images/icon-navigation-back.svg')no-repeat center center;background-size: 100%;}
 .default_page .page_head .skip_btn{position: absolute;right:0;top:0;z-index: 103;display: inline-block;width:20vw;height:15.5556vw;line-height:15.5556vw;text-align:center;color: #5280e2;font-family: Roboto;font-weight: bold;font-size: 3.8889vw;}
 .default_page .page_head .cord_btn{position: absolute;right:5.5556vw;top:0;z-index: 103;display: inline-block;width:16.4444vw;height:15.5556vw;line-height:15.5556vw;text-align:right;color: #5280e2;font-weight: 600;font-size: 3.8889vw;}
+.default_page .page_head .hselect{position: absolute;right:5.5556vw;top:0;z-index: 103;}
+.default_page .page_head .hselect select{font-size: 3.3333vw;height:15.5556vw;line-height:15.5556vw;}
 .default_page .page_head .noti{position: absolute;right:6.6667vw;top:4.4444vw;display: inline-block;width: 6.6667vw;height:6.6667vw;z-index: 104;}
 .default_page .page_head .noti::before{content: '';display: inline-block;width: 6.6667vw;height: 6.6667vw;background:url('../images/icon-noti.svg')no-repeat center center;background-size: 100%;}
 .default_page .page_head .noti span{display: inline-block;position: absolute;left:3.8889vw;top:-1.1111vw;height: 3.8889vw;line-height: 3.8889vw;padding: 0 1.1111vw;border-radius: 1.8056vw;background-color: #db3e3e;font-family: Roboto;font-size: 2.7778vw;font-weight: bold;color: #fff;white-space:nowrap;}
@@ -848,3 +850,4 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .sports_set .set_tab .swiper{width:100%;overflow: hidden;}
 .sports_set .set_tab .swiper-slide.bin{width:6.6667vw;}
 .sports_set .set_tab .swiper-slide{width: auto;padding-right: 1.1111vw;padding-bottom: 0.2778vw;}
+#calendar .fc-footer-toolbar.fc-toolbar.fc-toolbar-ltr{display: none;}

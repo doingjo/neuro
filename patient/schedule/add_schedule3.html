@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src='../js/progressbar.js'></script><!-- 밸런스 차트 있을 시 추가 -->
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>스케쥴 추가</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="sports_date">2021.10.22 - 2021.11.08</div>
+          <div class="schedule_add">
+            <h2>순서변경</h2>
+            <div class="tx">해당하는 운동을 꾹 눌러 이동해보세요.</div>
+            <ul id="sports_drag" class="sports_drag list-group col">
+              <li class="list-group-item">보행<span class="handle"></span></li>
+              <li class="list-group-item">제자리 서기<span class="handle"></span></li>
+              <li class="list-group-item">스쿼트<span class="handle"></span></li>
+              <li class="list-group-item">왼발 외발서기<span class="handle"></span></li>
+              <li class="list-group-item">오른발 외발서기<span class="handle"></span></li>
+              <li class="list-group-item">계단 오르기/내리기<span class="handle"></span></li>
+            </ul>
+            <script src="../js/Sortable.js"></script>
+            <script>new Sortable(sports_drag, {handle: '.handle', animation: 150,});</script>
+            <a href="#" class="button">운동 추가</a>
+          </div>
+          <div class="bottom_btn"><a href="#" class="button_default r">완료</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
