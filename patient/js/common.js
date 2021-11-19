@@ -169,6 +169,17 @@
       });
       dayWeek.slideTo($('.day_week .swiper-slide').length,0);
     }
+    
+    
+    // console.log(weeklistArr)
+    // $('#walk_tchart').scroll(function() {
+    //   console.log($(this).scrollLeft())
+
+      
+    //   // if($(this).scrollLeft() == $('#weeklist li').scrollLeft()){
+    //   //   console.log($('#weeklist li').scrollLeft())
+    //   // }
+    // });
 });
 
 /* 모달 팝업창 */
@@ -399,33 +410,55 @@ function bachart(data, id){
   }
 }
 
-
 function walk_tdata(data){
+  var weeklistArr = [];
   var dataLength = data.length ;
-  var startDay = data[0].day -0.5;
-  var endDay = data[dataLength - 1].day+0.5;
+  //var startDay = data[0].day.getDate() - 1;
+  var startDay = new Date(data[0].day.getFullYear(), data[0].day.getMonth(), data[0].day.getDate() - 1);
+  var endDay = new Date(data[dataLength - 1].day.getFullYear(), data[dataLength - 1].day.getMonth(), data[dataLength - 1].day.getDate() + 1);
+  //var endDay = data[dataLength - 1].day.getDate()+2;
   const ojstag = document.getElementById('walkTchart');
   ojstag.style.width = dataLength * 11.5 + "vw";
   const ojs = document.getElementById('walk_tchart');
   const width = ojstag.offsetWidth;            
   const height = ojs.offsetHeight;
-  const xScale = d3.scaleLinear().domain([startDay, endDay]).range([0, width]);
+  const xScale = d3.scaleTime().domain([startDay, endDay]).range([0, width]);
   const yScale = d3.scaleLinear().domain([0, 3.3]).range([height - 50, 0]);
-  const xAxisSVG = d3.select("svg").append("g").attr("transform", "translate(0, "+height+")").attr('class', 'day');     
-  const xAxis = d3.axisBottom(xScale).tickSize(1).ticks(dataLength);
-  xAxis(xAxisSVG); 
+  const xAxisSVG = d3.select("svg").append("g").attr("transform", "translate(0, "+height+")").attr('class', 'day'); 
+  const xAxis = d3.axisBottom(xScale).tickSize(1).tickFormat(d3.timeFormat("%d")).tickValues(data.map(d=>d.day));
+  xAxis(xAxisSVG);
   d3.select("svg").selectAll(".domain").remove();
   d3.select("svg").selectAll(".tick").attr('class', 'days');
   d3.select("svg").call(d => d.selectAll('line').remove());
-  const linearGenerator = d3.line().x(d=>xScale(d.day)).y(d=>yScale(d.value));
+  const linearGenerator = d3.line().x(d=>xScale(d.day)).y(d=>yScale(d.value))
   d3.select("svg").append("path").attr("d", linearGenerator(data)).attr("fill", "none").attr("stroke-width", 4).attr("stroke", "#5280e2").attr("stroke-linecap", "round");
   d3.select("svg").selectAll("circle").data(data).enter().append("circle").attr('class', 'cir').attr("r", 8).attr("cx", d=>xScale(d.day)).attr("cy", d=>yScale(d.value)).style("fill", "#5280e2").attr("stroke-width", 3).attr("stroke", "#fff")
   const bar_chart = document.getElementById('weeklist')
   for (let index = 0; index < data.length; index++) {
-    const element = data[index].value;
     var leftx = $('.days').eq(index).attr('transform').replaceAll("translate","").replace(/\)/g,'').replace(/\(/g,'').slice(0, -2);
-      var liHtml = `<li style="transform:translateX(${leftx}px)"><span class="liwa">${data[index].week}</span><span class="liday">${data[index].day}</span></li>`
-      bar_chart.innerHTML += liHtml;
+    var liHtml = `<li style="transform:translateX(${leftx}px)" yearName="${data[index].day.getFullYear()}" monthName="${data[index].day.getMonth()+1}"><span class="liwa">${data[index].week}</span><span class="liday">${data[index].day.getDate()}</span></li>`
+    bar_chart.innerHTML += liHtml;
+    weeklistArr.push({left:leftx, year:data[index].day.getFullYear(), month:data[index].day.getMonth()+1 })
+  }
+  let uniqueArr = weeklistArr.filter((thing, index, self) =>index === self.findIndex((t) => (t.month === thing.month)))
+  ojs.onscroll = logScroll;
+  let target = false;
+  load()
+  function load(){
+    $('.walk_wr .ti .year').html(uniqueArr[0].year);
+    $('.walk_wr .ti .month').html(uniqueArr[0].month);
+    target=false;
+  }
+  function logScroll(e) {
+    idx = weeklistArr.indexOf(e.target.scrollLeft)
+    if(uniqueArr[1].left <= e.target.scrollLeft && !target){
+      $('.walk_wr .ti .year').html(uniqueArr[1].year);
+      $('.walk_wr .ti .month').html(uniqueArr[1].month);
+      target=true;
+    }
+    if(uniqueArr[1].left > e.target.scrollLeft && target && uniqueArr[0].left <= e.target.scrollLeft){
+      load()
+    }
   }
 }
 
@@ -433,7 +466,6 @@ function walk_on(index){
   $('#weeklist li').eq(index).addClass("on").siblings().removeClass("on");
   $('.cir').eq(index).addClass("on").siblings().removeClass("on");
 }
-
 
 function linechat(data, id, tx, index){
   var dataLength = data.length ;
@@ -481,3 +513,4 @@ function linechat(data, id, tx, index){
     $('#'+id+' .bar_tip li').eq(index).addClass("on").siblings().removeClass("on");
   }
 }
+

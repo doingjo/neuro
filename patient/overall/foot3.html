@@ -22,6 +22,9 @@
         <link rel="stylesheet" href="../css/NotoSansKR.css">
         <link rel="stylesheet" href="../css/Montserrat.css">
     </noscript>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
     <link rel="stylesheet" href="../css/contents.css">
     <title>NEUROGAIT</title>
   </head>
@@ -36,7 +39,7 @@
         </div>
         <div class="container">
           <div class="period_search">
-            <input type="text" name="" id="" value="2021.10.3 - 2021.10.3">
+            <input type="text" id="calendar" name="" value="2021.10.3 - 2021.10.3" />
             <a href="#" class="btn">검색</a>
           </div>
           <p class="over_ti">자세 분석 점수 </p>
@@ -94,5 +97,7 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="../js/daterange.js"></script>
+  <script>daterangepicker();</script>
 </body>
 </html>
