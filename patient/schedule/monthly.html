@@ -46,6 +46,7 @@
           <hr class="line full" />
           <div class="schedule_list">
             <h2>10.01</h2>
+            <a href="#" class="today_btn">오늘</a>
             <hr class="line_box" />
             <ul>
               <li>
@@ -118,13 +119,11 @@
               },
               navLinks: true,
               navLinkDayClick: function(date, jsEvent) {
-                var year = date.getFullYear(),
-                    month = parseInt(date.getMonth())+1,
-                    day = date.getDate();
+                var year = date.getFullYear();
                 $('.fc-daygrid-day-number').removeClass('bg');
                 jsEvent.srcElement.classList.add('bg');
-  
-                console.log(year+'-'+month+'-'+day);
+                scheduleDayChange(date);
+                console.log(date);
               },
           },
           timeGridWeek: {
@@ -141,12 +140,13 @@
               },
               navLinks: true,
               navLinkDayClick: function(date) {
+                scheduleDayChange(date);
                 var year = date.getFullYear(),
                     month = parseInt(date.getMonth())+1,
                     day = date.getDate();
                 $('.col-day').removeClass('bg');
                 $('.col-day'+day).addClass('bg');
-  
+                scheduleDayChange(date);
                 console.log(year+'-'+month+'-'+day);
               },
           }
@@ -166,14 +166,11 @@
         ]
       });
       calendar.render();
+    });    
+    scheduleDayChange(new Date());
+    $('.today_btn').click(function() {
+      scheduleDayChange(new Date());
     });
-    $('.hselect select').change(function() {
-      if($(this).val() == 'month'){
-        $('.fc-dayGridMonth-button').trigger('click');
-      }else{
-        $('.fc-timeGridWeek-button').trigger('click');
-      }
-    })
   </script>  
 </body>
 </html>

@@ -86,13 +86,11 @@
               },
               navLinks: true,
               navLinkDayClick: function(date, jsEvent) {
-                var year = date.getFullYear(),
-                    month = parseInt(date.getMonth())+1,
-                    day = date.getDate();
+                var year = date.getFullYear();
                 $('.fc-daygrid-day-number').removeClass('bg');
                 jsEvent.srcElement.classList.add('bg');
-  
-                console.log(year+'-'+month+'-'+day);
+                scheduleDayChange(date);
+                console.log(date);
               },
           },
           timeGridWeek: {
@@ -109,17 +107,24 @@
               },
               navLinks: true,
               navLinkDayClick: function(date) {
+                scheduleDayChange(date);
                 var year = date.getFullYear(),
                     month = parseInt(date.getMonth())+1,
                     day = date.getDate();
                 $('.col-day').removeClass('bg');
                 $('.col-day'+day).addClass('bg');
-  
+                scheduleDayChange(date);
                 console.log(year+'-'+month+'-'+day);
               },
           }
         },
         height: 'auto',
+        // datesSet: function(info) {
+        //   if(!!calendarEl.querySelectorAll('.fc-day-today').length){
+        //   }else{
+        //     $('.today_btn').show()
+        //   }
+        // },
         events: [
           {
             start: '2021-11-19',
@@ -134,14 +139,11 @@
         ]
       });
       calendar.render();
+    });   
+    scheduleDayChange(new Date());
+    $('.today_btn').click(function() {
+      scheduleDayChange(new Date());
     });
-    $('.hselect select').change(function() {
-      if($(this).val() == 'month'){
-        $('.fc-dayGridMonth-button').trigger('click');
-      }else{
-        $('.fc-timeGridWeek-button').trigger('click');
-      }
-    })
   </script>  
 </body>
 </html>

@@ -160,7 +160,9 @@
     new Swiper(".aotoswiperc", {
       slidesPerView: "auto",
       spaceBetween: 0,
-      centeredSlides: true,
+      centeredSlides: true,pagination: {
+        el: ".aotoswiperc .swiper-pagination",
+      },
     });
     if($('.day_week').length){
       var dayWeek = new Swiper(".day_week", {
@@ -180,6 +182,15 @@
     //   //   console.log($('#weeklist li').scrollLeft())
     //   // }
     // });
+
+    
+    $('.hselect select').change(function() {
+      if($(this).val() == 'month'){
+        $('.fc-dayGridMonth-button').trigger('click');
+      }else{
+        $('.fc-timeGridWeek-button').trigger('click');
+      }
+    })
 });
 
 /* 모달 팝업창 */
@@ -206,7 +217,7 @@ function resize(obj) {
 
 
 function mainBalanceData(data){
-  var overall_data = $('.overall_data')
+  var overall_data = $('.overall_data');
   var result = 100/data.all*data.value;
   var chart = '<svg viewBox="0 0 32 32"><circle class="circle" r="16" cx="16" cy="16" style="stroke-dasharray: 10 100" /></svg>';
   overall_data.find('.pie').html(chart).find('.circle').css('stroke-dasharray', result + ' 100');
@@ -514,3 +525,29 @@ function linechat(data, id, tx, index){
   }
 }
 
+function formatDate(date, yearIf) { 
+  var d = new Date(date), 
+  month = '' + (d.getMonth() + 1), 
+  day = '' + d.getDate(), 
+  year = d.getFullYear(); 
+  if (month.length < 2) 
+  month = '0' + month; 
+  if (day.length < 2) 
+  day = '0' + day; 
+  if(yearIf){
+    return year+month+day;
+
+  }else{
+    return [month, day].join('.');
+
+  }
+}
+
+function scheduleDayChange(date){
+  $('.schedule_list h2').html(formatDate(date,false));
+  if(formatDate(date,true) == formatDate(new Date(),true)){
+    $('.today_btn').hide();
+  }else{
+    $('.today_btn').show();
+  }
+}
