@@ -94,6 +94,7 @@ $('.hselect select').change(function() {
 $('.today_btn').click(function() {
   choiceDay = new Date();
   scheduleDayChange(choiceDay, new Date());
+  $('.fc-today-button').trigger('click');
 });  
 
 function scheduleDayChange(choice, date){
