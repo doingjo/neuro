@@ -1069,6 +1069,8 @@ A VERTICAL event
 .fc .fc-timegrid .fc-col-header-cell-cushion{padding:0;display:block}
 .fc .fc-timegrid .fc-col-header .col-header{padding:2.8205vw 1.0256vw;font-size:3.0769vw;font-weight:500;}
 .fc .fc-timegrid .fc-col-header .col-day{min-height:12.3794vw;position:relative;z-index:4; font-size:3.734vw;color:#000;font-weight:700; display:flex;align-items:center;justify-content:center;}
+.fc .fc-timegrid .fc-col-header .bg .col-day{color:#fff;}
+.fc .fc-timegrid .fc-col-header .bg .col-day:before{content:'';display:block; border-radius:4.102vw;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:.5128vw;left:.5128vw;right:.5128vw;bottom:.5128vw;z-index:-1;}
 .fc .fc-timegrid .fc-col-header .col-day.bg{color:#fff;}
 .fc .fc-timegrid .fc-col-header .col-day.bg:before{content:'';display:block; border-radius:4.102vw;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:.5128vw;left:.5128vw;right:.5128vw;bottom:.5128vw;z-index:-1;}
 .fc .fc-timegrid .fc-scrollgrid tbody .fc-scrollgrid-section-body{position:absolute;top:9.2307vw;}

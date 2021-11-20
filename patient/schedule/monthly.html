@@ -46,7 +46,7 @@
           <hr class="line full" />
           <div class="schedule_list">
             <h2>10.01</h2>
-            <a href="#" class="today_btn">오늘</a>
+            <a href="#none" class="today_btn">오늘</a>
             <hr class="line_box" />
             <ul>
               <li>
@@ -93,84 +93,6 @@
       </div>
     </div>
   </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var calendarEl = document.getElementById('calendar');
-      var $targetOld = null;
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        headerToolbar: {
-          left: 'prev',
-          center: 'title',
-          right: 'next'
-        },
-        footerToolbar: {
-          right: 'dayGridMonth,timeGridWeek,today'
-        },
-        fixedWeekCount: false,
-        views: {
-          dayGridMonth: {
-              titleFormat : function(date) {
-                var month = '0'+(date.date.month +1);
-                return date.date.year +". "+month.slice(-2);
-              },
-              dayHeaderContent: ({date}) => {
-                  var weekdays = ['일','월','화','수','목','금','토']
-                  return weekdays[date.getDay()]
-              },
-              navLinks: true,
-              navLinkDayClick: function(date, jsEvent) {
-                var year = date.getFullYear();
-                $('.fc-daygrid-day-number').removeClass('bg');
-                jsEvent.srcElement.classList.add('bg');
-                scheduleDayChange(date);
-                console.log(date);
-              },
-          },
-          timeGridWeek: {
-              titleFormat : function(date) {
-                var startM = '0'+(date.date.month +1),
-                    startD = (date.date.day),
-                    endM = '0'+(date.end.month +1),
-                    endD = (date.end.day);
-                return startM.slice(-2)+'.'+startD+' ~ '+endM.slice(-2)+'.'+endD
-              },
-              dayHeaderContent: ({date}) => {
-                  var weekdays = ['일','월','화','수','목','금','토']
-                  return {html: `<div class="col-header">${weekdays[date.getDay()]}</div><div class="col-day col-day`+date.getDate()+`">${date.getDate()}</div>`}
-              },
-              navLinks: true,
-              navLinkDayClick: function(date) {
-                scheduleDayChange(date);
-                var year = date.getFullYear(),
-                    month = parseInt(date.getMonth())+1,
-                    day = date.getDate();
-                $('.col-day').removeClass('bg');
-                $('.col-day'+day).addClass('bg');
-                scheduleDayChange(date);
-                console.log(year+'-'+month+'-'+day);
-              },
-          }
-        },
-        height: 'auto',
-        events: [
-          {
-            start: '2021-11-19',
-            end: '2021-11-28',
-            display: 'background',
-          },
-          {
-            start: '2021-11-06',
-            end: '2021-11-08',
-            display: 'background',
-          }
-        ]
-      });
-      calendar.render();
-    });    
-    scheduleDayChange(new Date());
-    $('.today_btn').click(function() {
-      scheduleDayChange(new Date());
-    });
-  </script>  
+  <script src="../js/schedule.js"></script> 
 </body>
 </html>

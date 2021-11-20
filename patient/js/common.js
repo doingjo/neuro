@@ -183,14 +183,6 @@
     //   // }
     // });
 
-    
-    $('.hselect select').change(function() {
-      if($(this).val() == 'month'){
-        $('.fc-dayGridMonth-button').trigger('click');
-      }else{
-        $('.fc-timeGridWeek-button').trigger('click');
-      }
-    })
 });
 
 /* 모달 팝업창 */
@@ -522,32 +514,5 @@ function linechat(data, id, tx, index){
   lineclick(index);
   function lineclick(index){
     $('#'+id+' .bar_tip li').eq(index).addClass("on").siblings().removeClass("on");
-  }
-}
-
-function formatDate(date, yearIf) { 
-  var d = new Date(date), 
-  month = '' + (d.getMonth() + 1), 
-  day = '' + d.getDate(), 
-  year = d.getFullYear(); 
-  if (month.length < 2) 
-  month = '0' + month; 
-  if (day.length < 2) 
-  day = '0' + day; 
-  if(yearIf){
-    return year+month+day;
-
-  }else{
-    return [month, day].join('.');
-
-  }
-}
-
-function scheduleDayChange(date){
-  $('.schedule_list h2').html(formatDate(date,false));
-  if(formatDate(date,true) == formatDate(new Date(),true)){
-    $('.today_btn').hide();
-  }else{
-    $('.today_btn').show();
   }
 }

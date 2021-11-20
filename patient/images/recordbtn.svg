@@ -1,0 +1,8 @@
+<svg width="134" height="42" viewBox="0 0 134 42" xmlns="http://www.w3.org/2000/svg">
+    <g transform="translate(1 1)" fill="#FFF" fill-rule="evenodd">
+        <rect stroke-opacity=".497" stroke="#979797" fill-opacity=".203" width="132" height="40" rx="20"/>
+        <text font-family="NotoSansKR-Medium, Noto Sans KR" font-size="14" font-weight="400">
+                            <tspan x="40.24" y="25">기록하기</tspan>
+                        </text>
+    </g>
+</svg>
