@@ -156,11 +156,16 @@
     new Swiper(".aotoswiper", {
       slidesPerView: "auto",
       spaceBetween: 0,
+      observer: true,
+      resizeObserver: true,
     });
     new Swiper(".aotoswiperc", {
       slidesPerView: "auto",
       spaceBetween: 0,
-      centeredSlides: true,pagination: {
+      centeredSlides: true,
+      observer: true,
+      resizeObserver: true,
+      pagination: {
         el: ".aotoswiperc .swiper-pagination",
       },
     });
@@ -183,7 +188,12 @@
     //   // }
     // });
 
+    // $(window).resize( function() {
+    //   // do somthing
+    // ​});
+
 });
+
 
 /* 모달 팝업창 */
 function modals_close(id){

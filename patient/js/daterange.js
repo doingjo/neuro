@@ -1,5 +1,6 @@
 function daterangepicker(){
   $('#calendar').daterangepicker({
+    maxDate: new Date(),
     autoUpdateInput:true,
     "locale": {
       "format": "YYYY.MM.DD",

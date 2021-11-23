@@ -149,6 +149,8 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .radio_mark .input input::placeholder{color:#ced4da;}
 .radio_mark.on{border-color: #5280e2;}
 .radio_mark.on .input{color: #212529;}
+.radio_mark.tw label span{display: block;margin: 2.2222vw 0 0 0;font-size: 3.3333vw;font-weight: 500;}
+.radio_mark.tw label::before{top:6.1111vw;margin-top:0;}
 
 .radio_selection{display: block;position: relative;border: solid 1px #e9ecef;border-radius: 3.3333vw;}
 .radio_selection input[type="radio"]{float:left;margin:0;position:absolute;left:-100vw;top:0;width:0;height:0;overflow:hidden;opacity:0}
@@ -289,7 +291,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .default_page .page_head .back_btn{padding:4.4444vw 6.6667vw;position: absolute;left:0;top:0;z-index: 102;}
 .default_page .page_head .back_btn span{display: inline-block;width:6.6667vw;height:6.6667vw;font-size: 0;background:url('../images/icon-navigation-back.svg')no-repeat center center;background-size: 100%;}
 .default_page .page_head .skip_btn{position: absolute;right:0;top:0;z-index: 103;display: inline-block;width:20vw;height:15.5556vw;line-height:15.5556vw;text-align:center;color: #5280e2;font-family: Roboto;font-weight: bold;font-size: 3.8889vw;}
-.default_page .page_head .cord_btn{position: absolute;right:5.5556vw;top:0;z-index: 103;display: inline-block;width:16.4444vw;height:15.5556vw;line-height:15.5556vw;text-align:right;color: #5280e2;font-weight: 600;font-size: 3.8889vw;}
+.default_page .page_head .cord_btn{position: absolute;right:5.5556vw;top:0;z-index: 103;display: inline-block;width:18.4444vw;height:15.5556vw;line-height:15.5556vw;text-align:right;color: #5280e2;font-weight: 600;font-size: 3.8889vw;}
 .default_page .page_head .hselect{position: absolute;right:5.5556vw;top:0;z-index: 103;}
 .default_page .page_head .hselect select{font-size: 3.3333vw;height:15.5556vw;line-height:15.5556vw;}
 .default_page .page_head .noti{position: absolute;right:6.6667vw;top:4.4444vw;display: inline-block;width: 6.6667vw;height:6.6667vw;z-index: 104;}
@@ -310,6 +312,29 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .default_page.set{background-color: #f0f4f7;}
 .default_page.set .container{padding:4.4444vw 6.6667vw 17.7778vw;}
 .default_page .dimbg{position: fixed;left:0;right:0;top:0;bottom:0;opacity: 0;background-color: #000;z-index:50}
+.default_page.walking{background: #5280e2;height: 100vh;}
+.default_page.walking .page{padding: 0;height: calc(100% - 22.2222vw);}
+.default_page.walking .page_head{position: static;}
+.default_page.walking .page_head h1{color:#fff}
+.default_page.walking .page_head .back_btn span{background:url('../images/icon-navigation-backw.svg')no-repeat center center;}
+.default_page.walking .page_head .headbg{display: none;}
+.default_page.walking .button_default{background: #fff;color:#5280e2;font-weight: bold;}
+.default_page.walking .button_default:disabled{background: #e9ecef;color:#adb5bd}
+.default_page.walking .container{padding:0 14.1026vw;height: calc(100% - 15.5556vw);display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;}
+.default_page.walking .container .walking_choice{width:71.7949vw;margin:0 auto;}
+.default_page.walking .container .walking_choice p{font-size: 6.6667vw;font-weight: bold;line-height: 1.31;text-align: center;color: #fff;}
+.default_page.walking .container .walking_choice .list{margin-top:10.2564vw;}
+.default_page.walking .container .walking_choice .list li{margin-top:2.0513vw}
+.default_page.walking .container .walking_choice .list li:first-child{margin-top:0;}
+.default_page.walking .container .walking_choice .list li .radio{display: block;text-align:left;}
+.default_page.walking .container .walking_choice .list li .radio input[type="radio"]{float:left;margin:0;position:absolute;left:-100vw;top:0;width:0;height:0;overflow:hidden;opacity:0}
+.default_page.walking .container .walking_choice .list li .radio label{display: block;border-radius: 3.0769vw;border: solid 1px #e9ecef;background-color: #fff;padding: 5.6410vw 5.6410vw;font-size: 3.5897vw;font-weight: 500;color: #868e96;position: relative;}
+.default_page.walking .container .walking_choice .list li .radio label::before{content: '';position: absolute;right:5.5556vw;top:50%;margin-top:-2.7778vw;display: inline-block;width:5.5556vw;height:5.5556vw;background:url('../images/checkmark.svg')no-repeat center center;background-size: 100%;}
+.default_page.walking .container .walking_choice .list li .radio input[type="radio"].on + label,
+.default_page.walking .container .walking_choice .list li .radio input[type="radio"]:checked + label{opacity: 1;border-color: #5280e2;font-size: 3.5897vw;font-weight: 500;color: #5280e2;}
+.default_page.walking .container .walking_choice .list li .radio input[type="radio"].on + label::before,
+.default_page.walking .container .walking_choice .list li .radio input[type="radio"]:checked + label::before{background:url('../images/checkmark-selected.svg')no-repeat center center;background-size: 100%;}
+.default_page.walking .container .walking_choice .list.on li .radio label{opacity: 0.7;}
 
 /* 엑스로 닫는 페이지 */
 .close_page{background: #fff;min-height:100vh;position: relative;}
@@ -823,6 +848,7 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .sports_way .mov img{width:100%}
 .sports_way .tip{padding: 5.5556vw 6.6667vw 8.8889vw;margin-top:4.4444vw;border-radius: 3.3333vw;background-color: #f8f9fa;}
 .sports_way .tip::before{content: '';display: inline-block;width: 4.4444vw;height: 4.4444vw;background:url('../images/icon-help.svg') no-repeat center top;background-size: 100% auto;}
+.sports_way .tip.noimg::before{display: none;}
 .sports_way .tip div{margin-top:2.2222vw;font-size: 3.8889vw;line-height: 1.43;color: #212529;word-break: keep-all;}
 .sports_way .tip .btn{display: inline-block;margin-top:4.4444vw;height: 5.5556vw;line-height: 5.5556vw;font-size: 3.8889vw;font-weight: 700;color: #5280e2;}
 .sports_way .tip .btn::before{content: '';display: inline-block;width: 5.5556vw;height: 5.5556vw;border-radius: 100%;vertical-align: middle;position: relative;top:-0.5556vw;background:#5280e2 url('../images/icon-ui-editphoto.svg') no-repeat center center;background-size: 3.3333vw auto;margin-right:2.2222vw;}
