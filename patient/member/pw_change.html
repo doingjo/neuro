@@ -51,11 +51,16 @@
                   </div>
                 </div>
                 <div class="text err">에러 메시지</div>
-              </div>
-              <div class="input_default error"><!-- class "error" 넣으면 에러표시함-->
+              </div>   
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
                   <label for="pw">새 비밀번호</label>
-                  <input type="password" name="" id="pw" value="1234" placeholder="8~16 자리, 영문/숫자/특수문자 조합" />
+                  <div class="tixed">
+                    <div class="tfcell"><input type="password" name="" id="pw" class="pwinput" value="" placeholder="8~16 자리, 영문/숫자/특수문자 조합" /></div>
+                    <div class="tfcell">
+                      <a href="#" class="pwshow">패스워드 보기</a>
+                    </div>
+                  </div>
                 </div>
                 <div class="text err">8~16 자리, 영문/숫자/특수문자 조합이 아닙니다.</div>
               </div>
