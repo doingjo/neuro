@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+
+
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page setup">
+      <div class="page">
+        <div class="page_head">
+          <h1>이용약관</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div id='calendar'></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+ var $targetOld = null;
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      headerToolbar: {
+        left: 'prev',
+        center: 'title',
+        right: 'next'
+        //right: 'dayGridMonth,timeGridWeek'
+      },
+      footerToolbar: {
+        right: 'dayGridMonth,timeGridWeek,today'
+      },
+      fixedWeekCount: false,
+      //initialDate: '2020-09-12',
+      //locale : 'ko',
+      titleFormat : function(date) {
+        return date.date.year +". "+(date.date.month +1);
+      },
+      views: {
+        dayGridMonth: {
+            dayHeaderContent: ({date}) => {
+                var weekdays = ['일','월','화','수','목','금','토']
+                return weekdays[date.getDay()]
+            },
+        },
+        timeGridWeek: {
+            dayHeaderContent: ({date}) => {
+                var weekdays = ['일','월','화','수','목','금','토']
+                return {html: `<div class="col-header">${weekdays[date.getDay()]}</div><div class="col-day col-day`+date.getDate()+`">${date.getDate()}</div>`}
+            },
+            navLinks: true, // can click day/week names to navigate views
+            navLinkDayClick: function(date) {
+              var year = date.getFullYear(),
+                  month = parseInt(date.getMonth())+1,
+                  day = date.getDate();
+              $('.col-day').removeClass('bg');
+              $('.col-day'+day).addClass('bg');
+
+              console.log(year+'-'+month+'-'+day);
+            },
+        }
+      },
+      height: 'auto',
+      // eventClick: function(info) {
+      //   // change the border color just for fun
+      //   info.el.style.backgroundColor = 'red';
+      // },
+      // businessHours: true, // display business hours
+      // editable: true,
+      navLinks: true, // can click day/week names to navigate views
+      navLinkDayClick: function(date, jsEvent) {
+        var year = date.getFullYear(),
+            month = (parseInt(date.getMonth())+1,
+            day = date.getDate(),
+            samDay = year+'-'+month+'-'+day;
+        $('.fc-daygrid-day-number').removeClass('bg');
+
+        console.log(samDay);
+
+        jsEvent.srcElement.classList.add('bg');
+      },
+      // dateClick: function(info) {
+      //   console.log('clicked ' + info.dateStr);
+      //   $('.fc-daygrid-day-number').attr('style','');
+      //         info.jsEvent.target.style.color = '#fff';
+      // },
+      selectable: true,
+      selectMirror: true,
+      // select: function(date) {
+      //   console.log('day', date.startStr);
+      //   console.log('day', date.jsEvent);
+
+      //   // console.log('day', date.jsEvent.path[0]);
+      //   // console.log('day', date.jsEvent.path[1]);
+
+      //   // var $target = date.jsEvent.target;
+      //   // console.log($target)
+      //   // if($targetOld == date.jsEvent.target){
+      //   //     $targetOld.style.color = '#000'
+      //   //     console.log("123")
+
+      //   //   }
+      //   // if($target === date.jsEvent.target){
+      //   //   date.jsEvent.target.style.color = '#fff'
+      //   //   console.log("asd")
+      //   //   $targetOld = $target;
+      //   //   console.log($targetOld)
+      //   // }
+
+
+
+
+      //   // date.jsEvent.path[1].style.color = '#f50'
+      //   // date.jsEvent.path[0].style.color = '#fff'
+
+      //   //date.jsEvent.target.style.color = '#fff'
+
+      //   // var title = prompt('Event Title:');
+      //   // if (title) {
+      //   //   calendar.addEvent({
+      //   //     title: title,
+      //   //     start: arg.start,
+      //   //     end: arg.end,
+      //   //     allDay: arg.allDay
+      //   //   })
+      //   // }
+      //   // calendar.unselect()
+      // },
+      longPressDelay: 100,
+      events: [
+        {
+          start: '2021-11-19',
+          end: '2021-11-28',
+          display: 'background',
+        },
+        {
+          start: '2021-11-06',
+          end: '2021-11-08',
+          display: 'background',
+        }
+      ],
+
+    });
+
+    calendar.render();
+  });
+
+</script>
+<script type="text/javascript">
+
+</script>
+
+
+</body>
+</html>
