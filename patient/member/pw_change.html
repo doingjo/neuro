@@ -32,8 +32,15 @@
             <form action="">
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="hp">휴대폰 번호 </label>
-                  <input type="tel" name="" id="hp" placeholder="‘-’없이 입력" />
+                  <label for="hp">휴대폰 번호</label>
+                  <div class="tixed">
+                    <div class="tfcell email_select" style="width:20.5vw">
+                      <select name="" id="" class="form_select tal">
+                        <option value="">+82</option>
+                      </select>
+                    </div>
+                    <div class="tfcell" style="padding-left: 4.4444vw;"><input type="tel" name="" id="hp" placeholder="‘-’없이 입력" /></div>
+                  </div>
                 </div>
                 <div class="text err">에러 메시지</div>
               </div>
@@ -51,7 +58,7 @@
                   </div>
                 </div>
                 <div class="text err">에러 메시지</div>
-              </div>   
+              </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
                   <label for="pw">새 비밀번호</label>
