@@ -93,9 +93,11 @@
     $('.pwshow').on('click', function () {
       var type = $(this).parents('.tixed').find('.pwinput'); 
       if(type.attr('type') == 'password'){
-        type.attr('type', 'text')
+        type.attr('type', 'text');
+        $(this).addClass("on");
       }else{
-        type.attr('type', 'password')
+        type.attr('type', 'password');
+        $(this).removeClass("on");
       }
       return false;
     });

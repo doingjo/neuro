@@ -363,6 +363,8 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .join_ok .ok_text > div p.s{color: #868e96;font-weight: normal;font-size: 3.8889vw;}
 .join_ok .text_box{padding: 5.5556vw 11.1111vw;border-radius: 6.6667vw;background-color: #f8f9fa;color: #868e96;font-size: 3.8889vw;word-break:keep-all;position: absolute;bottom:26.6667vw;left:6.6667vw;right:6.6667vw;}
 .join_ok .bottom_btn{left:6.6667vw;right:6.6667vw;}
+.pwshow{display: inline-block;width: 5.5556vw;height: 5.5556vw;background:url('../images/icon-eye-01.svg')no-repeat center center;background-size: 100%;font-size: 0;}
+.pwshow.on{background:url('../images/icon-eye-02.svg')no-repeat center center;}
 
 /* 문진정보 */
 .medical .container{padding:3.3333vw 4.4444vw 3.3333vw;}
