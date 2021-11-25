@@ -26,7 +26,8 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .button_default{display: block;width:100%;background: #5280e2;height:15.5556vw;line-height:15.5556vw;border-radius: 7.7778vw;color: #fff;font-size: 4.4444vw;text-align: center;}
 .button_default:disabled{background-color: #e9ecef;color: #adb5bd;}
 .button_default.disabled{background-color: #e9ecef;color: #adb5bd;}
-.button_small{display: inline-block;text-align: center; color: #5280e2;font-size: 3.3333vw;height:8.8889vw;line-height: 8.8889vw;padding:0 3.3333vw;border-radius: 4.4444vw;border: solid 1px #5280e2;background-color: #fff;min-width: 20.1667vw;}
+.button_small{display: inline-block;text-align: center; color: #5280e2;font-size: 3.3333vw;height:8.8889vw;line-height: 8.8889vw;padding:0 3.3333vw;border-radius: 4.4444vw;border: solid 1px #5280e2;background-color: #fff;min-width:20.1667vw}
+.button_big{display: inline-block;text-align: center; color: #343a40;font-size: 3.8888vw;font-weight:500;height:13.3334vw;line-height: 13.3334vw;border-radius: 3.3334vw;border: solid 1px #5280e2;background-color: #fff;width:100%;margin-top:4.444vw}
 .button_more{display: inline-block;height: 13.3333vw;line-height: 13.3333vw;text-align: center;border-radius: 6.6667vw;border: solid 1px #e9ecef;background-color: #fff;font-size: 3.8889vw;font-weight: 500;color: #868e96;margin-top:4.7222vw;padding:0 7.2222vw;}
 .button_default.r{ border-radius: 3.3333vw;}
 
@@ -34,7 +35,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .form_default{margin-top:13.3333vw;padding-bottom: 8.3333vw;}
 .form_ti{color: #212529; font-weight: bold;font-size: 4.4444vw;margin:4.4444vw 0 8.8889vw;position: relative;}
 .form_tx{color: #212529;line-height: 1.43;font-size: 3.8889vw;font-weight: 500;margin-bottom: 6.3889vw;}
-.form_select{width:100%;border:0;height:13.3333vw;line-height:13.3333vw;outline: none;font-size: 5vw;font-weight: bold;padding: 0 6.6667vw 0 0;}
+.form_select{width:100%;border:0;height:13.3333vw;line-height:13.3333vw;outline: none;font-size:5vw;font-weight: bold;padding: 0 6.6667vw 0 0;}
 .form_select.dis{color:#ced4da;font-weight: 400;}
 .email_select .form_select{text-align: right;color: #212529;}
 
@@ -76,15 +77,15 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .suffix{text-align: right;color: #212529;font-size: 4.4444vw;font-weight: bold;}
 .only_input{width:100%;height: 15.5556vw;line-height: 15.5556vw;outline: none;font-size: 4.4444vw;font-weight: bold;padding: 4.4444vw 42.2222vw 4.4444vw 5.5556vw;border-radius: 3.3333vw;border: solid 1px #dee2e6;background-color: #fff;}
 .only_input::placeholder{color:#ced4da;}
-.linelink{margin-top:-8.3333vw}
+.linelink{margin-top:-8.3333vw;position:relative;}
 .linelink a{font-size: 3.3333vw;line-height: 1.33;color: #868e96;text-decoration: underline;}
 
 /* checkbox */
 .checkbox{display:inline-block;position:relative;}
 .checkbox input[type="checkbox"]{float:left;margin:0;position:absolute;left:-100vw;top:0;width:0;height:0;overflow:hidden;opacity:0}
-.checkbox label{display:inline-block;font-size:3.8889vw;color:#212529;}
-.checkbox .ico{display: inline-block;width:4.4444vw;height:4.4444vw;background:url('../images/checkbox.svg')no-repeat center center;background-size: 100%;margin-right: 3.3333vw;position: relative;top:0.2778vw}
-.checkbox input[type="checkbox"]:checked + .ico{background:url('../images/checkbox-selected.svg')no-repeat center center;background-size: 100%;}
+.checkbox label{display:inline-block;padding-left:7.7777vw;font-size:3.8889vw;color:#212529; background:url('../images/checkbox.svg')no-repeat 0 center;background-size:4.4444vw}
+.checkbox .ico{display: inline-block;width:4.4444vw;height:4.4444vw;position:absolute;top:0.2778vw}
+.checkbox input[type="checkbox"]:checked + label{background:url('../images/checkbox-selected.svg')no-repeat 0 center;background-size:4.4444vw}
 
 .checkbox_box{display: block;position: relative;}
 .checkbox_box input[type="checkbox"]{float:left;margin:0;position:absolute;left:-100vw;top:0;width:0;height:0;overflow:hidden;opacity:0}
@@ -196,14 +197,15 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .modals.show .box{transform:scale(1) translate(-50%, -50%);opacity: 1;}
 
 /* 로그인 */
-.login_page{background: #f0f4f7;height:100vh;position: relative;min-height:211.1111vw;}
+.login_page{background: #f0f4f7;/*height:100vh;*/position: relative;min-height:211.1111vw;}
 .login_page h1{height:28%;position: relative;min-height: 55vw;}
 .login_page h1 img{width:31.1111vw;position: absolute;left:50%;bottom:50%;margin:0 0 -16.5556vw -15.5556vw;}
-.login_page .login_form{position: absolute;left:0;right:0;top:50%;margin-top:-102vw;}
+.login_page .login_form{/*position: absolute;left:0;right:0;top:50%;margin-top:-102vw;*/}
 .login_page .login_form .form{border-radius: 6.6667vw;background-color: #fff;padding:11.1111vw;}
 .login_page .login_form h2{text-align:center;font-size: 8.8889vw;color:#212529;margin-bottom: 7.6667vw;}
 .login_page .login_form .input_default{margin-bottom: 4.4444vw;padding-bottom:0}
 .login_page .login_form .input_default .input{padding-left:8.8889vw;}
+.login_page .login_form .input_default select,
 .login_page .login_form .input_default input{font-size: 4.4444vw;font-weight: normal;}
 .login_page .login_form .input_default::before{content: '';position: absolute;left:0;top:4.4444vw;display: inline-block;width:6.6667vw;height:6.6667vw;}
 .login_page .login_form .input_default.login_id::before{background:url('../images/icon-ui-user.svg')no-repeat center center;background-size: 100%;}
@@ -259,8 +261,8 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .home_page .container .today_sports .txbox .ti{font-size: 3.8889vw;font-weight: bold;color: #212529;}
 .home_page .container .today_sports .txbox .tx{margin-top: 1.1111vw;font-size: 3.6111vw;line-height: 1.38;color: #868e96;}
 .home_page .container .today_sports .txbox .play{position: absolute;right:0;top:6.1111vw;display: inline-block;width: 10.0000vw;height: 10.0000vw;background-image: linear-gradient(to bottom, #01d689, #3c63df);font-size: 0;border-radius: 100%;}
-.home_page .container .today_sports .swiper-container-horizontal>.swiper-pagination-bullets, 
-.home_page .container .today_sports .swiper-pagination-custom, 
+.home_page .container .today_sports .swiper-container-horizontal>.swiper-pagination-bullets,
+.home_page .container .today_sports .swiper-pagination-custom,
 .home_page .container .today_sports .swiper-pagination-fraction{bottom: auto;left: auto;width: auto;right:8.8889vw;top:-9.2778vw;}
 .home_page .container .today_sports .swiper-pagination-bullet{width: 1.6667vw;height: 1.6667vw;margin: 0 1.6667vw;background-color: #ced4da;opacity: 1;}
 .home_page .container .today_sports .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 0 0 1.6667vw}
@@ -492,6 +494,9 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .info_member .img div img{max-width:100%;position: absolute;left:50%;top:50%;transform: translate(-50%, -50%);}
 .info_member .name{font-size: 7.2222vw;font-weight: bold;line-height: 1.31;color: #212529;}
 .info_member .id{font-size: 3.8889vw;line-height: 1.43;color: #212529;margin-top:1.1111vw;}
+
+.btn_medical{display:block;margin-bottom:16.6666vw;font-size: 4.4444vw;font-weight: 500;line-height: 1.5;color: #212529;}
+.btn_medical::after{content: '';display: inline-block;width:4.4444vw;height:4.4444vw;margin:-1.111vw 0 0 2.2222vw;vertical-align:middle;background:url('../images/icon-arrow-right-16.svg')no-repeat center center;background-size: 100%;}
 
 /* 설정 메인 */
 .set .info{position: relative;padding-right:19.4444vw;margin:3.3333vw 0 10vw;}

@@ -29,7 +29,7 @@
         <div class="page_head">
           <h1>센터/병원 정보</h1>
           <a href="#" class="back_btn"><span>뒤로가기</span></a>
-          <a href="#" class="cord_btn"><span>데이터연결</span></a>
+          <a href="#" class="cord_btn" onclick="modals_show('modals')"><span>데이터 연결</span></a>
           <span class="headbg"></span>
         </div>
         <div class="container">
@@ -39,6 +39,19 @@
               <p>매칭된 센터/병원이<br />없습니다.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="modals" id="modals">
+      <div class="box">
+        <div class="mod_hade">
+          <p>데이터 연결 코드</p>
+        </div>
+        <div class="mod_body tac">
+          나의코드 : <strong class="co_bu">000000</strong>
+        </div>
+        <div class="mod_bott">
+          <button onclick="modals_close('modals')">확인</button>
         </div>
       </div>
     </div>
