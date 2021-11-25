@@ -35,6 +35,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .form_ti{color: #212529; font-weight: bold;font-size: 4.4444vw;margin:4.4444vw 0 8.8889vw;position: relative;}
 .form_tx{color: #212529;line-height: 1.43;font-size: 3.8889vw;font-weight: 500;margin-bottom: 6.3889vw;}
 .form_select{width:100%;border:0;height:13.3333vw;line-height:13.3333vw;outline: none;font-size: 5vw;font-weight: bold;padding: 0 6.6667vw 0 0;}
+.form_select.dis{color:#ced4da;font-weight: 400;}
 .email_select .form_select{text-align: right;color: #212529;}
 
 /* tab */
@@ -75,6 +76,8 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .suffix{text-align: right;color: #212529;font-size: 4.4444vw;font-weight: bold;}
 .only_input{width:100%;height: 15.5556vw;line-height: 15.5556vw;outline: none;font-size: 4.4444vw;font-weight: bold;padding: 4.4444vw 42.2222vw 4.4444vw 5.5556vw;border-radius: 3.3333vw;border: solid 1px #dee2e6;background-color: #fff;}
 .only_input::placeholder{color:#ced4da;}
+.linelink{margin-top:-8.3333vw}
+.linelink a{font-size: 3.3333vw;line-height: 1.33;color: #868e96;text-decoration: underline;}
 
 /* checkbox */
 .checkbox{display:inline-block;position:relative;}
@@ -291,7 +294,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .default_page .page_head .back_btn{padding:4.4444vw 6.6667vw;position: absolute;left:0;top:0;z-index: 102;}
 .default_page .page_head .back_btn span{display: inline-block;width:6.6667vw;height:6.6667vw;font-size: 0;background:url('../images/icon-navigation-back.svg')no-repeat center center;background-size: 100%;}
 .default_page .page_head .skip_btn{position: absolute;right:0;top:0;z-index: 103;display: inline-block;width:20vw;height:15.5556vw;line-height:15.5556vw;text-align:center;color: #5280e2;font-family: Roboto;font-weight: bold;font-size: 3.8889vw;}
-.default_page .page_head .cord_btn{position: absolute;right:5.5556vw;top:0;z-index: 103;display: inline-block;width:18.4444vw;height:15.5556vw;line-height:15.5556vw;text-align:right;color: #5280e2;font-weight: 600;font-size: 3.8889vw;}
+.default_page .page_head .cord_btn{position: absolute;right:5.5556vw;top:0;z-index: 103;display: inline-block;width:19.4444vw;height:15.5556vw;line-height:15.5556vw;text-align:right;color: #5280e2;font-weight: 600;font-size: 3.8889vw;}
 .default_page .page_head .hselect{position: absolute;right:5.5556vw;top:0;z-index: 103;}
 .default_page .page_head .hselect select{font-size: 3.3333vw;height:15.5556vw;line-height:15.5556vw;}
 .default_page .page_head .noti{position: absolute;right:6.6667vw;top:4.4444vw;display: inline-block;width: 6.6667vw;height:6.6667vw;z-index: 104;}

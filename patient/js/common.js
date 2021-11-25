@@ -30,6 +30,14 @@
     });
     /* 인풋박스 포커스 이벤트 */
 
+    $('.form_select').change(function () {
+      if($(this).val()==null || $(this).val()==''){
+        $(this).addClass('dis');
+      }else{
+        $(this).removeClass('dis');
+      }
+    });
+
     /* 라디오 버튼 - 문진 정보 */
     $('.radio_mark input[type="radio"]').change(function () {
       if($(this).prop("checked")) { 

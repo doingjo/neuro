@@ -34,13 +34,18 @@
                 <div class="input">
                   <label for="email">변경할 휴대폰 번호</label>
                   <div class="tixed">
-                    <div class="tfcell"><input type="tel" name="" id="email" placeholder="‘-’없이 입력" /></div>
+                    <div class="tfcell email_select" style="width:20.5vw">
+                      <select name="" id="" class="form_select tal">
+                        <option value="">+82</option>
+                      </select>
+                    </div>
+                    <div class="tfcell" style="padding-left: 4.4444vw;"><input type="tel" name="" id="email" placeholder="‘-’없이 입력" /></div>
                     <div class="tfcell">
-                      <a href="#"  class="button_small">인증번호</a>
+                      <a href="#"  class="button_small">인증확인</a>
                     </div>
                   </div>
                 </div>
-                <div class="text err">휴대폰 번호를 확인해 주세요.</div>
+                <div class="text err">에러 메시지</div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
@@ -54,6 +59,7 @@
                 </div>
                 <div class="text attest">01:03</div>
               </div>
+              <div class="linelink"><a href="#">인증번호 재발송</a></div>
               <div class="bottom_btn"><button type="submit" class="button_default" disabled>완료</button></div>
             </form>
         </div>

@@ -50,10 +50,13 @@ body{-webkit-user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-
 .mt40{margin-top:11.1111vw !important;}
 .pt48{padding-top:13.3333vw !important;}
 .pl16{padding-left:4.4444vw !important;}
+.pl20{padding-left:5.5556vw !important;}
 .pb0{padding-bottom:0vw !important;}
 .mb0{margin-bottom:0vw !important;}
 .mb12{margin-bottom:3.3333vw !important;}
 .mb20{margin-bottom:5.5556vw !important;}
+
+.co_bu{color:#5280e2}
 
 
 input, textarea {appearance: none;-webkit-appearance: none;-webkit-border-radius: 0;}
