@@ -1,6 +1,14 @@
-function daterangepicker(){
+function daterangepicker(page){
+  var maxDateDay = false;
+  var minDateDay = false;
+  if(page == 'schedule'){
+    minDateDay = new Date();
+  }else{
+    maxDateDay = new Date();
+  }
   $('#calendar').daterangepicker({
-    maxDate: new Date(),
+    maxDate: maxDateDay,
+    minDate: minDateDay,
     autoUpdateInput:true,
     "locale": {
       "format": "YYYY.MM.DD",
