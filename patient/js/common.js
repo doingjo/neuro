@@ -536,3 +536,36 @@ function linechat(data, id, tx, index){
     $('#'+id+' .bar_tip li').eq(index).addClass("on").siblings().removeClass("on");
   }
 }
+
+
+function weekHome(data){
+  var currentDay = new Date();  
+  var theYear = currentDay.getFullYear();
+  var theMonth = currentDay.getMonth();
+  var theDate  = currentDay.getDate();
+  var theDayOfWeek = currentDay.getDay();
+  const weekListHome = document.getElementById('weekListHome');
+  var daysOfWeek = [ "일","월","화","수","목","금","토" ];
+  for(var i=0; i<7; i++) {
+    var resultDay = new Date(theYear, theMonth, theDate + (i - theDayOfWeek));
+    var yyyy = resultDay.getFullYear();
+    var mm = Number(resultDay.getMonth()) + 1;
+    var dd = resultDay.getDate();
+    mm = String(mm).length === 1 ? '0' + mm : mm;
+    dd = String(dd).length === 1 ? '0' + dd : dd;
+    var dayData  = yyyy + '-' + mm + '-' + dd;
+    var isSports = false;
+    for (let j = 0; j < data.length; j++) {
+      const element = data[j];
+      if(dayData == element){
+        isSports=true
+      }
+    }
+    var today ='';
+    if(dd==theDate){
+      today='today'
+    }
+    var liHtml = `<div class="ba_chart clear ${isSports} ${today}"><a href="#"><span>${daysOfWeek[i]}</span><strong>${dd}</strong></a></div>`
+    weekListHome.innerHTML += liHtml;
+  }
+}
