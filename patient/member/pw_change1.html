@@ -29,61 +29,45 @@
       <div class="page">
         <h1>비밀번호 재설정</h1>
         <p class="titles">회원가입 시 인증한 수단으로 <br />진행하시기 바랍니다.</p>
-        <div class="form_default">
-              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
-                <div class="input">
-                  <label for="hp">휴대폰 번호</label>
-                  <div class="tixed">
-                    <!-- <div class="tfcell email_select" style="width:20.5vw;padding-right: 4.4444vw;">
-                      <select name="" id="" class="form_select tal">
-                        <option value="">+82</option>
-                      </select>
-                    </div> -->
-                    <div class="tfcell""><input type="tel" name="" id="hp" value="+82 10-1234-5678" placeholder="‘-’없이 입력" /></div>
-                    <!-- <div class="tfcell">
-                      <a href="#"  class="button_small">인증확인</a>
-                    </div> -->
-                  </div>
-                </div>
-                <div class="text err">에러 메시지</div>
+        <div class="form_default pw_change">
+          <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+            <div class="input">
+              <label for="hp">휴대폰 번호</label>
+              <div class="tixed">
+                <div class="tfcell"><input type="tel" name="" id="hp" value="+82 10-1234-5678" placeholder="‘-’없이 입력" disabled /></div>
               </div>
-              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
-                <div class="input">
-                  <label for="email">이메일 </label>
-                  <div class="tfixed">
-                    <div class="tfcell"><input type="text" name="" id="email" value="jeongsoohwa@naver.com" placeholder="이메일 주소" /></div>
-                    <!-- <div class="tfcell email_select">
-                      <select name="" id="" class="form_select">
-                        <option value="">직접입력</option>
-                        <option value="@naver.com">@naver.com</option>
-                      </select>
-                    </div> -->
-                  </div>
-                </div>
-                <div class="text">이메일 주소로 가입하신 아이디를 보내드립니다.</div>
+            </div>
+            <div class="text err">에러 메시지</div>
+          </div>
+          <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+            <div class="input">
+              <label for="email">이메일 </label>
+              <div class="tfixed">
+                <div class="tfcell"><input type="text" name="" id="email" value="jeongsoohwa@naver.com" placeholder="이메일 주소" disabled /></div>
               </div>
-              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
-                <div class="input">
-                  <label for="pw">새 비밀번호</label>
-                  <div class="tixed">
-                    <div class="tfcell"><input type="password" name="" id="pw" class="pwinput" value="" placeholder="8~16 자리, 영문/숫자/특수문자 조합" /></div>
-                    <div class="tfcell">
-                      <a href="#" class="pwshow">패스워드 보기</a>
-                    </div>
-                  </div>
+            </div>
+          </div>
+          <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+            <div class="input">
+              <label for="pw">새 비밀번호</label>
+              <div class="tixed">
+                <div class="tfcell"><input type="password" name="" id="pw" class="pwinput" value="" placeholder="8~16 자리, 영문/숫자/특수문자 조합" /></div>
+                <div class="tfcell">
+                  <a href="#" class="pwshow">패스워드 보기</a>
                 </div>
-                <div class="text err">8~16 자리, 영문/숫자/특수문자 조합이 아닙니다.</div>
               </div>
-              <div class="input_default error"><!-- class "error" 넣으면 에러표시함-->
-                <div class="input">
-                  <label for="code">재설정 코드</label>
-                  <input type="text" name="" id="code" value="" placeholder="재설정코드 입력" />
-                </div>
-                <div class="text err">재설정코드가 올바르지 않습니다.<br />다시 확인해주세요.
-                  </div>
+            </div>
+            <div class="text err">8~16 자리, 영문/숫자/특수문자 조합이 아닙니다.</div>
+          </div>
+          <div class="input_default error"><!-- class "error" 넣으면 에러표시함-->
+            <div class="input">
+              <label for="code">재설정 코드</label>
+              <input type="text" name="" id="code" value="" placeholder="재설정코드 입력" />
+            </div>
+            <div class="text err">재설정코드가 올바르지 않습니다.<br />다시 확인해주세요.
               </div>
-              <div class="bottom_btn"><button type="submit" class="button_default">비밀번호 변경</button></div>
-
+          </div>
+          <div class="bottom_btn"><button type="submit" class="button_default">비밀번호 변경</button></div>
         </div>
       </div>
     </div>
