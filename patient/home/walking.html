@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src='../js/progressbar.js'></script><!-- 밸런스 차트 있을 시 추가 -->
+    <script type="text/javascript" src="../js/common.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page walking">
+      <div class="page">
+        <div class="page_head">
+          <h1>오늘의 걸음</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="walking_choice">
+            <p>걷고자 하는<br />시간을 선택해 주세요</p>
+            <ul class="list">
+              <li>
+                <span class="radio">
+                  <input type="radio" name="time" id="walking1">
+                  <label for="walking1">1분</label>
+                </span>
+              </li>
+              <li>
+                <span class="radio">
+                  <input type="radio" name="time" id="walking2">
+                  <label for="walking2">3분</label>
+                </span>
+              </li>
+              <li>
+                <span class="radio">
+                  <input type="radio" name="time" id="walking3">
+                  <label for="walking3">5분</label>
+                </span>
+              </li>
+              <li>
+                <span class="radio">
+                  <input type="radio" name="time" id="walking4">
+                  <label for="walking4">10분</label>
+                </span>
+              </li>
+              <li>
+                <span class="radio">
+                  <input type="radio" name="time" id="walking5">
+                  <label for="walking5">15분</label>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bottom_btn"><button type="submit" class="button_default" disabled>시작</button></div>
+    </div>
+  </div>
+  <script>
+    $('.radio input').on('change', function() {
+      $(this).addClass("on").parent().parent().siblings().find('input').removeClass("on");
+      $('.button_default').attr('disabled', false);
+      $('.walking_choice .list').addClass("on");
+    });
+  </script>
+</body>
+</html>

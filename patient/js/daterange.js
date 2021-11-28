@@ -1,6 +1,14 @@
-function daterangepicker(){
+function daterangepicker(page){
+  var maxDateDay = false;
+  var minDateDay = false;
+  if(page == 'schedule'){
+    minDateDay = new Date();
+  }else{
+    maxDateDay = new Date();
+  }
   $('#calendar').daterangepicker({
-    maxDate: new Date(),
+    maxDate: maxDateDay,
+    minDate: minDateDay,
     autoUpdateInput:true,
     "locale": {
       "format": "YYYY.MM.DD",
@@ -34,6 +42,7 @@ function daterangepicker(){
       $('.daterangepicker').wrap('<div class="wrap-layer"></div>').before('<div class="dimmed"></div>');
       $('.daterangepicker').prepend('<div class="header"><div class="date"></div><button class="btn-prev"></button><button class="btn-next"></button></div>');
     }
+    $('html,body').css({'overflow':'hidden','position':'fixed','height':'100%'});
     var first = $('.drp-calendar.left .month').text(),
         last = $('.drp-calendar.right .month').text();
     $('.date').html(first+' - '+last);
@@ -42,5 +51,6 @@ function daterangepicker(){
     $('.dimmed').remove();
     $('.daterangepicker').unwrap();
     $('.header').remove();
+    $('html,body').attr('style','');
   });
 }
