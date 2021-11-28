@@ -163,6 +163,20 @@ table + .inner_pagination{margin-top:33px;}
 .inner_pagination ul li a{display:inline-block;width:22px;height:22px;font-size:12px;line-height:22px;color:#687078;border-radius:10px;}
 .inner_pagination ul li.on a{background-color:#f1f3f5;font-weight:bold;color:#212529;}
 
+/** 공지사항 상세 **/
+.inner_detail_title{padding-bottom:30px;border-bottom:1px solid #adb5bd;}
+.inner_detail_title h2{font-weight:bold;font-size:22px;line-height:31px;color:#5280e2;}
+.area_etc{font-size:0;}
+.badge{display:inline-block;padding:0 8px;border:1px solid #e9ecef;background-color:#f8f9fa;font-size:12px;line-height:22px;color:#343a40;border-radius:4px;}
+.badge + .badge{margin-right:2px;}
+.inner_detail_title .area_etc + h2{margin-top:16px;}
+.inner_detail_title h2 + .area_etc{margin-top:9px;}
+.inner_detail_title .txt_date{font-size:13px;line-height:15px;color:#343a40;}
+.inner_editor{padding:20px 0;}
+.inner_file{padding:20px 0;border-top:1px solid #e9ecef;border-bottom:1px solid #e9ecef;}
+.inner_file img{margin-right:12px;}
+.inner_file a{display:inline-block;margin-right:24px;font-weight:500;font-size:15px;line-height:20px;color:#2e5bbb;text-decoration:underline;}
+
 /** 회원 탈퇴 **/
 .box_caution{margin:24px 0 40px;padding:56px 0;background-color:#f8f9fa;text-align:center;}
 .box_caution p{font-weight:500;font-size:15px;line-height:21px;color:#333;}
