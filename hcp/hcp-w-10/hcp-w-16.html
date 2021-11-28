@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>Neuro</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <div class="content">
+        <h1><a href="#none"><img src="../images/logo.png" alt="neurogait"></a></h1>
+        <!-- //GNB -->
+        <div class="inner_gnb">
+          <ul class="list_gnb">
+            <li><a href="#none"><span>홈</span></a></li>
+            <li><a href="#none"><span>환자</span></a></li>
+            <li><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>문의</span></a></li>
+            <li><a href="#none"><span>통계</span></a></li>
+            <li class="on"><a href="#none"><span>설정</span></a></li>
+          </ul>
+        </div>
+        <!-- GNB// -->
+        <!-- //Login -->
+        <div class="inner_user">
+          <!-- .box_avatar는 기본 프로필, box_avatar .login은 접속상태(파란배경), box_avatar .logoff는 로그인전 클릭상태(파란아바타) -->
+          <div class="box_avatar"></div>
+          <!-- <div class="box_state">
+            <p class="name_user">박재활님</p>
+            <button type="button" class="btn_login">Login</button>
+            <button type="button" class="btn_logout">Logout</button>
+          </div> -->
+        </div>
+        <!-- Login// -->
+      </div>
+    </div>
+    <!-- //Contents -->
+    <div class="container">
+      <!-- //타이틀영역 -->
+      <div class="inner_title">
+        <div class="box_title">
+          <h2>설정</h2>
+          <p class="tit_sub">손쉽게 환자관리를 할 수 있습니다</p>
+        </div>
+        <div class="box_link">
+          <a href="#none">계정정보</a>
+          <a href="#none" class="on">공지사항</a>
+          <a href="#none">자주 묻는 질문</a>
+          <a href="#none">FAQ</a>
+          <a href="#none">시스템문의</a>
+          <a href="#none">이용약관</a>
+          <a href="#none">개인정보처리방침</a>
+        </div>
+      </div>
+      <!-- 타이틀영역 -->
+      <!-- //컨텐츠 영역 -->
+      <div class="cont inner_notice">
+        <div class="tit_cnt">
+            <h3>공지사항</h3>
+            <div class="box_search">
+                <div class="deco_select">
+                    <select name="" id="">
+                    <option value="">전체</option>
+                    </select>
+                </div>
+                <div class="deco_search">
+                    <input type="text" placeholder="검색어를 입력하세요">
+                    <button type="button" class="btn_search"><img src="../images/icon_search.png" alt="검색"></button>
+                </div>
+            </div>
+        </div>
+        <!-- //테이블 영역 -->
+        <table class="tbl_notice">
+            <colgroup>
+                <col style="width:100px">
+                <col style="width:110px">
+                <col>
+                <col style="width:130px">
+            </colgroup>
+            <thead>
+                <tr>
+                    <!-- 디자인을 입히기 위해 div를 한번 감싸줌 -->
+                    <th><div>NO</div></th>
+                    <th><div>카테고리</div></th>
+                    <th><div>제목</div></th>
+                    <th><div>등록일자</div></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><div><img src="../images/icon_fixed.png" alt="고정내용"></div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다. 일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다. 일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다. 일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+                <tr>
+                    <td><div>99</div></td>
+                    <td><div>카테고리1</div></td>
+                    <td><div>일상의 보행을 바꿔보세요! 솔티드 인솔 구매이벤트 내용이들어가는 영역입니다.</div></td>
+                    <td><div>2021.01.01</div></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- 테이블 영역// -->
+        <!-- //pagination -->
+        <div class="inner_pagination">
+            <a href="#none" class="btn_first"><img src="../images/icon_first.png" alt="제일 처음 리스트로 이동"></a>
+            <a href="#none" class="btn_prev"><img src="../images/icon_prev.png" alt="이전 리스트로 이동"></a>
+            <ul>
+                <li class="on"><a href="" class="btn_page">1</a></li>
+                <li><a href="" class="btn_page">2</a></li>
+                <li><a href="" class="btn_page">3</a></li>
+                <li><a href="" class="btn_page">4</a></li>
+                <li><a href="" class="btn_page">5</a></li>
+                <li><a href="" class="btn_page">6</a></li>
+                <li><a href="" class="btn_page">7</a></li>
+                <li><a href="" class="btn_page">8</a></li>
+                <li><a href="" class="btn_page">9</a></li>
+                <li><a href="" class="btn_page">10</a></li>
+            </ul>
+            <a href="#none" class="btn_first"><img src="../images/icon_next.png" alt="다음 리스트로 이동"></a>
+            <a href="#none" class="btn_prev"><img src="../images/icon_last.png" alt="마지막 리스트로 이동"></a>
+        </div>
+        <!-- pagination// -->
+      </div>
+      <!-- 컨텐츠 영역// -->
+    </div>
+    <!-- Contents// -->
+    <!-- //Footer -->
+    <footer>
+      <span>사업자 등록번호 : 611 - 81 – 27282</span><span>통신판매업신고 : 제 2017-서울강남-00305호</span><span>대표자 : 조형진</span><span>개인정보보호 책임자 : 김대성</span>
+      <p>서울특별시 강남구 언주로 603 서진빌딩 6F  © Copyright 2021 SALTED.LTD</p>
+      <div class="inner_partner">
+        <a href="#none"><img src="../images/logo_partner01.png" alt="파트너사"></a><a href="#none"><img src="../images/logo_partner02.png" alt="파트너사"></a>
+      </div>
+      <div class="inner_logo">
+        <a href="#none" class="link_loge"><img src="../images/logo_footer.png" alt="salted"></a>
+      </div>
+    </footer>
+    <!-- Footer// -->
+  </div>
+</body>
+</html>

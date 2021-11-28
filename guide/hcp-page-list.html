@@ -1,0 +1,1330 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../patient/css/ini.min.css">
+    <script type="text/javascript" src="../patient/js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../patient/js/webfont-NotoSansKR.js"></script>
+
+    <noscript>
+        <link rel="stylesheet" href="../patient/css/NotoSansKR.css">
+    </noscript>
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+<style>
+    .content{margin:0 auto;padding:20px 0;width:1400px;}
+    .content h2{font-size:20px;}
+    table {margin-top:40px;font-size:13px; border-top:1px solid #999; width:100%;}
+    table thead th {border-bottom:1px solid #999; padding:10px 0; background-color:#dfdfdf; vertical-align:middle;}
+    table tbody th {font-weight:normal; text-align:left; padding:10px; border-bottom:1px solid #eee; vertical-align:middle;}
+    table tbody td {border-bottom:1px solid #eee; border-left:1px solid #eee; border-right:1px solid #eee; padding:10px; text-align:left; vertical-align:top;}
+    table tbody td:first-child {text-align:center;}/*border-left:0; */
+    table tbody td.tl {text-align:left;}
+    table tbody td .b-small {display:block; margin-top:3px; font-size:11px; color:#aaa;}
+
+    table tbody tr.disable td{background:#eee}
+    table tbody tr.native td{background:#f4cccc}
+    table tbody tr.modify1 td{background-color:rgba(33,208,179,.2)}
+    table tbody tr.modify2 td{background-color:rgba(33,208,179,.5)}
+    table tbody tr.modify3 td{background-color:rgba(33,208,179,1)}
+
+    /* tab menu */
+.tab-wrap{border-top:solid 1px #5d5d5d;position:relative}
+.tab-wrap:before{content:'';display:block; height:69px; opacity:.2;background-color:#000;position:absolute;top:0;left:0;right:0}
+.tab-menu{margin:-1px auto 0;width:1400px;position:relative}
+.tab-menu:after{content:'';display:block;clear:both}
+.tab-menu li{float:left; text-align:center}
+.tab-menu li.active{position:relative}
+.tab-menu li >a{display:block; border:1px solid #3e3e3e;border-top:solid 1px #5d5d5d;border-bottom:0;background-color:rgba(0,0,0,.2); padding:24px 10px 26px; font-size:16px;color:#fff;font-weight:500; margin-left:-1px}
+.tab-menu li.active >a{margin-left:-1px;background-color:#000; border-top:1px solid #eb6100; color:#eb6100; transition:all 0.3s}
+.tab-menu li:first-child a,
+.tab-menu li.active:first-child a{margin-left:0}
+.tab-inner{margin:0 auto;padding-top:100px;width:1400px}
+
+</style>
+<div id="wrap">
+    <section class="container">
+        <div class="content">
+            <div class="tab-wrap as-tab-wrap">
+                <ul class="tab-menu as-tab-menu">
+                    <li><a href="#">Patient</a></li>
+                    <li><a href="#">HCP</a></li>
+                    <li><a href="#">공통</a></li>
+                </ul>
+                <div class="inner-depth">
+                    <div class="tab-inner">
+                        <h2>NEUROGAIT - Patient</h2>
+                        <strong style="margin-top:10px;font-size:20px; background-color:rgba(33,208,179,.2);display:block"> 21.11.21 추가된 부분</strong>
+                        <strong style="margin-top:10px;font-size:20px; background-color:rgba(33,208,179,.5);display:block"> 21.11.22 수정된 부분</strong>
+                        <strong style="margin-top:10px;font-size:20px; background-color:rgba(33,208,179,1);display:block"> 21.11.24 수정된 부분</strong>
+                        <table>
+                            <colgroup>
+                                <col width="4%"><col width="10%"><col width="17%"><col width="17%"><col width="5%"><col width="/"><col width="20%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>1Depth</th>
+                                    <th>2Depth</th>
+                                    <th>3Depth</th>
+                                    <th>Page</th>
+                                    <th>Url.</th>
+                                    <th>비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="4">03로그인</td>
+                                    <td>로그인</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/login.html" target="_blank">login.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify3">
+                                    <td></td>
+                                    <td>02아이디찾기</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/id_search.html" target="_blank">id_search.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="">
+                                    <td></td>
+                                    <td rowspan="2">03비밀번호재설정</td>
+                                    <td>국가 선택</td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify3">
+                                    <td></td>
+                                    <td>상세</td>
+                                    <td></td>
+                                    <td><a href="../patient/member/pw_change.html" target="_blank">pw_change.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="15">04회원가입</td>
+                                    <td>01국가선택</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/join1.html" target="_blank">join1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="2">02정보입력</td>
+                                    <td>국내</td>
+                                    <td></td>
+                                    <td><a href="../patient/member/join2.html" target="_blank">join2.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify3">
+                                    <td></td>
+                                    <td>국외</td>
+                                    <td></td>
+                                    <td><a href="../patient/member/join2_out.html" target="_blank">join2_out.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>03약관</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/provision.html" target="_blank">provision.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>04가입완료</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/join_ok.html" target="_blank">join_ok.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_01</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical1.html" target="_blank">medical1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_02</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical2.html" target="_blank">medical2.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_03</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical3.html" target="_blank">medical3.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_04</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical4.html" target="_blank">medical4.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_05</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical5.html" target="_blank">medical5.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_06</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical6.html" target="_blank">medical6.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_07</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical7.html" target="_blank">medical7.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_08</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical8.html" target="_blank">medical8.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_09</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical9.html" target="_blank">medical9.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05문진정보_작성완료</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/member/medical_ok.html" target="_blank">medical_ok.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="11">05홈</td>
+                                    <td>홈</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>오늘의 걸음 진행 시 화면</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>이전날짜(운동진행 X) 화면</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>이전날짜(스케줄 X) 화면</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>오늘이후날짜 화면</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>오늘이후날짜(스케줄 X) 화면</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>오늘의 걸음 측정하기(시간 선택)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>오늘의 걸음 측정 실행</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>오늘의 걸음 상세 결과</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>시간별 오늘의 걸음 상세 결과</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>자율 보행 결과</td>
+                                    <td></td>
+                                    <td>popup</td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td rowspan="16">06운동</td>
+                                    <td>의료진 처방 운동</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/sports/main.html" target="_blank">main.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>직접 등록 운동</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/sports/my.html" target="_blank">my.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>오늘 운동 추가</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/sports/add_sports1.html" target="_blank">add_sports1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>운동 횟수 지정</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/sports/add_sports2.html" target="_blank">add_sports2.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td rowspan="2">운동 대기</td>
+                                    <td>직접 등록 운동,동영상 촬영 X</td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>의료진 등록 운동,동영상 촬영 X</td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>족저압 촬영 대기</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>족저압 촬영 중</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>완료 운동 조회</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>운동 대기(동영상 촬영 O)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>동영상 촬영 대기</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>동영상 촬영 중</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>완료 운동 조회</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td>의료진에게 질문</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/sports/inquire.html" target="_blank">inquire.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td>메모작성</td>
+                                    <td></td>
+                                    <td>popup</td>
+                                    <td><a href="../patient/sports/memo.html" target="_blank">memo.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="native">
+                                    <td></td>
+                                    <td>운동 완료 팝업</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td rowspan="6">07스케줄</td>
+                                    <td rowspan="2">캘린더</td>
+                                    <td>내역있음</td>
+                                    <td></td>
+                                    <td><a href="../patient/schedule/monthly.html" target="_blank">monthly.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td>내역없음</td>
+                                    <td></td>
+                                    <td><a href="../patient/schedule/nodata.html" target="_blank">nodata.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>신규 스케줄 추가</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/schedule/add_schedule0.html" target="_blank">add_schedule0.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td>운동 선택</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/schedule/add_schedule1.html" target="_blank">add_schedule1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>요일, 횟수 선택</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/schedule/add_schedule2.html" target="_blank">add_schedule2.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td>운동 순서 변경</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/schedule/add_schedule3.html" target="_blank">add_schedule3.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="11">08종합 결과</td>
+                                    <td>전체 종합 결과</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/overall.html" target="_blank">overall.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>전체순위보기</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/ranking.html" target="_blank">ranking.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td>운동별결과_01보행_01</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/walk1.html" target="_blank">walk1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td>운동별결과_01보행_02</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/walk2.html" target="_blank">walk2.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>운동별결과_01보행_03</td>
+                                    <td>기간 조회</td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/walk3.html" target="_blank">walk3.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>운동별결과_02외발서기외_01</td>
+                                    <td>제자리 서기</td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/foot1.html" target="_blank">foot1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>운동별결과_02외발서기외_02</td>
+                                    <td>제자리 서기</td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/foot2.html" target="_blank">foot2.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>운동별결과_02외발서기외_03</td>
+                                    <td>기간 조회</td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/foot3.html" target="_blank">foot3.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>운동별결과_03외발서기_01</td>
+                                    <td>외발서기</td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/foot4.html" target="_blank">foot4.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>운동별결과_03외발서기_02</td>
+                                    <td>외발서기</td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/foot5.html" target="_blank">foot5.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>운동별결과_02외발서기_03</td>
+                                    <td>기간 조회</td>
+                                    <td></td>
+                                    <td><a href="../patient/overall/foot6.html" target="_blank">foot6.html</a></td>
+                                    <td>검색 클릭시 팝업</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="33">08설정</td>
+                                    <td>메인</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/set.html" target="_blank">set.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td rowspan="2">문진정보</td>
+                                    <td>01없음</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/medical_no.html" target="_blank">medical_no.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify1">
+                                    <td></td>
+                                    <td>02있음</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/medical_list.html" target="_blank">medical_list.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="7">회원정보</td>
+                                    <td>회원정보</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/info.html" target="_blank">info.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>휴대폰번호 변경 - 국내</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/hp_change.html" target="_blank">hp_change.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify3">
+                                    <td></td>
+                                    <td>휴대폰번호 변경 - 국외</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/hp_change1.html" target="_blank">hp_change1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>이메일 변경 - 국내</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/mail_change.html" target="_blank">mail_change.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify3">
+                                    <td></td>
+                                    <td>이메일 변경 - 국외</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/mail_change1.html" target="_blank">mail_change1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>비밀번호 변경</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/pw_change.html" target="_blank">pw_change.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>회원탈퇴</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/member_leave.html" target="_blank">member_leave.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>알림</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/noti.html" target="_blank">noti.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="2">센터/병원정보</td>
+                                    <td>리스트</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/hospital.html" target="_blank">hospital.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="modify2">
+                                    <td></td>
+                                    <td>정보 없을때</td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/hospital_no.html" target="_blank">hospital_no.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>측정단위</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/unit.html" target="_blank">unit.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>데이터 동기화</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/synchronization.html" target="_blank">synchronization.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>저장공간 관리</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>자동 로그인 설정</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>알림 설정</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="3">공지사항</td>
+                                    <td>list</td>
+                                    <td></td>
+                                    <td><a href="../patient/customer/notice.html" target="_blank">notice.html</a></td>
+                                    <td>연결이 끊겼을 경우 팝업</td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>view</td>
+                                    <td></td>
+                                    <td><a href="../patient/customer/notice_view.html" target="_blank">notice_view.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>05_검색내역없음</td>
+                                    <td></td>
+                                    <td><a href="../patient/customer/nodata.html" target="_blank">nodata.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>이벤트</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/customer/event.html" target="_blank">event.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>FAQ</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/customer/faq.html" target="_blank">faq.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>시스템 문의</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>앱 버전(업데이트)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>이용약관</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../patient/setup/provision.html" target="_blank">provision.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>개인정보처리방침</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>민감정보 제공 동의</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>블루투스 통신 동의</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>위치정보 이용 동의</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>마케팅 정보 수신 동의</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>개인정보 제3자 제공 동의</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="disable">
+                                    <td></td>
+                                    <td>로그아웃</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="" target="_blank"></a></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-inner">
+                      <h2>HCP</h2>
+                      <table>
+                            <colgroup>
+                                <col width="8%">
+                                <col width="10%">
+                                <col width="15%">
+                                <col width="20%">
+                                <col width="15%">
+                                <col width="/">
+                                <col width="20%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>Screen ID</th>
+                                    <th>1Depth</th>
+                                    <th>2Depth</th>
+                                    <th>3Depth</th>
+                                    <th>Page</th>
+                                    <th>Url.</th>
+                                    <th>비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>로그인</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="3">회원 가입</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>이용약관 선택</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>개인정보 처리 방침 선택</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="2">이메일 찾기 </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>성공</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>비밀번호 재설정하기</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>홈</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="10">환자</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>환자 선택</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="8">환자 정보</td>
+                                    <td>문진 선택 </td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>정자세 선택 </td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>촬영 검사 선택</td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>운동 기록(환자 매칭 되지 않았을 경우) </td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>운동기록(환자 스케줄이 없을 경우)</td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td> 운동기록</td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td> 운동기록</td>
+                                    <td> 운동 선택</td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td> 운동기록</td>
+                                    <td> 운동 선택 > 운동 세트 선택</td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>영상 팝업</td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="2">환자(연구용 환자)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>환자 선택(연구 환자)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="7">스케줄</td>
+                                    <td>스케줄 관리(월별 스케줄)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>스케줄 관리(주별 스케줄)</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="5">스케줄 관리</td>
+                                    <td rowspan="5">신규 스케줄 추가</td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>시작 종료 날짜 선택</td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>환자 선택</td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>운동 선택</td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>환자 및 운동 추가</td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>문의</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>통계</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../.html" target="_blank">.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>HCP-W-10</td>
+                                    <td rowspan="10">설정</td>
+                                    <td rowspan="2">계정 정보</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-10.html" target="_blank">hcp-w-10.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-10-3.html" target="_blank">hcp-w-10-3.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="3">계정 관리</td>
+                                    <td rowspan="2">정보 수정</td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-10-1.html" target="_blank">hcp-w-10-1.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-10-4.html" target="_blank">hcp-w-10-4.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>회원 탈퇴</td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-10-2.html" target="_blank">hcp-w-10-2.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>HCP-W-16</td>
+                                    <td rowspan="2">공지사항</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-16.html" target="_blank">hcp-w-16.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>HCP-W-17</td>
+                                    <td>상세보기</td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-17.html" target="_blank">hcp-w-17.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>hcp-w-11</td>
+                                    <td>자주 묻는 질문</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-11.html" target="_blank">hcp-w-11.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>서비스 이용 약관</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-13.html" target="_blank">hcp-w-13.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>개인정보 처리방침</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../hcp/hcp-w-10/hcp-w-14.html" target="_blank">hcp-w-14.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>별도 퍼블용</td>
+                                    <td>페이지레이아웃</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../hcp/guide/layout.html" target="_blank">layout.html</a></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-inner">
+                        <h2>NEUROGAIT - 공통</h2>
+                        <table>
+                            <colgroup>
+                                <col width="4%"><col width="10%"><col width="23%"><col width="10%"><col width="5%"><col width="/"><col width="20%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>1Depth</th>
+                                    <th>2Depth</th>
+                                    <th>3Depth</th>
+                                    <th>Page</th>
+                                    <th>Url.</th>
+                                    <th>비고</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td rowspan="9">이메일</td>
+                                    <td>서비스 유지 체크 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/서비스 유지 체크 메일.html" target="_blank">서비스 유지 체크 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>아이디 찾기 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/아이디 찾기 메일.html" target="_blank">아이디 찾기 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>비말번호 재설정을 위한 코드 발송 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/비말번호 재설정을 위한 코드 발송 메일.html" target="_blank">비말번호 재설정을 위한 코드 발송 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>계정코드 발송 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/계정코드 발송 메일.html" target="_blank">계정코드 발송 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>회원가입 완료 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/회원가입 완료 메일.html" target="_blank">회원가입 완료 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>개인정보 이용 동의 약관 발송 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/개인정보 이용 동의 약관 발송 메일.html" target="_blank">개인정보 이용 동의 약관 발송 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>이용약관 동의 내용 발송 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/이용약관 동의 내용 발송 메일.html" target="_blank">이용약관 동의 내용 발송 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>휴면 계정 전환 사전 안내 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/휴면 계정 전환 사전 안내 메일.html" target="_blank">휴면 계정 전환 사전 안내 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>휴면 계정 전환 안내 메일</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><a href="../common/휴면 계정 전환 안내 메일.html" target="_blank">휴면 계정 전환 안내 메일.html</a></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+<script type="text/javascript">
+$(function(){
+    var $tabEle = $(".as-tab-menu > li");
+    $tabEle.find('a[href^="#"]').click(function(e){e.preventDefault();});
+    $tabEle.on("click", function(){
+        var $findNode = $(this);
+        var $findEle = $findNode.closest(".as-tab-wrap ").find(" > .inner-depth > .tab-inner");
+        $(this).addClass("active").siblings().removeClass("active");
+        $findEle.css("display","none");
+        $findEle.eq($(this).closest(".as-tab-menu").find(" > li").index(this)).css("display","block");
+    });
+    $tabEle.not(":hidden").each(function() {
+        if ($(this).parent(".as-tab-menu").hasClass("flexible")){
+          return;
+        } else {
+          var menuEa = $(this).parent(".as-tab-menu").find("li").length;
+          var menuSize = (100/menuEa);
+          $(this).parent(".as-tab-menu").find("li").width(menuSize+"%");
+        }
+    });
+    if (($tabEle).hasClass("active")) {
+        $(".as-tab-wrap > .as-tab-menu > li.active > a").trigger("click");
+    } else {
+        $(".as-tab-wrap > .as-tab-menu > li:first-child > a").trigger("click");
+    }
+})
+</script>
+
+
+
+
+
+        </div>
+    </section>
+</div>
+  </body>
+</html>
