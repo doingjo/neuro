@@ -100,7 +100,9 @@ footer {max-width: 1920px;margin: 0 auto;padding:56px 0 48px;background-color:#f
 footer span,
 footer p{font-size:12px;line-height:20px;color:#999;}
 footer span{display: inline-block;padding:0 7px;}
-footer img{margin-top:15px;}
+footer .inner_partner{margin-top:15px;text-align: center;}
+footer .inner_partner a{margin:0 6px;}
+footer .inner_logo{margin-top:32px;text-align: center;}
 
 /* 설정 */
 /** 계정정보 **/
