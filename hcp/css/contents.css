@@ -155,7 +155,7 @@ footer img{margin-top:15px;}
 .tbl_notice tr td:last-child div{padding:19px 40px 21px 20px;}
 .tbl_notice tr:hover td div{background-color:#f8f9fa;}
 .tbl_notice tr:hover td:nth-child(3) div{color:#5280e2;cursor: pointer;}
-table + .inner_pagination{margin-top:33px;}
+.inner_pagination{margin-top:33px;}
 .inner_pagination{font-size:0;text-align:center;}
 .inner_pagination > a{display:inline-block;margin:0 2px;}
 .inner_pagination ul{position:relative;top:-1px;overflow:hidden;display:inline-block;padding:0 6px;}
@@ -181,7 +181,25 @@ table + .inner_pagination{margin-top:33px;}
 .box_caution{margin:24px 0 40px;padding:56px 0;background-color:#f8f9fa;text-align:center;}
 .box_caution p{font-weight:500;font-size:15px;line-height:21px;color:#333;}
 
-
+/** 자주 묻는 질문 **/
+.cont.inner_notice{padding:28px 48px 70px;}
+.inner_notice .deco_select{min-width:480px}
+.list_faq{overflow:hidden;border:1px solid #e9ecef;background-color:#fff;border-radius:8px;}
+.list_faq .box_faq{border-top:1px solid #e9ecef;}
+.list_faq .box_faq:first-child{border-top:0;}
+.list_faq .box_faq .tit{position:relative;padding:22px 70px 22px 32px;}
+.list_faq .box_faq .tit::after{content:"";position:absolute;top:21px;right:32px;width:24px;height:24px;border:1px solid #f3f3f3;background:#fff url("../images/icon_faq_dft.png") no-repeat center;}
+.list_faq .box_faq:hover .tit::after{border:0;background:url("../images/icon_faq_hover.png") no-repeat center;}
+.list_faq .box_faq.open .tit::after{border:0;background:#5280e2 url("../images/icon_faq_open.png") no-repeat center;border-radius:4px;}
+.list_faq .box_faq .tit p{font-size:15px;line-height:24px;color:#343a40;}
+.list_faq .box_faq:hover .tit{background-color:#f8f9fa;}
+.list_faq .box_faq:hover .tit p{color:#5280e2;}
+.list_faq .box_faq .tit span{display:inline-block;width:108px;font-size:15px;line-height:22px;color:#868e96;}
+.list_faq .box_faq .answer{overflow:hidden;height:0;}
+.list_faq .box_faq .answer .in{padding:31px 32px 33px 140px;background-color:#f8f9fa;}
+.list_faq .box_faq .answer p{font-size:14px;line-height:21px;color:#343a40;}
+.list_faq .box_faq .answer a{display:inline-block;margin:8px 8px 0 0;font-weight:bold;font-size:14px;line-height:21px;color:#5280e2;}
+.list_faq .box_faq.open .answer{height:auto;}
 
 
 
