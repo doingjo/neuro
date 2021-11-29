@@ -15,21 +15,24 @@
   <link rel="stylesheet" href="../css/swiper.min.css">
   <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
   <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
   <noscript>
       <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
   </noscript>
   <link rel="stylesheet" href="../css/contents.css">
 
-  <title>Neuro font text</title>
+  <title>HCP</title>
 </head>
 <body>
   <div class="wrapper">
     <!-- //Header -->
     <div class="header">
       <div class="content">
-        <h1><a href="#none"><img src="../images/logo.png" alt="neurogait" class="header_logo"></a></h1>
+        <h1><a href="/">neurogait</a></h1>
         <!-- //GNB -->
         <div class="inner_gnb">
           <ul class="list_gnb">
@@ -44,8 +47,7 @@
         <!-- GNB// -->
         <!-- //Login -->
         <div class="inner_user">
-          <!-- .box_avatar는 기본 프로필, box_avatar .login은 접속상태(파란배경), box_avatar .logoff는 로그인전 클릭상태(파란아바타) -->
-          <div class="box_avatar"></div>
+          <div class="box_avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
           <div class="box_state">
             <p class="name_user">박재활님</p>
             <button type="button" class="btn_login">Login</button>
@@ -140,18 +142,5 @@
     </footer>
     <!-- Footer// -->
   </div>
-  <script>
-    $(document).ready(function(){
-      $(window).on("scroll", function(){
-        if($(document).scrollTop() > 0){
-          $(".wrapper").addClass("fixed_header");
-          $(".header_logo").attr("src","../images/logo_v_white.png");
-        }else{
-          $(".wrapper").removeClass("fixed_header");
-          $(".header_logo").attr("src","../images/logo.png");
-        }
-      });
-    });
-  </script>
 </body>
 </html>

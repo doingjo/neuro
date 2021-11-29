@@ -6,45 +6,49 @@ body {background-color: #f4f6fc;}
 .header {position: relative;height: 160px;padding-top:33px;background-color: #162550;}
 .header::after{content: "";position: absolute;top: 0;left: 0;width: 100%;height: 2px;background-image: linear-gradient(to right, #06d281 0%, #5280e2);}
 .header .content {max-width: 1920px;display: flex;justify-content: space-between;margin:0 auto;padding:0 40px;}
+.header .content h1 a{display:inline-block;width:177px;height:26px; text-indent:-9999px; background:url('../images/logo.png') no-repeat 0 0;}
 .inner_gnb {display: block;width: 100%;text-align: center;}
 .list_gnb{display: inline-block;}
-.list_gnb li {position: relative;overflow: hidden;float: left;height: 21px;padding: 0 14px 0 15px;text-align: center;}
-.list_gnb li::before {content: "";position: absolute;left: 13px;bottom: 1px;width: calc(100% - 26px);height: 8px;background-color: transparent;border-radius: 5px;}
+.list_gnb li {position: relative;overflow: hidden;float: left;height: 21px;padding: 0 15px 0 16px;text-align: center;}
+.list_gnb li::before {content: "";position: absolute;left: 14px;bottom:0;width: calc(100% - 26px);height: 8px;background-color: transparent;border-radius: 5px;transition:all .3s linear}
 .list_gnb li::after {content: "";position: absolute;left: 0;top: 8px;width: 1px;height: 7px;background-color: #364c8b;}
 .list_gnb li:first-child::after{content: none;}
-.list_gnb li a {font-weight: 500;font-size: 15px;color: #9daed2;text-shadow: 0 1px 2px rgba(24, 17, 48, 0.26);}
+.list_gnb li a {font-weight: 500;font-size: 15px;color: #9daed2;text-shadow: 0 1px 2px rgba(24, 17, 48, 0.26);transition:all .3s linear}
+.list_gnb li a:hover,
 .list_gnb li.on a{color:#fff;}
 .list_gnb li.on::before {background-color: #21d0b3;}
 .list_gnb li span{position:relative;}
-.inner_user{position:relative;}
+.inner_user{margin-left:20px; position:relative;}
 /** header fiexd **/
 .wrapper.fixed_header{padding-top:160px;}
-.wrapper.fixed_header .header {position: fixed;top:0;z-index:1000;width:100%;height: 80px;padding:30px 0;background-color: #fff;}
+.wrapper.fixed_header .header {position: fixed;top:0;z-index:1000;width:100%;height: 85px;padding:33px 0 30px;background-color: #fff;}
 .wrapper.fixed_header .header::after{content: "";position: absolute;top:auto;bottom: 0;left: 0;width: 100%;height: 2px;background-image: linear-gradient(to right, #06d281 0%, #5280e2);}
+.wrapper.fixed_header .header .content h1 a{background-image:url('../images/logo2.png');}
 .wrapper.fixed_header .list_gnb li::after {content: "";position: absolute;left: 0;top: 8px;width: 1px;height: 7px;background-color: #dee2e6;}
 .wrapper.fixed_header .list_gnb li:first-child::after{content: none;}
 .wrapper.fixed_header .list_gnb li a {color: #868e96;text-shadow:none;}
+.wrapper.fixed_header .list_gnb li a:hover,
 .wrapper.fixed_header .list_gnb li.on a{color:#212529;}
-/** 프로필 기본 **/
+/** 프로필 기본 로그인전 **/
 .box_avatar{position:relative;overflow:hidden;width:26px;height:26px;border:1px solid #e9ecef;background-color:#fff;border-radius: 13px;cursor: pointer;}
 .box_avatar::before {content: "";position:absolute;top:6px;left:8px; width:8px;height: 8px;border-radius: 4px;background-color: #adb5bd;}
 .box_avatar::after {content: "";position: absolute;top: 16px;left: 6px;width: 12px;height: 12px;border-radius: 6px;background-color: #adb5bd;}
-/** 프로필 접속상태 **/
-.box_avatar.login {position: relative;overflow: hidden;width: 26px;height: 26px;border: 1px solid #fff;background-color: #5280e2;border-radius: 13px;}
-.box_avatar.login::before {content: "";position: absolute;top: 6px;left: 8px;width: 8px;height: 8px;border-radius: 4px;background-color: #fff;}
-.box_avatar.login::after {content: "";position: absolute;top: 16px;left: 6px;width: 12px;height: 12px;border-radius: 6px;background-color: #fff;}
-/** 프로필 로그인전 **/
-.box_avatar.logoff {position: relative;overflow: hidden;width: 26px;height: 26px;border: 1px solid #5280e2;background-color: #fff;border-radius: 13px;}
-.box_avatar.logoff::before {content: "";position: absolute;top: 6px;left: 8px;width: 8px;height: 8px;border-radius: 4px;background-color: #5280e2;}
-.box_avatar.logoff::after {content: "";position: absolute;top: 16px;left: 6px;width: 12px;height: 12px;border-radius: 6px;background-color: #5280e2;}
+/** 프로필 로그인 **/
+.box_avatar.login {background-color: #5280e2;}
+.box_avatar.login::before,
+.box_avatar.login::after {background-color: #fff;}
+/** 프로필 로그인전 클릭 **/
+.box_avatar.on {border-color:#5280e2;}
+.box_avatar.on::before,
+.box_avatar.on::after {background-color: #5280e2;}
 
-.box_state{position:absolute;right:0;top:30px;overflow:hidden;min-width:82px;border-radius:14px;background-color: #fff;font-size:0;text-align: center;white-space: nowrap;box-shadow: 0 0 20px 0 rgba(91, 109, 147, 0.3);z-index:10;}
+.box_state{display:none; position:absolute;right:0;top:30px;overflow:hidden;min-width:82px;border-radius:14px;background-color: #fff;font-size:0;text-align: center;white-space: nowrap;box-shadow: 0 0 20px 0 rgba(91, 109, 147, 0.3);z-index:10;}
 .box_state .name_user {padding: 10px 20px;border-bottom: 1px solid #e9ecef;font-size: 11px;line-height: 16px;color: #809ac3;}
 .btn_login {padding: 0 25px;font-weight: bold;font-size: 11px;line-height: 35px;color: #5280e2;white-space: nowrap}
 .btn_logout {padding: 0 25px;font-weight: bold;font-size: 11px;line-height: 35px;color: #809ac3;white-space: nowrap}
 
 .container{position:relative;max-width:1400px;margin:-65px auto 0;background-color: transparent;}
-.inner_title{display: flex;justify-content: space-between;align-items: center; height:120px;padding:30px 48px;background-color: #fff;border-radius: 16px;box-shadow: 0 12px 70px 0 rgba(42, 72, 136, 0.1);}
+.inner_title{display: flex;justify-content: space-between;align-items: center; height:120px;padding:30px 48px;background-color: #fff;border-radius: 16px;box-shadow: 0 12px 70px 0 rgba(42, 72, 136, 0.1);transition:all .3s linear}
 .inner_title h2{font-weight:bold;font-size:22px;line-height:32px;color:#2e5bbb;}
 .inner_title .tit_sub{margin-top:8px;font-size:14px;line-height:20px;color:#999;}
 .inner_title .box_btn{font-size:0;}
@@ -57,7 +61,7 @@ body {background-color: #f4f6fc;}
 .inner_title .box_search{display:flex;align-items: center;}
 .inner_title .box_search .btn_find{width:48px;height:48px;margin-left:8px;border-radius: 24px;background-color: #212529;}
 .deco_select,
-.deco_search{overflow:hidden;display:inline-block;height:48px;min-width:190px;border:1px solid #e8e8e8;background-color:#fff;}
+.deco_search{overflow:hidden;display:inline-block; cursor:pointer; height:48px;min-width:190px;border:1px solid #e8e8e8;background-color:#fff;}
 .deco_select{position:relative;min-width:190px;border-radius:24px;}
 .deco_select::after{content:"";position:absolute;top:14px;right:20px;width:20px;height:20px;background-image: url(../images/icon-arrow-down.png); background-position: center; background-repeat: no-repeat;}
 .deco_select select {width:100%;height:46px;padding:12px 0;border:0;font-size:15px;line-height:18px;color:#212529;text-indent:24px;}
@@ -92,7 +96,7 @@ button:disabled{background-color:#e9ecef;color:#adb5bd;cursor: default;}
 .center_btn{margin-top:37px;text-align: center;}
 .radio_type1{font-size:0;}
 .radio_type1 input[type="radio"]{position:absolute;left:-9999px;}
-.radio_type1 label{position:relative;display:inline-block;margin-right:30px;padding:3px 0 2px 28px;font-size:13px;line-height:15px;color:#343a40;}
+.radio_type1 label{position:relative;display:inline-block;margin-right:30px;padding:3px 0 2px 28px;font-size:13px;line-height:15px;color:#343a40;cursor:pointer;}
 .radio_type1 label:last-child{margin-right:0;}
 .radio_type1 label::before{content:"";position:absolute;top:0;left:0;width:20px;height:20px;border:3px solid #e2e2e2;background-color:#fff;border-radius: 10px;box-sizing: border-box;}
 .radio_type1 input:checked + label::before{border:3px solid #3b6cd5;}
@@ -101,14 +105,16 @@ button:disabled{background-color:#e9ecef;color:#adb5bd;cursor: default;}
 .check_type1 label{position:relative;padding-left:28px;font-size:15px;line-height:21px;color:#e81c10;}
 .check_type1 label::after{content:"";position: absolute;top:1px;left:0;width:20px;height:20px;background:url("../images/bg_chkbox_type1.png") no-repeat left top;}
 .check_type1 input:checked + label::after{background-position: left bottom;}
-.input_round{height:40px;padding:8px 20px;border:1px solid #e2e2e2;border-radius:8px;}
+.input_round{height:40px;padding:8px 20px;border:1px solid #e2e2e2;border-radius:8px;transition:all .3s linear}
 input[type="text"]:focus-visible,
 input[type="password"]:focus-visible{outline:0;}
 
 footer {max-width: 1920px;margin: 0 auto;padding:56px 0 48px;background-color:#f4f6fc;text-align:center;font-size:0;}
 footer span,
 footer p{font-size:12px;line-height:20px;color:#999;}
-footer span{display: inline-block;padding:0 7px;}
+footer span{display: inline-block;padding:0 7px;position:relative;}
+footer span::before{content:"";display:block; width:2px;height:40%;background-color:#e6e7ea; position:absolute;top:30%;left:0;}
+footer span:first-child::before{display:none}
 footer .inner_partner{margin-top:15px;text-align: center;}
 footer .inner_partner a{margin:0 6px;}
 footer .inner_logo{margin-top:32px;text-align: center;}
@@ -122,6 +128,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .list_info li .info{flex:auto;font-weight:bold;font-size:15px;line-height:21px;color:#333;}
 .list_info input[type="text"],
 .list_info input[type="password"]{width:320px;margin-right:4px;}
+.list_info input:focus{border-color:#5280e2}
 .list_info .radio_type1 + .input_round{margin-left:12px;}
 .box_info .list_info{display: flex;justify-content: space-between;align-items: flex-start;flex-wrap: wrap}
 .box_info .list_info li:nth-child(odd){width:calc(50% - 20px);margin-right:20px;}
@@ -144,9 +151,9 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .inner_rule li + li{margin-top:8px;}
 .inner_rule p.txt_desc {font-size: 13px;line-height:19px;color: #898989;}
 .inner_rule p + h4,
-.inner_rule ul + h4{margin-top:40px;} 
+.inner_rule ul + h4{margin-top:40px;}
 .inner_rule p + h5,
-.inner_rule ul + h5{margin-top:32px;} 
+.inner_rule ul + h5{margin-top:32px;}
 
 /** 공지사항 **/
 .cont.inner_notice{padding:19px 48px 70px;}
@@ -230,10 +237,12 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 
 /* 조건을 모르겠어서 일단 그냥 임시로 넣어둠 */
 @media screen and (max-width: 1400px) {
-    .container{width:90vw;;}
+    .container{width:94.7916vw;}
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1024px) {
     .inner_gnb {text-align: right;}
+    .inner_title{height:80px;}
+    .inner_title .tit_sub{display:none}
     /* 설정 */
     /** 계정정보 **/
     .box_info .list_info li:nth-child(odd),
