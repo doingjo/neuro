@@ -26,6 +26,7 @@
 </head>
 <body>
   <div class="wrapper">
+    <!-- //Header -->
     <div class="header">
       <div class="content">
         <h1><a href="#none"><img src="../images/logo.png" alt="neurogait"></a></h1>
@@ -54,6 +55,7 @@
         <!-- Login// -->
       </div>
     </div>
+    <!-- Header// -->
     <!-- //Contents -->
     <div class="container">
       <!-- //타이틀영역 - 버튼 -->
@@ -138,5 +140,16 @@
     </footer>
     <!-- Footer// -->
   </div>
+  <script>
+    $(document).ready(function(){
+      $(window).on("scroll", function(){
+        if($(document).scrollTop() > 0){
+          $(".wrapper , .header").addClass("fixed");
+        }else{
+          $(".wrapper , .header").removeClass("fixed");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
