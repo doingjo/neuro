@@ -29,7 +29,7 @@
     <!-- //Header -->
     <div class="header">
       <div class="content">
-        <h1><a href="#none"><img src="../images/logo.png" alt="neurogait"></a></h1>
+        <h1><a href="#none"><img src="../images/logo.png" alt="neurogait" class="header_logo"></a></h1>
         <!-- //GNB -->
         <div class="inner_gnb">
           <ul class="list_gnb">
@@ -144,9 +144,11 @@
     $(document).ready(function(){
       $(window).on("scroll", function(){
         if($(document).scrollTop() > 0){
-          $(".wrapper , .header").addClass("fixed");
+          $(".wrapper").addClass("fixed_header");
+          $(".header_logo").attr("src","../images/logo_v_white.png");
         }else{
-          $(".wrapper , .header").removeClass("fixed");
+          $(".wrapper").removeClass("fixed_header");
+          $(".header_logo").attr("src","../images/logo.png");
         }
       });
     });

@@ -253,6 +253,8 @@
             if($(this).siblings(".box_faq").hasClass("open")){
                 $(this).parent(".list_faq").children(".box_faq").removeClass("open");
                 $(this).addClass("open");
+            }else if($(this).hasClass("open")){
+                $(this).removeClass("open");
             }else{
                 $(this).addClass("open");
             };
