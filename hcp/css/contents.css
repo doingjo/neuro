@@ -2,7 +2,7 @@
 * {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-print-color-adjust: exact}
 /* layout */
 body {background-color: #f4f6fc;}
-.wrapper {min-width: 1024px;}
+.wrapper {}
 .header {position: relative;height: 160px;padding-top:33px;background-color: #162550;}
 .header::after{content: "";position: absolute;top: 0;left: 0;width: 100%;height: 2px;background-image: linear-gradient(to right, #06d281 0%, #5280e2);}
 .header .content {max-width: 1920px;display: flex;justify-content: space-between;margin:0 auto;padding:0 40px;}
@@ -17,8 +17,15 @@ body {background-color: #f4f6fc;}
 .list_gnb li.on::before {background-color: #21d0b3;}
 .list_gnb li span{position:relative;}
 .inner_user{position:relative;}
+/** header fiexd **/
+.wrapper.fixed {padding-top:160px;}
+.header.fixed {position: fixed;top:0;z-index:1000;width:100%;height: 80px;padding:30px 0;background-color: #fff;}
+.header.fixed::after{content: "";position: absolute;top:auto;bottom: 0;left: 0;width: 100%;height: 2px;background-image: linear-gradient(to right, #06d281 0%, #5280e2);}
+.header.fixed .list_gnb li::after {content: "";position: absolute;left: 0;top: 8px;width: 1px;height: 7px;background-color: #dee2e6;}
+.header.fixed .list_gnb li a {color: #868e96;text-shadow:none;}
+.header.fixed .list_gnb li.on a{color:#212529;}
 /** 프로필 기본 **/
-.box_avatar{position:relative;overflow:hidden;width:26px;height:26px;border:1px solid #fff;background-color:#fff;border-radius: 13px;cursor: pointer;}
+.box_avatar{position:relative;overflow:hidden;width:26px;height:26px;border:1px solid #e9ecef;background-color:#fff;border-radius: 13px;cursor: pointer;}
 .box_avatar::before {content: "";position:absolute;top:6px;left:8px; width:8px;height: 8px;border-radius: 4px;background-color: #adb5bd;}
 .box_avatar::after {content: "";position: absolute;top: 16px;left: 6px;width: 12px;height: 12px;border-radius: 6px;background-color: #adb5bd;}
 /** 프로필 접속상태 **/
@@ -59,7 +66,7 @@ body {background-color: #f4f6fc;}
 .deco_search input{width:100%;padding:13px 16px 14px;border:0;}
 .deco_search .btn_search{position:absolute;top:13px;right:24px;}
 .inner_title .box_link{font-size:0;text-align: right;}
-.inner_title .box_link > a{position:relative;display:inline-block;margin-left:41px;font-weight:bold;font-size:16px;line-height:24px;color:#adb5bd;}
+.inner_title .box_link > a{position:relative;display:inline-block;margin-left:41px;font-weight:500;font-size:16px;line-height:24px;color:#adb5bd;}
 .inner_title .box_link > a:first-child{margin-left:0;}
 .inner_title .box_link > a::before{content: "";position:absolute;top:8px;left:-20px;width:1px;height:10px;background-color: #e0e0e0;}
 .inner_title .box_link > a:first-child::before{content:none;}
@@ -114,9 +121,9 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .list_info input[type="text"],
 .list_info input[type="password"]{width:320px;margin-right:4px;}
 .list_info .radio_type1 + .input_round{margin-left:12px;}
-.box_info{display: flex;justify-content: space-between;align-items: flex-start;}
-.box_info .list_info:first-child{width:50%;padding-right:20px;}
-.box_info .list_info:last-child{width:50%;padding-left:20px;}
+.box_info .list_info{display: flex;justify-content: space-between;align-items: flex-start;flex-wrap: wrap}
+.box_info .list_info li:nth-child(odd){width:calc(50% - 20px);margin-right:20px;}
+.box_info .list_info li:nth-child(even){width:calc(50% - 20px);margin-left:20px;}
 .box_info .list_info li{justify-content: space-between;}
 .box_info .list_info li .tit{width:auto}
 .box_info .list_info li .info{flex:none;}
@@ -221,8 +228,13 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 
 /* 조건을 모르겠어서 일단 그냥 임시로 넣어둠 */
 @media screen and (max-width: 1400px) {
-    .container{width:90vw;min-width:980px;}
+    .container{width:90vw;;}
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 700px) {
     .inner_gnb {text-align: right;}
+    /* 설정 */
+    /** 계정정보 **/
+    .box_info .list_info li:nth-child(odd),
+    .box_info .list_info li:nth-child(even){width:100%;margin:0 0 0 0;}
+
 }
