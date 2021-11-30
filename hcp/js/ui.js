@@ -27,6 +27,7 @@ var hcp = hcp || {
       hcp.gnb();
       hcp.inputFocus();
       hcp.memberLose();
+      hcp.faqlist();
     },
     gnb: function(){
       $(window).on("scroll", function(){
@@ -63,6 +64,18 @@ var hcp = hcp || {
         }else{
           target.attr('disabled', false);
         }
+      });
+    },
+    faqlist: function(){
+      $(".box_faq").on("click", function(){
+          if($(this).siblings(".box_faq").hasClass("open")){
+              $(this).parent(".list_faq").children(".box_faq").removeClass("open");
+              $(this).addClass("open");
+          }else if($(this).hasClass("open")){
+              $(this).removeClass("open");
+          }else{
+              $(this).addClass("open");
+          };
       });
     },
     tab : {

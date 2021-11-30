@@ -49,7 +49,7 @@ body {background-color: #f4f6fc;}
 
 .container{position:relative;max-width:1400px;min-width:700px;margin:-65px auto 0;background-color: transparent;transition:all .3s linear}
 .inner_title{display: flex;justify-content: space-between;align-items: center; height:120px;padding:30px 48px;background-color: #fff;border-radius: 16px;box-shadow: 0 12px 70px 0 rgba(42, 72, 136, 0.1);transition:all .3s linear}
-.inner_title h2{font-weight:bold;font-size:22px;line-height:32px;color:#2e5bbb;}
+.inner_title h2{min-width:65px;font-weight:bold;font-size:22px;line-height:32px;color:#2e5bbb;}
 .inner_title .tit_sub{margin-top:8px;font-size:14px;line-height:20px;color:#999;}
 .inner_title .box_btn{font-size:0;}
 .inner_title .box_btn button{padding:9px 20px 11px;font-size:12px;line-height:20px;border-radius:12px;}
@@ -124,10 +124,12 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 /* 설정 */
 /** 계정정보 **/
 .cont.inner_rule{padding:47px 48px 42px;}
-.list_info{margin-top:17px;}
-.list_info li{display:flex;align-items:center;min-height:57px;padding:18px 0 19px;border-bottom:1px solid #e9ecef;}
+.list_info{display:flex;flex-wrap:wrap;margin-top:17px;}
+.list_info li{display:flex;align-items:center;width:100%;min-height:57px;padding:8px 0 9px;border-bottom:1px solid #e9ecef;}
 .list_info li .tit{flex:none;width:140px;font-size:13px;line-height:19px;color:#999;}
 .list_info li .info{flex:auto;font-weight:bold;font-size:15px;line-height:21px;color:#333;}
+.list_info li.row_division{flex:none;width:50%;}
+.list_info li .inner{display: flex;align-items: center;}
 .list_info input[type="text"],
 .list_info input[type="password"]{width:320px;margin-right:4px;}
 .list_info input:focus{border-color:#5280e2}
@@ -207,14 +209,14 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .list_faq{overflow:hidden;border:1px solid #e9ecef;background-color:#fff;border-radius:8px;}
 .list_faq .box_faq{border-top:1px solid #e9ecef;}
 .list_faq .box_faq:first-child{border-top:0;}
-.list_faq .box_faq .tit{position:relative;padding:22px 70px 22px 32px;}
+.list_faq .box_faq .tit{position:relative;display:flex;padding:22px 70px 22px 32px;align-items: center;}
 .list_faq .box_faq .tit::after{content:"";position:absolute;top:21px;right:32px;width:24px;height:24px;border:1px solid #f3f3f3;background:#fff url("../images/icon_faq_dft.png") no-repeat center;}
 .list_faq .box_faq:hover .tit::after{border:0;background:url("../images/icon_faq_hover.png") no-repeat center;}
 .list_faq .box_faq.open .tit::after{border:0;background:#5280e2 url("../images/icon_faq_open.png") no-repeat center;border-radius:4px;}
-.list_faq .box_faq .tit p{font-size:15px;line-height:24px;color:#343a40;}
+.list_faq .box_faq .tit p{overflow:hidden;flex:auto;font-size:15px;line-height:24px;color:#343a40;white-space: nowrap;text-overflow: ellipsis;}
 .list_faq .box_faq:hover .tit{background-color:#f8f9fa;}
 .list_faq .box_faq:hover .tit p{color:#5280e2;}
-.list_faq .box_faq .tit span{display:inline-block;width:108px;font-size:15px;line-height:22px;color:#868e96;}
+.list_faq .box_faq .tit span{flex:none;width:108px;font-size:15px;line-height:22px;color:#868e96;}
 .list_faq .box_faq .answer{overflow:hidden;height:0;}
 .list_faq .box_faq .answer .in{padding:31px 32px 33px 140px;background-color:#f8f9fa;}
 .list_faq .box_faq .answer p{font-size:14px;line-height:21px;color:#343a40;}
@@ -247,6 +249,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
     .inner_title .tit_sub{display:none}
     /* 설정 */
     /** 계정정보 **/
+    .list_info li.row_division{width:100%;}
     .box_info .list_info li:nth-child(odd),
     .box_info .list_info li:nth-child(even){width:100%;margin:0 0 0 0;}
     /** 공지사항 **/
@@ -255,4 +258,11 @@ footer .inner_logo{margin-top:32px;text-align: center;}
     /** 자주 묻는 질문 **/
     .inner_faq .deco_select{width:34.2857vw}
 
+}
+@media screen and (max-width: 768px) {
+    .list_info input[type="text"],
+    .list_info input[type="password"]{width:100%;margin-right:0;}
+    .list_info li .inner{display: flex;width:100%;flex-direction: column;align-items:flex-start;}
+    .list_info .inner input:last-child{margin:4px 0 0 0;}
+    .list_info .inner .radio_type1 + .input_round{margin-top:16px;}
 }

@@ -69,7 +69,6 @@
         <div class="box_link">
           <a href="#none" class="on">계정정보</a>
           <a href="#none">공지사항</a>
-          <a href="#none">자주 묻는 질문</a>
           <a href="#none">FAQ</a>
           <a href="#none">시스템문의</a>
           <a href="#none">이용약관</a>
@@ -85,9 +84,11 @@
                 <em class="tit">국가</em>
                 <span class="info">한국 외</span>
             </li>
-            <li>
+            <li class="row_division">
                 <em class="tit">이름</em>
                 <span class="info">훈</span>
+            </li>
+            <li class="row_division">
                 <em class="tit">성</em>
                 <span class="info">재갈</span>
             </li>
@@ -101,8 +102,10 @@
             </li>
             <li>
                 <em class="tit">비밀번호</em>
-                <input type="password" class="input_round" placeholder="비밀번호를 입력해 주세요.">
-                <input type="password" class="input_round" placeholder="한 번 더 입력해 주세요.">
+                <div class="inner">
+                  <input type="password" class="input_round" placeholder="비밀번호를 입력해 주세요.">
+                  <input type="password" class="input_round" placeholder="한 번 더 입력해 주세요.">
+                </div>
             </li>
             <li>
                 <em class="tit">병드 코드</em>
@@ -110,17 +113,19 @@
             </li>
             <li>
                 <em class="tit">직군</em>
-                <div class="radio_type1">
-                    <input type="radio" name="job" id="job_01">
-                    <label for="job_01">의료진</label>
-                    <input type="radio" name="job" id="job_02">
-                    <label for="job_02">간호사</label>
-                    <input type="radio" name="job" id="job_03">
-                    <label for="job_03">물리치료사</label>
-                    <input type="radio" name="job" id="job_04" checked>
-                    <label for="job_04">직접입력</label>
+                <div class="inner">
+                    <div class="radio_type1">
+                      <input type="radio" name="job" id="job_01">
+                      <label for="job_01">의료진</label>
+                      <input type="radio" name="job" id="job_02">
+                      <label for="job_02">간호사</label>
+                      <input type="radio" name="job" id="job_03">
+                      <label for="job_03">물리치료사</label>
+                      <input type="radio" name="job" id="job_04" checked>
+                      <label for="job_04">직접입력</label>
+                    </div>
+                    <input type="text" class="input_round" placeholder="직군을 직접입력하세요.">
                 </div>
-                <input type="text" class="input_round" placeholder="직군을 직접입력하세요.">
             </li>
         </ul>
         <div class="both_btn">
