@@ -25,6 +25,8 @@ if (Browser.ie7) {
 var hcp = hcp || {
     init:function() {
       hcp.gnb();
+      hcp.inputFocus();
+      hcp.memberLose();
     },
     gnb: function(){
       $(window).on("scroll", function(){
@@ -43,9 +45,26 @@ var hcp = hcp || {
       $('body').on('click', function(){
         $('.box_avatar').removeClass('on').next('.box_state').fadeOut();
       });
-
-
     },//gnb
+    inputFocus: function(){
+      if($('.deco_select select, .deco_search input').length == 0){return;}
+      $('.deco_select select, .deco_search input').focusin(function(){
+        $(this).closest('.deco_select, .deco_search').addClass('focus');
+      }).focusout(function(){
+        $(this).closest('.deco_select, .deco_search').removeClass('focus');
+      });
+    },
+    memberLose: function(){
+      if($(".inner_member").length == 0){return;}
+      $(document).on('click', '.inner_member .check_type1 label',function(){
+        var target = $('.inner_member').find('button');
+        if($('.inner_member input[type="checkbox"]').prop('checked')){
+          target.attr('disabled', true);
+        }else{
+          target.attr('disabled', false);
+        }
+      });
+    },
     tab : {
         init: function(){
           if($(".as-tab-wrap").length == 0){return;}
