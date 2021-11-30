@@ -79,6 +79,7 @@ body {background-color: #f4f6fc;}
 .inner_title .box_link > a::before{content: "";position:absolute;top:8px;left:-20px;width:1px;height:10px;background-color: #e0e0e0;}
 .inner_title .box_link > a:first-child::before{content:none;}
 .inner_title .box_link > a.on{border-bottom:1px solid #5280e2;color:#5280e2;}
+.inner_title .deco_select{display:none}
 .cont{padding:48px;background-color:#fff;box-shadow:0 12px 40px 0 rgba(223, 226, 232, 0.5);border-radius: 20px;}
 .cont h3{font-size:18px;line-height:26px;color:#000;}
 .tit_cnt {display: flex;justify-content: space-between;align-items: flex-end;margin-bottom:22px;border-radius: 8px;}
@@ -148,7 +149,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .inner_rule h4{padding:15px 0 17px;background-color: #f8f9fa;font-size:16px;line-height:24px;color:#000;text-align: center;}
 .inner_rule h4 + h5{margin-top:40px;}
 .inner_rule h5 + p{margin-top:23px;}
-.inner_rule h5 + p{margin-top:21px;}
+.inner_rule h5 + ul{margin-top:21px;}
 .inner_rule p,
 .inner_rule li{font-size:14px;line-height:21px;color:#696969;}
 .inner_rule p + p,
@@ -220,7 +221,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .list_faq .box_faq .answer{overflow:hidden;height:0;}
 .list_faq .box_faq .answer .in{padding:31px 32px 33px 140px;background-color:#f8f9fa;}
 .list_faq .box_faq .answer p{font-size:14px;line-height:21px;color:#343a40;}
-.list_faq .box_faq .answer a{display:inline-block;margin:8px 8px 0 0;font-weight:bold;font-size:14px;line-height:21px;color:#5280e2;}
+.list_faq .box_faq .answer a{display:inline-block;margin:8px 8px 0 0;font-weight:bold;font-size:14px;line-height:21px;color:#5280e2;text-decoration:underline;}
 .list_faq .box_faq.open .answer{height:auto;}
 
 
@@ -247,6 +248,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
     .inner_gnb {text-align: right;}
     .inner_title{height:80px;}
     .inner_title .tit_sub{display:none}
+
     /* 설정 */
     /** 계정정보 **/
     .list_info li.row_division{width:100%;}
@@ -259,7 +261,10 @@ footer .inner_logo{margin-top:32px;text-align: center;}
     .inner_faq .deco_select{width:34.2857vw}
 
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+    .inner_title .box_link{display:none}
+    .inner_title .deco_select{display:block;width:31.25vw;}
+
     .list_info input[type="text"],
     .list_info input[type="password"]{width:100%;margin-right:0;}
     .list_info li .inner{display: flex;width:100%;flex-direction: column;align-items:flex-start;}
