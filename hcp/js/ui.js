@@ -48,11 +48,11 @@ var hcp = hcp || {
       });
     },//gnb
     inputFocus: function(){
-      if($('.deco_select select, .deco_search input').length == 0){return;}
-      $('.deco_select select, .deco_search input').focusin(function(){
-        $(this).closest('.deco_select, .deco_search').addClass('focus');
+      if($('.deco_select select, .deco_search input, .round_select select').length == 0){return;}
+      $('.deco_select select, .deco_search input, .round_select select').focusin(function(){
+        $(this).closest('.deco_select, .deco_search, .round_select').addClass('focus');
       }).focusout(function(){
-        $(this).closest('.deco_select, .deco_search').removeClass('focus');
+        $(this).closest('.deco_select, .deco_search, .round_select').removeClass('focus');
       });
     },
     memberLose: function(){

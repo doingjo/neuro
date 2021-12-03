@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <!-- 임시로 일단 넣어둔거 실제로 캘린더 넣으면 교체 해야함 -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <script type="text/javascript" src="../js/moment.min.js"></script>
+  <script type="text/javascript" src="../js/daterangepicker.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>HCP</title>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- //Header -->
+    <div class="header">
+      <div class="content">
+        <h1><a href="/">neurogait</a></h1>
+        <!-- //GNB -->
+        <div class="inner_gnb">
+          <ul class="list_gnb">
+            <li><a href="#none"><span>홈</span></a></li>
+            <li><a href="#none"><span>환자</span></a></li>
+            <li><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>문의</span></a></li>
+            <li class="on"><a href="#none"><span>통계</span></a></li>
+            <li><a href="#none"><span>설정</span></a></li>
+          </ul>
+        </div>
+        <!-- GNB// -->
+        <!-- //Login -->
+        <div class="inner_user">
+          <div class="box_avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+          <div class="box_state">
+            <p class="name_user">박재활님</p>
+            <button type="button" class="btn_login">Login</button>
+            <!-- <button type="button" class="btn_logout">Logout</button> -->
+          </div>
+        </div>
+        <!-- Login// -->
+      </div>
+    </div>
+    <!-- Header// -->
+    <!-- //Contents -->
+    <div class="container">
+      <!-- //타이틀영역 - 링크 -->
+      <div class="inner_title">
+        <div class="box_title">
+          <h2>통계</h2>
+          <p class="tit_sub">환자 및 재활 운동의 통계를 확인할 수 있습니다.</p>
+        </div>
+        <div class="box_link">
+          <a href="#none">환자별통계</a>
+          <a href="#none">운동통계</a>
+          <a href="#none" class="on">환자통계</a>
+        </div>
+      </div>
+      <!-- 타이틀영역 - 링크// -->
+      <!-- //컨텐츠 영역 -->
+      <div class="cont inner_data">
+        <!-- //통계_옵션선택 -->
+        <div class="inner_option_data">
+          <div class="area_select">
+            <div class="box_input">
+              <div class="round_select">
+                <select name="" id="" class="">
+                  <option value="">직접입력</option>
+                </select>
+              </div>
+              <div class="box_period">
+                  <input type="text" id="calendar" class="input_round" value="2021.9.12 - 2021.9.12" onfocus="this.blur()" inputmode="none">
+              </div>
+              <div class="round_select">
+                <select name="" id="" class="">
+                  <option value="">질환선택</option>
+                </select>
+              </div>
+              <div class="round_select">
+                <select name="" id="" class="">
+                  <option value="">50대</option>
+                </select>
+              </div>
+              <div class="round_select">
+                <select name="" id="" class="">
+                  <option value="">성별선택</option>
+                </select>
+              </div>
+            </div>
+            <div class="box_btn">
+              <button type="button" class="btn_reset"><span class="txt_hide">초기화</span></button>
+              <button type="button" class="btn_middle color_actprimary">조회</button>
+            </div>
+          </div>
+          <div class="area_data hidden">
+            <p>생년월일 : 1900.00.00</p>
+            <p>환자코드 : A123456789</p>
+            <p>질환 명 : 알츠하이머</p>
+          </div>
+        </div>
+        <!-- 통계_옵션선택// -->
+        <!-- 그래프영역 -->
+        <div class="inner_graph">
+            그래프가 들어옵니다.
+        </div>
+        <!-- 그래프영역// -->
+        <!-- //테이블 영역 -->
+        <div class="inner_tbl_data">
+            <table class="tbl_notice type_data">
+                <thead>
+                    <tr>
+                        <!-- 디자인을 입히기 위해 div를 한번 감싸줌 -->
+                        <th><div>일자</div></th>
+                        <th><div>환자 수</div></th>
+                        <th><div>남자</div></th>
+                        <th><div>여자</div></th>
+                        <th><div>10대</div></th>
+                        <th><div>20대</div></th>
+                        <th><div>30대</div></th>
+                        <th><div>40대</div></th>
+                        <th><div>50대</div></th>
+                        <th><div>60대</div></th>
+                        <th><div>70대</div></th>
+                        <th><div>80대</div></th>
+                        <th><div>90대</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                    <tr>
+                        <td><div>09.30</div></td>
+                        <td><div>749</div></td>
+                        <td><div>200</div></td>
+                        <td><div>241</div></td>
+                        <td><div>123</div></td>
+                        <td><div>432</div></td>
+                        <td><div>643</div></td>
+                        <td><div>123</div></td>
+                        <td><div>76</div></td>
+                        <td><div>65</div></td>
+                        <td><div>22</div></td>
+                        <td><div>222</div></td>
+                        <td><div>123</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- 테이블 영역// -->
+        <!-- //하단버튼 -->
+        <div class="both_btn">
+          <div class="align_right">
+            <button type="button" class="btn_round color_primary">통계 다운로드</button>
+          </div>
+        </div>
+        <!-- 하단버튼// -->
+      </div>
+      <!-- 컨텐츠 영역// -->
+
+    </div>
+    <!-- Contents// -->
+    <!-- //Footer -->
+    <footer>
+      <span>사업자 등록번호 : 611 - 81 – 27282</span><span>통신판매업신고 : 제 2017-서울강남-00305호</span><span>대표자 : 조형진</span><span>개인정보보호 책임자 : 김대성</span>
+      <p>서울특별시 강남구 언주로 603 서진빌딩 6F  © Copyright 2021 SALTED.LTD</p>
+      <div class="inner_partner">
+        <a href="#none"><img src="../images/logo_partner01.png" alt="파트너사"></a><a href="#none"><img src="../images/logo_partner02.png" alt="파트너사"></a>
+      </div>
+      <div class="inner_logo">
+        <a href="#none" class="link_loge"><img src="../images/logo_footer.png" alt="salted"></a>
+      </div>
+    </footer>
+    <!-- Footer// -->
+  </div>
+  <!-- 임시 <script type="text/javascript" src="../js/daterange.js"></script>
+  <script>daterangepicker();</script> -->
+</body>
+</html>
