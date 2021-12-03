@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>HCP</title>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- //Header -->
+    <div class="header">
+      <div class="content">
+        <h1><a href="/">neurogait</a></h1>
+        <!-- //GNB -->
+        <div class="inner_gnb">
+          <ul class="list_gnb">
+            <li><a href="#none"><span>홈</span></a></li>
+            <li class="on"><a href="#none"><span>환자</span></a></li>
+            <li><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>문의</span></a></li>
+            <li><a href="#none"><span>통계</span></a></li>
+            <li><a href="#none"><span>설정</span></a></li>
+          </ul>
+        </div>
+        <!-- GNB// -->
+        <!-- //Login -->
+        <div class="inner_user">
+          <div class="box_avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+          <div class="box_state">
+            <p class="name_user">박재활님</p>
+            <button type="button" class="btn_login">Login</button>
+            <!-- <button type="button" class="btn_logout">Logout</button> -->
+          </div>
+        </div>
+        <!-- Login// -->
+      </div>
+    </div>
+    <!-- Header// -->
+    <!-- //Contents -->
+    <div class="container">
+      <!-- //타이틀영역 -->
+      <div class="inner_title">
+        <div class="box_title">
+          <h2>설정</h2>
+          <p class="tit_sub">계정 설정 및 공지사항을 확인할 수 있습니다.</p>
+        </div>
+        <div class="box_link">
+          <a href="#none">계정정보</a>
+          <a href="#none">공지사항</a>
+          <a href="#none">FAQ</a>
+          <a href="#none">시스템문의</a>
+          <a href="#none">이용약관</a>
+          <a href="#none" class="on">개인정보처리방침</a>
+        </div>
+        <div class="deco_select">
+            <select name="" id="">
+            <option value="">계정정보</option>
+            <option value="">공지사항</option>
+            <option value="">FAQ</option>
+            <option value="">시스템문의</option>
+            <option value="">이용약관</option>
+            <option value="" selected>개인정보처리방침</option>
+            </select>
+        </div>
+      </div>
+      <!-- 타이틀영역 -->
+      <!-- //컨텐츠 영역 -->
+      <div class="cont inner_rule">
+        <div class="tit_cnt">
+            <h3>개인정보처리방침</h3>
+            <div class="deco_select">
+                <select name="" id="">
+                    <option value="">2021.10.10</option>
+                </select>
+            </div>
+        </div>
+        <h4>제1장 약관의 적용</h4>
+        <h5>제1조 목적</h5>
+        <p>솔티드(주)(이하 ‘회사’)가 제공하는 서비스를 이용해 주셔서 감사합니다. 회사는 이용자(이 약관에 동의하지 않은 비회원을 말합니다) 또는 회원(이 약관에동의하여 회사와 이용계약을 체결하고 회사가 제공하는 서비스를 이용할 수 있는 자를 말합니다)이 회사가 제공하는 솔티드 서비스(이하 ‘서비스’)에 통합 적용될 수 있는 솔티드(주) 통합 약관(이하 ‘본 약관’)을 마련하였습니다. 본 약관은 이용자가 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정함을 목적으로 합니다.</p>
+        <p class="txt_desc">※ '솔티드 서비스'라 함은 회사가 제공하는 “SALTED” 브랜드를 사용하는 서비스(예:SALTED Golf)를 의미합니다.</p>
+        <h5>제2조 약관의 명시, 효력 및 변경</h5>
+        <ul>
+            <li>1. 본 약관의 내용은 회사가 제공하는 개별 서비스 또는 서비스 초기 화면에 게시하거나 기타의 방법으로 공지하고, 본 약관에 동의한 이용자와 회원 모두(이하 ‘이용자’)에게 그 효력이 발생합니다.</li>
+            <li>2. 회사는 필요한 경우 관련법령을 위배하지 않는 범위 내에서 본 약관을 변경할 수 있습니다. 본 약관이 변경되는 경우 회사는 변경사항을 시행일자 7일전부터 이용자에게 홈페이지의 공지사항에서 공지하는 것을 원칙으로 하며, 이용자에게 불리한 내용으로 변경할 경우에는 30일 이전의 사전 유예기간을 두고 홈페이지에 게시하거나, 이용자가 등록한 메일 주소로 이메일을, 휴대폰번호로 문자메시지를 보내는 등 합리적으로 가능한 방법으로 변경사항을공지 또는 통지합니다.</li>
+            <li>3. 회사가 전 항에 따라 공지 또는 통지를 하면서 공지 또는 통지일로부터 개정약관 시행일까지 거부의료진을 표시하지 아니하면 승인한 것으로 본다는 뜻을 명확하게 고지하였음에도 이용자의 의료진표시가 없는 경우에는 변경된 약관을 승인한 것으로 봅니다. 이용자가 개정약관에 동의하지 않을 경우 이용자는 제13조 제1항에 따라 이용계약을 해지할 수 있습니다.</li>
+        </ul>
+        <h4>제2장 회원</h4>
+        <h5>제1조 목적</h5>
+        <p>솔티드(주)(이하 ‘회사’)가 제공하는 서비스를 이용해 주셔서 감사합니다. 회사는 이용자(이 약관에 동의하지 않은 비회원을 말합니다) 또는 회원(이 약관에동의하여 회사와 이용계약을 체결하고 회사가 제공하는 서비스를 이용할 수 있는 자를 말합니다)이 회사가 제공하는 솔티드 서비스(이하 ‘서비스’)에 통합 적용될 수 있는 솔티드(주) 통합 약관(이하 ‘본 약관’)을 마련하였습니다. 본 약관은 이용자가 서비스를 이용하는 데 필요한 권리, 의무 및 책임사항, 이용조건 및 절차 등 기본적인 사항을 규정함을 목적으로 합니다.</p>
+        <p class="txt_desc">※ '솔티드 서비스'라 함은 회사가 제공하는 “SALTED” 브랜드를 사용하는 서비스(예:SALTED Golf)를 의미합니다.</p>
+        <h5>제2조 약관의 명시, 효력 및 변경</h5>
+        <ul>
+            <li>1. 본 약관의 내용은 회사가 제공하는 개별 서비스 또는 서비스 초기 화면에 게시하거나 기타의 방법으로 공지하고, 본 약관에 동의한 이용자와 회원 모두(이하 ‘이용자’)에게 그 효력이 발생합니다.</li>
+            <li>2. 회사는 필요한 경우 관련법령을 위배하지 않는 범위 내에서 본 약관을 변경할 수 있습니다. 본 약관이 변경되는 경우 회사는 변경사항을 시행일자 7일전부터 이용자에게 홈페이지의 공지사항에서 공지하는 것을 원칙으로 하며, 이용자에게 불리한 내용으로 변경할 경우에는 30일 이전의 사전 유예기간을 두고 홈페이지에 게시하거나, 이용자가 등록한 메일 주소로 이메일을, 휴대폰번호로 문자메시지를 보내는 등 합리적으로 가능한 방법으로 변경사항을공지 또는 통지합니다.</li>
+            <li>3. 회사가 전 항에 따라 공지 또는 통지를 하면서 공지 또는 통지일로부터 개정약관 시행일까지 거부의료진을 표시하지 아니하면 승인한 것으로 본다는 뜻을 명확하게 고지하였음에도 이용자의 의료진표시가 없는 경우에는 변경된 약관을 승인한 것으로 봅니다. 이용자가 개정약관에 동의하지 않을 경우 이용자는 제13조 제1항에 따라 이용계약을 해지할 수 있습니다.</li>
+        </ul>
+      </div>
+      <!-- 컨텐츠 영역// -->
+    </div>
+    <!-- Contents// -->
+    <!-- //Footer -->
+    <footer>
+      <span>사업자 등록번호 : 611 - 81 – 27282</span><span>통신판매업신고 : 제 2017-서울강남-00305호</span><span>대표자 : 조형진</span><span>개인정보보호 책임자 : 김대성</span>
+      <p>서울특별시 강남구 언주로 603 서진빌딩 6F  © Copyright 2021 SALTED.LTD</p>
+      <div class="inner_partner">
+        <a href="#none"><img src="../images/logo_partner01.png" alt="파트너사"></a><a href="#none"><img src="../images/logo_partner02.png" alt="파트너사"></a>
+      </div>
+      <div class="inner_logo">
+        <a href="#none" class="link_loge"><img src="../images/logo_footer.png" alt="salted"></a>
+      </div>
+    </footer>
+    <!-- Footer// -->
+  </div>
+</body>
+</html>

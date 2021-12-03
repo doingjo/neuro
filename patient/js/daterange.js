@@ -1,10 +1,13 @@
 function daterangepicker(page){
   var maxDateDay = false;
   var minDateDay = false;
+  var now = new Date();
+  var yesterday = new Date(now.setDate(now.getDate() - 1));
+
   if(page == 'schedule'){
     minDateDay = new Date();
   }else{
-    maxDateDay = new Date();
+    maxDateDay = yesterday;
   }
   $('#calendar').daterangepicker({
     maxDate: maxDateDay,
@@ -18,8 +21,8 @@ function daterangepicker(page){
       "daysOfWeek": [ "일","월","화","수","목","금","토" ],
       "monthNames": [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
       "firstDay": 0,
-      "startDate": new Date(),
-      "endDate": new Date(),
+      "startDate": now.setDate(now.getDate()-1),
+      "endDate": now.setDate(now.getDate()-1),
       "drops": "auto"
     },
     }, function(start, end, label){
