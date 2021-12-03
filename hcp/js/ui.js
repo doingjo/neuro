@@ -28,6 +28,7 @@ var hcp = hcp || {
       hcp.inputFocus();
       hcp.memberLose();
       hcp.faqlist();
+      hcp.fileload();
     },
     gnb: function(){
       $(window).on("scroll", function(){
@@ -77,6 +78,17 @@ var hcp = hcp || {
               $(this).addClass("open");
           };
       });
+    },
+    fileload: function(){
+        $("#btn_file").on("change", function(){
+            var nameFile = $("#btn_file").val();
+            $(".input_view").val(nameFile);
+            $(".box_input_file .btn_del").show();
+        });
+        $(".btn_del").on("click", function(){
+            $(".input_view").val("");
+            $(".box_input_file .btn_del").hide();
+        });
     },
     tab : {
         init: function(){
