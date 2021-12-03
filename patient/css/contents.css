@@ -967,3 +967,15 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .sports_set .set_tab .swiper-slide{width: auto;padding-right: 1.1111vw;padding-bottom: 0.2778vw;}
 #calendar .fc-footer-toolbar.fc-toolbar.fc-toolbar-ltr{display: none;}
 #calendar{margin:0 -1.1111vw;}
+
+
+
+.allpop{position: fixed;left:0;top:0;right:0;bottom:0;background: #fff;z-index:50;display: none;}
+.allpop .w{position: relative;height:100%;}
+.allpop .w .head{position: relative;}
+.allpop .w .head h2{height: 15.5556vw;line-height: 15.5556vw;text-align: center;color: #212529;font-size: 4.4444vw;font-weight: bold;position: relative;}
+.allpop .w .head .page_close{position: absolute;top: 4.1111vw;left: 3.6667vw;z-index: 3;display: inline-block;width:6.6667vw;height:6.6667vw;font-size: 0;background:url('../images/icon-navigation-close.svg')no-repeat center center;background-size: 100%;}
+.allpop .b{height: calc(100% - 40.5556vw);overflow-y: scroll;padding:0 8.8889vw;}
+.allpop .b h3{margin-top:15px;}
+.allpop .b h3:first-child{margin-top:0}
+.allpop .b p{margin-top:10px;}
