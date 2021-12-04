@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>HCP</title>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- //Header -->
+    <div class="header">
+      <div class="content">
+        <h1><a href="/">neurogait</a></h1>
+        <!-- //GNB -->
+        <div class="inner_gnb">
+          <ul class="list_gnb">
+            <li><a href="#none"><span>홈</span></a></li>
+            <li class="on"><a href="#none"><span>환자</span></a></li>
+            <li><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>문의</span></a></li>
+            <li><a href="#none"><span>통계</span></a></li>
+            <li><a href="#none"><span>설정</span></a></li>
+          </ul>
+        </div>
+        <!-- GNB// -->
+        <!-- //Login -->
+        <div class="inner_user">
+          <div class="box_avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+          <div class="box_state">
+            <p class="name_user">박재활님</p>
+            <button type="button" class="btn_login">Login</button>
+            <!-- <button type="button" class="btn_logout">Logout</button> -->
+          </div>
+        </div>
+        <!-- Login// -->
+      </div>
+    </div>
+    <!-- Header// -->
+    <!-- //Contents -->
+    <div class="container">
+      <!-- //타이틀영역 -->
+      <div class="inner_title">
+        <div class="box_title">
+          <h2>환자 정보</h2>
+        </div>
+        <div class="box_btn">
+          <button type="button" class="btn_cancel">수정</button>
+          <button type="button" class="btn_cancel">삭제</button>
+          <button type="button" class="btn_primary">연결끊기</button>
+        </div>
+      </div>
+      <!-- 타이틀영역 -->
+      <!-- //컨텐츠 영역 -->
+      <div class="cont_both">
+            <div class="cont">
+                <div class="tit_cnt">
+                    <h3>일반 정보</h3>
+                    <p class="txt_date">등록일자 : 2021.11.02</p>
+                </div>
+                <div class="box_info">
+                    <ul class="list_info">
+                        <li>
+                            <em class="tit">환자코드</em>
+                            <span class="info">W54321</span>
+                        </li>
+                        <li>
+                            <em class="tit">성별</em>
+                            <span class="info">남자</span>
+                        </li>
+                        <li>
+                            <em class="tit">이름</em>
+                            <span class="info">훈</span>
+                        </li>
+                        <li>
+                            <em class="tit">국적</em>
+                            <span class="info">한국</span>
+                        </li>
+                        <li>
+                            <em class="tit">성</em>
+                            <span class="info">제갈</span>
+                        </li>
+                        <li>
+                            <em class="tit">거주지</em>
+                            <span class="info">서울</span>
+                        </li>
+                        <li>
+                            <em class="tit">질환명</em>
+                            <span class="info">-</span>
+                        </li>
+                        <li>
+                            <em class="tit">연락처</em>
+                            <span class="info">010-1234-5688</span>
+                        </li>
+                        <li class="bd_btm_0">
+                            <em class="tit">생년월일</em>
+                            <span class="info">2020.03.04</span>
+                        </li>
+                        <li class="bd_btm_0">
+                            <em class="tit">이메일</em>
+                            <span class="info">Salted@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cont">
+                <div class="tit_cnt">
+                    <h3>신체 정보</h3>
+                </div>
+                <div class="box_info type_single">
+                    <ul class="list_info">
+                        <li>
+                            <em class="tit">키</em>
+                            <span class="info">180.5cm</span>
+                        </li>
+                        <li>
+                            <em class="tit">몸무게</em>
+                            <span class="info">79.kg</span>
+                        </li>
+                        <li>
+                            <em class="tit">발사이즈</em>
+                            <span class="info">275cm</span>
+                        </li>
+                        <li>
+                            <em class="tit">다리길이(좌)</em>
+                            <span class="info">95cm</span>
+                        </li>
+                        <li class="bd_btm_0">
+                            <em class="tit">다리길이(우)</em>
+                            <span class="info">90cm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+      </div>
+      <div class="cont">
+        <div class="inner_tab type_both">
+            <div class="box_tab">
+                <ul class="list_tab">
+                    <li class="on"><a href="#none">문진</a></li>
+                    <li><a href="#none">정자세</a></li>
+                    <li><a href="#none">촬영검사</a></li>
+                    <li><a href="#none">운동기록</a></li>
+                </ul>
+            </div>
+            <div class="box_search">
+                <div class="box_period">
+                  <input type="text" id="calendar" class="input_round" value="2021.9.12" onfocus="this.blur()" inputmode="none">
+                </div>
+                <div class="round_select">
+                    <select name="" id="" class="">
+                    <option value="">시간선택</option>
+                    </select>
+                </div>
+                <button type="button" class="btn_middle color_actprimary">조회</button>
+            </div>
+        </div>
+        <div class="inner_survey">
+           <p class="txt_date">최근작성 : 2021.11.02</p> 
+           <!-- //질문 -->
+           <p class="tit_question">01. 환자분에세 해당하는 가족력을 모두 선택해 주세요.</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q01" id="q01_chk01">
+                        <label for="q01_chk01">없음</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q01" id="q01_chk02">
+                        <label for="q01_chk02">고혈압</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q01" id="q01_chk03">
+                        <label for="q01_chk03">당뇨</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q01" id="q01_chk04">
+                        <label for="q01_chk04">뇌혈관 질환</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q01" id="q01_chk05">
+                        <label for="q01_chk05">심장 질환</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q01" id="q01_chk06">
+                        <label for="q01_chk06">골다공증</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q01" id="q01_chk07">
+                        <label for="q01_chk07">암</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q01" id="q01_chk08">
+                        <label for="q01_chk08">기타</label>
+                    </div>
+                </div>
+                <div class="box_textarea">
+                    <textarea name="" id="" placeholder="기타내용을 입력하세요" ></textarea>
+                </div>
+           </div>
+           <!-- 질문// -->
+           <!-- //질문 -->
+           <p class="tit_question">02. 병원 진단이나 수술을 받은 이력이 있다면 모두 선택해 주세요.</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q02" id="q02_chk01">
+                        <label for="q02_chk01">없음</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q02" id="q02_chk02">
+                        <label for="q02_chk02">고혈압</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q02" id="q02_chk03">
+                        <label for="q02_chk03">당뇨</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q02" id="q02_chk04">
+                        <label for="q02_chk04">뇌혈관 질환</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q02" id="q02_chk05">
+                        <label for="q02_chk05">심장 질환</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q02" id="q02_chk06">
+                        <label for="q02_chk06">골다공증</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q02" id="q02_chk07">
+                        <label for="q02_chk07">암</label>
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q02" id="q02_chk08">
+                        <label for="q02_chk08">기타</label>
+                    </div>
+                </div>
+                <div class="box_textarea">
+                    <textarea name="" id="" placeholder="기타내용을 입력하세요" ></textarea>
+                </div>
+           </div>
+           <!-- 질문// -->
+           <!-- //질문 -->
+           <p class="tit_question">03. 지난 일주일 동안 격렬한 신체활동(무거운 물건 나르기, 달리기, 빠른 속도로 자건저 타기 등)을 며칠 하셨나요?</p>
+           <p class="txt_notice">※안함을 선택한 경우 5번 항목으로</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox">
+                        <input type="radio" name="q03" id="q03_rdo01">
+                        <label for="q03_rdo01">없음</label>
+                    </div>
+                    <div class="input_chk_txtbox etc">
+                        <input type="radio" name="q03" id="q03_rdo02">
+                        <label for="q03_rdo02" class="etc">기타</label>
+                        <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
+                    </div>
+                </div>
+           </div>
+           <!-- 질문// -->
+           <!-- //질문 -->
+           <p class="tit_question">04. 3번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox time type_hour">
+                        <input type="text" class="input_round" placeholder="시간">
+                    </div>
+                    <div class="input_chk_txtbox time type_minute">
+                        <input type="text" class="input_round" placeholder="분" value="25">
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q04" id="q04_chk01">
+                        <label for="q04_chk01">확실하지 않음</label>
+                    </div>
+                </div>
+           </div>
+           <!-- 질문// -->
+           <!-- //질문 -->
+           <p class="tit_question">05. 지난 일주일 동안 중간 정도의 신체활동(가벼운 물건 나르기, 복식 테니스, 중간 속도로 자전거 타기 등)을 며칠 하셨나요?</p>
+           <p class="txt_notice">※안함을 선택한 경우 7번 항목으로 ※걷기는 포함하지 않습니다.</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox">
+                        <input type="radio" name="q05" id="q05_rdo01">
+                        <label for="q05_rdo01">없음</label>
+                    </div>
+                    <div class="input_chk_txtbox etc">
+                        <input type="radio" name="q05" id="q05_rdo02">
+                        <label for="q05_rdo02" class="etc">기타</label>
+                        <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
+                    </div>
+                </div>
+           </div>
+           <!-- 질문// -->
+           <!-- //질문 -->
+           <p class="tit_question">06. 3번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox time type_hour">
+                        <input type="text" class="input_round" placeholder="시간">
+                    </div>
+                    <div class="input_chk_txtbox time type_minute">
+                        <input type="text" class="input_round" placeholder="분" value="25">
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q06" id="q06_chk01">
+                        <label for="q06_chk01">확실하지 않음</label>
+                    </div>
+                </div>
+           </div>
+           <!-- 질문// -->
+           <!-- //질문 -->
+           <p class="tit_question">07. 지난 일주일 동안 10분 이상 걸은 날은 며칠인가요?</p>
+           <p class="txt_notice">※안함을 선택한 경우 9번 항목으로</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox">
+                        <input type="radio" name="q07" id="q07_rdo01">
+                        <label for="q07_rdo01">없음</label>
+                    </div>
+                    <div class="input_chk_txtbox etc">
+                        <input type="radio" name="q07" id="q07_rdo02">
+                        <label for="q07_rdo02" class="etc">기타</label>
+                        <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
+                    </div>
+                </div>
+           </div>
+           <!-- 질문// -->
+           <!-- //질문 -->
+           <p class="tit_question">08. 7번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox time type_hour">
+                        <input type="text" class="input_round" placeholder="시간">
+                    </div>
+                    <div class="input_chk_txtbox time type_minute">
+                        <input type="text" class="input_round" placeholder="분" value="25">
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q08" id="q08_chk01">
+                        <label for="q08_chk01">확실하지 않음</label>
+                    </div>
+                </div>
+           </div>
+           <!-- 질문// -->
+           <!-- //질문 -->
+           <p class="tit_question">09. 지난 일주일 동안 하루에 평균 몇 시간을 않아 계시나요?</p>
+           <div class="area_answer">
+                <div class="grp_chk">
+                    <div class="input_chk_txtbox time type_hour">
+                        <input type="text" class="input_round" placeholder="시간">
+                    </div>
+                    <div class="input_chk_txtbox time type_minute">
+                        <input type="text" class="input_round" placeholder="분" value="25">
+                    </div>
+                    <div class="input_chk_txtbox">
+                        <input type="checkbox" name="q09" id="q09_chk01">
+                        <label for="q09_chk01">확실하지 않음</label>
+                    </div>
+                </div>
+           </div>
+           <!-- 질문// -->
+        </div>
+      </div>
+      <!-- 컨텐츠 영역// -->
+    </div>
+    <!-- Contents// -->
+    <!-- //Footer -->
+    <footer>
+      <span>사업자 등록번호 : 611 - 81 – 27282</span><span>통신판매업신고 : 제 2017-서울강남-00305호</span><span>대표자 : 조형진</span><span>개인정보보호 책임자 : 김대성</span>
+      <p>서울특별시 강남구 언주로 603 서진빌딩 6F  © Copyright 2021 SALTED.LTD</p>
+      <div class="inner_partner">
+        <a href="#none"><img src="../images/logo_partner01.png" alt="파트너사"></a><a href="#none"><img src="../images/logo_partner02.png" alt="파트너사"></a>
+      </div>
+      <div class="inner_logo">
+        <a href="#none" class="link_loge"><img src="../images/logo_footer.png" alt="salted"></a>
+      </div>
+    </footer>
+    <!-- Footer// -->
+  </div>
+  <script>
+      $(function(){
+          $(".list_tab li").on("click", function(){
+              $(this).addClass("on").siblings().removeClass("on");
+          });
+          $(".input_chk_txtbox input[type='text']").on("click", function(){
+              $(this).parent(".input_chk_txtbox").children("label.etc").trigger("click");
+              $(this).focus();
+          });
+      });
+  </script>
+
+</body>
+</html>

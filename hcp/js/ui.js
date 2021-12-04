@@ -29,6 +29,7 @@ var hcp = hcp || {
       hcp.memberLose();
       hcp.faqlist();
       hcp.fileload();
+      hcp.survey();
     },
     gnb: function(){
       $(window).on("scroll", function(){
@@ -89,6 +90,15 @@ var hcp = hcp || {
             $(this).parent(".box_input_file").children(".input_view").val("");
             $(this).parent(".box_input_file").children(".btn_del").hide();
         });
+    },
+    survey: function(){
+        $(".list_tab li").on("click", function(){
+              $(this).addClass("on").siblings().removeClass("on");
+          });
+          $(".input_chk_txtbox input[type='text']").on("click", function(){
+              $(this).parent(".input_chk_txtbox").children("label.etc").trigger("click");
+              $(this).focus();
+          });
     },
     tab : {
         init: function(){
