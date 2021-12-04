@@ -80,14 +80,14 @@ var hcp = hcp || {
       });
     },
     fileload: function(){
-        $("#btn_file").on("change", function(){
-            var nameFile = $("#btn_file").val();
-            $(".input_view").val(nameFile);
-            $(".box_input_file .btn_del").show();
+        $(".input_function").on("change", function(){
+            var nameFile = $(this).val();
+            $(this).parent(".box_input_file").children(".input_view").val(nameFile);
+            $(this).parent(".box_input_file").children(".btn_del").show();
         });
         $(".btn_del").on("click", function(){
-            $(".input_view").val("");
-            $(".box_input_file .btn_del").hide();
+            $(this).parent(".box_input_file").children(".input_view").val("");
+            $(this).parent(".box_input_file").children(".btn_del").hide();
         });
     },
     tab : {

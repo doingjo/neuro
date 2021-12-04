@@ -49,6 +49,7 @@ body {background-color: #f4f6fc;}
 
 .container{position:relative;max-width:1400px;min-width:700px;margin:-65px auto 0;background-color: transparent;transition:all .3s linear}
 .inner_title{display: flex;justify-content: space-between;align-items: center; height:120px;padding:30px 48px;background-color: #fff;border-radius: 16px;box-shadow: 0 12px 70px 0 rgba(42, 72, 136, 0.1);transition:all .3s linear}
+.inner_title.single_right{justify-content:flex-end;}
 .inner_title h2{min-width:65px;font-weight:bold;font-size:22px;line-height:32px;color:#2e5bbb;}
 .inner_title .tit_sub{margin-top:8px;font-size:14px;line-height:20px;color:#999;}
 .inner_title .box_btn{font-size:0;}
@@ -106,6 +107,7 @@ button.btn_round{height:40px;padding:11px 32px 10px;font-weight:bold;font-size:1
 button.color_primary{background-color: #343a40;color: #fff;}
 button.color_secondary{border:1px solid #e9ecef;background-color: #f8f9fa;color: #343a40;}
 button.color_actprimary{background-color: #5280e2;color: #fff;}
+button.color_grey600{background-color: #666;color: #fff;}
 button:disabled{background-color:#e9ecef;color:#adb5bd;cursor: default;}
 .both_btn{overflow:hidden;margin-top:32px;}
 .both_btn .align_left{float:left;}
@@ -278,21 +280,32 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 
 /* 문의 */
 .inner_reply{padding:32px;background-color:#f8f9fc;border-radius:8px;}
-.inner_reply .tit_reply{padding-left:16px;font-size:15px;line-height: 21px;font-weight:500;background:url("../images/icon_reply.png") no-repeat left 6px;}
+.inner_reply .tit_reply{padding-left:16px;background:url("../images/icon_reply.png") no-repeat left 6px;font-weight:500;font-size:15px;line-height: 21px;}
+.inner_reply .tit_reply .txt_date{display:inline-block;padding-left:8px;font-weight:400;font-size:13px;line-height:21px;color:#999;}
 .inner_reply .tit_reply + .box_textarea{margin-top:16px;}
-.box_textarea{padding:14px 20px;border:1px solid #e2e2e2;background-color:#fff;border-radius: 8px;}
+.box_textarea{padding:20px;border:1px solid #e2e2e2;background-color:#fff;border-radius: 8px;}
 .box_textarea textarea{height:105px;width:100%;font-size:15px;line-height:21px;border:0;resize: none;outline:none;}
-.inner_input_file{margin-top:8px;}
+.inner_reply .box_reply{overflow-y:scroll;height:105px;margin:24px 0 20px;font-size:15px;line-height:21px;color:#343a40;}
+.inner_input_file{display:flex;flex-wrap:wrap;margin:4px -2px 0;}
+.inner_input_file .area_space{width:50%;padding:4px 2px 0;}
 .box_input_file{position:relative;overflow:hidden;height:48px;border:1px solid #e2e2e2;background-color:#fff;border-radius: 8px;}
 .box_input_file .btn_file{float:right;width:73px;border-left:1px solid #e2e2e2;font-weight:500;font-size:11px;line-height:48px;color:#2e5bbb;text-align: center;}
-.box_input_file .input_view{float:left;width:calc(100% - 73px);padding:13px 0 14px 20px;line-height:21px;border:0;}
+.box_input_file .input_view{overflow:hidden;float:left;width:calc(100% - 73px);padding:13px 43px 14px 20px;line-height:21px;border:0;text-overflow: ellipsis;}
 .box_input_file .input_function{position:absolute;left:-9999px;overflow:hidden;width:1px;height:1px;}
 .box_input_file .btn_del{display:none;position:absolute;top:14px;right:93px;width:20px;height:20px;background-color: #adb5bd;border-radius: 10px;}
 .box_input_file .btn_del::before,
 .box_input_file .btn_del::after{content:"";position:absolute;top:5px;left:9px;width:2px;height:10px;border-radius: 1px;background-color: #fff;transform-origin: center;}
 .box_input_file .btn_del::before{transform: rotate(45deg);}
 .box_input_file .btn_del::after{transform: rotate(-45deg);}
-
+.inner_reply .inner_file{padding:20px 0 0;border-bottom:0;}
+.list_info.type_board{border-top:1px solid #ededed;}
+.list_info.type_board li{padding:20px 0;border-bottom:1px solid #ededed;}
+.list_info.type_board .tit{width:160px;}
+.list_info.type_board .info{font-weight:500;}
+.list_info.type_board .inner_file{padding:0 0;border:0;}
+.inner_board .inner_reply{border-radius: 0;}
+.inner_board .inner_reply .input_view{background-color: #f8f9fc;}
+.inner_board .inner_reply .btn_del{background-color:#333;}
 
 
 

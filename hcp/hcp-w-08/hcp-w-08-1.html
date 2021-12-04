@@ -60,42 +60,46 @@
     <!-- Header// -->
     <!-- //Contents -->
     <div class="container">
+        <!-- //타이틀영역 -->
+      <div class="inner_title single_right">
+        <div class="box_info_patient">
+            <em class="tit">환자코드</em><span class="txt_info">W12345</span>
+            <em class="tit">성별</em><span class="txt_info">남</span>
+            <em class="tit">이름</em><span class="txt_info">박재활</span>
+            <em class="tit">생년월일</em><span class="txt_info">1990.00.00</span>
+        </div>
+      </div>
+      <!-- 타이틀영역// -->
       <!-- //컨텐츠 영역 -->
-      <div class="cont">
-        <div class="inner_detail_title type_both">
-            <div>
-                <h2>운동명이 들어가는 영역입니다.</h2>
-                <div class="area_etc">
-                    <p class="txt_datentime">2021.11.01 00:00:00</p>
+      <div class="cont inner_board">
+        <ul class="list_info type_board">
+            <li>
+                <em class="tit">운동</em>
+                <span class="info">운동명이 들어갑니다.</span>
+            </li>
+            <li>
+                <em class="tit">문의내용</em>
+                <div class="info">
+                    <p>
+                       문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다.
+                       문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다. 문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다. 문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다. 문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다.  
+                    </p>
                 </div>
-            </div>
-            <div class="box_info_patient">
-                <em class="tit">환자코드</em><span class="txt_info">W12345</span>
-                <em class="tit">성별</em><span class="txt_info">남</span>
-                <em class="tit">이름</em><span class="txt_info">박재활</span>
-                <em class="tit">생년월일</em><span class="txt_info">1990.00.00</span>
-            </div>
-        </div>
-        <div class="inner_editor view_ask">
-            <!-- //에디터 영역 -->
-            <p style="font-size:15px;lien-height:21px;color:#343a40;">
-                문의하신 내용이쭈욱 작성되는 영영역입니나.<br><br>
-
-                길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다.<br>
-                문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로<br><br>
-
-                줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다. 문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다. 문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는 기획팀 확인부탁드립니다. 문의하신 내용이쭈욱 작성되는 영영역입나. 길어지면 아래로 줄갈이되며 최대 글자 수는 기획 문서 또는
-                기획팀 확인부탁드립니다. 
-            </p>
-            <!-- 에디터 영역// -->
-        </div>
-        <!-- /첨부파일영역 -->
-        <div class="inner_file view_ask">
-            <a href="#none" download=""><img src="../images/icon_pdf.png" alt="pdf">Filename area.pdf</a>
-            <a href="#none"><img src="../images/icon_pdf.png" alt="pdf">Filename area.pdf</a>
-            <a href="#none"><img src="../images/icon_pdf.png" alt="pdf">Filename area.pdf</a>
-        </div>
-        <!-- 첨부파일영역// -->
+            </li>
+            <li>
+                <em class="tit">첨부파일</em>
+                <div class="info">
+                    <!-- /첨부파일영역 -->
+                    <div class="inner_file">
+                        <a href="#none" download=""><img src="../images/icon_pdf.png" alt="pdf">Filename area.pdf</a>
+                        <a href="#none"><img src="../images/icon_pdf.png" alt="pdf">Filename area.pdf</a>
+                        <a href="#none"><img src="../images/icon_pdf.png" alt="pdf">Filename area.pdf</a>
+                    </div>
+                    <!-- 첨부파일영역// -->
+                </div>
+            </li>
+        </ul>
+        
         <!-- 답변영역 -->
         <div class="inner_reply">
            <p class="tit_reply">답변하기</p> 
@@ -126,10 +130,10 @@
         <!-- //답변영역 -->
         <div class="both_btn">
           <div class="align_left">
-            <button type="button" class="btn_large color_secondary">목록</button>
+            <button type="button" class="btn_large color_secondary">취소</button>
           </div>
           <div class="align_right">
-            <button type="button" class="btn_large color_primary">임시저장</button>
+            <button type="button" class="btn_large color_grey600">임시저장</button>
             <button type="button" class="btn_large color_actprimary">답변등록</button>
           </div>
         </div>
