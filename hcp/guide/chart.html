@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/chart.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="../css/NotoSansKR.css">
+    </noscript>
+
+<style>
+.linechart-wrap{width:1300px;}
+
+.piechart-wrap{width:220px;}
+.piechart-wrap .chart{position:relative;}
+.piechart-wrap .chart .dot-list li{position:absolute;bottom:0;display:inline-block;width:5px;height:5px;background:#dee2e6;border-radius:100%;}
+.piechart-wrap .chart .dot-list li.on{background-color:#5280e2}
+.piechart-wrap .chart .dot-list li.dot6{left:18.18%;bottom:2.43%;}
+.piechart-wrap .chart .dot-list li.dot5{left:18.63%;bottom:18.69%;}
+.piechart-wrap .chart .dot-list li.dot4{left:21.81%;bottom:34.14%;}
+.piechart-wrap .chart .dot-list li.dot3{left:27.72%;bottom:47.15%;}
+.piechart-wrap .chart .dot-list li.dot2{left:35%;bottom:56.91%;}
+.piechart-wrap .chart .dot-list li.dot1{left:44.54%;bottom:62.6%;}
+.piechart-wrap .chart .dot-list li.dot7{right:44.54%;bottom:62.6%;}
+.piechart-wrap .chart .dot-list li.dot8{right:35%;bottom:56.91%;}
+.piechart-wrap .chart .dot-list li.dot9{right:27.72%;bottom:47.15%;}
+.piechart-wrap .chart .dot-list li.dot10{right:21.81%;bottom:34.14%;}
+.piechart-wrap .chart .dot-list li.dot11{right:18.63%;bottom:18.69%;}
+.piechart-wrap .chart .dot-list li.dot12{right:18.18%;bottom:2.43%;}
+.piechart-wrap .chart .pin{position:absolute;bottom:0;left:calc(50% - 6px); transform:rotate(0deg);transform-origin:bottom center;}
+.piechart-wrap .chart .pin::before{content:'';display:inline-block; width:12px;height:41px;margin-bottom:-6px; background:url('../images/chart_pointer.png') no-repeat center center;}
+
+
+.walkchart-wrap .chart{width:546px; position: relative;padding-top:0.8333vw;}
+.walkchart-wrap .chart > .averline{position: absolute;top:10%;height:78%;z-index:1;width:0.2778vw;background:url('../images/line_1.svg')repeat-y center center;background-size:auto;}
+.walkchart-wrap .chart .chart{margin-top:4.1667vw;position: relative;}
+.walkchart-wrap .chart .chart .bar{display: block;position: relative;height: 3.3333vw;margin: 0 0 2.2222vw;border-radius: 1.6667vw;background-color: #e9ecef;overflow: hidden;}
+.walkchart-wrap .chart .chart .bar .stance{position: absolute;top:0;height: 3.3333vw;}
+.walkchart-wrap .chart .chart .stance_tx{position: absolute;top:5.5556vw;transform: translate(-50%, 0); font-family: Montserrat;font-size: 3.3333vw;font-weight: bold;line-height: 1.33;text-align: center;color: #000;white-space:nowrap;}
+.walkchart-wrap .chart .chart .swing_tx{position: absolute;top:5.5556vw;right:0; font-family: Montserrat;font-size: 3.3333vw;font-weight: bold;line-height: 1.33;text-align: center;color: #000;white-space:nowrap;}
+.walkchart-wrap .chart .chart.f .stance_tx{transform: translate(-100%, 0);}
+.walkchart-wrap .chart .chart.ff .swing_tx{transform: translate(130%, 0);}
+.walkchart-wrap .chart .chart.fff .swing_tx{display:none}
+.walkchart-wrap .chart .chart .name{font-size: 3.3333vw;font-weight: 500;line-height: 1.33;color: #868e96;}
+.walkchart-wrap .chart .chart.left .bar .stance{background-color: #5280e2;}
+.walkchart-wrap .chart .chart.right .bar .stance{background-color: #21d0b3;}
+.walkchart-wrap .chart .chart.aver .bar .stance{background-color: #2f455c;}
+/*.walkchart-wrap .chart .chart.right .stance_tx{font-weight: normal;}
+.walkchart-wrap .chart .chart.aver .stance_tx{font-weight: normal;}*/
+
+
+</style>
+
+
+    <title>Neuro font text</title>
+  </head>
+  <body>
+  <body>
+    <div class="linechart-wrap"><div class="chart"></div></div>
+    <div class="piechart-wrap"><div class="chart"></div></div>
+    <div class="walkchart-wrap"><div class="chart"></div></div>
+
+
+  </body>
+</html>
+
+<script>
+var linechartData = [
+  {date:'01', value: 123},
+  {date:'02', value: 245},
+  {date:'03', value: 355},
+  {date:'04', value: 255},
+  {date:'05', value: 359},
+  {date:'06', value: 258},
+  {date:'07', value: 307},
+  {date:'08', value: 344},
+  {date:'09', value: 123},
+  {date:'10', value: 245},
+  {date:'11', value: 123},
+  {date:'12', value: 245},
+  {date:'13', value: 355},
+  {date:'14', value: 255},
+  {date:'15', value: 359},
+  {date:'16', value: 258},
+  {date:'17', value: 307},
+  {date:'18', value: 344},
+  {date:'19', value: 123},
+  {date:'20', value: 245},
+  {date:'21', value: 123},
+  {date:'22', value: 245},
+  {date:'23', value: 355},
+  {date:'24', value: 255},
+  {date:'25', value: 359},
+  {date:'26', value: 258},
+  {date:'27', value: 307},
+  {date:'28', value: 344},
+  {date:'29', value: 123},
+  {date:'30', value: 245},
+];
+var piechartData = {
+    value : 180 //왼쪽 0~100, 오른쪽 100~200
+};
+var barCycleData = [
+  {name:'왼발',stance:'100',swing:'33'},
+  {name:'오른발',stance:'63',swing:'37'},
+  {name:'표준',stance:'60',swing:'40'},
+];
+$(function(){
+  hcp.lineChart('.linechart-wrap .chart', linechartData);
+  hcp.pieChart('.piechart-wrap .chart', piechartData);
+  walkChart('.walkchart-wrap .chart', barCycleData)
+});
+
+
+
+function walkChart($this, data){
+  var box = $($this),
+      averNo = data.find(x => x.name === '표준').stance,
+      averHtml = `<span class="averline" style="left:${averNo}%"></span>`;
+  box.append(averHtml);
+  for(var  index = 0; index < data.length; index++){
+    var name = data[index].name,
+        left = data[index].stance,
+        right = data[index].swing,
+        leftClass ='',
+        color = '';
+    if(left >= 92 && left < 97){leftClass='f'}else if(left >= 97){if(left == 100){leftClass='fff'}else{leftClass='ff'}}
+    if(name == '왼발'){color='left'}else if(name == '오른발'){color='right'}else{color='aver'}
+    var liHtml = `<div class="chart ${leftClass} ${color}"><div class="bar"><span class="stance" style="width:${left}%"> </span></div><span class="stance_tx" style="left:${left}%">${left}</span><span class="swing_tx">${right}</span><span class="name">${name}</span></div>`
+    box.append(liHtml);
+  }
+}
+
+
+</script>

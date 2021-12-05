@@ -333,7 +333,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .inner_option_data .area_data{overflow:hidden;margin-top:16px;margin-left:8px;padding:10px 12px;background-color: #fff;border-radius:8px;}
 .inner_option_data .area_data.hidden{display: none;}
 .inner_option_data .area_data p{float:left;padding:0 8px;font-size:13px;line-height:19px;color:#868e96;}
-.inner_graph{padding:28px 0;}
+.linechart-wrap{margin:32px 0 24px; overflow-x:auto; border-radius: 8px;border: solid 1px #e9ecef;}
 .tbl_notice.type_data + .both_btn{margin-top:24px;}
 
 /* 문의 */
@@ -515,8 +515,14 @@ h4 + .balance_data {margin-top:34px;}
     .inner_notice .deco_select{width:17.4285vw}
     /** 자주 묻는 질문 **/
     .inner_faq .deco_select{width:34.2857vw}
-
+    /* 문의 */
+    .inner_detail_title.type_both{flex-direction: column;}
+    .inner_detail_title.type_both.short{flex-direction: row;}
+    .inner_detail_title.type_both > :first-child{align-self: flex-start;}
+    .inner_detail_title.type_both > :last-child{margin-top:20px;align-self: flex-start;}
+    .inner_detail_title.type_both.short > :last-child{margin-top:0;align-self:center;}
     /* 통계 */
+    .inner_tbl_overx{overflow-x:scroll;}
     .inner_option_data .area_select{width:100%;flex-direction: column;}
     .inner_option_data .box_input{width:100%;align-self:flex-start;}
     .inner_option_data .box_input > *{margin-bottom:12px;}
@@ -543,17 +549,12 @@ h4 + .balance_data {margin-top:34px;}
     .list_info .inner .radio_type1 + .input_round{margin-top:16px;}
 
     .inner_option_data .area_data{display: none;}
-    .inner_tbl_overx{overflow-x:scroll;}
 
     .tbl_notice th div{padding:22px 10px 21px;}
     .tbl_notice tr td div{padding:19px 10px 21px;}
 
     .inner_title .box_search .deco_select{display: none;}
-    .inner_detail_title.type_both{flex-direction: column;}
-    .inner_detail_title.type_both.short{flex-direction: row;}
-    .inner_detail_title.type_both > :first-child{align-self: flex-start;}
-    .inner_detail_title.type_both > :last-child{margin-top:20px;align-self: flex-start;}
-    .inner_detail_title.type_both.short > :last-child{margin-top:0;align-self:center;}
+
 
     .inner_tab.type_both{flex-wrap: wrap;}
     .inner_tab.type_both > div + div{margin-top:10px;}

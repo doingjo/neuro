@@ -20,9 +20,10 @@
   <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
-  <script type="text/javascript" src="../js/ui.js"></script>
   <script type="text/javascript" src="../js/moment.min.js"></script>
   <script type="text/javascript" src="../js/daterangepicker.js"></script>
+  <script type="text/javascript" src="../js/chart.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
   <noscript>
       <link rel="stylesheet" href="../css/NotoSansKR.css">
       <link rel="stylesheet" href="../css/Montserrat.css">
@@ -120,13 +121,51 @@
         </div>
         <!-- 통계_옵션선택// -->
         <!-- 그래프영역 -->
-        <div class="inner_graph">
-            그래프가 들어옵니다.
-        </div>
+        <script>
+        var linechartData = [
+          {date:'01', value: 123},
+          {date:'02', value: 245},
+          {date:'03', value: 355},
+          {date:'04', value: 255},
+          {date:'05', value: 359},
+          {date:'06', value: 258},
+          {date:'07', value: 307},
+          {date:'08', value: 344},
+          {date:'09', value: 123},
+          {date:'10', value: 245},
+          {date:'11', value: 123},
+          {date:'12', value: 245},
+          {date:'13', value: 355},
+          {date:'14', value: 255},
+          {date:'15', value: 359},
+          {date:'16', value: 258},
+          {date:'17', value: 307},
+          {date:'18', value: 344},
+          {date:'19', value: 123},
+          {date:'20', value: 245},
+          {date:'21', value: 123},
+          {date:'22', value: 245},
+          {date:'23', value: 355},
+          {date:'24', value: 255},
+          {date:'25', value: 359},
+          {date:'26', value: 258},
+          {date:'27', value: 307},
+          {date:'28', value: 344},
+          {date:'29', value: 123},
+          {date:'30', value: 245},
+        ];
+        $(function(){
+          hcp.lineChart('.linechart-wrap .chart', linechartData);
+        });
+        </script>
+        <div class="linechart-wrap"><div class="chart"></div></div>
         <!-- 그래프영역// -->
         <!-- //테이블 영역 -->
         <div class="inner_tbl_overx">
             <table class="tbl_notice type_data">
+                <colgroup>
+                  <col width="90px"><col width="80px"><col width="80px"><col width="80px"><col width="80px"><col width="80px"><col width="80px"><col width="80px"><col width="80px"><col width="80px"><col width="80px"><col width="80px"><col width="80px">
+                </colgroup>
                 <thead>
                     <tr>
                         <!-- 디자인을 입히기 위해 div를 한번 감싸줌 -->
