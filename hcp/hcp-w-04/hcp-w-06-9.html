@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>HCP</title>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- //Header -->
+    <div class="header">
+      <div class="content">
+        <h1><a href="/">neurogait</a></h1>
+        <!-- //GNB -->
+        <div class="inner_gnb">
+          <ul class="list_gnb">
+            <li><a href="#none"><span>홈</span></a></li>
+            <li class="on"><a href="#none"><span>환자</span></a></li>
+            <li><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>문의</span></a></li>
+            <li><a href="#none"><span>통계</span></a></li>
+            <li><a href="#none"><span>설정</span></a></li>
+          </ul>
+        </div>
+        <!-- GNB// -->
+        <!-- //Login -->
+        <div class="inner_user">
+          <div class="box_avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+          <div class="box_state">
+            <p class="name_user">박재활님</p>
+            <button type="button" class="btn_login">Login</button>
+            <!-- <button type="button" class="btn_logout">Logout</button> -->
+          </div>
+        </div>
+        <!-- Login// -->
+      </div>
+    </div>
+    <!-- Header// -->
+    <!-- //Contents -->
+    <div class="container">
+      <!-- //컨텐츠 영역 -->
+      <div class="cont">
+        <div class="inner_detail_title type_both short">
+            <div>
+                <h2>김재활님의 운동 결과</h2>
+                <div class="area_etc">
+                    <p class="txt_datentime">2021.11.01 (화요일)</p>
+                </div>
+            </div>
+            <div>
+                <div class="round_select">
+                    <select name="" id="" class="">
+                        <option value="">3세트</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="inner_pdt32px">
+            <p class="txt_date">운동 시간 : 2021.11.02 ~ 14:55:00 / 8세트 / 22분 22초</p>
+            <!-- 데이터 영역 -->
+            <div class="wrap_inner_flex1box">
+                <div class="inner_flex1box">
+                    <h4>운동 자세</h4>
+                    <div class="box_video">
+                        <img src="" alt="동영상썸네일">
+                        <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                    </div>
+                </div>
+                <div class="inner_flex1box">
+                    <div class="box_flex1box">
+                        <h4>평균 밸런스(%)</h4> 
+                        <div class="balance_data">
+                            <div class="data">
+                                <p>흔들림 정도<span class="txt_sub">(추천 : 10% 이하)</span></p>
+                                <p class="val_data">7%</p>
+                            </div>  
+                            <div class="data">
+                                <p>외발 서기 시간</p>
+                                <p class="val_data">0’’</p>
+                            </div>  
+                        </div>                    
+                    </div>  
+                </div>
+                <div class="inner_flex1box">
+                    <div class="box_flex1box">
+                        <h4>자세 분석</h4>                        
+                    </div>
+                </div>
+            </div>
+            <!-- //데이터 영역 -->
+            <!-- 데이터 영역 -->
+            <div class="inner_flex1box sm">
+                <div class="box_flex1box">
+                    <h4>밸런스 분석</h4>
+                    <p>오른쪽으로 쏠리는 경향을 보입니다.</p>
+                </div>
+            </div>
+            <!-- //데이터 영역 -->
+        </div>
+
+        <div class="both_btn">
+          <div class="align_left">
+            <button type="button" class="btn_large color_secondary">목록</button>
+          </div>
+        </div>
+      </div>
+      <!-- 컨텐츠 영역// -->
+    </div>
+    <!-- Contents// -->
+    <!-- //Footer -->
+    <footer>
+      <span>사업자 등록번호 : 611 - 81 – 27282</span><span>통신판매업신고 : 제 2017-서울강남-00305호</span><span>대표자 : 조형진</span><span>개인정보보호 책임자 : 김대성</span>
+      <p>서울특별시 강남구 언주로 603 서진빌딩 6F  © Copyright 2021 SALTED.LTD</p>
+      <div class="inner_partner">
+        <a href="#none"><img src="../images/logo_partner01.png" alt="파트너사"></a><a href="#none"><img src="../images/logo_partner02.png" alt="파트너사"></a>
+      </div>
+      <div class="inner_logo">
+        <a href="#none" class="link_loge"><img src="../images/logo_footer.png" alt="salted"></a>
+      </div>
+    </footer>
+    <!-- Footer// -->
+  </div>
+</body>
+</html>

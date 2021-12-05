@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>HCP</title>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- //Header -->
+    <div class="header">
+      <div class="content">
+        <h1><a href="/">neurogait</a></h1>
+        <!-- //GNB -->
+        <div class="inner_gnb">
+          <ul class="list_gnb">
+            <li><a href="#none"><span>홈</span></a></li>
+            <li class="on"><a href="#none"><span>환자</span></a></li>
+            <li><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>문의</span></a></li>
+            <li><a href="#none"><span>통계</span></a></li>
+            <li><a href="#none"><span>설정</span></a></li>
+          </ul>
+        </div>
+        <!-- GNB// -->
+        <!-- //Login -->
+        <div class="inner_user">
+          <div class="box_avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+          <div class="box_state">
+            <p class="name_user">박재활님</p>
+            <button type="button" class="btn_login">Login</button>
+            <!-- <button type="button" class="btn_logout">Logout</button> -->
+          </div>
+        </div>
+        <!-- Login// -->
+      </div>
+    </div>
+    <!-- Header// -->
+    <!-- //Contents -->
+    <div class="container">
+      <!-- //타이틀영역 -->
+      <div class="inner_title">
+        <div class="box_title">
+          <h2>박재활님의 운동 결과</h2>
+          <p class="tit_sub">2021.11.22(금요일)</p>
+        </div>
+        <div class="box_btn">
+          <button type="button" class="btn_secondary">수정</button>
+          <button type="button" class="btn_secondary">삭제</button>
+          <button type="button" class="btn_primary">연결끊기</button>
+        </div>
+      </div>
+      <!-- 타이틀영역 -->
+      <!-- //컨텐츠 영역 -->
+      <div class="cont_both">
+            <div class="cont">
+                <div class="tit_cnt">
+                    <h3>일반 정보</h3>
+                    <p class="txt_date">등록일자 : 2021.11.02</p>
+                </div>
+                <div class="box_info">
+                    <ul class="list_info">
+                        <li>
+                            <em class="tit">환자코드</em>
+                            <span class="info">W54321</span>
+                        </li>
+                        <li>
+                            <em class="tit">성별</em>
+                            <span class="info">남자</span>
+                        </li>
+                        <li>
+                            <em class="tit">이름</em>
+                            <span class="info">훈</span>
+                        </li>
+                        <li>
+                            <em class="tit">국적</em>
+                            <span class="info">한국</span>
+                        </li>
+                        <li>
+                            <em class="tit">성</em>
+                            <span class="info">제갈</span>
+                        </li>
+                        <li>
+                            <em class="tit">거주지</em>
+                            <span class="info">서울</span>
+                        </li>
+                        <li>
+                            <em class="tit">질환명</em>
+                            <span class="info">-</span>
+                        </li>
+                        <li>
+                            <em class="tit">연락처</em>
+                            <span class="info">010-1234-5688</span>
+                        </li>
+                        <li class="bd_btm_0">
+                            <em class="tit">생년월일</em>
+                            <span class="info">2020.03.04</span>
+                        </li>
+                        <li class="bd_btm_0">
+                            <em class="tit">이메일</em>
+                            <span class="info">Salted@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cont">
+                <div class="tit_cnt">
+                    <h3>신체 정보</h3>
+                </div>
+                <div class="box_info type_single">
+                    <ul class="list_info">
+                        <li>
+                            <em class="tit">키</em>
+                            <span class="info">180.5cm</span>
+                        </li>
+                        <li>
+                            <em class="tit">몸무게</em>
+                            <span class="info">79.kg</span>
+                        </li>
+                        <li>
+                            <em class="tit">발사이즈</em>
+                            <span class="info">275cm</span>
+                        </li>
+                        <li>
+                            <em class="tit">다리길이(좌)</em>
+                            <span class="info">95cm</span>
+                        </li>
+                        <li class="bd_btm_0">
+                            <em class="tit">다리길이(우)</em>
+                            <span class="info">90cm</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+      </div>
+      <div class="cont">
+        <div class="inner_tab type_both">
+            <div class="box_tab">
+                <ul class="list_tab">
+                    <li><a href="#none">문진</a></li>
+                    <li><a href="#none">정자세</a></li>
+                    <li><a href="#none">촬영검사</a></li>
+                    <li class="on"><a href="#none">운동기록</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="inner_record empty">
+            <p class="tit_error">환자와 연결되지 않았습니다.</p>
+            <p>처방한 운동 기록을 확인하려면 아래 경로에서 환자 코드를 확인 후<br>“환자 데이터 연결”을 통해 환자의 데이터를 연결해 주세요.</p>
+            <div class="box_connect_wayto">
+                <p class="tit_wayto">환자 <em>데이터 연결 코드 확인</em> 방법</p>
+                <ol class="list_wayto">
+                    <li>
+                        <div class="box_img">
+                            <img src="" alt="썸네일">
+                        </div>
+                        <p>Patient App<br>로그인</p>
+                    </li>
+                    <li>
+                        <div class="box_img">
+                            <img src="" alt="썸네일">
+                        </div>
+                        <p class="line_single">설정</p>
+                    </li>
+                    <li>
+                        <div class="box_img">
+                            <img src="" alt="썸네일">
+                        </div>
+                        <p>센터 / 병원<br>정보</p>
+                    </li>
+                    <li>
+                        <div class="box_img">
+                            <img src="" alt="썸네일">
+                        </div>
+                        <p>'데이터연결'<br>버튼</p>
+                    </li>
+                </ol>
+            </div>
+            <button type="button" class="btn_round color_primary">환자 데이터 연결</button>
+        </div>
+      </div>
+      <!-- 컨텐츠 영역// -->
+    </div>
+    <!-- Contents// -->
+    <!-- //Footer -->
+    <footer>
+      <span>사업자 등록번호 : 611 - 81 – 27282</span><span>통신판매업신고 : 제 2017-서울강남-00305호</span><span>대표자 : 조형진</span><span>개인정보보호 책임자 : 김대성</span>
+      <p>서울특별시 강남구 언주로 603 서진빌딩 6F  © Copyright 2021 SALTED.LTD</p>
+      <div class="inner_partner">
+        <a href="#none"><img src="../images/logo_partner01.png" alt="파트너사"></a><a href="#none"><img src="../images/logo_partner02.png" alt="파트너사"></a>
+      </div>
+      <div class="inner_logo">
+        <a href="#none" class="link_loge"><img src="../images/logo_footer.png" alt="salted"></a>
+      </div>
+    </footer>
+    <!-- Footer// -->
+  </div>
+</body>
+</html>
