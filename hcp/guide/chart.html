@@ -23,46 +23,66 @@
     </noscript>
 
 <style>
-.linechart-wrap{width:1300px;}
+.linechart-wrap{width:1300px}
 
-.piechart-wrap{width:220px;}
-.piechart-wrap .chart{position:relative;}
-.piechart-wrap .chart .dot-list li{position:absolute;bottom:0;display:inline-block;width:5px;height:5px;background:#dee2e6;border-radius:100%;}
+.piechart-wrap{width:220px}
+.piechart-wrap .chart{position:relative}
+.piechart-wrap .chart .dot-list li{position:absolute;bottom:0;display:inline-block;width:5px;height:5px;background:#dee2e6;border-radius:100%}
 .piechart-wrap .chart .dot-list li.on{background-color:#5280e2}
-.piechart-wrap .chart .dot-list li.dot6{left:18.18%;bottom:2.43%;}
-.piechart-wrap .chart .dot-list li.dot5{left:18.63%;bottom:18.69%;}
-.piechart-wrap .chart .dot-list li.dot4{left:21.81%;bottom:34.14%;}
-.piechart-wrap .chart .dot-list li.dot3{left:27.72%;bottom:47.15%;}
-.piechart-wrap .chart .dot-list li.dot2{left:35%;bottom:56.91%;}
-.piechart-wrap .chart .dot-list li.dot1{left:44.54%;bottom:62.6%;}
-.piechart-wrap .chart .dot-list li.dot7{right:44.54%;bottom:62.6%;}
-.piechart-wrap .chart .dot-list li.dot8{right:35%;bottom:56.91%;}
-.piechart-wrap .chart .dot-list li.dot9{right:27.72%;bottom:47.15%;}
-.piechart-wrap .chart .dot-list li.dot10{right:21.81%;bottom:34.14%;}
-.piechart-wrap .chart .dot-list li.dot11{right:18.63%;bottom:18.69%;}
-.piechart-wrap .chart .dot-list li.dot12{right:18.18%;bottom:2.43%;}
-.piechart-wrap .chart .pin{position:absolute;bottom:0;left:calc(50% - 6px); transform:rotate(0deg);transform-origin:bottom center;}
-.piechart-wrap .chart .pin::before{content:'';display:inline-block; width:12px;height:41px;margin-bottom:-6px; background:url('../images/chart_pointer.png') no-repeat center center;}
+.piechart-wrap .chart .dot-list li.dot6{left:18.18%;bottom:2.43%}
+.piechart-wrap .chart .dot-list li.dot5{left:18.63%;bottom:18.69%}
+.piechart-wrap .chart .dot-list li.dot4{left:21.81%;bottom:34.14%}
+.piechart-wrap .chart .dot-list li.dot3{left:27.72%;bottom:47.15%}
+.piechart-wrap .chart .dot-list li.dot2{left:35%;bottom:56.91%}
+.piechart-wrap .chart .dot-list li.dot1{left:44.54%;bottom:62.6%}
+.piechart-wrap .chart .dot-list li.dot7{right:44.54%;bottom:62.6%}
+.piechart-wrap .chart .dot-list li.dot8{right:35%;bottom:56.91%}
+.piechart-wrap .chart .dot-list li.dot9{right:27.72%;bottom:47.15%}
+.piechart-wrap .chart .dot-list li.dot10{right:21.81%;bottom:34.14%}
+.piechart-wrap .chart .dot-list li.dot11{right:18.63%;bottom:18.69%}
+.piechart-wrap .chart .dot-list li.dot12{right:18.18%;bottom:2.43%}
+.piechart-wrap .chart .pin{position:absolute;bottom:0;left:calc(50% - 6px); transform:rotate(0deg);transform-origin:bottom center}
+.piechart-wrap .chart .pin::before{content:'';display:inline-block; width:12px;height:41px;margin-bottom:-6px; background:url('../images/chart_pointer.png') no-repeat center center}
 
+.walkchart-wrap{width:546px;}
+.walkchart-wrap .chart{position:relative}
+.walkchart-wrap .chart .legend:after{content:'';display:block;clear:both}
+.walkchart-wrap .chart .legend strong:nth-child(2){float:right}
+.walkchart-wrap .chart .legend strong{font-size:14px;font-weight:500}
+.walkchart-wrap .chart .legend strong span{font-size:12px;font-weight:400;vertical-align:baseline}
+.walkchart-wrap .chart >.averline{position:absolute;top:32px;height:120px;z-index:1;width:2px;background:url('../images/line_1.svg')repeat-y center center;background-size:auto}
+.walkchart-wrap .chart .bar-wrap{margin-top:11px;position:relative}
+.walkchart-wrap .chart .bar-wrap .bar{position:relative;height:12px;margin:0 0 8px;border-radius:6px;background-color:#e9ecef;overflow:hidden}
+.walkchart-wrap .chart .bar-wrap .bar .stance{position:absolute;top:0;height:12px}
+.walkchart-wrap .chart .bar-wrap >span{font-size:12px;font-weight:bold;line-height:1.33;text-align:center;color:#000;white-space:nowrap}
+.walkchart-wrap .chart .bar-wrap .stance_tx{position:absolute;top:20px;transform:translate(-50%, 0)}
+.walkchart-wrap .chart .bar-wrap .swing_tx{position:absolute;top:20px;right:0}
+.walkchart-wrap .chart .bar-wrap.f .stance_tx{transform:translate(-100%, 0)}
+.walkchart-wrap .chart .bar-wrap.ff .swing_tx{transform:translate(130%, 0)}
+.walkchart-wrap .chart .bar-wrap.fff .swing_tx{display:none}
+.walkchart-wrap .chart .bar-wrap .name{font-weight:500;color:#868e96}
+.walkchart-wrap .chart .bar-wrap.left .bar .stance{background-color:#5280e2}
+.walkchart-wrap .chart .bar-wrap.right .bar .stance{background-color:#21d0b3}
+.walkchart-wrap .chart .bar-wrap.aver .bar .stance{background-color:#2f455c}
 
-.walkchart-wrap .chart{width:546px; position: relative;padding-top:0.8333vw;}
-.walkchart-wrap .chart > .averline{position: absolute;top:10%;height:78%;z-index:1;width:0.2778vw;background:url('../images/line_1.svg')repeat-y center center;background-size:auto;}
-.walkchart-wrap .chart .chart{margin-top:4.1667vw;position: relative;}
-.walkchart-wrap .chart .chart .bar{display: block;position: relative;height: 3.3333vw;margin: 0 0 2.2222vw;border-radius: 1.6667vw;background-color: #e9ecef;overflow: hidden;}
-.walkchart-wrap .chart .chart .bar .stance{position: absolute;top:0;height: 3.3333vw;}
-.walkchart-wrap .chart .chart .stance_tx{position: absolute;top:5.5556vw;transform: translate(-50%, 0); font-family: Montserrat;font-size: 3.3333vw;font-weight: bold;line-height: 1.33;text-align: center;color: #000;white-space:nowrap;}
-.walkchart-wrap .chart .chart .swing_tx{position: absolute;top:5.5556vw;right:0; font-family: Montserrat;font-size: 3.3333vw;font-weight: bold;line-height: 1.33;text-align: center;color: #000;white-space:nowrap;}
-.walkchart-wrap .chart .chart.f .stance_tx{transform: translate(-100%, 0);}
-.walkchart-wrap .chart .chart.ff .swing_tx{transform: translate(130%, 0);}
-.walkchart-wrap .chart .chart.fff .swing_tx{display:none}
-.walkchart-wrap .chart .chart .name{font-size: 3.3333vw;font-weight: 500;line-height: 1.33;color: #868e96;}
-.walkchart-wrap .chart .chart.left .bar .stance{background-color: #5280e2;}
-.walkchart-wrap .chart .chart.right .bar .stance{background-color: #21d0b3;}
-.walkchart-wrap .chart .chart.aver .bar .stance{background-color: #2f455c;}
-/*.walkchart-wrap .chart .chart.right .stance_tx{font-weight: normal;}
-.walkchart-wrap .chart .chart.aver .stance_tx{font-weight: normal;}*/
+.analysis-wrap{width:325px;}
+.analysis-wrap .chart{position:relative;}
+.analysis-wrap .chart .legend{font-size:18px;font-weight:700;letter-spacing:-.5px}
+.analysis-wrap .chart .legend:after{content:'';display:block;clear:both}
+.analysis-wrap .chart .legend em{font-size:14px;font-weight:500;vertical-align:middle}
+.analysis-wrap .chart .legend strong{float:right;}
+.analysis-wrap .chart .bar-wrap{margin-top:8px;padding-bottom:26px; position:relative}
+.analysis-wrap .chart .bar-wrap .bar{height:12px;border-radius:6px;overflow:hidden}
+.analysis-wrap .chart .bar-wrap .bar span{display:block;height:100%;}
+.analysis-wrap .chart .bar-wrap .average{  position:absolute;top:0;}
+.analysis-wrap .chart .bar-wrap .average:before,
+.analysis-wrap .chart .bar-wrap .average:after{content:'';display:block; height:16px;position:absolute;top:-2px;}
+.analysis-wrap .chart .bar-wrap .average:before{width:12px;background-color:#fff; left:-6px;}
+.analysis-wrap .chart .bar-wrap .average:after{width:4px;border-radius:2px;background-color:#212529; left:-2px;}
+.analysis-wrap .chart .bar-wrap .average span{position:absolute;top:19px;left:0; font-size:12px;color:#868e96;white-space:nowrap;}
 
-
+.analysis-wrap .chart.type3{padding-right:30px;}
+.analysis-wrap .chart.type3 .legend{line-height:1; position:absolute;top:-3px;right:0;}
 </style>
 
 
@@ -73,8 +93,8 @@
     <div class="linechart-wrap"><div class="chart"></div></div>
     <div class="piechart-wrap"><div class="chart"></div></div>
     <div class="walkchart-wrap"><div class="chart"></div></div>
-
-
+    <div class="analysis-wrap type01"><div class="chart"></div></div>
+    <div class="analysis-wrap type03"><div class="chart"></div></div>
   </body>
 </html>
 
@@ -119,31 +139,16 @@ var barCycleData = [
   {name:'오른발',stance:'63',swing:'37'},
   {name:'표준',stance:'60',swing:'40'},
 ];
+var analysisData = {
+  tit:'좌 : 우', value: 100, averageTxt: '표준', average: 50, barColor: '#5280e2', bgColor: '#f1f3f5'  
+}
 $(function(){
   hcp.lineChart('.linechart-wrap .chart', linechartData);
   hcp.pieChart('.piechart-wrap .chart', piechartData);
-  walkChart('.walkchart-wrap .chart', barCycleData)
+  hcp.walkChart('.walkchart-wrap .chart', barCycleData);
+  hcp.analysisChart('.type01 .chart', analysisData, 1);
+  hcp.analysisChart('.type03 .chart', analysisData, 3);
 });
-
-
-
-function walkChart($this, data){
-  var box = $($this),
-      averNo = data.find(x => x.name === '표준').stance,
-      averHtml = `<span class="averline" style="left:${averNo}%"></span>`;
-  box.append(averHtml);
-  for(var  index = 0; index < data.length; index++){
-    var name = data[index].name,
-        left = data[index].stance,
-        right = data[index].swing,
-        leftClass ='',
-        color = '';
-    if(left >= 92 && left < 97){leftClass='f'}else if(left >= 97){if(left == 100){leftClass='fff'}else{leftClass='ff'}}
-    if(name == '왼발'){color='left'}else if(name == '오른발'){color='right'}else{color='aver'}
-    var liHtml = `<div class="chart ${leftClass} ${color}"><div class="bar"><span class="stance" style="width:${left}%"> </span></div><span class="stance_tx" style="left:${left}%">${left}</span><span class="swing_tx">${right}</span><span class="name">${name}</span></div>`
-    box.append(liHtml);
-  }
-}
 
 
 </script>

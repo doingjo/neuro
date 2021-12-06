@@ -186,6 +186,36 @@ var hcp = hcp || {
                     .text(d.label);
                 }
             });
+    },
+    walkChart: function($this, data){
+      var box = $($this),
+          averNo = data.find(x => x.name === '표준').stance,
+          averHtml = `<span class="averline" style="left:${averNo}%"></span>`;
+      box.append(`<div class="legend"><strong>입각기 <span>(Stance Phase)</span></strong><strong>유각기 <span>(Swing Phase)</span></strong></div>`);
+      box.append(averHtml);
+      for(var  index = 0; index < data.length; index++){
+        var name = data[index].name,
+            left = data[index].stance,
+            right = data[index].swing,
+            leftClass ='',
+            color = '';
+        if(left >= 92 && left < 97){leftClass='f'}else if(left >= 97){if(left == 100){leftClass='fff'}else{leftClass='ff'}}
+        if(name == '왼발'){color='left'}else if(name == '오른발'){color='right'}else{color='aver'}
+        var liHtml = `<div class="bar-wrap ${leftClass} ${color}"><div class="bar"><span class="stance" style="width:${left}%"> </span></div><span class="stance_tx" style="left:${left}%">${left}</span><span class="swing_tx">${right}</span><span class="name">${name}</span></div>`
+        box.append(liHtml);
+      }
+    },
+    analysisChart: function($this, data, type){
+      var box = $($this),
+          dataSet = data,
+          valueTxt = '';
+      if( type === 3 ){
+        box.append('<div class="legend">'+ dataSet.value +'</div>').addClass('type3');
+      }else{
+        ( type === 1 )? valueTxt = dataSet.value : valueTxt = dataSet.value +' : '+ (100-dataSet.value) ;
+        box.append('<div class="legend"><em>'+ dataSet.tit +'</em><strong>'+ valueTxt +'</strong></div>');
+      }
+      box.append('<div class="bar-wrap"><p class="average" style="left:'+ dataSet.average +'%;"><span>'+ dataSet.averageTxt +' '+ dataSet.average +'</span></p><div class="bar" style="background-color:'+ dataSet.bgColor +';"><span style="width:'+ dataSet.value +'%; background-color:'+ dataSet.barColor +';"></span></div></div>');
     }
 };
 
