@@ -1,0 +1,9 @@
+<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+    <g fill="none" fill-rule="evenodd">
+        <rect fill="#DB3E3E" width="20" height="20" rx="10"/>
+        <g transform="rotate(-180 5.5 7.5)" fill="#FFF">
+            <rect y="3" width="2" height="6" rx="1"/>
+            <rect width="2" height="2" rx="1"/>
+        </g>
+    </g>
+</svg>

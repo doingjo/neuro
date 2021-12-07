@@ -136,6 +136,8 @@ var hcp = hcp || {
         box.append('<ul class="dot-list">'+list+'</ul>');
         box.append('<p class="pin"></p>');
         $pin = (dataSet.value <= 100)? -(dataSet.value*.9) : (dataSet.value-100)*.9;
+        $val = (dataSet.value <= 100)? dataSet.value : dataSet.value-100;
+        box.append('<p class="txt_val">'+ $val +'</p>');
         box.find('.pin').css('-webkit-transform','rotate('+ $pin +'deg)');
         box.css("height", height);
         var svg = d3.select($this).append("svg").attr("width", width).attr("height", height);
@@ -216,6 +218,19 @@ var hcp = hcp || {
         box.append('<div class="legend"><em>'+ dataSet.tit +'</em><strong>'+ valueTxt +'</strong></div>');
       }
       box.append('<div class="bar-wrap"><p class="average" style="left:'+ dataSet.average +'%;"><span>'+ dataSet.averageTxt +' '+ dataSet.average +'</span></p><div class="bar" style="background-color:'+ dataSet.bgColor +';"><span style="width:'+ dataSet.value +'%; background-color:'+ dataSet.barColor +';"></span></div></div>');
+    },
+    achieveChart: function($this, data){
+      var box = $($this),
+          dataSet = data,
+          barWRap = '',
+          valueMax = dataSet.map(function(d){return d.value});
+          valueMax = Math.max.apply(null, valueMax);
+      for(var i = 0; i < dataSet.length; i++){
+        (valueMax === dataSet[i].value)? max = 'max' : max = '';
+        barWRap += '<p class="bar '+max+'"><em class="tick">'+ dataSet[i].day +'</em><span style="height:'+ dataSet[i].value +'%;"></span></p>'
+      }
+      box.append('<div class="legend"><p>100</p><p>75</p><p>50</p><p>25</p><p>0</p><p>달성도(%)</p></div>');
+      box.append('<div class="bar-wrap">'+ barWRap +'</div>');
     }
 };
 

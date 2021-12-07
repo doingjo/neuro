@@ -90,9 +90,6 @@ var hcp = hcp || {
             $(this).parent(".box_input_file").children(".input_view").val("");
             $(this).parent(".box_input_file").children(".btn_del").hide();
         });
-        $(".input_view").on("click", function(){
-            $(this).next(".btn_file").trigger("click");
-        });
     },
     survey: function(){
         $(".list_tab li").on("click", function(){
@@ -114,9 +111,6 @@ var hcp = hcp || {
       setTimeout(() => {
         $('#'+id).addClass('show');
       }, 200);
-    },
-    laypop: function (id) {
-      $("#"+id).fadeIn();
     },
     tab : {
         init: function(){

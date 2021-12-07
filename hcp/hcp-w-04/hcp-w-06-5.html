@@ -96,11 +96,11 @@
                         <div class="data">
                             <p>걸음수<br>(단위 보)</p>
                             <p class="val_data">1,300</p>
-                        </div>  
+                        </div>
                         <div class="data">
                             <p>분당 걸음 수<br>(단위 spm)</p>
                             <p class="val_data">90</p>
-                        </div>  
+                        </div>
                     </div>
                 </div>
                 <div class="box_flex1box">
@@ -121,7 +121,6 @@
                        <div>
                             <div class="box_graph_gct">
                                 <div class="piechart-wrap">
-                                    <p class="txt_val">00</p>
                                     <div class="chart"></div>
                                 </div>
                             </div>
@@ -133,11 +132,11 @@
                                 <div class="data">
                                     <p class="tit_data">왼발 GCT</p>
                                     <p class="val_data">300</p>
-                                </div>  
+                                </div>
                                 <div class="data">
                                     <p class="tit_data">오른발 GTC</p>
                                     <p class="val_data">280</p>
-                                </div>  
+                                </div>
                             </div>
                        </div>
                    </div>
@@ -184,10 +183,6 @@
                 <div class="box_flex1box">
                     <div class="space_cnt_right">
                         <h4>보행 주기(%)</h4>
-                        <!-- <div class="box_tit_phase">
-                            <p>입각기 <span>(Stance Phase)</span></p>
-                            <p>유각기 <span>(Swing Phase)</span></p>
-                        </div> -->
                         <div>
                             <div class="box_graph_phase">
                                 <div class="walkchart-wrap"><div class="chart"></div></div>
@@ -268,7 +263,6 @@
         {name:'표준',stance:'60',swing:'40'},
     ];
     $(function(){
-        $(".txt_val").text(piechartData.value);
         hcp.pieChart('.piechart-wrap .chart', piechartData);
         hcp.walkChart('.walkchart-wrap .chart', barCycleData);
     });
