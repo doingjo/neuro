@@ -18,6 +18,7 @@
   <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/chart.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
   <noscript>
       <link rel="stylesheet" href="../css/NotoSansKR.css">
@@ -112,7 +113,12 @@
                    <div class="gct_box">
                        <!-- 그래프영역 -->
                        <div>
-                            <div class="box_graph_gct" style="background-color:#efefef">그래프 영역 비워둠</div>
+                            <div class="box_graph_gct">
+                                <div class="piechart-wrap">
+                                    <p class="txt_val">00</p>
+                                    <div class="chart"></div>
+                                </div>
+                            </div>
                             <p class="result_val">오른쪽으로 치우침</p>
                        </div>
                        <!-- 그래프영역 -->
@@ -172,12 +178,14 @@
                 <div class="box_flex1box">
                     <div class="space_cnt_right">
                         <h4>보행 주기(%)</h4>
-                        <div class="box_tit_phase">
+                        <!-- <div class="box_tit_phase">
                             <p>입각기 <span>(Stance Phase)</span></p>
                             <p>유각기 <span>(Swing Phase)</span></p>
-                        </div>
+                        </div> -->
                         <div>
-                            <div class="box_graph_phase" style="height:132px;background-color:#efefef">그래프 영역 비워둠</div>
+                            <div class="box_graph_phase">
+                                <div class="walkchart-wrap"><div class="chart"></div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -244,5 +252,20 @@
     </footer>
     <!-- Footer// -->
   </div>
+  <script>
+    var piechartData = {
+        value : 180 //왼쪽 0~100, 오른쪽 100~200
+    };
+    var barCycleData = [
+        {name:'왼발',stance:'67',swing:'33'},
+        {name:'오른발',stance:'63',swing:'37'},
+        {name:'표준',stance:'60',swing:'40'},
+    ];
+    $(function(){
+        $(".txt_val").text(piechartData.value);
+        hcp.pieChart('.piechart-wrap .chart', piechartData);
+        hcp.walkChart('.walkchart-wrap .chart', barCycleData);
+    });
+  </script>
 </body>
 </html>

@@ -198,10 +198,40 @@
                     </li>
                 </ol>
             </div>
-            <button type="button" class="btn_round color_primary">환자 데이터 연결</button>
+            <!-- .btn_pop 클래스는 팝업 호출욜 스타일 없음 -->
+            <button type="button" class="btn_round color_primary btn_pop" onclick="hcp.laypop('laypop_prompt')">환자 데이터 연결</button>
         </div>
       </div>
       <!-- 컨텐츠 영역// -->
+      <!-- //레이어 팝업 -->
+        <div class="wrapper_laypop type_alert" id="laypop_prompt">
+            <div class="inner_laypop">
+                <div class="box_cnt">
+                    <p class="txt_msg">데이터 코드 입력</p>
+                    <div>
+                        <input type="text" class="input_round" value="" placeholder="코드값을 입력해주세요.">
+                    </div>
+                </div>
+                <div class="box_btn">
+                    <button type="button" class="btn_type_txt txt_grey800" onclick="$(this).parents('.wrapper_laypop').hide()">취소</button>
+                    <button type="button" class="btn_type_txt txt_actprimary" onclick="$(this).parents('.wrapper_laypop').hide();hcp.laypop('laypop_alert')">연결</button>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper_laypop type_alert" id="laypop_alert">
+            <div class="inner_laypop">
+                <div class="box_cnt">
+                    <p class="txt_msg">환자 연결</p>
+                    <div class="box_msg">
+                        <p class="txt_actprimary">'이름'과 연결 되었습니다.</p>
+                    </div>
+                </div>
+                <div class="box_btn">
+                    <button type="button" class="btn_type_txt txt_grey800" onclick="$(this).parents('.wrapper_laypop').hide()">확인</button>
+                </div>
+            </div>
+        </div>
+      <!-- 레이어 팝업// -->
     </div>
     <!-- Contents// -->
     <!-- //Footer -->
