@@ -24,6 +24,7 @@ if (Browser.ie7) {
 
 var hcp = hcp || {
     init:function() {
+      hcp.tab.init();
       hcp.gnb();
       hcp.inputFocus();
       hcp.memberLose();
@@ -120,34 +121,36 @@ var hcp = hcp || {
     },
     tab : {
         init: function(){
-          if($(".as-tab-wrap").length == 0){return;}
-          $tabEle = $(".as-tab-menu > li");
+          if($(".as_tab_wrap").length == 0){return;}
+          $tabEle = $(".as_tab_menu > li");
+          console.log('tab')
           this.event();
         },
         event: function(){
           var tab = this;
+
           $tabEle.find('a[href^="#"]').click(function(e){e.preventDefault();});
           $tabEle.on("click", function(e){
-            tab.action($(this), $(this).closest(".as-tab-menu").find(" > li").index(this));
+            tab.action($(this), $(this).closest(".as_tab_menu").find(" > li").index(this));
           });
           $tabEle.not(":hidden").each(function() {
-            if ($(this).parent(".as-tab-menu").hasClass("flexible")){
+            if ($(this).parent(".as_tab_menu").hasClass("flexible")){
               return;
             } else {
-              var menuEa = $(this).parent(".as-tab-menu").find("li").length;
+              var menuEa = $(this).parent(".as_tab_menu").find("li").length;
               var menuSize = (100/menuEa);
-              $(this).parent(".as-tab-menu").find("li").width(menuSize+"%");
+              $(this).parent(".as_tab_menu").find("li").width(menuSize+"%");
             }
           });
           if (($tabEle).hasClass("active")) {
-            $(".as-tab-wrap > .as-tab-menu > li.active > a").trigger("click");
+            $(".as_tab_wrap .as_tab_menu > li.active > a").trigger("click");
           } else {
-            $(".as-tab-wrap > .as-tab-menu > li:first-child > a").trigger("click");
+            $(".as_tab_wrap .as_tab_menu > li:first-child > a").trigger("click");
           }
         },
         action: function(ele, getIndex){
           var $findNode = $(ele);
-          var $findEle = $findNode.closest(".as-tab-wrap ").find(" > .inner-depth > .tab-inner");
+          var $findEle = $findNode.closest(".as_tab_wrap ").find(" > .inner_depth > .tab_inner");
           $(ele).addClass("active").siblings().removeClass("active");
           $findEle.css("display","none");
           $findEle.eq(getIndex).css("display","block");

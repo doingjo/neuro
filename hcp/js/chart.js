@@ -22,7 +22,7 @@ if (Browser.ie7) {
   //document.write('<div style="position:absolute; top:0; right:0; border:3px solid black">ie7/8</div>');
 }
 
-var hcp = hcp || {
+var chart = chart || {
     init:function() {
 
     },
@@ -232,8 +232,4 @@ var hcp = hcp || {
       box.append('<div class="legend"><p>100</p><p>75</p><p>50</p><p>25</p><p>0</p><p>달성도(%)</p></div>');
       box.append('<div class="bar-wrap">'+ barWRap +'</div>');
     }
-};
-
-window.onload = function(){
-    hcp.init();
 };

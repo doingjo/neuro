@@ -155,149 +155,144 @@
             </div>
       </div>
       <div class="cont">
-        <div class="inner_tab type_both">
-            <div class="box_tab">
-                <ul class="list_tab">
-                    <li><a href="#none">문진</a></li>
-                    <li class="on"><a href="#none">정자세</a></li>
-                    <li><a href="#none">촬영검사</a></li>
-                    <li><a href="#none">운동기록</a></li>
-                </ul>
+        <div class="tab_wrap">
+            <div class="tab_top">
+              <ul class="tab_menu">
+                  <li><a href="#">문진</a></li>
+                  <li class="active"><a href="#">정자세</a></li>
+                  <li><a href="#">촬영검사</a></li>
+                  <li><a href="#">운동기록</a></li>
+              </ul>
+              <div class="box_search">
+                  <div class="box_period">
+                    <input type="text" id="calendar" class="input_round" value="2021.9.12" onfocus="this.blur()" inputmode="none">
+                  </div>
+                  <div class="round_select">
+                      <select name="" id="" class="">
+                      <option value="">시간선택</option>
+                      </select>
+                  </div>
+                  <button type="button" class="btn_middle color_actprimary">조회</button>
+              </div>
             </div>
-            <div class="box_search">
-                <div class="box_period">
-                  <input type="text" id="calendar" class="input_round" value="2021.9.12" onfocus="this.blur()" inputmode="none">
+            <div class="inner_depth">
+                <div class="tab_inner inner_posture">
+                    <p class="txt_date">최근 검사 : 2021.11.02</p>
+                    <div class="inner_posture_data">
+                       <div class="inner_box_data">
+                            <div class="box_posture">
+                                <p class="tit">정면</p>
+                                <div class="area_data">
+                                    <div class="area_video">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="area_input">
+                                        <div class="grp_chk">
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_front" id="pst_front01">
+                                                <label for="pst_front01">정상(이상없음)</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_front" id="pst_front02">
+                                                <label for="pst_front02">전신 왼쪽 편중</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_front" id="pst_front03">
+                                                <label for="pst_front03">어깨 불균형</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_front" id="pst_front04">
+                                                <label for="pst_front04">골반 불균형</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_front" id="pst_front05">
+                                                <label for="pst_front05">O다리</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_front" id="pst_front06">
+                                                <label for="pst_front06">X다리</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="inner_box_data">
+                            <div class="box_posture">
+                                <p class="tit">측면</p>
+                                <div class="area_data">
+                                    <div class="area_video">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="area_input">
+                                        <div class="grp_chk">
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_side" id="pst_side01">
+                                                <label for="pst_side01">정상(이상없음)</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_side" id="pst_side02">
+                                                <label for="pst_side02">거북목</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_side" id="pst_side03">
+                                                <label for="pst_side03">일자목</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_side" id="pst_side04">
+                                                <label for="pst_side04">골반 전방 변위</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_side" id="pst_side05">
+                                                <label for="pst_side05">골반 후방 변위</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="inner_box_data">
+                            <div class="box_posture">
+                                <p class="tit">후면</p>
+                                <div class="area_data">
+                                    <div class="area_video">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                    </div>
+                                    <div class="area_input">
+                                        <div class="grp_chk">
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_back" id="pst_back01">
+                                                <label for="pst_back01">정상(이상없음)</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_back" id="pst_back02">
+                                                <label for="pst_back02">견갑골 회전</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_back" id="pst_back03">
+                                                <label for="pst_back03">상부 척추 불균형</label>
+                                            </div>
+                                            <div class="input_chk_smtxt">
+                                                <input type="checkbox" name="pst_back" id="pst_back04">
+                                                <label for="pst_back04">하부 척추 불균형</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                    </div>
                 </div>
-                <div class="round_select">
-                    <select name="" id="" class="">
-                    <option value="">시간선택</option>
-                    </select>
-                </div>
-                <button type="button" class="btn_middle color_actprimary">조회</button>
             </div>
-        </div>
-        <div class="inner_posture">
-           <p class="txt_date">최근 검사 : 2021.11.02</p>
-           <div class="inner_posture_data">
-               <!-- 자세별 박스 -->
-               <div class="inner_box_data">
-                    <div class="box_posture">
-                        <p class="tit">정면</p>
-                        <div class="area_data">
-                            <div class="area_video">
-                                <div class="box_video">
-                                    <img src="" alt="동영상썸네일">
-                                    <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                                </div>
-                            </div>
-                            <div class="area_input">
-                                <div class="grp_chk">
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_front" id="pst_front01">
-                                        <label for="pst_front01">정상(이상없음)</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_front" id="pst_front02">
-                                        <label for="pst_front02">전신 왼쪽 편중</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_front" id="pst_front03">
-                                        <label for="pst_front03">어깨 불균형</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_front" id="pst_front04">
-                                        <label for="pst_front04">골반 불균형</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_front" id="pst_front05">
-                                        <label for="pst_front05">O다리</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_front" id="pst_front06">
-                                        <label for="pst_front06">X다리</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-               <!-- 자세별 박스// -->
-               <!-- 자세별 박스 -->
-               <div class="inner_box_data">
-                    <div class="box_posture">
-                        <p class="tit">측면</p>
-                        <div class="area_data">
-                            <div class="area_video">
-                                <div class="box_video">
-                                    <img src="" alt="동영상썸네일">
-                                    <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                                </div>
-                            </div>
-                            <div class="area_input">
-                                <div class="grp_chk">
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_side" id="pst_side01">
-                                        <label for="pst_side01">정상(이상없음)</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_side" id="pst_side02">
-                                        <label for="pst_side02">거북목</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_side" id="pst_side03">
-                                        <label for="pst_side03">일자목</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_side" id="pst_side04">
-                                        <label for="pst_side04">골반 전방 변위</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_side" id="pst_side05">
-                                        <label for="pst_side05">골반 후방 변위</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-               <!-- 자세별 박스// -->
-               <!-- 자세별 박스 -->
-               <div class="inner_box_data">
-                    <div class="box_posture">
-                        <p class="tit">후면</p>
-                        <div class="area_data">
-                            <div class="area_video">
-                                <div class="box_video">
-                                    <img src="" alt="동영상썸네일">
-                                    <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                                </div>
-                            </div>
-                            <div class="area_input">
-                                <div class="grp_chk">
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_back" id="pst_back01">
-                                        <label for="pst_back01">정상(이상없음)</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_back" id="pst_back02">
-                                        <label for="pst_back02">견갑골 회전</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_back" id="pst_back03">
-                                        <label for="pst_back03">상부 척추 불균형</label>
-                                    </div>
-                                    <div class="input_chk_smtxt">
-                                        <input type="checkbox" name="pst_back" id="pst_back04">
-                                        <label for="pst_back04">하부 척추 불균형</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-               <!-- 자세별 박스// -->
-           </div>
-
         </div>
       </div>
       <!-- 컨텐츠 영역// -->

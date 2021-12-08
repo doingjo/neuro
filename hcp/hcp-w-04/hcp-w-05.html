@@ -155,232 +155,216 @@
             </div>
       </div>
       <div class="cont">
-        <div class="inner_tab type_both">
-            <div class="box_tab">
-                <ul class="list_tab">
-                    <li class="on"><a href="#none">문진</a></li>
-                    <li><a href="#none">정자세</a></li>
-                    <li><a href="#none">촬영검사</a></li>
-                    <li><a href="#none">운동기록</a></li>
-                </ul>
+        <div class="tab_wrap">
+            <div class="tab_top">
+              <ul class="tab_menu">
+                  <li class="active"><a href="#">문진</a></li>
+                  <li><a href="#">정자세</a></li>
+                  <li><a href="#">촬영검사</a></li>
+                  <li><a href="#">운동기록</a></li>
+              </ul>
+              <div class="box_search">
+                  <div class="box_period">
+                    <input type="text" id="calendar" class="input_round" value="2021.9.12" onfocus="this.blur()" inputmode="none">
+                  </div>
+                  <div class="round_select">
+                      <select name="" id="" class="">
+                      <option value="">시간선택</option>
+                      </select>
+                  </div>
+                  <button type="button" class="btn_middle color_actprimary">조회</button>
+              </div>
             </div>
-            <div class="box_search">
-                <div class="box_period">
-                  <input type="text" id="calendar" class="input_round" value="2021.9.12" onfocus="this.blur()" inputmode="none">
+            <div class="inner_depth">
+                <div class="tab_inner inner_survey">
+                    <p class="txt_date">최근작성 : 2021.11.02</p>
+                    <p class="tit_question">01. 환자분에세 해당하는 가족력을 모두 선택해 주세요.</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q01" id="q01_chk01">
+                                <label for="q01_chk01">없음</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q01" id="q01_chk02">
+                                <label for="q01_chk02">고혈압</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q01" id="q01_chk03">
+                                <label for="q01_chk03">당뇨</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q01" id="q01_chk04">
+                                <label for="q01_chk04">뇌혈관 질환</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q01" id="q01_chk05">
+                                <label for="q01_chk05">심장 질환</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q01" id="q01_chk06">
+                                <label for="q01_chk06">골다공증</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q01" id="q01_chk07">
+                                <label for="q01_chk07">암</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q01" id="q01_chk08">
+                                <label for="q01_chk08">기타</label>
+                            </div>
+                        </div>
+                        <div class="box_textarea">
+                            <textarea name="" id="" placeholder="기타내용을 입력하세요" ></textarea>
+                        </div>
+                    </div>
+                    <p class="tit_question">02. 병원 진단이나 수술을 받은 이력이 있다면 모두 선택해 주세요.</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q02" id="q02_chk01">
+                                <label for="q02_chk01">없음</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q02" id="q02_chk02">
+                                <label for="q02_chk02">고혈압</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q02" id="q02_chk03">
+                                <label for="q02_chk03">당뇨</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q02" id="q02_chk04">
+                                <label for="q02_chk04">뇌혈관 질환</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q02" id="q02_chk05">
+                                <label for="q02_chk05">심장 질환</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q02" id="q02_chk06">
+                                <label for="q02_chk06">골다공증</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q02" id="q02_chk07">
+                                <label for="q02_chk07">암</label>
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q02" id="q02_chk08">
+                                <label for="q02_chk08">기타</label>
+                            </div>
+                        </div>
+                        <div class="box_textarea">
+                            <textarea name="" id="" placeholder="기타내용을 입력하세요" ></textarea>
+                        </div>
+                    </div>
+                    <p class="tit_question">03. 지난 일주일 동안 격렬한 신체활동(무거운 물건 나르기, 달리기, 빠른 속도로 자건저 타기 등)을 며칠 하셨나요?</p>
+                    <p class="txt_notice">※안함을 선택한 경우 5번 항목으로</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox">
+                                <input type="radio" name="q03" id="q03_rdo01">
+                                <label for="q03_rdo01">없음</label>
+                            </div>
+                            <div class="input_chk_txtbox etc">
+                                <input type="radio" name="q03" id="q03_rdo02">
+                                <label for="q03_rdo02" class="etc">기타</label>
+                                <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit_question">04. 3번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox time type_hour">
+                                <input type="text" class="input_round" placeholder="시간">
+                            </div>
+                            <div class="input_chk_txtbox time type_minute">
+                                <input type="text" class="input_round" placeholder="분" value="25">
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q04" id="q04_chk01">
+                                <label for="q04_chk01">확실하지 않음</label>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit_question">05. 지난 일주일 동안 중간 정도의 신체활동(가벼운 물건 나르기, 복식 테니스, 중간 속도로 자전거 타기 등)을 며칠 하셨나요?</p>
+                    <p class="txt_notice">※안함을 선택한 경우 7번 항목으로 ※걷기는 포함하지 않습니다.</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox">
+                                <input type="radio" name="q05" id="q05_rdo01">
+                                <label for="q05_rdo01">없음</label>
+                            </div>
+                            <div class="input_chk_txtbox etc">
+                                <input type="radio" name="q05" id="q05_rdo02">
+                                <label for="q05_rdo02" class="etc">기타</label>
+                                <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit_question">06. 3번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox time type_hour">
+                                <input type="text" class="input_round" placeholder="시간">
+                            </div>
+                            <div class="input_chk_txtbox time type_minute">
+                                <input type="text" class="input_round" placeholder="분" value="25">
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q06" id="q06_chk01">
+                                <label for="q06_chk01">확실하지 않음</label>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit_question">07. 지난 일주일 동안 10분 이상 걸은 날은 며칠인가요?</p>
+                    <p class="txt_notice">※안함을 선택한 경우 9번 항목으로</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox">
+                                <input type="radio" name="q07" id="q07_rdo01">
+                                <label for="q07_rdo01">없음</label>
+                            </div>
+                            <div class="input_chk_txtbox etc">
+                                <input type="radio" name="q07" id="q07_rdo02">
+                                <label for="q07_rdo02" class="etc">기타</label>
+                                <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit_question">08. 7번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox time type_hour">
+                                <input type="text" class="input_round" placeholder="시간">
+                            </div>
+                            <div class="input_chk_txtbox time type_minute">
+                                <input type="text" class="input_round" placeholder="분" value="25">
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q08" id="q08_chk01">
+                                <label for="q08_chk01">확실하지 않음</label>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="tit_question">09. 지난 일주일 동안 하루에 평균 몇 시간을 않아 계시나요?</p>
+                    <div class="area_answer">
+                        <div class="grp_chk">
+                            <div class="input_chk_txtbox time type_hour">
+                                <input type="text" class="input_round" placeholder="시간">
+                            </div>
+                            <div class="input_chk_txtbox time type_minute">
+                                <input type="text" class="input_round" placeholder="분" value="25">
+                            </div>
+                            <div class="input_chk_txtbox">
+                                <input type="checkbox" name="q09" id="q09_chk01">
+                                <label for="q09_chk01">확실하지 않음</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="round_select">
-                    <select name="" id="" class="">
-                    <option value="">시간선택</option>
-                    </select>
-                </div>
-                <button type="button" class="btn_middle color_actprimary">조회</button>
             </div>
-        </div>
-        <div class="inner_survey">
-           <p class="txt_date">최근작성 : 2021.11.02</p>
-           <!-- //질문 -->
-           <p class="tit_question">01. 환자분에세 해당하는 가족력을 모두 선택해 주세요.</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q01" id="q01_chk01">
-                        <label for="q01_chk01">없음</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q01" id="q01_chk02">
-                        <label for="q01_chk02">고혈압</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q01" id="q01_chk03">
-                        <label for="q01_chk03">당뇨</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q01" id="q01_chk04">
-                        <label for="q01_chk04">뇌혈관 질환</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q01" id="q01_chk05">
-                        <label for="q01_chk05">심장 질환</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q01" id="q01_chk06">
-                        <label for="q01_chk06">골다공증</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q01" id="q01_chk07">
-                        <label for="q01_chk07">암</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q01" id="q01_chk08">
-                        <label for="q01_chk08">기타</label>
-                    </div>
-                </div>
-                <div class="box_textarea">
-                    <textarea name="" id="" placeholder="기타내용을 입력하세요" ></textarea>
-                </div>
-           </div>
-           <!-- 질문// -->
-           <!-- //질문 -->
-           <p class="tit_question">02. 병원 진단이나 수술을 받은 이력이 있다면 모두 선택해 주세요.</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q02" id="q02_chk01">
-                        <label for="q02_chk01">없음</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q02" id="q02_chk02">
-                        <label for="q02_chk02">고혈압</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q02" id="q02_chk03">
-                        <label for="q02_chk03">당뇨</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q02" id="q02_chk04">
-                        <label for="q02_chk04">뇌혈관 질환</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q02" id="q02_chk05">
-                        <label for="q02_chk05">심장 질환</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q02" id="q02_chk06">
-                        <label for="q02_chk06">골다공증</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q02" id="q02_chk07">
-                        <label for="q02_chk07">암</label>
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q02" id="q02_chk08">
-                        <label for="q02_chk08">기타</label>
-                    </div>
-                </div>
-                <div class="box_textarea">
-                    <textarea name="" id="" placeholder="기타내용을 입력하세요" ></textarea>
-                </div>
-           </div>
-           <!-- 질문// -->
-           <!-- //질문 -->
-           <p class="tit_question">03. 지난 일주일 동안 격렬한 신체활동(무거운 물건 나르기, 달리기, 빠른 속도로 자건저 타기 등)을 며칠 하셨나요?</p>
-           <p class="txt_notice">※안함을 선택한 경우 5번 항목으로</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox">
-                        <input type="radio" name="q03" id="q03_rdo01">
-                        <label for="q03_rdo01">없음</label>
-                    </div>
-                    <div class="input_chk_txtbox etc">
-                        <input type="radio" name="q03" id="q03_rdo02">
-                        <label for="q03_rdo02" class="etc">기타</label>
-                        <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
-                    </div>
-                </div>
-           </div>
-           <!-- 질문// -->
-           <!-- //질문 -->
-           <p class="tit_question">04. 3번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox time type_hour">
-                        <input type="text" class="input_round" placeholder="시간">
-                    </div>
-                    <div class="input_chk_txtbox time type_minute">
-                        <input type="text" class="input_round" placeholder="분" value="25">
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q04" id="q04_chk01">
-                        <label for="q04_chk01">확실하지 않음</label>
-                    </div>
-                </div>
-           </div>
-           <!-- 질문// -->
-           <!-- //질문 -->
-           <p class="tit_question">05. 지난 일주일 동안 중간 정도의 신체활동(가벼운 물건 나르기, 복식 테니스, 중간 속도로 자전거 타기 등)을 며칠 하셨나요?</p>
-           <p class="txt_notice">※안함을 선택한 경우 7번 항목으로 ※걷기는 포함하지 않습니다.</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox">
-                        <input type="radio" name="q05" id="q05_rdo01">
-                        <label for="q05_rdo01">없음</label>
-                    </div>
-                    <div class="input_chk_txtbox etc">
-                        <input type="radio" name="q05" id="q05_rdo02">
-                        <label for="q05_rdo02" class="etc">기타</label>
-                        <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
-                    </div>
-                </div>
-           </div>
-           <!-- 질문// -->
-           <!-- //질문 -->
-           <p class="tit_question">06. 3번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox time type_hour">
-                        <input type="text" class="input_round" placeholder="시간">
-                    </div>
-                    <div class="input_chk_txtbox time type_minute">
-                        <input type="text" class="input_round" placeholder="분" value="25">
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q06" id="q06_chk01">
-                        <label for="q06_chk01">확실하지 않음</label>
-                    </div>
-                </div>
-           </div>
-           <!-- 질문// -->
-           <!-- //질문 -->
-           <p class="tit_question">07. 지난 일주일 동안 10분 이상 걸은 날은 며칠인가요?</p>
-           <p class="txt_notice">※안함을 선택한 경우 9번 항목으로</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox">
-                        <input type="radio" name="q07" id="q07_rdo01">
-                        <label for="q07_rdo01">없음</label>
-                    </div>
-                    <div class="input_chk_txtbox etc">
-                        <input type="radio" name="q07" id="q07_rdo02">
-                        <label for="q07_rdo02" class="etc">기타</label>
-                        <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
-                    </div>
-                </div>
-           </div>
-           <!-- 질문// -->
-           <!-- //질문 -->
-           <p class="tit_question">08. 7번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox time type_hour">
-                        <input type="text" class="input_round" placeholder="시간">
-                    </div>
-                    <div class="input_chk_txtbox time type_minute">
-                        <input type="text" class="input_round" placeholder="분" value="25">
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q08" id="q08_chk01">
-                        <label for="q08_chk01">확실하지 않음</label>
-                    </div>
-                </div>
-           </div>
-           <!-- 질문// -->
-           <!-- //질문 -->
-           <p class="tit_question">09. 지난 일주일 동안 하루에 평균 몇 시간을 않아 계시나요?</p>
-           <div class="area_answer">
-                <div class="grp_chk">
-                    <div class="input_chk_txtbox time type_hour">
-                        <input type="text" class="input_round" placeholder="시간">
-                    </div>
-                    <div class="input_chk_txtbox time type_minute">
-                        <input type="text" class="input_round" placeholder="분" value="25">
-                    </div>
-                    <div class="input_chk_txtbox">
-                        <input type="checkbox" name="q09" id="q09_chk01">
-                        <label for="q09_chk01">확실하지 않음</label>
-                    </div>
-                </div>
-           </div>
-           <!-- 질문// -->
         </div>
       </div>
       <!-- 컨텐츠 영역// -->
