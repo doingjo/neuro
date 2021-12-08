@@ -490,10 +490,10 @@
                         <div class="box_flex1box">
                             <div class="box_video">
                                 <img src="" alt="동영상썸네일">
-                                <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player')"><span class="hidden">재생</span></button>
                             </div>
                             <div class="box_video">
-                                <img src="" alt="이미지썸네일">
+                                <img src="" alt="이미지썸네일" onclick="hcp.modals_show('laypop_player_sm')">
                             </div>
                         </div>
                         <div class="box_flex1box">
@@ -884,6 +884,58 @@
       <button onclick="hcp.modals_close('modals02'); ">확인</button>
     </div>
   </div>
+</div>
+<div class="modals" id="laypop_player">
+    <div class="wrapper_laypop type_basic player">
+        <div class="inner_laypop">
+            <div class="box_cnt">
+                <div class="seg_data">
+                    <div class="tit_data icon_data01">
+                        <p class="tit">족저압</p>
+                    </div>
+                    <div class="box_data">
+                        <img src="../images/dummy_foot.png" alt="">
+                    </div>
+                    <div class="tit_data icon_data02">
+                        <p class="tit">그래프</p>
+                    </div>
+                    <div class="box_data">
+                        <img src="../images/dummy_graph.png" alt="">
+                    </div>
+                </div>
+                <div class="seg_video" style="background-color: #d8d8d8;">
+                    비디오 영역
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
+</div>
+<div class="modals" id="laypop_player_sm">
+    <div class="wrapper_laypop type_basic player_sm">
+        <div class="inner_laypop">
+            <div class="box_cnt">
+                <div class="seg_data">
+                    <p class="tit">발끝</p>
+                    <p class="txt_percent">94%</p>
+                    <p class="txt_direction">L</p>
+                    <p class="tit">뒤꿈치</p>
+                    <p class="txt_percent">6%</p>
+                </div>
+                <div class="seg_video" style="background-color: #000">
+                    비디오 영역
+                </div>
+                <div class="seg_data">
+                    <p class="tit">발끝</p>
+                    <p class="txt_percent">94%</p>
+                    <p class="txt_direction">R</p>
+                    <p class="tit">뒤꿈치</p>
+                    <p class="txt_percent">6%</p>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player_sm');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
 </div>
 
   <script>

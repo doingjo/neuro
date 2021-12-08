@@ -1,0 +1,9 @@
+diff a/guide/page-list.html b/guide/page-list.html	(rejected hunks)
+@@ -92,6 +92,7 @@
+                                     <td></td>
+                                     <td></td>
+                                     <td></td>
++                                    <td><a href="../hcp/hcp-w-01/hcp-w-01.html" target="_blank">hcp-w-01.html</a></td>
+                                     <td>얼랏팝업4종 작업완료</td>
+                                 </tr>
+                                 <tr>
