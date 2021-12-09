@@ -79,7 +79,7 @@ function daterangepicker(){
       console.log(start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD'));
   });
 
-  /* 눌리고 시작할 때 *
+  /* 눌리고 시작할 때 */
   $('.daterangepicker').wrap('<div class="wrap-layer"></div>').before('<div class="dimmed"></div>');
   $('.daterangepicker').prepend('<div class="header"><div class="date"></div><button class="btn-prev"></button><button class="btn-next"></button></div>');
   $('#calendar').trigger('click');

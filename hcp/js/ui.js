@@ -118,8 +118,15 @@ var hcp = hcp || {
       }, 200);
     },
     btnpass: function(){
-      $(".btn_showtxt").on("click", function () {
-        $(this).toggleClass("showtxt");
+      $('.btn_showtxt').on('click', function () {
+        var type = $(this).prev('input');
+        if(type.attr('type') == 'password'){
+          type.attr('type', 'text');
+          $(this).addClass("on");
+        }else{
+          type.attr('type', 'password');
+          $(this).removeClass("on");
+        }
       });
     },
     tab : {

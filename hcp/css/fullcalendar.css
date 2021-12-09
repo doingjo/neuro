@@ -26,7 +26,7 @@
   .fc *,
   .fc *:before,
   .fc *:after {
-    font-family:'Montserrat'; box-sizing: border-box;
+    font-family:Roboto, "Noto Sans KR", "Apple SD Gothic", "sans-serif", sans-serif; -webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;
   }
 .fc table {
     border-collapse: collapse;
@@ -34,19 +34,18 @@
     font-size: 1em; /* normalize cross-browser */
   }
 .fc th {
-    text-align: center;
+    text-align: right;
   }
 .fc th,
   .fc td {
     vertical-align: top;
     padding: 0;
   }
-.fc a{outline:none}
 .fc a[data-navlink] {
     cursor: pointer;
   }
 .fc a[data-navlink]:hover {
-    text-decoration:none;
+    text-decoration: none;
   }
 .fc-direction-ltr {
   direction: ltr;
@@ -56,10 +55,9 @@
   direction: rtl;
   text-align: right;
 }
-.fc-theme-standard td,
-  .fc-theme-standard th {
-    /*border: 1px solid #ddd;
-    border: 1px solid var(--fc-border-color, #ddd);*/
+.fc-theme-standard td{
+    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--fc-border-color, #ddd);
   }
 /* for FF, which doesn't expand a 100% div within a table cell. use absolute positioning */
 /* inner-wrappers are responsible for being absolute */
@@ -101,13 +99,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.fc-icon-chevron-left:before {
-  content: "";display:inline-block; border-top:.7692vw solid transparent;border-bottom:.7692vw solid transparent;border-right:1.282vw solid #000;
-}
-
-.fc-icon-chevron-right:before {
-  content: "";display:inline-block; border-top:.7692vw solid transparent;border-bottom:.7692vw solid transparent;border-left:1.282vw solid #000;
-}
+.fc-icon-chevron-left:before{content: "";display:inline-block;width:100%;height:100%; background:url('../images/cal_btn_left.png') no-repeat 0 0;background-size:100%;}
+.fc-icon-chevron-right:before{content: "";display:inline-block;width:100%;height:100%; background:url('../images/cal_btn_right.png') no-repeat 0 0;background-size:100%;}
+.fc-icon-chevron-left:hover:before{background-image:url('../images/cal_btn_left_on.png');}
+.fc-icon-chevron-right:hover:before{background-image:url('../images/cal_btn_right_on.png');}
 
 .fc-icon-chevrons-left:before {
   content: "\e902";
@@ -198,6 +193,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   /* "primary" coloring */
 
 }
+
 .fc .fc-button-primary {
     color: #fff;
     color: var(--fc-button-text-color, #fff);
@@ -238,8 +234,9 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
     box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
   }
-.fc .fc-header-toolbar .fc-button-primary {padding:0; border:1px solid #e9ecef;border-radius:1.5384vw;background-color:#fff}
-.fc .fc-header-toolbar .fc-button-primary .fc-icon{width:5.8974vw;height:5.8974vw; display:flex;align-items:center;justify-content:center}
+.fc .fc-header-toolbar .fc-button-primary {margin-right:4px;padding:0; border:1px solid #e9ecef;border-radius:4px;background-color:#fff;transition:all .3s linear}
+.fc .fc-header-toolbar .fc-button-primary:hover{border-color:#5280e2;}
+.fc .fc-header-toolbar .fc-button-primary .fc-icon{width:22px;height:22px; display:flex;align-items:center;justify-content:center}
 
 .fc {
 
@@ -267,7 +264,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   .fc .fc-button-group > .fc-button.fc-button-active {
     z-index: 1;
   }
-.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
+/*.fc-direction-ltr .fc-button-group > .fc-button:not(:first-child) {
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
@@ -284,22 +281,17 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc-direction-rtl .fc-button-group > .fc-button:not(:last-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-  }
+  }*/
 .fc .fc-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-.fc .fc-toolbar.fc-header-toolbar {
-    margin-bottom: 1.5em;
-  }
+.fc .fc-toolbar.fc-header-toolbar{margin-bottom:1.25em;}
 .fc .fc-toolbar.fc-footer-toolbar {
-    margin-top: 1.5em;
+    height:0;width:0;position:absolute;overflow:hidden;clip:rect(1px 1px 1px 1px)
   }
-.fc .fc-toolbar-title {
-    font-size: 4.6154vw;
-    margin: 0;
-  }
+.fc .fc-toolbar-title {margin:0; font-family:'Montserrat';font-size:1.625em;line-height:1;font-weight:700;}
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
   }
@@ -336,10 +328,10 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
 .fc-direction-rtl .fc-scroller-harness > .fc-scroller { /* undo above hack */
     direction: rtl;
   }
-.fc-theme-standard .fc-scrollgrid {
-    /*border: 1px solid #ddd;
-    border: 1px solid var(--fc-border-color, #ddd); /* bootstrap does this. match */
-  }
+/*.fc-theme-standard .fc-scrollgrid {
+    border: 1px solid #ddd;
+    border: 1px solid var(--fc-border-color, #ddd); /* bootstrap does this. match *
+  }*/
 .fc .fc-scrollgrid,
     .fc .fc-scrollgrid table { /* all tables (self included) */
       width: 100%; /* because tables don't normally do this */
@@ -392,13 +384,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   /* stickiness */
 
 }
-.fc .fc-scrollgrid-section-sticky > * {
-    /*background: #fff;
-    background: var(--fc-page-bg-color, #fff);*/
-    position: sticky;
-    z-index: 3; /* TODO: var */
-    /* TODO: box-shadow when sticking */
-  }
+.fc .fc-scrollgrid-section-sticky > * {position:sticky;z-index:3; border-radius:8px;background: #f8f9fd;background: var(--fc-page-bg-color, #f8f9fd);}
 .fc .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky > * {
     top: 0; /* because border-sharing causes a gap at the top */
       /* TODO: give safari -1. has bug */
@@ -429,26 +415,29 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     bottom: 0;
     left: 0;
   }
-.fc .fc-col-header-cell-cushion {
-    display: inline-block; /* x-browser for when sticky (when multi-tier header) */
-    padding:2.8205vw 1.0256vw;font-size:3.0769vw;color:#868e96;font-weight:700;
-  }
-/* custom */
+.fc .fc-col-header-cell-cushion{display:inline-block; padding:15px 21.93%;font-size:12px;color:#888;font-weight:500;}
 .fc .fc-day-sun .fc-col-header-cell-cushion{color:#e93c3c;}
 .fc .fc-day-sat .fc-col-header-cell-cushion{color:#2a4bd9;}
+
 .fc .fc-bg-event,
   .fc .fc-non-business,
   .fc .fc-highlight {
     /* will always have a harness with position:relative/absolute, so absolutely expand */
-    position:absolute;top:1.0256vw;left:1.0256vw;right:1.0256vw;bottom:1.0256vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 .fc .fc-non-business {
     background: rgba(215, 215, 215, 0.3);
     background: var(--fc-non-business-color, rgba(215, 215, 215, 0.3));
   }
-.fc .fc-bg-event {border-radius:4.102vw;background:rgb(240, 244, 247);background:var(--fc-bg-event-color, rgb(240, 244, 247));
-    /*opacity: 0.3;
-    opacity: var(--fc-bg-event-opacity, 0.3)*/
+.fc .fc-bg-event {
+    background: rgb(143, 223, 130);
+    background: var(--fc-bg-event-color, rgb(143, 223, 130));
+    opacity: 0.3;
+    opacity: var(--fc-bg-event-opacity, 0.3)
   }
 .fc .fc-bg-event .fc-event-title {
       margin: .5em;
@@ -456,14 +445,10 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
       font-size: var(--fc-small-font-size, .85em);
       font-style: italic;
     }
-.fc .fc-highlight{background:rgb(240, 244, 247);background: var(--fc-highlight-color, rgb(240, 244, 247));border-radius:4.102vw;}
-.fc .fc-highlight.startSelect:before,
-.fc .fc-highlight.endSelect:before,
-.fc .fc-highlight.startSelect.endSelect:after{content:'';display:block; width:11.282vw;height:11.282vw; border-radius:4.102vw;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1)); position:absolute;top:-.5128vw;}
-.fc .fc-highlight.startSelect:before{left:-.5128vw;}
-.fc .fc-highlight.endSelect:before,
-.fc .fc-highlight.startSelect.endSelect:after{right:-.5128vw;}
-
+.fc .fc-highlight {
+    background: rgba(188, 232, 241, 0.3);
+    background: var(--fc-highlight-color, rgba(188, 232, 241, 0.3));
+  }
 .fc .fc-cell-shaded,
   .fc .fc-day-disabled {
     background: rgba(208, 208, 208, 0.3);
@@ -715,27 +700,20 @@ A HORIZONTAL event
     position: relative;
     z-index: 1; /* container inner z-index's because <tr>s can't do it */
   }
-/* custom today */
-.fc .fc-day-today {position:relative;}
-.fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number:after{content:'';display:block; width:1.0256vw;height:1.0256vw; border-radius:100%;background-color:#000;position:absolute;top:2.0512vw;left:calc(50% - .5128vw);z-index:10}
-.fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number.bg:after{background-color:#fff}
-.fc .fc-col-header-cell.fc-day-today .col-day:after{content:'';display:block; width:1.0256vw;height:1.0256vw; border-radius:100%;background-color:#000;position:absolute;top:2.0512vw;left:calc(50% - .5128vw);z-index:10}
-.fc .fc-col-header-cell.fc-day-today .col-day.bg:after{background-color:#fff}
-
+.fc .fc-daygrid-day.fc-day-today {
+      /*background-color: rgba(255, 220, 40, 0.15);
+      background-color: var(--fc-today-bg-color, rgba(255, 220, 40, 0.15));*/
+    }
 .fc .fc-daygrid-day-frame {
     position: relative;
-    min-height: 100%; /* seems to work better than `height` because sets height after rows/cells naturally do it */
+    height:99px; /* seems to work better than `height` because sets height after rows/cells naturally do it */
   }
 .fc {
 
   /* cell top */
 
 }
-.fc .fc-daygrid-day-top {
-    /*display: flex;
-    flex-direction: row-reverse;*/
-     position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;
-  }
+.fc .fc-daygrid-day-top{position:absolute;top:0;left:0;right:0;bottom:0;z-index:10;}
 .fc .fc-day-other .fc-daygrid-day-top {
     opacity: 0.3;
   }
@@ -744,23 +722,22 @@ A HORIZONTAL event
   /* day number (within cell top) */
 
 }
-.fc .fc-daygrid-day-number {
-    height:100%;
-    position: relative;
-    z-index: 4;
-    font-size:3.734vw;color:#000;font-weight:700; display:flex;align-items:center;justify-content:center;
-  }
-.fc .fc-daygrid .fc-daygrid-day-number.bg{color:#fff;}
-.fc .fc-daygrid .fc-daygrid-day-number.bg:before{content:'';display:block; border-radius:4.102vw;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:.5128vw;left:.5128vw;right:.5128vw;bottom:.5128vw;z-index:-1;}
+
+.fc .fc-daygrid-day-number{position:relative;z-index:4; height:91px;padding:21px;margin:4px; font-size:12px;color:#868e96;font-weight:500; border-radius:12px;border:1px solid #fff; display:flex;align-items:start;justify-content:end;}
+.fc .fc-daygrid-day-number:hover{text-decoration:none !important; border-color:#5280e2;box-shadow: 0 4px 12px 0 rgba(183, 192, 227, 0.4);}
+.fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number{color:#fff;}
+.fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:hover{border-color:transparent;}
+.fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:before{content:'';display:block; border-radius:12px;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
+.fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-events .fc-event-title{color:#fff;}
+.fc .fc-daygrid .fc-day-today .fc-daygrid-day-top::before{content:'';display:block; width:3px;height:3px;border-radius:100%;background-color:#111; position:absolute;top:21px;right:28px;z-index:10}
+.fc .fc-daygrid .fc-day-today.bg .fc-daygrid-day-top::before{background-color:#fff;}
 
 .fc {
 
   /* event container */
 
 }
-.fc .fc-daygrid-day-events {
-    /*margin-top: 1px;*/ /* needs to be margin, not padding, so that available cell height can be computed */
-  }
+.fc .fc-daygrid-day-events {}
 .fc {
 
   /* positioning for balanced vs natural */
@@ -771,14 +748,11 @@ A HORIZONTAL event
       left: 0;
       right: 0;
     }
-.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
-      position: relative; /* for containing abs positioned event harnesses */
-      min-height:12.3794vw; /* in addition to being a min-height during natural height, equalizes the heights a little bit */
-    }
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{position:absolute;top:50px;right:24px;z-index:10}
 .fc .fc-daygrid-body-natural { /* can coexist with -unbalanced */
   }
 .fc .fc-daygrid-body-natural .fc-daygrid-day-events {
-      /*margin-bottom: 1em;*/
+     /* margin-bottom: 1em;*/
     }
 .fc {
 
@@ -904,23 +878,23 @@ A HORIZONTAL event
   padding: 2px 0
 
 }
-.fc-daygrid-dot-event .fc-event-title {
-    flex-grow: 1;
+.fc-daygrid-day-events .fc-event-title{font-size:14px;color:#212529;font-weight:700;line-height:20px;
+    /*flex-grow: 1;
     flex-shrink: 1;
-    min-width: 0; /* important for allowing to shrink all the way */
+    min-width: 0;
     overflow: hidden;
-    font-weight: bold;
+    font-weight: bold;*/
   }
-.fc-daygrid-dot-event:hover,
+/*.fc-daygrid-dot-event:hover,
   .fc-daygrid-dot-event.fc-event-mirror {
     background: rgba(0, 0, 0, 0.1);
-  }
+  }*/
 .fc-daygrid-dot-event.fc-event-selected:before {
     /* expand hit area */
     top: -10px;
     bottom: -10px;
   }
-.fc-daygrid-event-dot { /* the actual dot */
+.fc-daygrid-event-dot { /* the actual dot */display:none;
   margin: 0 4px;
   box-sizing: content-box;
   width: 0;
@@ -931,7 +905,7 @@ A HORIZONTAL event
   border-radius: calc(var(--fc-daygrid-event-dot-width, 8px) / 2);
 }
 /* --- spacing between time and title --- */
-.fc-direction-ltr .fc-daygrid-event .fc-event-time {
+.fc-direction-ltr .fc-daygrid-event .fc-event-time {display:none;
     margin-right: 3px;
   }
 .fc-direction-rtl .fc-daygrid-event .fc-event-time {
@@ -1060,22 +1034,6 @@ A VERTICAL event
       bottom: -4px;
       bottom: calc(var(--fc-event-resizer-dot-total-width, 8px) / -2);
     }
-/* custom */
-.fc .fc-timegrid.fc-timeGridWeek-view table tbody tr:nth-child(n+2){display:none}
-.fc .fc-timegrid .fc-timegrid-axis{display:none}
-.fc .fc-timegrid .fc-col-header colgroup{display:none}
-.fc .fc-timegrid .fc-daygrid-body table colgroup{display:none}
-/*.fc .fc-timegrid .fc-col-header .col-header{padding:11px 4px;font-size:12px;color:#868e96;font-weight:500;}*/
-.fc .fc-timegrid .fc-col-header-cell-cushion{padding:0;display:block}
-.fc .fc-timegrid .fc-col-header .col-header{padding:2.8205vw 1.0256vw;font-size:3.0769vw;font-weight:500;}
-.fc .fc-timegrid .fc-col-header .col-day{min-height:12.3794vw;position:relative;z-index:4; font-size:3.734vw;color:#000;font-weight:700; display:flex;align-items:center;justify-content:center;}
-.fc .fc-timegrid .fc-col-header .bg .col-day{color:#fff;}
-.fc .fc-timegrid .fc-col-header .bg .col-day:before{content:'';display:block; border-radius:4.102vw;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:.5128vw;left:.5128vw;right:.5128vw;bottom:.5128vw;z-index:-1;}
-.fc .fc-timegrid .fc-col-header .col-day.bg{color:#fff;}
-.fc .fc-timegrid .fc-col-header .col-day.bg:before{content:'';display:block; border-radius:4.102vw;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:.5128vw;left:.5128vw;right:.5128vw;bottom:.5128vw;z-index:-1;}
-.fc .fc-timegrid .fc-scrollgrid tbody .fc-scrollgrid-section-body{position:absolute;top:9.2307vw;}
-
-
 .fc .fc-timegrid .fc-daygrid-body { /* the all-day daygrid within the timegrid view */
     z-index: 2; /* put above the timegrid-body so that more-popover is above everything. TODO: better solution */
   }
@@ -1494,3 +1452,21 @@ A VERTICAL event
     color: inherit; /* natural color for navlinks */
   }
 
+/* timegrid custom */
+.fc .fc-timegrid.fc-timeGridWeek-view table tbody{display:none}
+.fc .fc-timegrid .fc-timegrid-axis{display:none}
+.fc .fc-timegrid .fc-col-header colgroup{display:none}
+.fc .fc-timegrid .fc-col-header th{text-align:center;}
+
+.fc .fc-timegrid .fc-col-header-cell-cushion{display:block; padding:0;}
+
+.fc .fc-timegrid .fc-col-header .fc-day{padding-bottom:4px;}
+.fc .fc-timegrid .fc-col-header .fc-day-sun{padding-left:4px;}
+.fc .fc-timegrid .fc-col-header .fc-day-sat{padding-right:4px;}
+.fc .fc-timegrid .fc-col-header .col-header{padding:14px 0 20px;}
+.fc .fc-timegrid .fc-col-header .col-day{padding:7px 0 9px; font-size:13px;color:#999;font-weight:700; background-color:#fff;position:relative;}
+.fc .fc-timegrid .fc-col-header .fc-day-sun .col-day{color:#e93c3c; border-radius:8px 0 0 8px}
+.fc .fc-timegrid .fc-col-header .fc-day-sat .col-day{color:#2a4bd9; border-radius:0 8px 8px 0}
+
+.fc .fc-timegrid .fc-day-today .col-day::before{content:'';display:block; width:3px;height:3px;border-radius:100%;background-color:#111; position:absolute;top:5px;right:calc(50% - 2px);z-index:10}
+.fc .fc-timegrid .fc-day-today.bg .col-day::before{background-color:#fff;}

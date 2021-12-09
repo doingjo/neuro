@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/fullcalendar.js"></script>
+  <script type="text/javascript" src="../js/chart.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>HCP</title>
+</head>
+
+<style>
+.schedule_cal_wrap{max-width:800px;}
+.schedule_cal_wrap .time_wrap{display:none; margin-top:24px;}
+.schedule_cal_wrap .schedule_list{display:flex;flex-direction:row; justify-content:space-between;}
+.schedule_cal_wrap .schedule_list ul{width:13%;}
+.schedule_cal_wrap .schedule_list .active{background-color:#666}
+</style>
+
+<body>
+  <div id="wrap" style="background:#fff">
+
+
+          <div style="padding:50px;">
+            <button style="margin:0 10px;padding:10px;background-color:#ddd;" class="btn_month">월간</button><button style="margin:0 10px;padding:10px;background-color:#ddd;" class="btn_week">주간</button>
+          </div>
+          <div class="schedule_cal_wrap">
+            <div id='calendar'></div>
+            <div class="time_wrap">
+              <div class="schedule_list">
+              <ul>
+                <li>영기</li>
+                <li>영기</li>
+              </ul>
+              <ul>
+                <li>영기</li>
+                <li>영기</li>
+              </ul>
+              <ul>
+                <li>영기</li>
+                <li>영기</li>
+              </ul>
+              <ul>
+                <li>영기</li>
+                <li>영기</li>
+              </ul>
+              <ul>
+                <li>영기</li>
+                <li>영기</li>
+              </ul>
+              <ul>
+                <li>영기</li>
+                <li>영기</li>
+              </ul>
+              <ul>
+                <li>영기</li>
+                <li>영기</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+<script>
+
+var scheduleData = [
+    {
+      title: '5명',
+      start: '2021-12-09T00:00:00'
+    },
+    {
+      title: '5명',
+      start: '2021-12-16T00:00:00'
+    },
+    {
+      title: '5명',
+      start: '2021-12-12T00:00:00'
+    },
+    {
+      title: '5명',
+      start: '2021-12-13T00:00:00'
+    },
+  ];
+</script>
+<script type="text/javascript" src="../js/schedule.js"></script>
+
+
+</body>
+</html>
