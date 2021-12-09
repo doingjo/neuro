@@ -31,6 +31,7 @@ var hcp = hcp || {
       hcp.faqlist();
       hcp.fileload();
       hcp.survey();
+      hcp.btnpass();
     },
     gnb: function(){
       $(window).on("scroll", function(){
@@ -116,8 +117,10 @@ var hcp = hcp || {
         $('#'+id).addClass('show');
       }, 200);
     },
-    laypop: function (id) {
-      $("#"+id).fadeIn();
+    btnpass: function(){
+      $(".btn_showtxt").on("click", function () {
+        $(this).toggleClass("showtxt");
+      });
     },
     tab : {
         init: function(){
