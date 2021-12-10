@@ -144,8 +144,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     line-height: inherit;
   }
 .fc .fc-button:focus {
-    outline: 1px dotted;
-    outline: 5px auto -webkit-focus-ring-color;
+    /*outline: 1px dotted;
+    outline: 5px auto -webkit-focus-ring-color;*/
   }
 .fc .fc-button {
     -webkit-appearance: button;
@@ -183,7 +183,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc .fc-button:focus {
     outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);
+    /*box-shadow: 0 0 0 0.2rem rgba(44, 62, 80, 0.25);*/
   }
 .fc .fc-button:disabled {
     opacity: 0.65;
@@ -219,7 +219,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     border-color: var(--fc-button-border-color, #2C3E50); /* overrides :hover */
   }
 .fc .fc-button-primary:focus {
-    box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
+    /*box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);*/
   }
 .fc .fc-button-primary:not(:disabled):active,
   .fc .fc-button-primary:not(:disabled).fc-button-active {
@@ -232,7 +232,7 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
   }
 .fc .fc-button-primary:not(:disabled):active:focus,
   .fc .fc-button-primary:not(:disabled).fc-button-active:focus {
-    box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);
+    /*box-shadow: 0 0 0 0.2rem rgba(76, 91, 106, 0.5);*/
   }
 .fc .fc-header-toolbar .fc-button-primary {margin-right:4px;padding:0; border:1px solid #e9ecef;border-radius:4px;background-color:#fff;transition:all .3s linear}
 .fc .fc-header-toolbar .fc-button-primary:hover{border-color:#5280e2;}
@@ -288,10 +288,8 @@ When it's NOT activated, the fc-button classes won't even be in the DOM.
     align-items: center;
   }
 .fc .fc-toolbar.fc-header-toolbar{margin-bottom:1.25em;}
-.fc .fc-toolbar.fc-footer-toolbar {
-    height:0;width:0;position:absolute;overflow:hidden;clip:rect(1px 1px 1px 1px)
-  }
-.fc .fc-toolbar-title {margin:0; font-family:'Montserrat';font-size:1.625em;line-height:1;font-weight:700;}
+.fc .fc-toolbar.fc-footer-toolbar {height:0;width:0;position:absolute;overflow:hidden;clip:rect(1px 1px 1px 1px)}
+.fc .fc-toolbar-title {margin:0; font-family:'Montserrat';font-size:1.625em;line-height:1;font-weight:700;letter-spacing:-.5px}
 .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
     margin-left: .75em; /* space between */
   }
@@ -724,7 +722,7 @@ A HORIZONTAL event
 }
 
 .fc .fc-daygrid-day-number{position:relative;z-index:4; height:91px;padding:21px;margin:4px; font-size:12px;color:#868e96;font-weight:500; border-radius:12px;border:1px solid #fff; display:flex;align-items:start;justify-content:end;}
-.fc .fc-daygrid-day-number:hover{text-decoration:none !important; border-color:#5280e2;box-shadow: 0 4px 12px 0 rgba(183, 192, 227, 0.4);}
+.fc .fc-daygrid-day-number:hover{text-decoration:none !important; border-color:#5280e2;box-shadow: 0 4px 4px 0 rgba(183, 192, 227, 0.4);}
 .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number{color:#fff;}
 .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:hover{border-color:transparent;}
 .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:before{content:'';display:block; border-radius:12px;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}

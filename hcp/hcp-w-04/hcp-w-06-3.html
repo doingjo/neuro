@@ -13,11 +13,14 @@
 
   <link rel="stylesheet" href="../css/ini.min.css">
   <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
   <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
   <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
   <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/fullcalendar.js"></script>
+  <script type="text/javascript" src="../js/schedule.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
   <noscript>
       <link rel="stylesheet" href="../css/NotoSansKR.css">
@@ -169,7 +172,29 @@
               <!-- //달력과 스케쥴 -->
                 <div class="inner_schedule">
                   <!-- //달력영역 -->
-                  <div style="background-color:#efefef;"></div>
+                  <div class="fullcalendar_wrap workout">
+                    <div id='fullcalendar'></div>
+                    <script>
+                    var scheduleData = [
+                        {
+                          title: '5명',
+                          start: '2021-12-09T00:00:00'
+                        },
+                        {
+                          title: '5명',
+                          start: '2021-12-16T00:00:00'
+                        },
+                        {
+                          title: '5명',
+                          start: '2021-12-12T00:00:00'
+                        },
+                        {
+                          title: '5명',
+                          start: '2021-12-13T00:00:00'
+                        },
+                      ];
+                    </script>
+                  </div>
                   <!-- 달력영역// -->
                   <!-- //스케쥴 -->
                   <div class="box_schedule">
@@ -195,6 +220,48 @@
                             <div class="tit_nbadge">
                               <p class="tit">운동명이들어갑니다</p>
                               <div class="badge complete">완료</div>
+                            </div>
+                            <p class="txt_gauge">운동 달성률 85%</p>
+                          </div>
+                          <div class="box_btn">
+                            <button type="button" class="btn_type_txt txt_actprimary">결과보기</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="seg_schedule">
+                          <div class="box_cnt">
+                            <div class="tit_nbadge">
+                              <p class="tit">운동명이들어갑니다</p>
+                              <div class="badge yet">미진행</div>
+                            </div>
+                            <p class="txt_gauge">운동 달성률 85%</p>
+                          </div>
+                          <div class="box_btn">
+                            <button type="button" class="btn_type_txt txt_actprimary">결과보기</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="seg_schedule">
+                          <div class="box_cnt">
+                            <div class="tit_nbadge">
+                              <p class="tit">운동명이들어갑니다</p>
+                              <div class="badge yet">미진행</div>
+                            </div>
+                            <p class="txt_gauge">운동 달성률 85%</p>
+                          </div>
+                          <div class="box_btn">
+                            <button type="button" class="btn_type_txt txt_actprimary">결과보기</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="seg_schedule">
+                          <div class="box_cnt">
+                            <div class="tit_nbadge">
+                              <p class="tit">운동명이들어갑니다</p>
+                              <div class="badge yet">미진행</div>
                             </div>
                             <p class="txt_gauge">운동 달성률 85%</p>
                           </div>

@@ -37,14 +37,23 @@
   <div id="wrap">
 
 
-
-            <input type="text" id="calendar" name="" value="" />
+        <div class="datepicker_wrap">
+          <input type="text" class="datepicker" name="" value="" />
+        </div>
 
 
 <style>
-.daterangepicker{margin-top:0;top:0 !important; display:block !important}
-.daterangepicker:before,
-.daterangepicker:after{display:none}
+.datepicker_open{border:0; max-width:790px; display:flex !important;justify-content:space-between;}
+.datepicker_open{margin-top:0; top:0;left:0;}
+.datepicker_open .drp-calendar{max-width:380px;padding:0 !important;}
+.datepicker_open .drp-calendar.right{margin-left:30px;}
+
+.datepicker_open .drp-calendar.left,
+.datepicker_open .drp-calendar.right{padding:0;}
+.daterangepicker .drp-calendar.left .calendar-table{padding:0 !important;}
+.datepicker_open .calendar-table th,
+.datepicker_open .calendar-table td{width:auto;height:40px;}
+.datepicker_open .calendar-table thead tr:nth-child(2) th{padding-top:auto;height:auto;}
 </style>
 
   </div>
@@ -52,13 +61,16 @@
 <script>
 $(function() {
 
-    daterangepicker();
+    daterangepicker('.datepicker', true);  //true는 line형으로 달력 나와 있는거, false는 팝업형, 클래서 적당히 변경해서 사용하길 바람ㅋㅋㅋㅋ 주석을 읽으면 삭제 부탁
 
 });//function
 
-function daterangepicker(){
-  $('#calendar').daterangepicker({
+function daterangepicker(ele, type){
+  var $this = $(ele),
+      clickDay = '';
+  $this.daterangepicker({
     autoApply:true,
+    inline: type,
     "locale": {
       "format": "YYYY.MM.DD",
       "separator": " - ",
@@ -72,9 +84,15 @@ function daterangepicker(){
       "drops": "auto"
     },
     }, function(start, end, label){
+      clickDay = start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD');
       console.log(start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD'));
+      if(type === true){ $('.datepicker_wrap').before('<p>'+clickDay+'</p>') }// 날짜 상단에 줘야해서 만들어 놓은거, 코드 만들면 적당히 응용하고 정리 부탁
+
   });
-  $('#calendar').trigger('click');
+  if(type === true){
+    $('.daterangepicker').addClass('datepicker_open');
+  }
+
 }
 
 

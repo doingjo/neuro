@@ -539,7 +539,7 @@ h4 + .balance_data {margin-top:34px;}
 .box_connect_wayto .list_wayto p{margin-top:8px;font-weight:400;font-size:12px;line-height:17px;color:#868e96;}
 .box_connect_wayto .list_wayto p.line_single{margin-top:18px;}
 .inner_schedule{display:flex;justify-content: space-between;margin-top:67px;}
-.box_schedule{width:464px;min-height:697px;margin-left:40px;padding:35px 32px;background-color:#f8f9fa;border-radius:20px;}
+.box_schedule{width:464px;max-height:697px;margin-left:40px;padding:35px 32px;background-color:#f8f9fa;border-radius:20px; overflow-y:auto;}
 .seg_schedule{overflow:hidden;border:1px solid #e9ecef;background-color:#fff;border-radius: 12px;}
 .seg_schedule .box_cnt{padding:22px 24px 21px;}
 .seg_schedule .box_btn{display:flex;border-top:1px solid #e9ecef;background-color: #fff;;}
@@ -560,6 +560,9 @@ h4 + .balance_data {margin-top:34px;}
 .modals .mod_body .box_msg{min-width:296px;padding:13px 20px;background-color:#f4f6fc;border-radius: 8px;text-align: center;}
 .modals .mod_body .input_round{width:100%;text-align: center;}
 .modals .mod_bott .txt_actprimary{color:#5280e2;}
+/* schedule calendar */
+.fullcalendar_wrap{width:800px;max-height:697px;}
+
 
 /* 레이어 팝업 */
 .wrapper_laypop.type_alert {position:fixed;left:50%;top:50%;transform: translate(-50%, -50%);display:none;}

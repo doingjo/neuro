@@ -1,6 +1,6 @@
 var choiceDay = new Date();
   document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+    var calendarEl = document.getElementById('fullcalendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       headerToolbar: {
         left: 'title',
@@ -72,13 +72,7 @@ var choiceDay = new Date();
     console.log(formatDate(date,true));
   }
   function scheduleDayChange(choice, date){
-    //$('.schedule_list h2').html(formatDate(date,false));
-    if(formatDate(date,true) == formatDate(new Date(),true)){
-      $('.today_btn').hide();
-    }else{
-      $('.today_btn').show();
-    }
-    $('#calendar .bg').removeClass('bg');
+    $('#fullcalendar .bg').removeClass('bg');
     $('.fc-daygrid-body .fc-day').each(function(i){
       borne_sup = $(this).attr("data-date");
       borne_choice = formatDate(choice,true);
@@ -93,20 +87,25 @@ var choiceDay = new Date();
         $('.time_wrap ul').eq(i).addClass('active').siblings().removeClass('active');
       }
     });
+    //오늘 버튼 on / off 필요하면 쓰고 // 안쓰면 생기는건,, 해당 달일때 이벤트 disable 걸림
+    ($('.fc-today-button').is(':disabled')) ? $('.btn_today').hide() : $('.btn_today').show() ;
   }
 $(function(){
   //확인 후 주석 삭제!!!!!!!!!!!!!!!!!!
   /* 일정 없는 날 - 표기 */
-  $('.fc-daygrid-day-events').each(function(index, item){
-    ($(this).find('.fc-daygrid-event').length == 0) ? $(this).html('<p class="fc-event-title">-</p>') : '' ;
-    console.log('1')
-  });
-  $('.fc-prev-button, .fc-next-button').on('click', function(){
-    $('.fc-daygrid-day-events').each(function(index, item){
-      ($(this).find('.fc-daygrid-event').length == 0) ? $(this).html('<p class="fc-event-title">-</p>') : '' ;
-    });
-  });
+  // $('.fc-daygrid-day-events').each(function(index, item){
+  //   ($(this).find('.fc-daygrid-event').length == 0) ? $(this).html('<p class="fc-event-title">-</p>') : '' ;
+  //   console.log('1')
+  // });
+  // $('.fc-prev-button, .fc-next-button').on('click', function(){
+  //   $('.fc-daygrid-day-events').each(function(index, item){
+  //     ($(this).find('.fc-daygrid-event').length == 0) ? $(this).html('<p class="fc-event-title">-</p>') : '' ;
+  //   });
+  // });
   /* 월간, 주간 tridder */
+  $('.btn_today').click(function() {
+    $('.fc-today-button').trigger('click');
+  });
   $('.btn_month').on('click', function(){
     $('.time_wrap').hide();
     $('.fc-dayGridMonth-button').trigger('click');
