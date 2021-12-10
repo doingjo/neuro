@@ -297,6 +297,15 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .home_page .home_menu .week_home > div.today a strong{color:#fff;}
 .home_page .home_menu .week_home > div.true a{background: rgb(240, 244, 247);}
 .home_page .home_menu hr{border:0;display: block;margin-bottom:0;height:1px;background-color: #e9ecef;}
+.home_page .home_menu .swiper-slide{text-align: center;}
+.home_page .home_menu .day_week{margin:0;padding-bottom: 3.0769vw;}
+.home_page .home_menu .day_week a{display: inline-block;text-align: center;font-size: 3.0769vw;font-weight: bold;line-height: 1.33;color: #212529;border-radius: 5.3846vw;padding: 2.5641vw 2.3077vw 2.0513vw;border-radius: 5.3846vw;}
+.home_page .home_menu .day_week a.on{background-color: #5280e2;color: #fff;}
+.home_page .home_menu .day_week .liwa{display: block;font-size: 3.0769vw;font-weight: bold;line-height: 1.33;color: #ced4da;margin-bottom: 0.5128vw;text-align: center;width:auto;}
+.home_page .home_menu .day_week .liwa.sunday{color: #f04848;}
+.home_page .home_menu .day_week .liwa.saturday{color: #5999ff;}
+.home_page .home_menu .day_week .liday{display: block;text-align: center;font-size: 3.0769vw;font-weight: bold;line-height: 4.1026vw;height: 4.1026vw;color: #212529;width:auto;}
+.home_page .home_menu .day_week .on .liday{box-shadow:none;background-color:transparent;color: #fff;}
 
 /* default page */
 .default_page{background: #fff;min-height:100vh;position: relative;overflow: hidden;}
