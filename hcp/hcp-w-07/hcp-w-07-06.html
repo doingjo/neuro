@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/fullcalendar.js"></script>
+  <script type="text/javascript" src="../js/chart.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+<script type="text/javascript" src="../js/moment.min.js"></script>
+<script type="text/javascript" src="../js/daterangepicker.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/touch-punch.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
+
+  <title>HCP</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- //Header -->
+    <div class="header">
+      <div class="content">
+        <h1><a href="/">neurogait</a></h1>
+        <!-- //GNB -->
+        <div class="inner_gnb">
+          <ul class="list_gnb">
+            <li><a href="#none"><span>홈</span></a></li>
+            <li><a href="#none"><span>환자</span></a></li>
+            <li class="on"><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>문의</span></a></li>
+            <li><a href="#none"><span>통계</span></a></li>
+            <li><a href="#none"><span>설정</span></a></li>
+          </ul>
+        </div>
+        <!-- GNB// -->
+        <!-- //Login -->
+        <div class="inner_user">
+          <div class="box_avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+          <div class="box_state">
+            <p class="name_user">박재활님</p>
+            <button type="button" class="btn_login">Login</button>
+            <!-- <button type="button" class="btn_logout">Logout</button> -->
+          </div>
+        </div>
+        <!-- Login// -->
+      </div>
+    </div>
+    <!-- Header// -->
+    <!-- //Contents -->
+    <div class="container">
+      <!-- //타이틀영역 -->
+      <div class="inner_title">
+        <div class="box_title">
+          <h2>스케쥴 추가</h2>
+          <p class="tit_sub">환자에게 알맞은 재활 운동 스케줄을 등록할 수 있습니다.</p>
+        </div>
+        <div class="box_btn">
+          <button type="button" class="btn_cancel">취소</button>
+          <button type="button" class="btn_actprimary">저장</button>
+        </div>
+      </div>
+      <!-- 타이틀영역 -->
+      <!-- //컨텐츠 영역 -->
+      <div class="cont inner_schedule_add">
+        <!-- //달력과 환자정보 -->
+        <div class="flex_schedule">
+            <!-- //달력영역 -->
+            <div class="box_calendar">
+                <div class="datepicker_wrap">
+                    <input type="text" class="main_rangedatepicker" name="" value="" />
+                </div>
+            </div>
+            <!-- 달력영역// -->
+            <!-- //환자정보 -->
+            <div class="box_schedule">
+                <div class="tit_schedule">
+                    <h2>환자정보</h2>
+                </div>                
+                <div class="box_select">
+                    <p class="txt_name"><span>제갈민우</span></p>
+                    <div class="box_info type_single">
+                        <ul class="list_info">
+                            <li>
+                                <em class="tit">환자코드</em>
+                                <span class="info">W0392871</span>
+                            </li>
+                            <li>
+                                <em class="tit">생년월일</em>
+                                <span class="info">1972.10.24</span>
+                            </li>
+                            <li class="bd_btm_0">
+                                <em class="tit">질환 명</em>
+                                <span class="info">알츠하이머</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="btn_small color_whiteborder">선택</button>
+                </div>
+            </div>
+            <!-- 환자정보// -->
+        </div>
+        <!-- 달력과 환자정보// -->        
+      </div>
+      <div class="cont inner_schedule_add">
+            <div class="tit_exlist">
+                <h2>운동 리스트</h2>
+                <button class="btn_small color_whiteborder">운동 리스트 추가</button>
+            </div>
+            <ul class="sortable_ex">
+                <li>
+                    <div class="area_ex_cnt">
+                        <div class="tit_list">
+                            <div>
+                                <h3><span class="idx_list">01. </span>무릎꿇고 일어서기</h3>
+                                <p class="sub_tit">무릎, 어깨, 골반, 발목, 다리, 배</p>
+                            </div>
+                            <button type="button" class="btn_xsmall color_primary"><span>삭제</span></button>
+                        </div>
+                        <div class="area_answer">
+                            <div class="select_set">
+                                <div class="set_left">
+                                    <div class="round_select">
+                                        <select name="" id="" class="">
+                                            <option value="">1세트</option>
+                                        </select>
+                                    </div>
+                                    <div class="round_select">
+                                        <select name="" id="" class="">
+                                            <option value="">1세트</option>
+                                        </select>
+                                    </div>
+                                    <div class="grp_chk">
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk01">
+                                            <label for="q01_chk01">월</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk02">
+                                            <label for="q01_chk02">화</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk03">
+                                            <label for="q01_chk03">수</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk04">
+                                            <label for="q01_chk04">목</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk05">
+                                            <label for="q01_chk05">금</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk06">
+                                            <label for="q01_chk06">토</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk07">
+                                            <label for="q01_chk07">일</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box_btn_video">
+                                    <p>동영상 촬영</p>
+                                    <button type="button" class="btn_toggle on"><span class="slide"></span><span class="hidden">동영상촬영 버튼</span></button>
+                                </div>
+                            </div>
+                            <div class="box_textarea">
+                                <textarea name="" id="" placeholder="도움말 입력해주세요" ></textarea>
+                            </div>
+                        </div>
+                        <div class="area_ex_handler"><span class="hidden">이동 버튼</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="area_ex_cnt">
+                        <div class="tit_list">
+                            <div>
+                                <h3><span class="idx_list">02. </span>외발 중심잡기</h3>
+                                <p class="sub_tit">무릎, 어깨, 골반, 발목, 다리, 배</p>
+                            </div>
+                            <button type="button" class="btn_xsmall color_primary"><span>삭제</span></button>
+                        </div>
+                        <div class="area_answer">
+                            <div class="select_set">
+                                <div class="set_left">
+                                    <div class="round_select">
+                                        <select name="" id="" class="">
+                                            <option value="">1세트</option>
+                                        </select>
+                                    </div>
+                                    <div class="round_select">
+                                        <select name="" id="" class="">
+                                            <option value="">1세트</option>
+                                        </select>
+                                    </div>
+                                    <div class="grp_chk">
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk01">
+                                            <label for="q01_chk01">월</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk02">
+                                            <label for="q01_chk02">화</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk03">
+                                            <label for="q01_chk03">수</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk04">
+                                            <label for="q01_chk04">목</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk05">
+                                            <label for="q01_chk05">금</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk06">
+                                            <label for="q01_chk06">토</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk07">
+                                            <label for="q01_chk07">일</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box_btn_video">
+                                    <p>동영상 촬영</p>
+                                    <button type="button" class="btn_toggle on"><span class="slide"></span><span class="hidden">동영상촬영 버튼</span></button>
+                                </div>
+                            </div>
+                            <div class="box_textarea">
+                                <textarea name="" id="" placeholder="도움말 입력해주세요" ></textarea>
+                            </div>
+                        </div>
+                        <div class="area_ex_handler"><span class="hidden">이동 버튼</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="area_ex_cnt">
+                        <div class="tit_list">
+                            <div>
+                                <h3><span class="idx_list">03. </span>무릎꿇고 일어서기</h3>
+                                <p class="sub_tit">무릎, 어깨, 골반, 발목, 다리, 배</p>
+                            </div>
+                            <button type="button" class="btn_xsmall color_primary"><span>삭제</span></button>
+                        </div>
+                        <div class="area_answer">
+                            <div class="select_set">
+                                <div class="set_left">
+                                    <div class="round_select">
+                                        <select name="" id="" class="">
+                                            <option value="">1세트</option>
+                                        </select>
+                                    </div>
+                                    <div class="round_select">
+                                        <select name="" id="" class="">
+                                            <option value="">1세트</option>
+                                        </select>
+                                    </div>
+                                    <div class="grp_chk">
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk01">
+                                            <label for="q01_chk01">월</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk02">
+                                            <label for="q01_chk02">화</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk03">
+                                            <label for="q01_chk03">수</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk04">
+                                            <label for="q01_chk04">목</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk05">
+                                            <label for="q01_chk05">금</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk06">
+                                            <label for="q01_chk06">토</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk07">
+                                            <label for="q01_chk07">일</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box_btn_video">
+                                    <p>동영상 촬영</p>
+                                    <button type="button" class="btn_toggle"><span class="slide"></span><span class="hidden">동영상촬영 버튼</span></button>
+                                </div>
+                            </div>
+                            <div class="box_textarea">
+                                <textarea name="" id="" placeholder="도움말 입력해주세요" ></textarea>
+                            </div>
+                        </div>
+                        <div class="area_ex_handler"><span class="hidden">이동 버튼</span></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="area_ex_cnt">
+                        <div class="tit_list">
+                            <div>
+                                <h3><span class="idx_list">04. </span>무릎꿇고 일어서기</h3>
+                                <p class="sub_tit">무릎, 어깨, 골반, 발목, 다리, 배</p>
+                            </div>
+                            <button type="button" class="btn_xsmall color_primary"><span>삭제</span></button>
+                        </div>
+                        <div class="area_answer">
+                            <div class="select_set">
+                                <div class="set_left">
+                                    <div class="round_select">
+                                        <select name="" id="" class="">
+                                            <option value="">1세트</option>
+                                        </select>
+                                    </div>
+                                    <div class="round_select">
+                                        <select name="" id="" class="">
+                                            <option value="">1세트</option>
+                                        </select>
+                                    </div>
+                                    <div class="grp_chk">
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk01">
+                                            <label for="q01_chk01">월</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk02">
+                                            <label for="q01_chk02">화</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk03">
+                                            <label for="q01_chk03">수</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk04">
+                                            <label for="q01_chk04">목</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk05">
+                                            <label for="q01_chk05">금</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk06">
+                                            <label for="q01_chk06">토</label>
+                                        </div>
+                                        <div class="input_chk_txtbox">
+                                            <input type="checkbox" name="q01" id="q01_chk07">
+                                            <label for="q01_chk07">일</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box_btn_video">
+                                    <p>동영상 촬영</p>
+                                    <button type="button" class="btn_toggle"><span class="slide"></span><span class="hidden">동영상촬영 버튼</span></button>
+                                </div>
+                            </div>
+                            <div class="box_textarea">
+                                <textarea name="" id="" placeholder="도움말 입력해주세요" ></textarea>
+                            </div>
+                        </div>
+                        <div class="area_ex_handler"><span class="hidden">이동 버튼</span></div>
+                    </div>
+                </li>
+            </ul>
+          <!-- //운동리스트가 비었을 경우만 나오는 버튼 -->
+          <div class="box_btn_btm">
+            <button class="btn_small color_whiteborder">운동 리스트 선택</button>
+          </div>
+          <!-- 운동리스트가 비었을 경우만 나오는 버튼// -->
+      </div>
+      <!-- 컨텐츠 영역// -->
+    </div>
+    <!-- Contents// -->
+    <!-- //Footer -->
+    <footer>
+      <span>사업자 등록번호 : 611 - 81 – 27282</span><span>통신판매업신고 : 제 2017-서울강남-00305호</span><span>대표자 : 조형진</span><span>개인정보보호 책임자 : 김대성</span>
+      <p>서울특별시 강남구 언주로 603 서진빌딩 6F  © Copyright 2021 SALTED.LTD</p>
+      <div class="inner_partner">
+        <a href="#none"><img src="../images/logo_partner01.png" alt="파트너사"></a><a href="#none"><img src="../images/logo_partner02.png" alt="파트너사"></a>
+      </div>
+      <div class="inner_logo">
+        <a href="#none" class="link_loge"><img src="../images/logo_footer.png" alt="salted"></a>
+      </div>
+    </footer>
+    <!-- Footer// -->
+  </div>
+  <script>
+    $(function() {
+        hcp.daterangepicker('.main_rangedatepicker', true);
+        $( ".sortable_ex" ).sortable();
+        $(".btn_toggle").on("click", function(){
+            $(this).toggleClass("on");
+        });
+    });
+
+  </script>
+</body>
+</html>

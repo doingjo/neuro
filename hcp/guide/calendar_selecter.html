@@ -61,7 +61,7 @@
 <script>
 $(function() {
 
-    daterangepicker('.datepicker', true);  //true는 line형으로 달력 나와 있는거, false는 팝업형, 클래서 적당히 변경해서 사용하길 바람ㅋㅋㅋㅋ 주석을 읽으면 삭제 부탁
+    daterangepicker('.datepicker', true);
 
 });//function
 
@@ -86,8 +86,7 @@ function daterangepicker(ele, type){
     }, function(start, end, label){
       clickDay = start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD');
       console.log(start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD'));
-      if(type === true){ $('.datepicker_wrap').before('<p>'+clickDay+'</p>') }// 날짜 상단에 줘야해서 만들어 놓은거, 코드 만들면 적당히 응용하고 정리 부탁
-
+      if(type === true){ $('.datepicker_wrap').before('<p>'+clickDay+'</p>') };
   });
   if(type === true){
     $('.daterangepicker').addClass('datepicker_open');

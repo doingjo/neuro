@@ -129,6 +129,39 @@ var hcp = hcp || {
         }
       });
     },
+    daterangepicker: function(ele, type){
+      var $this = $(ele),
+          clickDay = '';
+      $this.daterangepicker({
+        autoApply:true,
+        inline: type,
+        "locale": {
+          "format": "YYYY.MM.DD",
+          "separator": " - ",
+          "applyLabel": "선택완료",
+          "cancelLabel": "취소",
+          "daysOfWeek": [ "일","월","화","수","목","금","토" ],
+          "monthNames": [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
+          "firstDay": 0,
+          "startDate": new Date(),
+          "endDate": new Date(),
+          "drops": "auto"
+        },
+        }, function(start, end, label){
+          clickDay = start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD');
+          console.log(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+        if (type === true && $(ele).parents(".inner_schedule_add")) {
+            $(".checked_range").remove();
+            $(ele).parents('.inner_schedule_add').addClass("show_rangebox").append('<p class="checked_range">' + clickDay + '</p>')
+        } else if (type === true) {
+            $(".checked_range").remove();
+            $('.datepicker_wrap').before('<p class="checked_range">' + clickDay + '</p>')
+          };
+      });
+      if(type === true){
+        $('.daterangepicker').addClass('datepicker_open');
+      }
+    },
     tab : {
         init: function(){
           if($(".as_tab_wrap").length == 0){return;}

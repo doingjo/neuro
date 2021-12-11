@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/fullcalendar.js"></script>
+  <script type="text/javascript" src="../js/schedule.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>HCP</title>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- //Header -->
+    <div class="header">
+      <div class="content">
+        <h1><a href="/">neurogait</a></h1>
+        <!-- //GNB -->
+        <div class="inner_gnb">
+          <ul class="list_gnb">
+            <li><a href="#none"><span>홈</span></a></li>
+            <li><a href="#none"><span>환자</span></a></li>
+            <li class="on"><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>문의</span></a></li>
+            <li><a href="#none"><span>통계</span></a></li>
+            <li><a href="#none"><span>설정</span></a></li>
+          </ul>
+        </div>
+        <!-- GNB// -->
+        <!-- //Login -->
+        <div class="inner_user">
+          <div class="box_avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+          <div class="box_state">
+            <p class="name_user">박재활님</p>
+            <button type="button" class="btn_login">Login</button>
+            <!-- <button type="button" class="btn_logout">Logout</button> -->
+          </div>
+        </div>
+        <!-- Login// -->
+      </div>
+    </div>
+    <!-- Header// -->
+    <!-- //Contents -->
+    <div class="container">
+      <!-- //타이틀영역 -->
+      <div class="inner_title">
+        <div class="box_title">
+          <h2>재활 스케쥴</h2>
+          <p class="tit_sub">환자에게 알맞은 재활 운동 스케줄을 등록할 수 있습니다.</p>
+        </div>
+        <div class="box_link">
+          <a href="#none" class="on btn_month">월간</a>
+          <a href="#none" class="btn_week">주간</a>
+        </div>
+        <!-- 테블릿 사이즈로 줄어들었을때는 box_link 대신 리스트 형태로 나옴 -->
+        <div class="deco_select">
+          <select name="" id="">
+            <option value="">월간</option>
+            <option value="">주간</option>
+          </select>
+        </div>
+        <!-- //테블릿 사이즈로 줄어들었을때는 리스트 형태로 나옴 -->
+      </div>
+      <!-- 타이틀영역 -->
+      <!-- //컨텐츠 영역 -->
+      <div class="cont inner_schedule_main">
+        <!-- //달력과 스케쥴 -->
+        <div class="flex_schedule">
+            <!-- //달력영역 -->
+            <div class="box_calendar">
+                <div class="fullcalendar_wrap workout">
+                    <div id='fullcalendar'></div>
+                    <script>
+                    var scheduleData = [
+                        {
+                            title: '5명',
+                            start: '2021-12-09T00:00:00'
+                        },
+                        {
+                            title: '5명',
+                            start: '2021-12-16T00:00:00'
+                        },
+                        {
+                            title: '5명',
+                            start: '2021-12-12T00:00:00'
+                        },
+                        {
+                            title: '5명',
+                            start: '2021-12-13T00:00:00'
+                        },
+                        ];
+                    </script>
+                </div>
+            </div>
+            <!-- 달력영역// -->
+            <!-- //스케쥴 -->
+            <div class="box_schedule">
+                <div class="tit_schedule">
+                    <h2><span class="txt_date">09.08</span> 환자 재활 스케쥴</h2>
+                    <button class="btn_xsmall color_primaryborder"><span>신규 추가</span></button>
+                </div>
+                <div class="inner_overbox">
+                    <ul class="list_schedule">
+                        <li>
+                            <div class="seg_schedule">
+                                <div class="box_cnt">
+                                    <div class="area_period">
+                                        <p class="txt_order">10</p>
+                                        <p class="txt_period">2021.10.20 ~ 12.23</p>
+                                    </div>
+                                    <div class="area_info">
+                                        <p class="txt_name">Leonardo DiCaprio</p>
+                                        <p class="txt_rate">총 달성률 85%</p>
+                                        <p class="txt_code">Code : W12345</p>
+                                        <p class="txt_disease">알츠하이머</p>
+                                    </div>
+                                </div>
+                                <div class="box_gauge">
+                                    <ul class="list_gauge">
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">85%</p>
+                                        </li>
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">9%</p>
+                                        </li>
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">6%</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="seg_schedule">
+                                <div class="box_cnt">
+                                    <div class="area_period">
+                                        <p class="txt_order">09</p>
+                                        <p class="txt_period">2021.10.20 ~ 12.23</p>
+                                    </div>
+                                    <div class="area_info">
+                                        <p class="txt_name">Leonardo DiCaprio</p>
+                                        <p class="txt_rate">총 달성률 85%</p>
+                                        <p class="txt_code">Code : W12345</p>
+                                        <p class="txt_disease">알츠하이머</p>
+                                    </div>
+                                </div>
+                                <div class="box_gauge">
+                                    <ul class="list_gauge">
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">85%</p>
+                                        </li>
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">9%</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="seg_schedule">
+                                <div class="box_cnt">
+                                    <div class="area_period">
+                                        <p class="txt_order">08</p>
+                                        <p class="txt_period">2021.10.20 ~ 12.23</p>
+                                    </div>
+                                    <div class="area_info">
+                                        <p class="txt_name">Leonardo DiCaprio</p>
+                                        <p class="txt_rate">총 달성률 15%</p>
+                                        <p class="txt_code">Code : W12345</p>
+                                        <p class="txt_disease">알츠하이머</p>
+                                    </div>
+                                </div>
+                                <div class="box_gauge">
+                                    <ul class="list_gauge">
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">9%</p>
+                                        </li>
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">6%</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="seg_schedule">
+                                <div class="box_cnt">
+                                    <div class="area_period">
+                                        <p class="txt_order">07</p>
+                                        <p class="txt_period">2021.10.20 ~ 12.23</p>
+                                    </div>
+                                    <div class="area_info">
+                                        <p class="txt_name">Leonardo DiCaprio</p>
+                                        <p class="txt_rate">총 달성률 85%</p>
+                                        <p class="txt_code">Code : W12345</p>
+                                        <p class="txt_disease">알츠하이머</p>
+                                    </div>
+                                </div>
+                                <div class="box_gauge">
+                                    <ul class="list_gauge">
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">85%</p>
+                                        </li>
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">9%</p>
+                                        </li>
+                                        <li>
+                                            <p class="txt_name">Program Name</p>
+                                            <p class="txt_rate">6%</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 스케쥴// -->
+        </div>
+        <!-- 달력과 스케쥴// -->        
+      </div>
+      <!-- 컨텐츠 영역// -->
+    </div>
+    <!-- Contents// -->
+    <!-- //Footer -->
+    <footer>
+      <span>사업자 등록번호 : 611 - 81 – 27282</span><span>통신판매업신고 : 제 2017-서울강남-00305호</span><span>대표자 : 조형진</span><span>개인정보보호 책임자 : 김대성</span>
+      <p>서울특별시 강남구 언주로 603 서진빌딩 6F  © Copyright 2021 SALTED.LTD</p>
+      <div class="inner_partner">
+        <a href="#none"><img src="../images/logo_partner01.png" alt="파트너사"></a><a href="#none"><img src="../images/logo_partner02.png" alt="파트너사"></a>
+      </div>
+      <div class="inner_logo">
+        <a href="#none" class="link_loge"><img src="../images/logo_footer.png" alt="salted"></a>
+      </div>
+    </footer>
+    <!-- Footer// -->
+  </div>
+</body>
+</html>
