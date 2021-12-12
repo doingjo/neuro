@@ -177,12 +177,12 @@ var achieveData = [
   {day:'토', value: 0},
 ];
 $(function(){
-  hcp.lineChart('.linechart-wrap .chart', linechartData);
-  hcp.pieChart('.piechart-wrap .chart', piechartData);
-  hcp.walkChart('.walkchart-wrap .chart', barCycleData);
-  hcp.analysisChart('.type01 .chart', analysisData, 1);
-  hcp.analysisChart('.type03 .chart', analysisData, 3);
-  hcp.achieveChart('.achieve-wrap .chart', achieveData);
+  chart.lineChart('.linechart-wrap .chart', linechartData);
+  chart.pieChart('.piechart-wrap .chart', piechartData);
+  chart.walkChart('.walkchart-wrap .chart', barCycleData);
+  chart.analysisChart('.type01 .chart', analysisData, 1);
+  chart.analysisChart('.type03 .chart', analysisData, 3);
+  chart.achieveChart('.achieve-wrap .chart', achieveData);
 });
 
 

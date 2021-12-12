@@ -113,136 +113,140 @@
     <!-- layer popup -->
     <div class="modals board" id="select_exercise">
         <div class="box">
-            <div class="mod_body">
+            <div class="mod_head">
                 <h3>환자 선택</h3>
-                <div class="inner_search">
-                    <div class="round_select">
-                        <select name="" id="" class="">
-                            <option value="">전체</option>
-                        </select>
+            </div>
+            <div class="mod_body">
+                <div class="overflow_body">
+                    <div class="inner_search">
+                        <div class="round_select">
+                            <select name="" id="" class="">
+                                <option value="">전체</option>
+                            </select>
+                        </div>
+                        <input type="text" class="input_round" placeholder="검색어를 입력하세요">
+                        <button type="button" class="btn_middle color_actprimary">조회</button>
                     </div>
-                    <input type="text" class="input_round" placeholder="검색어를 입력하세요">
-                    <button type="button" class="btn_middle color_actprimary">조회</button>
+                    <table class="tbl_notice type_all_center">
+                        <colgroup>
+                            <col style="width:12%">
+                            <col style="width:15%">
+                            <col style="width:25%">
+                            <col>
+                            <col style="width:10%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <!-- 디자인을 입히기 위해 div를 한번 감싸줌 -->
+                                <th><div>NO</div></th>
+                                <th><div>운동종류</div></th>
+                                <th><div class="tal">운동명</div></th>
+                                <th><div class="tal">운동부위</div></th>
+                                <th><div>구분</div></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div>100</div></td>
+                                <td><div>밸런스 운동</div></td>
+                                <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
+                                <td><div class="tal"><p>운동부위</p></div></td>
+                                <td>
+                                    <div>
+                                        <div class="check_type1 no_label">
+                                            <input type="checkbox" name="chk_ex" id="chk_ex01"><label for="chk_ex01"></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div>99</div></td>
+                                <td><div>밸런스 운동</div></td>
+                                <td><div class="tal"><p>운동명</p></div></td>
+                                <td><div class="tal"><p>운동부위</p></div></td>
+                                <td>
+                                    <div>
+                                        <div class="check_type1 no_label">
+                                            <input type="checkbox" name="chk_ex" id="chk_ex02" checked><label for="chk_ex02"></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div>99</div></td>
+                                <td><div>밸런스 운동</div></td>
+                                <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
+                                <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
+                                <td>
+                                    <div>
+                                        <div class="check_type1 no_label">
+                                            <input type="checkbox" name="chk_ex" id="chk_ex03" disabled><label for="chk_ex03"></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div>99</div></td>
+                                <td><div>밸런스 운동</div></td>
+                                <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다 운동명이 두줄까지 노출될 수 있습니다 운동명이 두줄까지 노출될 수 있습니다</p></div></td>
+                                <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
+                                <td>
+                                    <div>
+                                        <div class="check_type1 no_label">
+                                            <input type="checkbox" name="chk_ex" id="chk_ex04"><label for="chk_ex04"></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div>99</div></td>
+                                <td><div>밸런스 운동</div></td>
+                                <td><div class="tal"><p>운동명</p></div></td>
+                                <td><div class="tal"><p>운동부위</p></div></td>
+                                <td>
+                                    <div>
+                                        <div class="check_type1 no_label">
+                                            <input type="checkbox" name="chk_ex" id="chk_ex05"><label for="chk_ex05"></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><div>99</div></td>
+                                <td><div>밸런스 운동</div></td>
+                                <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
+                                <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
+                                <td>
+                                    <div>
+                                        <div class="check_type1 no_label">
+                                            <input type="checkbox" name="chk_ex" id="chk_ex06"><label for="chk_ex06"></label>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //pagination -->
+                    <div class="inner_pagination">
+                        <a href="#none" class="btn_first"><img src="../images/icon_first.png" alt="제일 처음 리스트로 이동"></a>
+                        <a href="#none" class="btn_prev"><img src="../images/icon_prev.png" alt="이전 리스트로 이동"></a>
+                        <ul>
+                            <li class="on"><a href="" class="btn_page">1</a></li>
+                            <li><a href="" class="btn_page">2</a></li>
+                            <li><a href="" class="btn_page">3</a></li>
+                            <li><a href="" class="btn_page">4</a></li>
+                            <li><a href="" class="btn_page">5</a></li>
+                            <li><a href="" class="btn_page">6</a></li>
+                            <li><a href="" class="btn_page">7</a></li>
+                            <li><a href="" class="btn_page">8</a></li>
+                            <li><a href="" class="btn_page">9</a></li>
+                            <li><a href="" class="btn_page">10</a></li>
+                        </ul>
+                        <a href="#none" class="btn_first"><img src="../images/icon_next.png" alt="다음 리스트로 이동"></a>
+                        <a href="#none" class="btn_prev"><img src="../images/icon_last.png" alt="마지막 리스트로 이동"></a>
+                    </div>
+                    <!-- pagination// -->
                 </div>
-                <table class="tbl_notice type_all_center">
-                    <colgroup>
-                        <col style="width:12%">
-                        <col style="width:15%">
-                        <col style="width:25%">
-                        <col>
-                        <col style="width:10%">
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <!-- 디자인을 입히기 위해 div를 한번 감싸줌 -->
-                            <th><div>NO</div></th>
-                            <th><div>운동종류</div></th>
-                            <th><div class="tal">운동명</div></th>
-                            <th><div class="tal">운동부위</div></th>
-                            <th><div>구분</div></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><div>100</div></td>
-                            <td><div>밸런스 운동</div></td>
-                            <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
-                            <td><div class="tal"><p>운동부위</p></div></td>
-                            <td>
-                                <div>
-                                    <div class="check_type1 no_label">
-                                        <input type="checkbox" name="chk_ex" id="chk_ex01"><label for="chk_ex01"></label>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div>99</div></td>
-                            <td><div>밸런스 운동</div></td>
-                            <td><div class="tal"><p>운동명</p></div></td>
-                            <td><div class="tal"><p>운동부위</p></div></td>
-                            <td>
-                                <div>
-                                    <div class="check_type1 no_label">
-                                        <input type="checkbox" name="chk_ex" id="chk_ex02" checked><label for="chk_ex02"></label>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div>99</div></td>
-                            <td><div>밸런스 운동</div></td>
-                            <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
-                            <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
-                            <td>
-                                <div>
-                                    <div class="check_type1 no_label">
-                                        <input type="checkbox" name="chk_ex" id="chk_ex03" disabled><label for="chk_ex03"></label>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div>99</div></td>
-                            <td><div>밸런스 운동</div></td>
-                            <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다 운동명이 두줄까지 노출될 수 있습니다 운동명이 두줄까지 노출될 수 있습니다</p></div></td>
-                            <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
-                            <td>
-                                <div>
-                                    <div class="check_type1 no_label">
-                                        <input type="checkbox" name="chk_ex" id="chk_ex04"><label for="chk_ex04"></label>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div>99</div></td>
-                            <td><div>밸런스 운동</div></td>
-                            <td><div class="tal"><p>운동명</p></div></td>
-                            <td><div class="tal"><p>운동부위</p></div></td>
-                            <td>
-                                <div>
-                                    <div class="check_type1 no_label">
-                                        <input type="checkbox" name="chk_ex" id="chk_ex05"><label for="chk_ex05"></label>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><div>99</div></td>
-                            <td><div>밸런스 운동</div></td>
-                            <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
-                            <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
-                            <td>
-                                <div>
-                                    <div class="check_type1 no_label">
-                                        <input type="checkbox" name="chk_ex" id="chk_ex06"><label for="chk_ex06"></label>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!-- //pagination -->
-                <div class="inner_pagination">
-                    <a href="#none" class="btn_first"><img src="../images/icon_first.png" alt="제일 처음 리스트로 이동"></a>
-                    <a href="#none" class="btn_prev"><img src="../images/icon_prev.png" alt="이전 리스트로 이동"></a>
-                    <ul>
-                        <li class="on"><a href="" class="btn_page">1</a></li>
-                        <li><a href="" class="btn_page">2</a></li>
-                        <li><a href="" class="btn_page">3</a></li>
-                        <li><a href="" class="btn_page">4</a></li>
-                        <li><a href="" class="btn_page">5</a></li>
-                        <li><a href="" class="btn_page">6</a></li>
-                        <li><a href="" class="btn_page">7</a></li>
-                        <li><a href="" class="btn_page">8</a></li>
-                        <li><a href="" class="btn_page">9</a></li>
-                        <li><a href="" class="btn_page">10</a></li>
-                    </ul>
-                    <a href="#none" class="btn_first"><img src="../images/icon_next.png" alt="다음 리스트로 이동"></a>
-                    <a href="#none" class="btn_prev"><img src="../images/icon_last.png" alt="마지막 리스트로 이동"></a>
-                </div>
-                <!-- pagination// -->
                 <div class="center_btn">
                     <button type="button" class="btn_xlarge color_whiteborder">취소</button>
                     <button type="button" class="btn_xlarge color_actprimary">선택</button>

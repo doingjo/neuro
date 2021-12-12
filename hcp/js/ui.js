@@ -32,6 +32,8 @@ var hcp = hcp || {
       hcp.fileload();
       hcp.survey();
       hcp.btnpass();
+      hcp.allchkdisabled();
+      hcp.chketc();
     },
     gnb: function(){
       $(window).on("scroll", function(){
@@ -100,10 +102,13 @@ var hcp = hcp || {
         $(".list_tab li").on("click", function(){
               $(this).addClass("on").siblings().removeClass("on");
           });
-          $(".input_chk_txtbox input[type='text']").on("click", function(){
-              $(this).parent(".input_chk_txtbox").children("label.etc").trigger("click");
-              $(this).focus();
-          });
+        $(".input_chk_txtbox input[type='text']").on("click", function(){
+            $(this).parent(".input_chk_txtbox").children("label.etc").trigger("click");
+            $(this).focus();
+        });
+      $(".input_chk_txtbox input[type='radio']").on("click", function () { 
+          $(this).parent().siblings().children("input[type='text']").val("");
+        });
     },
     modals_close: function(id){
       $('#'+id).removeClass('show');
@@ -129,12 +134,13 @@ var hcp = hcp || {
         }
       });
     },
-    daterangepicker: function(ele, type){
+    daterangepicker: function(ele, type, single){
       var $this = $(ele),
           clickDay = '';
       $this.daterangepicker({
         autoApply:true,
         inline: type,
+        singleDatePicker: single,
         "locale": {
           "format": "YYYY.MM.DD",
           "separator": " - ",
@@ -161,6 +167,22 @@ var hcp = hcp || {
       if(type === true){
         $('.daterangepicker').addClass('datepicker_open');
       }
+    },
+    allchkdisabled: function(){
+      $('.allchkdisabled').on('click', function () {
+        var checkbox = $(this).parent().siblings().children("input");
+        if (checkbox.is(":disabled")) {
+          $(checkbox).removeAttr("disabled");
+        } else { 
+          $(checkbox).prop('checked',false).attr("disabled", true);
+        }
+      });
+    },
+    chketc: function(){
+      $('.chk_etc').on('click', function () {
+        $(this).parents(".area_answer").children(".box_textarea").slideDown();
+        
+      });
     },
     tab : {
         init: function(){
