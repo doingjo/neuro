@@ -51,6 +51,9 @@ var hcp = hcp || {
       $('body').on('click', function(){
         $('.box_avatar').removeClass('on').next('.box_state').fadeOut();
       });
+      $(document).on('click', '.box_link a',function(){
+        $(this).addClass('on').siblings().removeClass('on');
+      });
     },//gnb
     inputFocus: function(){
       if($('.deco_select select, .deco_search input, .round_select select').length == 0){return;}
