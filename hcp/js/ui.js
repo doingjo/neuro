@@ -28,6 +28,7 @@ var hcp = hcp || {
       hcp.gnb();
       hcp.inputFocus();
       hcp.memberLose();
+      hcp.boardChk();
       hcp.faqlist();
       hcp.fileload();
       hcp.survey();
@@ -71,6 +72,17 @@ var hcp = hcp || {
           target.attr('disabled', true);
         }else{
           target.attr('disabled', false);
+        }
+      });
+    },
+  boardChk: function () {
+      if($(".tbl_notice label").length == 0){return;}
+      $(document).on('click', '.tbl_notice .check_type1 label',function(){
+        var target = $('.mod_body').find('.chk_ex');
+        if ($('.tbl_notice input[type="checkbox"]').prop('checked').length >= 1 ) {
+          console.log(1);
+        } else { 
+          console.log(2);
         }
       });
     },
