@@ -171,7 +171,9 @@
                   </div>
                   <div class="round_select">
                       <select name="" id="" class="">
-                      <option value="">시간선택</option>
+                        <option value="" selected disabled hidden>시간선택</option>
+                        <option value="">시간선택1</option>
+                        <option value="">시간선택2</option>
                       </select>
                   </div>
                   <button type="button" class="btn_middle color_actprimary">조회</button>
@@ -185,8 +187,7 @@
                         <div class="grp_chk">
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q01" id="q01_chk01">
-                                <!-- 2021-12-12 .allchkdisabled 추가 -->
-                                <label for="q01_chk01" class="allchkdisabled">없음</label>
+                                <label for="q01_chk01">없음</label>
                             </div>
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q01" id="q01_chk02">
@@ -226,8 +227,7 @@
                         <div class="grp_chk">
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q02" id="q02_chk01">
-                                <!-- 2021-12-12 .allchkdisabled 추가 -->
-                                <label for="q02_chk01" class="allchkdisabled">없음</label>
+                                <label for="q02_chk01">없음</label>
                             </div>
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q02" id="q02_chk02">
@@ -255,8 +255,7 @@
                             </div>
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q02" id="q02_chk08">
-                                <!-- 2021-12-12 .chk_etc 클래스 추가 -->
-                                <label for="q02_chk08" class="chk_etc">기타</label>
+                                <label for="q02_chk08">기타</label>
                             </div>
                         </div>
                         <div class="box_textarea">
@@ -273,7 +272,6 @@
                             </div>
                             <div class="input_chk_txtbox etc">
                                 <input type="radio" name="q03" id="q03_rdo02">
-                                <!-- 2021-12-12 .chk_etc 클래스 추가 -->
                                 <label for="q03_rdo02" class="etc">기타</label>
                                 <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
                             </div>
@@ -386,7 +384,7 @@
                                     <div class="area_input">
                                         <div class="grp_chk">
                                             <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_front" id="pst_front01">
+                                                <input type="checkbox" name="pst_front" id="pst_front01" checked>
                                                 <label for="pst_front01">정상(이상없음)</label>
                                             </div>
                                             <div class="input_chk_smtxt">
