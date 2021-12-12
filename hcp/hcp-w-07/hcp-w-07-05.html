@@ -96,7 +96,7 @@
                 </div>                
                 <div class="box_select">
                     <p class="txt_msg">선택 버튼을 눌러 환자를 추가하세요</p>
-                    <button class="btn_small color_whiteborder" onclick="hcp.modals_show('select_patient')">선택</button>
+                    <button class="btn_small color_whiteborder">선택</button>
                 </div>
             </div>
             <!-- 환자정보// -->
@@ -105,13 +105,13 @@
       </div>
       <div class="cont inner_schedule_add empty">
           <div class="box_btn_btm">
-            <button class="btn_small color_whiteborder">운동 리스트 선택</button>
+            <button class="btn_small color_whiteborder" onclick="hcp.modals_show('select_exercise')">운동 리스트 선택</button>
           </div>
       </div>
       <!-- 컨텐츠 영역// -->
     </div>
     <!-- layer popup -->
-    <div class="modals board" id="select_patient">
+    <div class="modals board" id="select_exercise">
         <div class="box">
             <div class="mod_body">
                 <h3>환자 선택</h3>
@@ -124,77 +124,102 @@
                     <input type="text" class="input_round" placeholder="검색어를 입력하세요">
                     <button type="button" class="btn_middle color_actprimary">조회</button>
                 </div>
-                <div class="inner_result">
-                    <p class="txt_msg"><span class="txt_num">35</span>건의 검색결과가 있습니다.</p>
-                </div>
                 <table class="tbl_notice type_all_center">
                     <colgroup>
-                        <col style="width:12%;">
+                        <col style="width:12%">
+                        <col style="width:15%">
+                        <col style="width:25%">
                         <col>
-                        <col style="width:15%">
-                        <col style="width:15%">
-                        <col style="width:15%">
-                        <col style="width:15%">
+                        <col style="width:10%">
                     </colgroup>
                     <thead>
                         <tr>
                             <!-- 디자인을 입히기 위해 div를 한번 감싸줌 -->
                             <th><div>NO</div></th>
-                            <th><div class="tal">환자이름</div></th>
-                            <th><div>생년월일</div></th>
-                            <th><div>최근진단</div></th>
-                            <th><div>등록일</div></th>
+                            <th><div>운동종류</div></th>
+                            <th><div class="tal">운동명</div></th>
+                            <th><div class="tal">운동부위</div></th>
                             <th><div>구분</div></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><div>100</div></td>
-                            <td><div class="tal">홍길동</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                            <td><div>밸런스 운동</div></td>
+                            <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
+                            <td><div class="tal"><p>운동부위</p></div></td>
+                            <td>
+                                <div>
+                                    <div class="check_type1 no_label">
+                                        <input type="checkbox" name="chk_ex" id="chk_ex01"><label for="chk_ex01"></label>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td><div>99</div></td>
-                            <td><div class="tal"><p>영문처럼 환자명이 길경우 두줄까지 노출 됩니다 영문처럼 환자명이 길경우 두줄까지 노출 됩니다</p></div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                            <td><div>밸런스 운동</div></td>
+                            <td><div class="tal"><p>운동명</p></div></td>
+                            <td><div class="tal"><p>운동부위</p></div></td>
+                            <td>
+                                <div>
+                                    <div class="check_type1 no_label">
+                                        <input type="checkbox" name="chk_ex" id="chk_ex02" checked><label for="chk_ex02"></label>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td><div>99</div></td>
-                            <td><div class="tal">홍길동</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                            <td><div>밸런스 운동</div></td>
+                            <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
+                            <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
+                            <td>
+                                <div>
+                                    <div class="check_type1 no_label">
+                                        <input type="checkbox" name="chk_ex" id="chk_ex03" disabled><label for="chk_ex03"></label>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td><div>99</div></td>
-                            <td><div class="tal">홍길동</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                            <td><div>밸런스 운동</div></td>
+                            <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다 운동명이 두줄까지 노출될 수 있습니다 운동명이 두줄까지 노출될 수 있습니다</p></div></td>
+                            <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
+                            <td>
+                                <div>
+                                    <div class="check_type1 no_label">
+                                        <input type="checkbox" name="chk_ex" id="chk_ex04"><label for="chk_ex04"></label>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td><div>99</div></td>
-                            <td><div class="tal">홍길동</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                            <td><div>밸런스 운동</div></td>
+                            <td><div class="tal"><p>운동명</p></div></td>
+                            <td><div class="tal"><p>운동부위</p></div></td>
+                            <td>
+                                <div>
+                                    <div class="check_type1 no_label">
+                                        <input type="checkbox" name="chk_ex" id="chk_ex05"><label for="chk_ex05"></label>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                         <tr>
                             <td><div>99</div></td>
-                            <td><div class="tal">홍길동</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div>2021.01.01</div></td>
-                            <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                            <td><div>밸런스 운동</div></td>
+                            <td><div class="tal"><p>운동명이 두줄까지 노출될 수 있습니다</p></div></td>
+                            <td><div class="tal"><p>운동부위도 두줄까지 노출됩니다 이상 점처리</p></div></td>
+                            <td>
+                                <div>
+                                    <div class="check_type1 no_label">
+                                        <input type="checkbox" name="chk_ex" id="chk_ex06"><label for="chk_ex06"></label>
+                                    </div>
+                                </div>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -218,11 +243,12 @@
                     <a href="#none" class="btn_prev"><img src="../images/icon_last.png" alt="마지막 리스트로 이동"></a>
                 </div>
                 <!-- pagination// -->
-                <div class="inner_result empty">
-                    <p class="txt_msg">선택할 환자가 없습니다.</p>
+                <div class="center_btn">
+                    <button type="button" class="btn_xlarge color_whiteborder">취소</button>
+                    <button type="button" class="btn_xlarge color_actprimary">선택</button>
                 </div>
             </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('select_patient')"><span class="hidden">창닫기</span></button>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('select_exercise')"><span class="hidden">창닫기</span></button>
         </div>
     </div>
     <!-- //layer popup -->
@@ -244,7 +270,7 @@
     $(function() {
         hcp.daterangepicker('.main_rangedatepicker', true);
         $(window).on("load", function(){
-            hcp.modals_show('select_patient');
+            hcp.modals_show('select_exercise');
         });
     });
 
