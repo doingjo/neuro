@@ -69,7 +69,8 @@
         <div class="box_btn">
           <button type="button" class="btn_cancel">수정</button>
           <button type="button" class="btn_cancel">삭제</button>
-          <button type="button" class="btn_primary">연결끊기</button>
+          <!-- 2021-12-12 연결 끊기 버튼 띄어쓰기 수정 -->
+          <button type="button" class="btn_primary">연결 끊기</button>
         </div>
       </div>
       <!-- 타이틀영역 -->
@@ -184,7 +185,8 @@
                         <div class="grp_chk">
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q01" id="q01_chk01">
-                                <label for="q01_chk01">없음</label>
+                                <!-- 2021-12-12 .allchkdisabled 추가 -->
+                                <label for="q01_chk01" class="allchkdisabled">없음</label>
                             </div>
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q01" id="q01_chk02">
@@ -212,7 +214,7 @@
                             </div>
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q01" id="q01_chk08">
-                                <label for="q01_chk08">기타</label>
+                                <label for="q01_chk08" class="chk_etc">기타</label>
                             </div>
                         </div>
                         <div class="box_textarea">
@@ -224,7 +226,8 @@
                         <div class="grp_chk">
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q02" id="q02_chk01">
-                                <label for="q02_chk01">없음</label>
+                                <!-- 2021-12-12 .allchkdisabled 추가 -->
+                                <label for="q02_chk01" class="allchkdisabled">없음</label>
                             </div>
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q02" id="q02_chk02">
@@ -252,7 +255,8 @@
                             </div>
                             <div class="input_chk_txtbox">
                                 <input type="checkbox" name="q02" id="q02_chk08">
-                                <label for="q02_chk08">기타</label>
+                                <!-- 2021-12-12 .chk_etc 클래스 추가 -->
+                                <label for="q02_chk08" class="chk_etc">기타</label>
                             </div>
                         </div>
                         <div class="box_textarea">
@@ -269,6 +273,7 @@
                             </div>
                             <div class="input_chk_txtbox etc">
                                 <input type="radio" name="q03" id="q03_rdo02">
+                                <!-- 2021-12-12 .chk_etc 클래스 추가 -->
                                 <label for="q03_rdo02" class="etc">기타</label>
                                 <input type="text" class="input_round width_wide" placeholder="기타내용을 입력하세요">
                             </div>
@@ -278,7 +283,7 @@
                     <div class="area_answer">
                         <div class="grp_chk">
                             <div class="input_chk_txtbox time type_hour">
-                                <input type="text" class="input_round" placeholder="시간">
+                                <input type="number" max="23" min="0" class="input_round" placeholder="시간">
                             </div>
                             <div class="input_chk_txtbox time type_minute">
                                 <input type="text" class="input_round" placeholder="분" value="25">
