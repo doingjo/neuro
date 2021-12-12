@@ -77,12 +77,12 @@ var hcp = hcp || {
     },
   boardChk: function () {
       if($(".tbl_notice label").length == 0){return;}
-      $(document).on('click', '.tbl_notice .check_type1 label',function(){
+      $('.tbl_notice .check_type1 input[name=chk_ex]').on('click', function(){
         var target = $('.mod_body').find('.chk_ex');
-        if ($('.tbl_notice input[type="checkbox"]').prop('checked').length >= 1 ) {
-          console.log(1);
-        } else { 
-          console.log(2);
+        if( $("input:checkbox[name=chk_ex]:checked").length == 0 ) {
+          target.attr('disabled', true);
+        }else{
+          target.attr('disabled', false);
         }
       });
     },
@@ -179,7 +179,7 @@ var hcp = hcp || {
         $('.daterangepicker').addClass('datepicker_open');
       }
     },
-    selectplaceholder: function (){ 
+    selectplaceholder: function (){
       $("select").change(function(){
             $(this).parent().addClass("selected");
           });

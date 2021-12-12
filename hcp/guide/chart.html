@@ -50,6 +50,7 @@ body{background-color:#fff}
 .piechart-wrap .chart .dot-list li.dot12{right:18.18%;bottom:2.43%}
 .piechart-wrap .chart .pin{position:absolute;bottom:0;left:calc(50% - 6px); transform:rotate(0deg);transform-origin:bottom center}
 .piechart-wrap .chart .pin::before{content:'';display:inline-block; width:12px;height:41px;margin-bottom:-6px; background:url('../images/chart_pointer.png') no-repeat center center}
+.piechart-wrap .txt_val{font-weight:bold;font-size:30px;line-height:35px;color:#2f455c;text-align:center; position:absolute;left:50%;bottom:-10px;transform: translateX(-50%);}
 
 .walkchart-wrap{width:546px;}
 .walkchart-wrap .chart{position:relative}
@@ -165,7 +166,7 @@ var barCycleData = [
   {name:'표준',stance:'60',swing:'40'},
 ];
 var analysisData = {
-  tit:'좌 : 우', value: 100, averageTxt: '표준', average: 50, barColor: '#5280e2', bgColor: '#f1f3f5'  
+  tit:'좌 : 우', value: 100, averageTxt: '표준', average: 50, barColor: '#5280e2', bgColor: '#f1f3f5'
 }
 var achieveData = [
   {day:'일', value: 20},
