@@ -68,6 +68,31 @@ body {background-color: #f4f6fc;}
 .modals.alert .mod_body strong{display:block; font-size:16px;font-weight:500;color:#212529;}
 .modals.alert .mod_body p{margin-top:13px; font-size:13px;color:#868e96;line-height:1.5;word-break:keep-all;}
 .modals.alert .mod_body textarea{outline:none;width:100%;height:70px;border:0;resize:none; font-size:15px;}
+
+.modals.board{}
+.modals.board .box{max-width:800px;width:90vw;}
+.modals.board .mod_body{padding:24px 32px 32px;}
+.modals.board h3{font-weight:bold;font-size:15px;line-height:21px;color:#212529;text-align:left;}
+.modals.board .btn_close{position:absolute;top:23px;right:40px;width:24px;height:24px;border-radius: 12px;background-color:#212529;}
+.modals.board .btn_close::before,
+.modals.board .btn_close::after{content:"";position:absolute;top:46%;left:25%;width:12px;height:2px;border-radius:2px;background-color:#fff;transform-origin:center;}
+.modals.board .btn_close::before{transform:rotate(45deg)}
+.modals.board .btn_close::after{transform:rotate(-45deg)}
+.modals.board .inner_search{display:flex;padding:34px 0 20px;}
+.modals.board .inner_search .round_select{width:180px;}
+.modals.board .inner_search .input_round{width:442px;height:48px;margin-left:8px;text-align: left;}
+.modals.board .inner_search button{margin-left:16px;white-space: nowrap;}
+.modals.board .inner_result{padding:14px 0 15px;border-radius: 8px;background-color:#f8f9fa;}
+.modals.board .inner_result.empty{padding:140px 0;}
+.modals.board .inner_result .txt_msg{margin:0;font-weight:400;font-size:13px;line-height:19px;color:#868e96;text-align: center;}
+.modals.board .inner_result .txt_num{display:inline-block;font-weight:bold;font-size:13px;line-height:19px;color:#5280e2;}
+.modals.board .inner_result + table{margin-top:16px;}
+.modals.board .tbl_notice th div{padding:16px 5px 19px;}
+.modals.board .tbl_notice td div{padding:9px 5px;white-space:normal;}
+.modals.board .tbl_notice td div p{overflow:hidden;display:-webkit-box;max-height:38px;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
+
+
+
 /* login */
 .wrapper.log::before{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background-image:linear-gradient(to right, #06d281 0%, #5280e2);}
 .wrapper.log >footer,
@@ -417,6 +442,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .tbl_notice.type_all_center tr td div{text-overflow: initial;}
 .tbl_notice.type_all_center tr th:nth-child(3) div,
 .tbl_notice.type_all_center tr td:nth-child(3) div{text-align: center;}
+.tbl_notice.type_all_center tr:hover td:nth-child(3) div{color:#343a40;}
 
 .tab_top{padding-bottom:40px;border-bottom:1px solid #d8d8d8; display:flex;justify-content: space-between;align-items: center;}
 .tab_menu{display: flex;border:1px solid #e9ecef;border-radius: 24px;background-color:#f4f6fc;}
@@ -717,10 +743,11 @@ h4 + .balance_data {margin-top:34px;}
 .box_confirm{position: relative;}
 .wrapper.join .inner_join .box_confirm .input_round{padding-right:100px;}
 .box_confirm .btn_xsmall{position: absolute;top:10px;right:20px;}
-.btn_xsmall{height:28px;padding:3px 15px 0;border-radius: 14px;}
+.btn_xsmall{height:28px;padding:3px 15px 0;border-radius:14px;}
 .btn_xsmall span{display: inline-block;font-weight:bold;font-size:12px;line-height:16px;color:#5280e2;}
 .btn_xsmall.color_primary span{color:inherit;}
 .color_primaryborder{background-color:#fff;border:1px solid #5280e2;}
+.color_txtprimaryborder{background-color:#fff;border:1px solid #5280e2;color:#5280e2;}
 .box_password{position:relative;}
 .box_password .btn_showtxt{position:absolute;top:16px;right:20px;overflow:hidden;width:24px;height:16px;background:url("../images/icon_password.png") no-repeat left bottom;}
 .box_password .btn_showtxt.on{background-position:left top;}
@@ -820,7 +847,6 @@ h4 + .balance_data {margin-top:34px;}
 .box_btn_video .btn_toggle.on .slide::after{left:20px;background-color:#5280e2;}
 
 /* 주간 달력 */
-.schedule_cal_wrap{}
 .schedule_cal_wrap .time_wrap{display:none; margin-top:24px;}
 .schedule_cal_wrap .schedule_list{display:flex;flex-direction:row;justify-content:space-between;}
 .schedule_cal_wrap .schedule_list ul{flex:1 1 13%;padding:8px 16px;;border-radius:12px;}
