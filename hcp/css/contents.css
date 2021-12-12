@@ -76,14 +76,14 @@ button{white-space: nowrap;}
 .modals.board .box .overflow_body::-webkit-scrollbar-track{width:0;background-color:transparent;}
 .modals.board .mod_head{padding:24px 32px;}
 .modals.board .mod_body{padding:10px 32px 32px;}
-.modals.board .overflow_body{overflow-y:scroll;height:570px;}
+.modals.board .overflow_body{overflow-y:scroll;max-height:570px;}
 .modals.board h3{font-weight:bold;font-size:15px;line-height:21px;color:#212529;text-align:left;}
 .modals.board .btn_close{position:absolute;top:23px;right:40px;width:24px;height:24px;border-radius: 12px;background-color:#212529;}
 .modals.board .btn_close::before,
 .modals.board .btn_close::after{content:"";position:absolute;top:46%;left:25%;width:12px;height:2px;border-radius:2px;background-color:#fff;transform-origin:center;}
 .modals.board .btn_close::before{transform:rotate(45deg)}
 .modals.board .btn_close::after{transform:rotate(-45deg)}
-.modals.board .inner_search{display:flex;padding:34px 0 20px;}
+.modals.board .inner_search{display:flex;margin-bottom:20px;}
 .modals.board .inner_search .round_select{width:180px;}
 .modals.board .inner_search .input_round{width:442px;height:48px;margin-left:8px;text-align: left;}
 .modals.board .inner_search button{margin-left:16px;white-space: nowrap;}
@@ -469,7 +469,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .inner_option_data .area_select .box_input > *{margin-left:8px;}
 .inner_option_data .area_select .box_input > :first-child{margin-left:0;}
 .box_period{position: relative;}
-.box_period .input_round{height:48px;width:100%;padding-right:46px;}
+.box_period .input_round{height:48px;width:100%;padding-right:46px;font-size:15px;color:#212529;}
 .box_period::after{content: "";position: absolute;top:14px;right:20px;width:20px;height:20px;background:url("../images/icon_calendar.png") no-repeat left top;pointer-events: none;}
 .inner_option_data .area_select .box_btn{display: flex;justify-content:flex-end;align-items: center;}
 .inner_option_data .area_select .box_btn > *{margin-right:4px;}
