@@ -16,7 +16,7 @@
     <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
     <script type="text/javascript" src="../js/d3.v5.min.js"></script>
     <script type="text/javascript" src="../js/swiper.min.js"></script>
-    <script type="text/javascript" src='../js/progressbar.js'></script><!-- 밸런스 차트 있을 시 추가 -->
+    <script type="text/javascript" src='../js/chart.js'></script>
     <script type="text/javascript" src="../js/common.js"></script>
     <noscript>
         <link rel="stylesheet" href="../css/NotoSansKR.css">
@@ -138,15 +138,15 @@
               </div>
             </div>
             <div class="probar">
-              <div id="points" class="semicircle">
-                <svg width="100%" height="100%" viewBox="-5 -5 110 63" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M 50,50 m -47,0 a 47,47 0 1 1 94,0" stroke="#21d0b3" stroke-width="13" stroke-linecap="round" fill-opacity="0"></path>
-                  <path id="sports" d="M 50,50 m -47,0 a 47,47 0 1 1 94,0" stroke="#5280e2" stroke-linecap="round" stroke-width="13" fill-opacity="0"></path>
-                </svg>
-              </div>
+              <div class="piechart-wrap"><div class="chart"></div></div>
               <div class="text">오른쪽으로 치우침</div>
             </div>
-            <script>probar(40,'sports','points')</script>
+            <script>
+              var piechartData = {
+                  value : 180 //왼쪽 0~100, 오른쪽 100~200
+              };
+              chart.pieChart('.piechart-wrap .chart', piechartData);
+            </script>
             <div class="over_data tfixed pb0">
               <div class="tfcell">
                 <p class="ti">왼발 GCT(ms)</p>

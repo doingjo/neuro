@@ -40,19 +40,19 @@
 
     /* 라디오 버튼 - 문진 정보 */
     $('.radio_mark input[type="radio"]').change(function () {
-      if($(this).prop("checked")) { 
+      if($(this).prop("checked")) {
         $(this).closest('.radio_mark').addClass('on').parent().siblings().find('.radio_mark').removeClass("on");
       }
     });
     $('.radio_mark .input input').focusin(function(){
-      $(this).closest('.radio_mark').addClass('on').find("input[type=radio]").prop("checked",true); 
+      $(this).closest('.radio_mark').addClass('on').find("input[type=radio]").prop("checked",true);
       $(this).closest('.radio_mark').parent().siblings().find('.radio_mark').removeClass("on");
     });
     /* 라디오 버튼 - 문진 정보 */
 
-    
+
     $('.check_mark input[type="checkbox"]').change(function () {
-      if($(this).prop("checked")) { 
+      if($(this).prop("checked")) {
         $(this).closest('.check_mark').addClass('on').parent().siblings().find('.check_mark').removeClass("on");
         $(this).closest('.check_mark').find('.input').show();
       }else{
@@ -71,35 +71,35 @@
     /* 탭메뉴 */
 
     /* 회원가입 개인정보 동의  */
-    $("#agreeAll").click(function(){ 
-      if($("#agreeAll").prop("checked")) { 
-        $(".agree_list input[type=checkbox]").prop("checked",true); 
-      } else { 
-        $(".agree_list input[type=checkbox]").prop("checked",false); 
-      } 
+    $("#agreeAll").click(function(){
+      if($("#agreeAll").prop("checked")) {
+        $(".agree_list input[type=checkbox]").prop("checked",true);
+      } else {
+        $(".agree_list input[type=checkbox]").prop("checked",false);
+      }
     });
     $(".agree_list input[type=checkbox]").click(function(){
       var lengths = $('.agree_list input[type=checkbox]').length -1;
       $('.agree_list input:checkbox[type=checkbox]:checked').each(function (index) {
         if(index==lengths){
-          $("#agreeAll").prop("checked",true); 
+          $("#agreeAll").prop("checked",true);
         }else{
-          $("#agreeAll").prop("checked",false); 
+          $("#agreeAll").prop("checked",false);
         }
       });
     });
     /* 회원가입 개인정보 동의  */
 
     /* 도움말 팝업 */
-    $(".tip_icon").click(function(){ 
+    $(".tip_icon").click(function(){
       $(this).toggleClass('on').parent().find('.tip_pop').toggleClass('on');
       return false;
     });
     /* 도움말 팝업 */
 
-    /* 비밀번호 타입 변경 */    
+    /* 비밀번호 타입 변경 */
     $('.pwshow').on('click', function () {
-      var type = $(this).parents('.tixed').find('.pwinput'); 
+      var type = $(this).parents('.tixed').find('.pwinput');
       if(type.attr('type') == 'password'){
         type.attr('type', 'text');
         $(this).addClass("on");
@@ -109,7 +109,7 @@
       }
       return false;
     });
-    /* 비밀번호 타입 변경 */    
+    /* 비밀번호 타입 변경 */
 
     /* 검색창 입력값 지우는 버튼 */
     $(".search_box input").on("propertychange change keyup paste input", function(){
@@ -154,11 +154,11 @@
         $('.page_head .headbg').css({'opacity':scroll/200});
       }else{
         $('.page_head .headbg').css({'opacity':1});
-      }  
-    }      
+      }
+    }
     $(window).scroll(function() {headbg();});
     /* 페이지 헤드 스크롤에 따라 배경색 변경 */
-    
+
     new Swiper(".category_tab .swiper", {
       slidesPerView: "auto",
       spaceBetween: 0,
@@ -186,13 +186,13 @@
       });
       dayWeek.slideTo($('.day_week .swiper-slide').length,0);
     }
-    
-    
+
+
     // console.log(weeklistArr)
     // $('#walk_tchart').scroll(function() {
     //   console.log($(this).scrollLeft())
 
-      
+
     //   // if($(this).scrollLeft() == $('#weeklist li').scrollLeft()){
     //   //   console.log($('#weeklist li').scrollLeft())
     //   // }
@@ -244,12 +244,12 @@ function bubble(data){
   var root = d3.hierarchy(data).sum(function(d) { return d.value; }).sort(function(a, b) { return b.value - a.value; });
   bubble(root);
   var node = svg.selectAll('.node').data(root.children).enter().append('g').attr('class', 'node').attr('transform', function(d) { return 'translate(' + d.x + ' ' + d.y + ')'; }).append('g').attr('class', 'graph');
-  node.append("circle").attr("r", function(d) { return d.r; }).style("fill", function(d) { 
-    return d.data.color; 
+  node.append("circle").attr("r", function(d) { return d.r; }).style("fill", function(d) {
+    return d.data.color;
   });
   node.append("text").attr("dy", ".3em").style("font-weight", "bold").style("text-anchor", "middle")
-  .text(function(d) { 
-    return d.data.value + '회'; 
+  .text(function(d) {
+    return d.data.value + '회';
   }).style("fill", "#ffffff").style("font-size", function(d) { return (d.r/11) + 'vw'; })
   var tatgetTag = document.querySelector('.bubble_texts');
   for (let index = 0; index < data.children.length; index++) {
@@ -303,31 +303,31 @@ function barchart(data, id, aver){
   $('#'+id+' .b').on("click", function(e) {
     $('#'+id+' li').removeClass("on");
     $(this).parent().addClass("on")
-  }); 
+  });
 }
 
-function probar(e, id, box){
-  sportsPoints = e/100,
-  svgSportsPath = document.getElementById(id);
-  var sports = new ProgressBar.Path(svgSportsPath, {
-    duration: 1000,
-    text: { value: '0' }
-  });
-  sports.set(sportsPoints);
-  var onebgHtml = `<div class="onebg"><div class="one"></div></div>`
-  var pinHtml = `<div class="pin"></div>`
-  var ruHtml = `<div class="ru"><ul></ul></div>`
-  $("#"+box).append(onebgHtml).append(pinHtml).append(ruHtml);
-  var per;
-  e < 60 ? per = e/10: per = e/10 + 1;
-  var perclass;
-  for (let index = 0; index < 12; index++) {
-    index - 1 < per ? perclass = 'on': perclass = 'off';
-    $("#"+box).find('.ru ul').append(`<li class="${perclass}"></li>`)
-  }
-  $("#"+box).find('.onebg').css('-webkit-transform','rotate('+e*1.8+'deg)'); 
-  $("#"+box).find('.pin').css('-webkit-transform','rotate('+e*1.8+'deg)'); 
-}
+// function probar(e, id, box){
+//   sportsPoints = e/100,
+//   svgSportsPath = document.getElementById(id);
+//   var sports = new ProgressBar.Path(svgSportsPath, {
+//     duration: 1000,
+//     text: { value: '0' }
+//   });
+//   sports.set(sportsPoints);
+//   var onebgHtml = `<div class="onebg"><div class="one"></div></div>`
+//   var pinHtml = `<div class="pin"></div>`
+//   var ruHtml = `<div class="ru"><ul></ul></div>`
+//   $("#"+box).append(onebgHtml).append(pinHtml).append(ruHtml);
+//   var per;
+//   e < 60 ? per = e/10: per = e/10 + 1;
+//   var perclass;
+//   for (let index = 0; index < 12; index++) {
+//     index - 1 < per ? perclass = 'on': perclass = 'off';
+//     $("#"+box).find('.ru ul').append(`<li class="${perclass}"></li>`)
+//   }
+//   $("#"+box).find('.onebg').css('-webkit-transform','rotate('+e*1.8+'deg)');
+//   $("#"+box).find('.pin').css('-webkit-transform','rotate('+e*1.8+'deg)');
+// }
 
 
 function barCycle(data, id){
@@ -351,11 +351,11 @@ function balance(data){
   const ojstag = document.getElementById('balancesvg');
   ojstag.style.height = dataLength * 13 + "vw";
   const ojs = document.getElementById('balance');
-  const width = ojs.offsetWidth;            
+  const width = ojs.offsetWidth;
   const height = ojs.offsetHeight - 20;
   //function resizer(){
-  const yScale = d3.scaleLinear().domain([endDay, startDay]).range([10, height]);  
-  const xScale = d3.scaleLinear().domain([6, 0]).range([width, 10]);      
+  const yScale = d3.scaleLinear().domain([endDay, startDay]).range([10, height]);
+  const xScale = d3.scaleLinear().domain([6, 0]).range([width, 10]);
   const yAxisSVG = d3.select("svg").append("g")//.select('text');
   const yAxis = d3.axisRight(yScale).tickSize(0).ticks(dataLength);
   yAxis(yAxisSVG);
@@ -384,7 +384,7 @@ function balance(data){
       }
     });
   d3.select("svg").data(data).selectAll(".tick").attr('class', function(d) {
-    var index = data.findIndex(i => i.day == d); 
+    var index = data.findIndex(i => i.day == d);
     if(index<0){return;}
     if(data[index].value == null || data[index].value == ''){
       return "nodata";
@@ -443,11 +443,11 @@ function walk_tdata(data){
   const ojstag = document.getElementById('walkTchart');
   ojstag.style.width = dataLength * 11.5 + "vw";
   const ojs = document.getElementById('walk_tchart');
-  const width = ojstag.offsetWidth;            
+  const width = ojstag.offsetWidth;
   const height = ojs.offsetHeight;
   const xScale = d3.scaleTime().domain([startDay, endDay]).range([0, width]);
   const yScale = d3.scaleLinear().domain([0, 3.3]).range([height - 50, 0]);
-  const xAxisSVG = d3.select("svg").append("g").attr("transform", "translate(0, "+height+")").attr('class', 'day'); 
+  const xAxisSVG = d3.select("svg").append("g").attr("transform", "translate(0, "+height+")").attr('class', 'day');
   const xAxis = d3.axisBottom(xScale).tickSize(1).tickFormat(d3.timeFormat("%d")).tickValues(data.map(d=>d.day));
   xAxis(xAxisSVG);
   d3.select("svg").selectAll(".domain").remove();
@@ -498,10 +498,10 @@ function linechat(data, id, tx, index){
   valdata= Math.max.apply(null,valdata);
   const ojstag = document.getElementById(id);
   ojstag.style.width = dataLength * 11.5 + "vw";
-  const width = ojstag.offsetWidth;            
+  const width = ojstag.offsetWidth;
   const height = ojstag.offsetHeight -30;
   var svgoj = d3.select("#"+id).append("svg")
-  const xScale = d3.scaleLinear().domain([startDay, endDay]).range([0, width]);                
+  const xScale = d3.scaleLinear().domain([startDay, endDay]).range([0, width]);
   const yScale = d3.scaleLinear().domain([-5, valdata + 5]).range([height, 0]);
   const xAxisSVG = svgoj.append("g").attr("transform", "translate(0, "+height+")");
   const xAxis = d3.axisBottom(xScale).tickSize(1).ticks(dataLength);
@@ -526,11 +526,11 @@ function linechat(data, id, tx, index){
   $('#'+id+' .cir').on("click", function(e) {
     var index = $(this).index();
     lineclick(index)
-  }); 
+  });
   $('#'+id+' .linechatli li').on("click", function(e) {
     var index = $(this).index();
     lineclick(index)
-  }); 
+  });
   lineclick(index);
   function lineclick(index){
     $('#'+id+' .bar_tip li').eq(index).addClass("on").siblings().removeClass("on");
@@ -539,7 +539,7 @@ function linechat(data, id, tx, index){
 
 
 function weekHome(data){
-  var currentDay = new Date();  
+  var currentDay = new Date();
   var theYear = currentDay.getFullYear();
   var theMonth = currentDay.getMonth();
   var theDate  = currentDay.getDate();

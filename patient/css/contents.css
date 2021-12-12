@@ -197,6 +197,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .modals.show::before{background-color: rgba(0, 0, 0, 0.7);transition: all 0.2s ease-out 0s;}
 .modals.show .box{transform:scale(1) translate(-50%, -50%);opacity: 1;}
 
+#wrap .container .noti{font-size:2.8205vw;color:#868e96;}
 /* 로그인 */
 .login_page{background: #f0f4f7;/*height:100vh;*/position: relative;min-height:211.1111vw;}
 .login_page h1{height:28%;position: relative;min-height: 55vw;}
@@ -306,6 +307,14 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .home_page .home_menu .day_week .liwa.saturday{color: #5999ff;}
 .home_page .home_menu .day_week .liday{display: block;text-align: center;font-size: 3.0769vw;font-weight: bold;line-height: 4.1026vw;height: 4.1026vw;color: #212529;width:auto;}
 .home_page .home_menu .day_week .on .liday{box-shadow:none;background-color:transparent;color: #fff;}
+.home_page .home_menu .nav{display:flex;justify-content:space-between; padding:4.1025vw 1.282vw 5.1282vw 3.846vw; border-top:.2565vw solid #e9ecef;}
+.home_page .home_menu .nav a{display:block; min-width:5.1282vw;padding:6.923vw 0 1.7948vw;font-size:2.8205vw;color:#3f59a8;font-weight:700;text-align:center; background-size:5.1282vw !important; position:relative;}
+.home_page .home_menu .nav a.active::after{content:'';display:block; width:100%;height:.5128vw; border-radius:.5128vw;background-color:#5280e2; position:absolute;bottom:0;left:0;right:0;}
+.home_page .home_menu .nav .home{background:url('../images/ico-bottom-home.svg')no-repeat center top;}
+.home_page .home_menu .nav .schedule{background:url('../images/ico-bottom-schedule.svg')no-repeat center top;}
+.home_page .home_menu .nav .training{background:url('../images/ico-bottom-training.svg')no-repeat center top;}
+.home_page .home_menu .nav .insole{background:url('../images/ico-bottom-insole.svg')no-repeat center top;}
+.home_page .home_menu .nav .result{background:url('../images/ico-bottom-result.svg')no-repeat center top;}
 
 /* default page */
 .default_page{background: #fff;min-height:100vh;position: relative;overflow: hidden;}
@@ -474,7 +483,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .category_tab .swiper{width:100%;overflow: hidden;}
 .category_tab .swiper-slide.bin{width:6.6667vw;}
 .category_tab .swiper-slide{width: auto;padding-right: 1.1111vw;}
-.category_tab .box{display: inline-block;height:10vw;line-height:9.5vw;border: solid 1px #dee2e6;border-radius: 5.5556vw;padding:0 4.4444vw;font-size: 3.8889vw;font-weight: bold;color: #212529;}
+.category_tab .box{display: inline-block;height:10vw;line-height:9.5vw; background-color:#fff;border: solid 1px #dee2e6;border-radius: 5.5556vw;padding:0 4.4444vw;font-size: 3.8889vw;font-weight: bold;color: #212529;}
 .category_tab .box.on{background: #5280e2;border-color: #5280e2;color:#fff;}
 .category_tab.on{margin:6.6667vw -6.6667vw 0;}
 .category_tab.on::before{left:0;}
@@ -673,6 +682,27 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .probar .semicircle .ru ul li:nth-child(12){left:99%;bottom:0%;}
 .probar .semicircle .ru ul li.on{background: rgb(82, 128, 226);}
 .probar .text{display: block;margin:4.4444vw auto 8.8889vw;text-align: center;font-size: 5.0000vw;font-weight: bold;color: #212529;}
+
+
+.piechart-wrap{margin:0 auto;width:56.4102vw}
+.piechart-wrap .chart{position:relative}
+.piechart-wrap .chart .dot-list li{position:absolute;bottom:0;display:inline-block;width:1.282vw;height:1.282vw;background:#dee2e6;border-radius:100%}
+.piechart-wrap .chart .dot-list li.on{background-color:#5280e2}
+.piechart-wrap .chart .dot-list li.dot6{left:18.18%;bottom:2.43%}
+.piechart-wrap .chart .dot-list li.dot5{left:18.63%;bottom:18.69%}
+.piechart-wrap .chart .dot-list li.dot4{left:21.81%;bottom:34.14%}
+.piechart-wrap .chart .dot-list li.dot3{left:27.72%;bottom:47.15%}
+.piechart-wrap .chart .dot-list li.dot2{left:35%;bottom:56.91%}
+.piechart-wrap .chart .dot-list li.dot1{left:44.54%;bottom:62.6%}
+.piechart-wrap .chart .dot-list li.dot7{right:44.54%;bottom:62.6%}
+.piechart-wrap .chart .dot-list li.dot8{right:35%;bottom:56.91%}
+.piechart-wrap .chart .dot-list li.dot9{right:27.72%;bottom:47.15%}
+.piechart-wrap .chart .dot-list li.dot10{right:21.81%;bottom:34.14%}
+.piechart-wrap .chart .dot-list li.dot11{right:18.63%;bottom:18.69%}
+.piechart-wrap .chart .dot-list li.dot12{right:18.18%;bottom:2.43%}
+.piechart-wrap .chart .pin{position:absolute;bottom:7.6923vw;left:calc(50% - 1.5384vw); transform:rotate(0deg);transform-origin:bottom center}
+.piechart-wrap .chart .pin::before{content:'';display:inline-block; width:3.0769vw;height:8.9743vw;margin-bottom:-1.5384vw; background:url('../images/chart_pointer.png') no-repeat center center;background-size:100% 100%}
+.piechart-wrap .txt_val{font-weight:bold;font-size:7.6923vw;line-height:8.9743vw;color:#2f455c;text-align:center; position:absolute;left:50%;bottom:-2.5641vw;transform: translateX(-50%);}
 
 .bubble_texts{text-align: center;margin-top:5vw;}
 .bubble_texts li{display: inline-block; font-size: 3.3333vw;font-weight: 500;line-height: 1.33;color: #212529;margin:1.6667vw 3.3333vw;}
@@ -947,7 +977,7 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .schedule_add{padding:6.6667vw 0 22.2222vw;}
 .schedule_add h2{font-size: 6.1111vw;font-weight: bold;line-height: 1.45;color: #212529;}
 .schedule_add .tx{margin: 4.4444vw 0 0 0;font-size: 3.8889vw;line-height: 1.43;color: #212529; word-break: keep-all;}
-.schedule_add .sports{margin-top:11.1111vw;}
+.schedule_add .sports{margin-top:5.1283vw;}
 .schedule_add .sports li{margin-bottom:2.2222vw;}
 .schedule_add .sports li:first-child{margin-top:0;}
 .schedule_add .category_tab{margin:8.8889vw -6.6667vw;}
