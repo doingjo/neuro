@@ -170,9 +170,10 @@ button{white-space: nowrap;}
 .inner_title .box_info .txt{margin-top:9px;font-weight:bold;font-size:18px;line-height:22px;color:#fff;}
 .inner_title .box_info .slash{display:inline-block;margin:0 4px;font-weight:300;font-size:14px;opacity: 0.7;}
 .inner_title .box_info .txt_total{opacity:0.75;}
- .box_info .info .badge{margin-right:9px;background-color:#fff;border-radius:12px;font-size:11px;line-height:22px;color:#5280e2;}
+.box_info .info .badge{margin-right:9px;background-color:#fff;border-radius:12px;font-size:11px;line-height:22px;color:#5280e2;}
 .deco_select,
 .deco_search{overflow:hidden;display:inline-block; cursor:pointer; height:48px;min-width:190px;border:1px solid #e8e8e8;background-color:#fff;transition:all .3s linear}
+.deco_search{padding:0 20px;}
 .deco_select.focus,
 .deco_search.focus,
 .round_select.focus{border-color:#5280e2;}
@@ -293,6 +294,13 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .input_chk_smtxt label::after{content:"";position:absolute;top:5px;left:0;overflow:hidden;width:8px;height:8px;background:url("../images/icon_chksmtxt.png") no-repeat left top;}
 .input_chk_smtxt input[type="checkbox"]:checked + label{color:#5280e2;}
 .input_chk_smtxt input[type="checkbox"]:checked + label::after{background:url("../images/icon_chksmtxt_cheked.png") no-repeat left top;}
+.deco_select select,
+.round_select select {color: #ced4da;}
+.deco_select.selected select,
+.round_select.selected select,
+.box_link + .deco_select select,
+.inner_rule .deco_select select{color: #212529;}
+
 
 
 /* 홈 */
@@ -343,7 +351,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .box_info.edit .list_info li {justify-content: flex-start;}
 .box_info.edit .list_info li .tit{width:140px;}
 .box_info.edit .round_select {min-width:320px;height:40px;}
-.box_info.edit .round_select select{height:40px;padding:8px 0 11px;}
+.box_info.edit .round_select select{height:40px;padding:8px 20px 11px;}
 .box_info.edit .box_input {position:relative;}
 .box_info.edit .box_input .input_round{padding-right:42px;margin:0;}
 .box_info.edit .box_input.shorter .input_round{width:182px;}
@@ -511,11 +519,11 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .tab_menu{display: flex;border:1px solid #e9ecef;border-radius: 24px;background-color:#f4f6fc;}
 .tab_menu li{position: relative;}
 .tab_menu li::before{content:"";position:absolute;top:0;left:50%;width:0;height:100%;border-radius: 24px;}
-.tab_menu li::after{content:"";position:absolute;top:17px;left:0;width:1px;height:14px;background-color:#e0e0e0;}
-.tab_menu li:first-child::after{content:none;}
+.tab_menu li::after{content:"";position:absolute;top:17px;right:-1px;width:1px;height:14px;background-color:#e0e0e0;}
+.tab_menu li:last-child::after{content:none;}
 .tab_menu li a{position:relative;display:block;padding:0 24px;font-weight:500;font-size:15px;line-height:46px;color:rgba(0,0,0,0.5);text-align:center;white-space:nowrap;}
 .tab_menu li.active::before{width:100%;background-color: #5280e2;transform:translateX(-50%);box-shadow: 0 -4px 13px 0 rgba(57, 59, 62, 0.12);}
-.tab_menu li.active::after{background-color: transparent;}
+.tab_menu li.active::after{content:none;}
 .tab_menu li.active a{color:#fff;}
 .tab_top .box_search{display:flex;justify-content:flex-end;}
 .tab_top .box_search > *{margin-left:8px;}
@@ -528,7 +536,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .inner_survey{padding:32px 0 16px;}
 .inner_survey .tit_question{margin:40px 0 13px;font-size:16px;line-height:22px;color:#212529;}
 .inner_survey .txt_notice{margin:-4px 0 12px;font-size:13px;line-height:19px;color:#f00;}
-.inner_survey .box_textarea{display:none;padding:14px 20px;}
+.inner_survey .box_textarea{padding:14px 20px;}
 .inner_survey .box_textarea textarea{height:60px;line-height:20px;}
 .inner_posture{padding:32px 0 52px;}
 .inner_posture_data{display: flex;flex-wrap:wrap;margin:20px -10px 0;}
