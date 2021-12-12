@@ -91,17 +91,6 @@ var choiceDay = new Date();
     ($('.fc-today-button').is(':disabled')) ? $('.btn_today').hide() : $('.btn_today').show() ;
   }
 $(function(){
-  //확인 후 주석 삭제!!!!!!!!!!!!!!!!!!
-  /* 일정 없는 날 - 표기 */
-  // $('.fc-daygrid-day-events').each(function(index, item){
-  //   ($(this).find('.fc-daygrid-event').length == 0) ? $(this).html('<p class="fc-event-title">-</p>') : '' ;
-  //   console.log('1')
-  // });
-  // $('.fc-prev-button, .fc-next-button').on('click', function(){
-  //   $('.fc-daygrid-day-events').each(function(index, item){
-  //     ($(this).find('.fc-daygrid-event').length == 0) ? $(this).html('<p class="fc-event-title">-</p>') : '' ;
-  //   });
-  // });
   /* 월간, 주간 tridder */
   $('.btn_today').click(function() {
     $('.fc-today-button').trigger('click');

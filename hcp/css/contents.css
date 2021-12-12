@@ -819,6 +819,20 @@ h4 + .balance_data {margin-top:34px;}
 .box_btn_video .btn_toggle .slide::after{content:"";position:absolute;top:0;right:0;width:20px;height:20px;border-radius:10px;background-color:#868e96;transition:background-color 0.5s;}
 .box_btn_video .btn_toggle.on .slide::after{left:20px;background-color:#5280e2;}
 
+/* 주간 달력 */
+.schedule_cal_wrap{}
+.schedule_cal_wrap .time_wrap{display:none; margin-top:24px;}
+.schedule_cal_wrap .schedule_list{display:flex;flex-direction:row;justify-content:space-between;}
+.schedule_cal_wrap .schedule_list ul{flex:1 1 13%;padding:8px 16px;;border-radius:12px;}
+.schedule_cal_wrap .schedule_list .active{background-color:#5280e2;box-shadow: 0 4px 12px 0 rgba(183, 192, 227, 0.4);}
+.schedule_cal_wrap .schedule_list li{padding:14px 0 10px;border-top:1px solid rgba(255, 255, 255, .2)}
+.schedule_cal_wrap .schedule_list li:first-child{border:0;}
+.schedule_cal_wrap .schedule_list .txt_num{font-size:11px;line-height:13px;color:#999;}
+.schedule_cal_wrap .schedule_list .txt_name{margin-top:7px;font-size:13px;line-height:19px;color:#111;}
+.schedule_cal_wrap .schedule_list .active p{color:#fff;}
+
+
+
 /* daterangepicker */
 .datepicker_open{border:0; max-width:790px; display:flex !important;justify-content:space-between;}
 .datepicker_open{margin-top:0; top:0;left:0;}
