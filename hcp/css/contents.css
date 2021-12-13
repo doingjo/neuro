@@ -331,6 +331,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .home_calendar_wrap .fc .fc-daygrid .fc-day-today.bg .fc-daygrid-day-top::before{background-color:#fff}
 .home_calendar_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{width:4px; top:32px;right:calc(50% - 2px)}
 .home_calendar_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events .fc-daygrid-event{margin:0;padding:0;width:4px;height:4px; text-indent:-9999px; border-radius:100%;background-color:#000;}
+.home_calendar_wrap .fc .fc-daygrid-day-number:hover{box-shadow:0 3px 2px 0 rgb(183 192 227 / 40%);}
 
 /* 설정 */
 /** 계정정보 **/
@@ -976,7 +977,9 @@ h4 + .balance_data {margin-top:34px;}
 @media screen and (max-width: 1300px) {
     .inner_gnb {text-align: right;}
     .inner_title{height:80px;}
+    .inner_title.home{height:120px;}
     .inner_title .tit_sub{display:none}
+    .inner_title.home .tit_sub{display:block;}
 
     /* 설정 */
     /** 계정정보 **/
@@ -1037,6 +1040,9 @@ h4 + .balance_data {margin-top:34px;}
     .inner_schedule_add .box_schedule{margin-top:48px;padding:0;padding-top:48px;border-width:1px;}
     .inner_schedule_add .datepicker_open .drp-calendar{max-width:50%;}
 
+    .cont_both.home .cont:first-child{max-width:100%;}
+    .achieve-wrap{margin:0 auto;}
+
 }
 @media screen and (max-width: 1024px) {
     .inner_title .box_link{display:none}
@@ -1072,10 +1078,16 @@ h4 + .balance_data {margin-top:34px;}
     .type_basic.player .inner_laypop{width:95vw;}
     .type_basic.player .seg_data{padding:0 24px;}
     .type_basic.player_sm .inner_laypop{width:95vw;padding:40px 24px 24px;}
+    .tit_cnt{align-items:center;}
 }
 @media screen and (max-width: 900px) {
     .wrapper.join .container{height:auto;padding:64px 0 48px;}
     .wrapper.join footer{position:static;}
+    .inner_title.home .box_info .info{min-width:100px;}
+    .inner_title.home .tit_sub .txt_date{display:block;}
+    .achieve-wrap{width:630px;}
+    .achieve-wrap .chart .legend p::after{width:417px;}
+    .achieve-wrap .chart .bar-wrap{padding:0 30px;}
 }
 @media screen and (max-height:850px) {
     .wrapper.join .container{height:auto;padding:64px 0 48px;}
