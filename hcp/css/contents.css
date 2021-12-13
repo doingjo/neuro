@@ -909,16 +909,15 @@ h4 + .balance_data {margin-top:34px;}
 .tit_exlist{display:flex;justify-content:space-between;margin-bottom:15px;}
 .tit_exlist h2{font-weight:bold;font-size:18px;line-height:26px;color:#000;}
 
-.sortable_ex > li{overflow:hidden;border:1px solid #e9ecef;border-radius:12px;background-color:#fff;pointer-events:none;}
+.sortable_ex > li{overflow:hidden;border:1px solid #e9ecef;border-radius:12px;background-color:#fff;}
 .sortable_ex .area_ex_cnt{position:relative;padding:28px 92px 21px 33px;}
-.sortable_ex .area_ex_handler{position:absolute;top:0;right:0;width:60px;height:100%;border-left:1px solid #e9ecef;background-color:#f8f9fa;pointer-events:all;}
+.sortable_ex .area_ex_handler{position:absolute;top:0;right:0;width:60px;height:100%;border-left:1px solid #e9ecef;background-color:#f8f9fa;}
 .sortable_ex .area_ex_handler::after{content:"";overflow:hidden;position:absolute;top:50%;right:24px;width:12px;height:2px;margin-top:-3px;border-top:2px solid #d8d8d8;border-bottom:2px solid #d8d8d8;border-radius:1px;}
 .sortable_ex li + li{margin-top:11px;}
 .area_ex_cnt .tit_list{display:flex;justify-content:space-between;margin-bottom:21px;}
 .area_ex_cnt .tit_list h3{font-weight:bold;font-size:16px;line-height:24px;color:#5280e2;}
 .area_ex_cnt .tit_list .idx_list{display:inline-block;font:inherit;}
 .area_ex_cnt .tit_list .sub_tit{font-weight:300;font-size:14px;line-height:20px;color:#868e96;}
-.sortable_ex .area_answer > *{pointer-events: all;}
 .select_set{display:flex;justify-content: space-between;}
 .select_set .set_left{display:flex;flex-wrap:wrap;}
 .select_set .set_left > *{margin-right:4px;}
