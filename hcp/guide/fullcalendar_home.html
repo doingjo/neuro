@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/fullcalendar.js"></script>
+  <script type="text/javascript" src="../js/chart.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+  <title>HCP</title>
+</head>
+
+<style>
+.home_cal_wrap{max-width:404px;}
+
+.fc .fc-daygrid-day-frame{position: relative;height:99px; /* seems to work better than `height` because sets height after rows/cells naturally do it */  }
+.fc .fc-daygrid-day-number{position:relative;z-index:4; height:91px;padding:21px;margin:4px; font-size:12px;color:#868e96;font-weight:500; border-radius:12px;border:1px solid #fff; display:flex;align-items:start;justify-content:end;}
+.fc .fc-daygrid-day-number:hover{text-decoration:none !important; border-color:#5280e2;box-shadow: 0 4px 4px 0 rgba(183, 192, 227, 0.4);}
+.fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:before{content:'';display:block; border-radius:12px;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
+.fc .fc-scrollgrid-section-sticky > * {position:sticky;z-index:3; border-radius:8px;background: #f8f9fd;background: var(--fc-page-bg-color, #f8f9fd);}
+.fc .fc-daygrid .fc-day-today .fc-daygrid-day-top::before{content:'';display:block; width:3px;height:3px;border-radius:100%;background-color:#111; position:absolute;top:21px;right:28px;z-index:10}
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{position:absolute;top:50px;right:24px;z-index:10}
+
+
+.home_cal_wrap .fc .fc-scrollgrid-section-sticky > *{background-color:transparent !important;}
+.home_cal_wrap .fc .fc-col-header-cell-cushion{padding:0 0 13px;width:100%; text-align:center;}
+.home_cal_wrap .fc-theme-standard td{border-top:0}
+.home_cal_wrap .fc .fc-daygrid-day-frame{height:44px;}
+.home_cal_wrap .fc .fc-daygrid-day-number{height:42px;padding:0;margin:1px; font-size:13px;color:#000;font-weight:700; border-radius:8px; align-items:center;justify-content:center;}
+.home_cal_wrap .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:before{border-radius:8px;}
+.home_cal_wrap .fc .fc-daygrid .fc-day-today .fc-daygrid-day-top::before{background-color:#868e96; top:10px;right:calc(50% - 2px)}
+.home_cal_wrap .fc .fc-daygrid .fc-day-today.bg .fc-daygrid-day-top::before{background-color:#fff}
+.home_cal_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{width:4px; top:32px;right:calc(50% - 2px)}
+.home_cal_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events .fc-daygrid-event{margin:0;padding:0;width:4px;height:4px; text-indent:-9999px; border-radius:100%;background-color:#000;}
+</style>
+
+<body>
+  <div id="wrap" style="background:#fff">
+
+
+        <div style="padding:50px;">
+          <button style="margin:0 10px;padding:10px;background-color:#ddd;" class="btn_today">오늘</button>
+        </div>
+        <div class="home_cal_wrap">
+          <div id='home_calendar'></div>
+        </div>
+
+<script>
+
+var scheduleData = [
+    {
+      title: '5명',
+      start: '2021-12-09T00:00:00'
+    },
+    {
+      title: '5명',
+      start: '2021-12-16T00:00:00'
+    },
+    {
+      title: '5명',
+      start: '2021-12-12T00:00:00'
+    },
+    {
+      title: '5명',
+      start: '2021-12-13T00:00:00'
+    },
+  ];
+</script>
+
+<script>
+  hcp.fullcalendar('home_calendar', 'home', scheduleData)
+</script>
+
+
+</body>
+</html>

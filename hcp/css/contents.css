@@ -321,11 +321,16 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .home .box_schedule .box_cnt .txt_rate{margin-left:4px;font-weight:bold;color:#5280e2;}
 .home .box_schedule .box_cnt .txt_rate.rowrate{margin-left:4px;font-weight:bold;color:#db3e3e;}
 .home .inner_overbox{top:69px;bottom:32px;left:28px;right:12px;padding:0 12px 0 0;}
-.home .home_calendar{position:relative;}
-.home .home_calendar .datepicker{position:absolute;left:-9999px;}
-.home .home_calendar + .daterangepicker{position:static;border:0;}
-.home .home_calendar + .daterangepicker .drp-calendar{max-width:unset;margin-top:22px;}
-
+.home_calendar_wrap .fc .fc-scrollgrid-section-sticky > *{background-color:transparent !important;}
+.home_calendar_wrap .fc .fc-col-header-cell-cushion{padding:0 0 13px;width:100%; text-align:center;}
+.home_calendar_wrap .fc-theme-standard td{border-top:0}
+.home_calendar_wrap .fc .fc-daygrid-day-frame{height:44px;}
+.home_calendar_wrap .fc .fc-daygrid-day-number{height:42px;padding:0;margin:1px; font-size:13px;color:#000;font-weight:700; border-radius:8px; align-items:center;justify-content:center;}
+.home_calendar_wrap .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:before{border-radius:8px;}
+.home_calendar_wrap .fc .fc-daygrid .fc-day-today .fc-daygrid-day-top::before{background-color:#868e96; top:10px;right:calc(50% - 2px)}
+.home_calendar_wrap .fc .fc-daygrid .fc-day-today.bg .fc-daygrid-day-top::before{background-color:#fff}
+.home_calendar_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{width:4px; top:32px;right:calc(50% - 2px)}
+.home_calendar_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events .fc-daygrid-event{margin:0;padding:0;width:4px;height:4px; text-indent:-9999px; border-radius:100%;background-color:#000;}
 
 /* 설정 */
 /** 계정정보 **/
@@ -705,8 +710,8 @@ h4 + .balance_data {margin-top:34px;}
 /* 챠트 */
 /* .linechart-wrap{width:1300px} */
 
-.piechart-wrap{width:220px}
-.piechart-wrap .chart{position:relative}
+.piechart-wrap{width:220px;height:133px;}
+.piechart-wrap .chart{width:100%;height:123px;position:relative}
 .piechart-wrap .chart .dot-list li{position:absolute;bottom:0;display:inline-block;width:5px;height:5px;background:#dee2e6;border-radius:100%}
 .piechart-wrap .chart .dot-list li.on{background-color:#5280e2}
 .piechart-wrap .chart .dot-list li.dot6{left:18.18%;bottom:2.43%}
@@ -723,7 +728,7 @@ h4 + .balance_data {margin-top:34px;}
 .piechart-wrap .chart .dot-list li.dot12{right:18.18%;bottom:2.43%}
 .piechart-wrap .chart .pin{position:absolute;bottom:30px;left:calc(50% - 6px); transform:rotate(0deg);transform-origin:bottom center}
 .piechart-wrap .chart .pin::before{content:'';display:inline-block; width:12px;height:35px;margin-bottom:-6px; background:url('../images/chart_pointer.png') no-repeat center center;background-size:100% 100%}
-.piechart-wrap .txt_val{font-weight:bold;font-size:30px;line-height:35px;color:#2f455c;text-align:center;}
+.piechart-wrap .txt_val{font-weight:bold;font-size:30px;line-height:35px;color:#2f455c;text-align:center; position:absolute;left:50%;bottom:-10px;transform: translateX(-50%);}
 
 .walkchart-wrap{/* width:546px; */width:100%;}
 .walkchart-wrap .chart{position:relative}

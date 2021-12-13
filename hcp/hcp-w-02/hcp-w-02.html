@@ -13,21 +13,20 @@
 
   <link rel="stylesheet" href="../css/ini.min.css">
   <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
   <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
   <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
   <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/fullcalendar.js"></script>
   <script type="text/javascript" src="../js/chart.js"></script>
-  <script type="text/javascript" src="../js/moment.min.js"></script>
-  <script type="text/javascript" src="../js/daterangepicker.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
   <noscript>
       <link rel="stylesheet" href="../css/NotoSansKR.css">
       <link rel="stylesheet" href="../css/Montserrat.css">
   </noscript>
   <link rel="stylesheet" href="../css/contents.css">
-  <link rel="stylesheet" type="text/css" href="../css/daterangepicker.css" />
 
   <title>HCP</title>
 </head>
@@ -212,11 +211,8 @@
                     <h3>재활 스케쥴</h3>
                     <button type="button" class="btn_xsmall color_txtprimaryborder"><span>오늘</span></button>
                 </div>
-                <div>
-                    <!-- 디자인 미완성 211212기준 -->
-                    <div class="home_calendar">
-                        <input type="text" class="datepicker" name="" value="" />
-                    </div>
+                <div class="home_calendar_wrap">
+                  <div id='home_calendar'></div>
                 </div>
                 <div class="box_schedule">
                     <div class="tit_schedule">
@@ -433,11 +429,27 @@
         {day:'금', value: 40},
         {day:'토', value: 0},
     ];
-    $(function(){
-        chart.achieveChart('.achieve-wrap .chart', achieveData);
-        hcp.daterangepicker('.home_calendar', true, true);
-        hcp.modals_show("main_pop");
-    });
+    var scheduleData = [
+        {
+          title: '5명',
+          start: '2021-12-09T00:00:00'
+        },
+        {
+          title: '5명',
+          start: '2021-12-16T00:00:00'
+        },
+        {
+          title: '5명',
+          start: '2021-12-12T00:00:00'
+        },
+        {
+          title: '5명',
+          start: '2021-12-13T00:00:00'
+        },
+    ];
+    chart.achieveChart('.achieve-wrap .chart', achieveData);
+    hcp.fullcalendar('home_calendar', 'home', scheduleData);
+    hcp.modals_show("main_pop");
 </script>
 </body>
 </html>
