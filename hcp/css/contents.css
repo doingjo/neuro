@@ -136,7 +136,7 @@ button{white-space: nowrap;}
 .log_wrap form .btn_wrap .btns a::before{content:'';display:block;position:absolute;top:5px;left:-18px;  width:1px;height:10px; background-color:#ced4da}
 .log_wrap form .btn_wrap .btns a:first-child::before{display:none}
 .log_wrap form >button{margin-top:40px;width:100%;height:56px; font-size:17px;color:#fff;font-weight:700; border-radius:12px;background-color:#5280e2}
-.log_wrap form .btn_join{display:inline-block;margin-top:48px;padding:9px 30px; /*font-family:"Apple SD Gothic";*/font-size:15px;color:#343a40;font-weight:700; border-radius:20px;border:1px solid #e9ecef;background-color:#fff}
+.log_wrap form .btn_mem{display:inline-block;margin-top:48px;padding:9px 30px; /*font-family:"Apple SD Gothic";*/font-size:15px;color:#343a40;font-weight:700; border-radius:20px;border:1px solid #e9ecef;background-color:#fff}
 @media screen and (max-height:800px) {
     .log_wrap{position:relative;top:0;left:0;transform:none;margin:100px auto 0;width:360px; text-align:center;}
     .wrapper.log >footer{position:relative;padding:56px 0 48px;}
@@ -836,7 +836,7 @@ h4 + .balance_data {margin-top:34px;}
 .box_confirm{position: relative;}
 .wrapper.join .inner_join .box_confirm .input_round{padding-right:100px;}
 .box_confirm .btn_xsmall{position: absolute;top:10px;right:20px;}
-.btn_xsmall{height:28px;padding:3px 15px 0;border-radius:14px;}
+.btn_xsmall{height:26px;padding:1px 15px 0;border-radius:14px;}
 .btn_xsmall span{display: inline-block;font-weight:bold;font-size:12px;line-height:16px;color:#5280e2;}
 .btn_xsmall.color_primary span{color:inherit;}
 .color_primaryborder{background-color:#fff;border:1px solid #5280e2;}

@@ -20,7 +20,6 @@
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
   <script type="text/javascript" src="../js/fullcalendar.js"></script>
-  <script type="text/javascript" src="../js/schedule.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
   <noscript>
       <link rel="stylesheet" href="../css/NotoSansKR.css">
@@ -389,7 +388,7 @@
             </div>
             <!-- 스케쥴// -->
         </div>
-        <!-- 달력과 스케쥴// -->        
+        <!-- 달력과 스케쥴// -->
       </div>
       <!-- 컨텐츠 영역// -->
     </div>
@@ -426,6 +425,7 @@
             start: '2021-12-13T00:00:00'
         },
     ];
+    hcp.fullcalendar('fullcalendar', 'schedule', scheduleData);
     $(function(){
         $(window).on("load", function(){
             $(".btn_week").trigger("click");
