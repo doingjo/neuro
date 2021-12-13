@@ -844,7 +844,7 @@ h4 + .balance_data {margin-top:34px;}
 .cont.inner_schedule_main{padding:0;}
 .flex_schedule{display:flex;justify-content: space-between;}
 .flex_schedule .box_calendar{max-width:900px;padding:52px 44px 48px;}
-.flex_schedule .box_schedule{position:relative;overflow:hidden;flex:1 1 30%;min-width:461px;max-height:800px;border-left:8px solid #f2f3f9;padding:48px 48px 36px;}
+.flex_schedule .box_schedule{position:relative;overflow:hidden;flex:1 1 30%;min-width:461px;border-left:8px solid #f2f3f9;padding:48px 48px 36px;}
 .box_schedule .tit_schedule{display:flex;justify-content: space-between;margin-bottom:20px;}
 .tit_schedule h2{font-weight:bold;font-size:18px;line-height:28px;color:#555;}
 .tit_schedule .txt_date{display:inline-block;font:inherit;color:#5280e2;}
@@ -1033,7 +1033,7 @@ h4 + .balance_data {margin-top:34px;}
     .inner_schedule_add .datepicker_open .drp-calendar{max-width:50%;}
 
 }
-@media screen and (max-width: 1024px) {    
+@media screen and (max-width: 1024px) {
     .inner_title .box_link{display:none}
     .inner_title .box_link + .deco_select{display:block;width:31.25vw;}
 
