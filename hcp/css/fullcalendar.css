@@ -727,8 +727,8 @@ A HORIZONTAL event
 .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:hover{border-color:transparent;}
 .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:before{content:'';display:block; border-radius:12px;background:rgba(82, 128, 227, 1);background:var(--fc-highlight-color, rgba(82, 128, 227, 1));position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
 .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-events .fc-event-title{color:#fff;}
-.fc .fc-daygrid .fc-day-today .fc-daygrid-day-top::before{content:'';display:block; width:3px;height:3px;border-radius:100%;background-color:#111; position:absolute;top:21px;right:28px;z-index:10}
-.fc .fc-daygrid .fc-day-today.bg .fc-daygrid-day-top::before{background-color:#fff;}
+.fc .fc-daygrid .fc-day-today .fc-daygrid-day-top::before{content:'';display:block; width:3px;height:3px;border-radius:100%;background-color:#21d0b3; position:absolute;top:21px;right:28px;z-index:10}
+/*.fc .fc-daygrid .fc-day-today.bg .fc-daygrid-day-top::before{background-color:#fff;}*/
 
 .fc {
 

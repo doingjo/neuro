@@ -139,7 +139,7 @@ var chart = chart || {
         $val = (dataSet.value <= 100)? dataSet.value : dataSet.value-100;
         box.append('<p class="txt_val">'+ $val +'</p>');
         box.find('.pin').css('-webkit-transform','rotate('+ $pin +'deg)');
-        box.css("height", height);
+        box.css({'width': width, 'height': height});
         var svg = d3.select($this).append("svg").attr("width", width).attr("height", height);
         g = svg.append("g").attr("transform", "translate(" + width / 2 + "," + (height-circleR) + ")");
         var arcGenerator = d3.arc()
