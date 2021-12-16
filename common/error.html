@@ -11,24 +11,26 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
 
+  <script type="text/javascript" src="js/lottie-player.js"></script>
   <link rel="stylesheet" href="css/NotoSansKR.css">
   <link rel="stylesheet" href="css/error.css">
 
   <title>neuro</title>
 </head>
 <body>
-  <div id="wrap">
 
+  <div id="wrap">
     <div class="error-wrap">
       <div class="error">
-        <div><img src="images/error01.svg" alt=""></div>
+        <div class="lottie">
+            <lottie-player src="images/error.json" background="transparent" style="width:100%; height:100%;" speed="1" loop autoplay></lottie-player>
+        </div>
         <strong>다음과 같은 이유로<br>처리되지 않았습니다</strong>
         <p>요청하신 페이지는 보안 세션이 적용되어 있습니다.<br>즐겨찾기(북마크) 등을 통해 직접 이 페이지에 접근하는 경우에 이 에러가 발생할 수 있습니다.<br>암호화 세션이 종료되었을 경우에 이 에러가 발생할 수 있습니다.</p>
       </div>
       <div class="btn-bottom"><a href="/">메인화면으로 이동</a></div>
     </div>
-
-
   </div>
+
 </body>
 </html>

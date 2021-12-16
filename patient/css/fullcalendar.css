@@ -719,8 +719,8 @@ A HORIZONTAL event
 .fc .fc-day-today {position:relative;}
 .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number:after{content:'';display:block; width:1.0256vw;height:1.0256vw; border-radius:100%;background-color:#000;position:absolute;top:2.0512vw;left:calc(50% - .5128vw);z-index:10}
 .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number.bg:after{background-color:#fff}
-.fc .fc-col-header-cell.fc-day-today .col-day:after{content:'';display:block; width:1.0256vw;height:1.0256vw; border-radius:100%;background-color:#000;position:absolute;top:2.0512vw;left:calc(50% - .5128vw);z-index:10}
-.fc .fc-col-header-cell.fc-day-today .col-day.bg:after{background-color:#fff}
+.fc .fc-col-header-cell.fc-day-today .col-day:after{content:'';display:block; width:1.0256vw;height:1.0256vw; border-radius:100%;background-color:#21d0b3;position:absolute;top:2.0512vw;left:calc(50% - .5128vw);z-index:10}
+/*.fc .fc-col-header-cell.fc-day-today .col-day.bg:after{background-color:#fff}*/
 
 .fc .fc-daygrid-day-frame {
     position: relative;

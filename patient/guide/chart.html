@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+  <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/chart.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+  </noscript>
+  <link rel="stylesheet" href="../css/contents.css">
+
+
+<style>
+body{background-color:#fff}
+
+
+.walkchart-wrap{width:546px;}
+.walkchart-wrap .chart{position:relative}
+.walkchart-wrap .chart .legend:after{content:'';display:block;clear:both}
+.walkchart-wrap .chart .legend strong:nth-child(2){text-align:right;float:right}
+.walkchart-wrap .chart .legend strong{font-size:3.5897vw;font-weight:500; float:left;}
+.walkchart-wrap .chart .legend strong span{display:block; font-size:3.0769vw;font-weight:400;vertical-align:baseline}
+.walkchart-wrap .chart >.averline{position:absolute;top:9.7435vw;height:30.7692vw;z-index:1;width:.5128vw;background:url('../images/line_1.svg')repeat-y center center;background-size:auto}
+.walkchart-wrap .chart .bar-wrap{margin-top:2.8205vw;position:relative}
+.walkchart-wrap .chart .bar-wrap .bar{position:relative;height:3.0769vw;margin:0 0 2.0512vw;border-radius:1.5384vw;background-color:#e9ecef;overflow:hidden}
+.walkchart-wrap .chart .bar-wrap .bar .stance{position:absolute;top:0;height:3.0769vw}
+.walkchart-wrap .chart .bar-wrap >span{font-size:3.0769vw;font-weight:bold;line-height:1.33;text-align:center;color:#000;white-space:nowrap}
+.walkchart-wrap .chart .bar-wrap .stance_tx{position:absolute;top:5.1282vw;transform:translate(-50%, 0)}
+.walkchart-wrap .chart .bar-wrap .swing_tx{position:absolute;top:5.1282vw;right:0}
+.walkchart-wrap .chart .bar-wrap.f .stance_tx{transform:translate(-100%, 0)}
+.walkchart-wrap .chart .bar-wrap.ff .swing_tx{transform:translate(130%, 0)}
+.walkchart-wrap .chart .bar-wrap.fff .swing_tx{display:none}
+.walkchart-wrap .chart .bar-wrap .name{font-weight:500;color:#868e96}
+.walkchart-wrap .chart .bar-wrap.left .bar .stance{background-color:#5280e2}
+.walkchart-wrap .chart .bar-wrap.right .bar .stance{background-color:#21d0b3}
+.walkchart-wrap .chart .bar-wrap.aver .bar .stance{background-color:#2f455c}
+
+.analysis-wrap{width:325px;}
+.analysis-wrap .chart{position:relative;}
+.analysis-wrap .chart .legend{font-size:4.6153vw;font-weight:700;letter-spacing:-.5px}
+.analysis-wrap .chart .legend:after{content:'';display:block;clear:both}
+.analysis-wrap .chart .legend em{font-size:3.5897vw;font-weight:500;vertical-align:middle}
+.analysis-wrap .chart .legend strong{font-family:Montserrat; float:right;}
+.analysis-wrap .chart .bar-wrap{margin-top:2.0512vw;padding-bottom:6.6667vw; position:relative}
+.analysis-wrap .chart .bar-wrap .bar{height:3.0769vw;border-radius:1.5384vw;overflow:hidden}
+.analysis-wrap .chart .bar-wrap .bar span{display:block;height:100%;}
+.analysis-wrap .chart .bar-wrap .average{  position:absolute;top:0;}
+.analysis-wrap .chart .bar-wrap .average:before,
+.analysis-wrap .chart .bar-wrap .average:after{content:'';display:block; height:4.1025vw;position:absolute;top:-.5128vw;}
+.analysis-wrap .chart .bar-wrap .average:before{width:3.0769vw;background-color:#fff; left:-1.5384vw;}
+.analysis-wrap .chart .bar-wrap .average:after{width:1.0256vw;border-radius:.5128vw;background-color:#212529; left:-.5128vw;}
+.analysis-wrap .chart .bar-wrap .average span{position:absolute;top:4.8717vw;left:0; font-size:3.0769vw;color:#868e96;white-space:nowrap;}
+.analysis-wrap .chart.type3{padding-right:7.6923vw;}
+.analysis-wrap .chart.type3 .legend{line-height:1; position:absolute;top:-.7692vw;right:0;}
+
+.achieve-wrap{width:792px;height:304px; padding:24px 32px 24px 102px; border-radius:10px;background-color:#f7f8fd}
+.achieve-wrap .chart{position:relative; height:100%;padding:42px 40px 65px; border-radius:10px;background-color:#fff}
+.achieve-wrap .chart .legend{position:absolute;top:34px;left:-70px;}
+.achieve-wrap .chart .legend p{position:relative; margin-top:18px; font-size:12px;color:#868e96;font-weight:500}
+.achieve-wrap .chart .legend p::after{content:'';display:block; position:absolute;top:50%;left:110px; width:580px;height:1px; background-color:#e9ecef}
+.achieve-wrap .chart .legend p:first-child{margin-top:0;}
+.achieve-wrap .chart .legend p:last-child{margin-top:23px; font-size:11px;font-weight:400}
+.achieve-wrap .chart .legend p:last-child::after{display:none}
+.achieve-wrap .chart .bar-wrap{display:flex;flex-direction:row;justify-content:space-between; height:100%;padding:0 60px;}
+.achieve-wrap .chart .bar-wrap .bar{position:relative; width:24px;height:100%;}
+.achieve-wrap .chart .bar-wrap .bar span{display:inline-block;position:absolute;bottom:0; width:100%;min-height:24px; border-radius:12px;background-color:#90b4ff}
+.achieve-wrap .chart .bar-wrap .bar .tick{position:absolute;bottom:-36px;left:0;right:0; font-size:12px;color:#999;font-weight:700;text-align:center;}
+.achieve-wrap .chart .bar-wrap .bar:first-child .tick{color:#fa323c;}
+.achieve-wrap .chart .bar-wrap .bar:last-child .tick{color:#434cff;}
+.achieve-wrap .chart .bar-wrap .bar.max span{background-color:#5280e2}
+</style>
+
+
+    <title>Neuro font text</title>
+  </head>
+  <body>
+  <body>
+    <div class="linechart-wrap"><div class="chart"></div></div>
+    <div class="piechart-wrap"><div class="chart"></div></div>
+    <div class="walkchart-wrap"><div class="chart"></div></div>
+    <div class="analysis-wrap type01"><div class="chart"></div></div>
+    <div class="analysis-wrap type02"><div class="chart"></div></div>
+    <div class="analysis-wrap type03"><div class="chart"></div></div>
+
+    <div class="achieve-wrap"><div class="chart"></div></div>
+  </body>
+</html>
+
+<script>
+var linechartData = [
+  {date:'01', value: 123},
+  {date:'02', value: 245},
+  {date:'03', value: 355},
+  {date:'04', value: 255},
+  {date:'05', value: 359},
+  {date:'06', value: 258},
+  {date:'07', value: 307},
+  {date:'08', value: 344},
+  {date:'09', value: 123},
+  {date:'10', value: 245},
+  {date:'11', value: 123},
+  {date:'12', value: 245},
+  {date:'13', value: 355},
+  {date:'14', value: 255},
+  {date:'15', value: 359},
+  {date:'16', value: 258},
+  {date:'17', value: 307},
+  {date:'18', value: 344},
+  {date:'19', value: 123},
+  {date:'20', value: 245},
+  {date:'21', value: 123},
+  {date:'22', value: 245},
+  {date:'23', value: 355},
+  {date:'24', value: 255},
+  {date:'25', value: 359},
+  {date:'26', value: 258},
+  {date:'27', value: 307},
+  {date:'28', value: 344},
+  {date:'29', value: 123},
+  {date:'30', value: 245},
+];
+var piechartData = {
+    value : 180 //왼쪽 0~100, 오른쪽 100~200
+};
+var barCycleData = [
+  {name:'왼발',stance:'100',swing:'33'},
+  {name:'오른발',stance:'63',swing:'37'},
+  {name:'표준',stance:'60',swing:'40'},
+];
+var analysisData = {
+  tit:'좌 : 우', value: 40, averageTxt: '표준', average: 50, barColor: '#5280e2', bgColor: '#21d0b3'
+}
+var achieveData = [
+  {day:'일', value: 20},
+  {day:'월', value: 30},
+  {day:'화', value: 60},
+  {day:'수', value: 100},
+  {day:'목', value: 80},
+  {day:'금', value: 40},
+  {day:'토', value: 0},
+];
+$(function(){
+  chart.lineChart('.linechart-wrap .chart', linechartData);
+  chart.pieChart('.piechart-wrap .chart', piechartData);
+  chart.walkChart('.walkchart-wrap .chart', barCycleData);
+  chart.analysisChart('.type01 .chart', analysisData, 1);
+  chart.analysisChart('.type02 .chart', analysisData, 2);
+  chart.analysisChart('.type03 .chart', analysisData, 3);
+  chart.achieveChart('.achieve-wrap .chart', achieveData);
+});
+
+
+</script>

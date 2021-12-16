@@ -1,0 +1,58 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path d="M1.049 0h11.89a1.049 1.049 0 1 1 0 2.098H1.048a1.049 1.049 0 1 1 0-2.098z" id="e"/>
+        <path d="M1.049 0h11.89a1.049 1.049 0 1 1 0 2.098H1.048a1.049 1.049 0 1 1 0-2.098z" id="f"/>
+        <path d="M6.994 5.245c3.862 0 6.993-1.879 6.993-4.196 0 .025-13.987-.002-13.987 0 0 2.317 3.131 4.196 6.994 4.196z" id="g"/>
+        <circle id="a" cx="30" cy="30" r="30"/>
+        <rect id="c" x="0" y="0" width="27.625" height="38.115" rx="13.812"/>
+    </defs>
+    <g transform="translate(2 2)" fill="none" fill-rule="evenodd">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <circle stroke="#FFF" stroke-width="2" cx="30" cy="30" r="31"/>
+        <g mask="url(#b)">
+            <g transform="translate(11.928 6.436)">
+                <circle fill="#FB9253" cx="8.567" cy="40.738" r="8.567"/>
+                <circle fill="#FB9253" cx="29.198" cy="40.738" r="8.567"/>
+                <rect fill="#FB9253" x="2.833" width="31.821" height="47.557" rx="15.911"/>
+                <path d="M33.57 55.564H3.497c0-7.725 6.262-13.987 13.987-13.987h2.098c7.725 0 13.988 6.262 13.988 13.987z" fill="#30C57A"/>
+                <ellipse fill="#FFF" cx="18.708" cy="46.158" rx="5.342" ry="3.847"/>
+                <path fill="#FFB892" d="M14.364 32.171h8.688v13.288h-8.688z"/>
+                <ellipse fill="#FFCEB4" cx="4.896" cy="22.729" rx="3.147" ry="3.847"/>
+                <ellipse fill="#FFCEB4" cx="32.171" cy="22.729" rx="3.147" ry="3.847"/>
+                <g transform="translate(4.546 2.797)">
+                    <mask id="d" fill="#fff">
+                        <use xlink:href="#c"/>
+                    </mask>
+                    <use fill="#FFB892" xlink:href="#c"/>
+                    <rect fill="#FFCEB4" mask="url(#d)" y="-1.748" width="27.625" height="38.115" rx="13.812"/>
+                    <circle fill="#FFAC9D" opacity=".614" mask="url(#d)" cx="4.721" cy="20.107" r="2.273"/>
+                    <circle fill="#FFAC9D" opacity=".614" mask="url(#d)" cx="23.604" cy="20.107" r="2.273"/>
+                    <rect fill="#5B332B" mask="url(#d)" x="6.994" y="13.987" width="2.797" height="4.196" rx="1.399"/>
+                    <path d="M7.693 8.218c.483 0 .874.39.874.874v3.147a.874.874 0 0 1-1.748 0V9.092c0-.483.391-.874.874-.874z" fill="#77493A" mask="url(#d)" transform="rotate(77 7.693 10.665)"/>
+                    <rect fill="#77493A" mask="url(#d)" transform="rotate(90 19.582 11.365)" x="18.708" y="8.917" width="1.748" height="4.896" rx=".874"/>
+                    <rect fill="#5B332B" mask="url(#d)" x="18.183" y="13.987" width="2.797" height="4.196" rx="1.399"/>
+                    <path d="M15.7 20.469c0-.683-.774-1.236-1.73-1.236s-1.731.553-1.731 1.236c0 .683 3.462.683 3.462 0z" fill="#F89786" mask="url(#d)"/>
+                    <g mask="url(#d)">
+                        <g transform="translate(6.994 22.38)">
+                            <use fill="#C64E4E" xlink:href="#e"/>
+                            <use fill="#FFF" xlink:href="#f"/>
+                            <mask id="h" fill="#fff">
+                                <use xlink:href="#g"/>
+                            </mask>
+                            <use fill="#C64E4E" xlink:href="#g"/>
+                            <ellipse fill="#A20C0C" mask="url(#h)" cx="7.168" cy="4.721" rx="4.546" ry="1.574"/>
+                        </g>
+                    </g>
+                    <circle fill="#FFF" mask="url(#d)" cx="9.616" cy="14.512" r="1"/>
+                    <circle fill="#FFF" mask="url(#d)" cx="20.806" cy="14.512" r="1"/>
+                </g>
+                <path d="M3.847 18.183a.7.7 0 0 1 .699.7V31.82a.35.35 0 0 1-.35.35.368.368 0 0 1-.367-.35l-.647-12.939a.665.665 0 0 1 .665-.699zM32.87 18.183a.665.665 0 0 1 .665.699l-.647 12.94a.368.368 0 0 1-.368.349.35.35 0 0 1-.35-.35V18.883a.7.7 0 0 1 .7-.7z" fill="#FB9253"/>
+                <ellipse fill="#FFB892" cx="18.708" cy="45.459" rx="4.371" ry="3.147"/>
+            </g>
+            <path d="M25.566 9.98C25.025 3.327 27.842 0 34.018 0s9.647 4.213 10.411 12.638c.713 7.754 2.255 11.981 4.627 12.68-.032.003-4.257 2.973-5.265-2.7C42.02 12.485 35.945 8.273 25.566 9.98z" fill="#FB9253"/>
+            <path d="M25.566 9.98c.73-3.163 2.362-4.612 4.896-4.348 3.8.397 6.818 3.303 11.469 10.97-3.23-5.944-8.686-8.151-16.365-6.622z" fill="#CB773A"/>
+        </g>
+    </g>
+</svg>

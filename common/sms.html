@@ -13,7 +13,7 @@
 
   <link rel="stylesheet" href="css/NotoSansKR.css">
   <link rel="stylesheet" href="css/sms.css">
-  <script type="text/javascript" src="../patient/js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
 
   <title>neuro</title>
 </head>
@@ -88,7 +88,7 @@
       </ul>
       <div class="bottom_btn"><button type="submit" class="button_default" disabled>다음</button></div>
    </div>
-   
+
     <!-- 약관내용 변경예정 -->
     <div id="terms" class="allpop">
       <div class="w">
@@ -154,20 +154,20 @@
       }, 200);
     }
     /* 모달 팝업창 */
-    $("#agreeAll").click(function(){ 
-      if($("#agreeAll").prop("checked")) { 
-        $(".agree_list input[type=checkbox]").prop("checked",true); 
-      } else { 
-        $(".agree_list input[type=checkbox]").prop("checked",false); 
-      } 
+    $("#agreeAll").click(function(){
+      if($("#agreeAll").prop("checked")) {
+        $(".agree_list input[type=checkbox]").prop("checked",true);
+      } else {
+        $(".agree_list input[type=checkbox]").prop("checked",false);
+      }
     });
     $(".agree_list input[type=checkbox]").click(function(){
       var lengths = $('.agree_list input[type=checkbox]').length -1;
       $('.agree_list input:checkbox[type=checkbox]:checked').each(function (index) {
         if(index==lengths){
-          $("#agreeAll").prop("checked",true); 
+          $("#agreeAll").prop("checked",true);
         }else{
-          $("#agreeAll").prop("checked",false); 
+          $("#agreeAll").prop("checked",false);
         }
       });
     });

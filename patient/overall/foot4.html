@@ -16,6 +16,7 @@
     <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
     <script type="text/javascript" src="../js/d3.v5.min.js"></script>
     <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
     <script type="text/javascript" src="../js/common.js"></script>
     <noscript>
         <link rel="stylesheet" href="../css/NotoSansKR.css">
@@ -88,19 +89,13 @@
           </div>
           <div class="over_box">
             <div class="ti mb12">자세 분석</div>
-            <div id="bc3" class="bcpm mt24">
-              <div class="clear">
-                <div class="til">운동 점수</div>
-                <div class="tir">80</div>
-              </div>
-              <div class="chw">
-                <span class="a" style="left:70%"><span>평균 70</span></span>
-                <span class="b" style="left:70%"></span>
-                <div class="ch" style="background-color: #f1f3f5">
-                  <span class="g" style="width:80%;background-color: #5280e2"></span>
-                </div>
-              </div>
-            </div>
+            <div class="analysis-wrap exercise mt24"><div class="chart"></div></div>
+            <script>
+              var exercise = {
+                tit:'운동 점수', value: 80, averageTxt: '평균', average: 70, barColor: '#5280e2', bgColor: '#f1f3f5'
+              }
+              chart.analysisChart('.exercise .chart', exercise, 1);
+            </script>
           </div>
           <div class="over_box">
             <div class="ti mb12">밸런스 분석</div>

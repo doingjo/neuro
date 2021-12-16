@@ -210,14 +210,22 @@ var chart = chart || {
     analysisChart: function($this, data, type){
       var box = $($this),
           dataSet = data,
-          valueTxt = '';
+          valueTxt,
+          averageTxt;
       if( type === 3 ){
         box.append('<div class="legend">'+ dataSet.value +'</div>').addClass('type3');
+        averageTxt = dataSet.average;
       }else{
-        ( type === 1 )? valueTxt = dataSet.value : valueTxt = dataSet.value +' : '+ (100-dataSet.value) ;
+        if( type === 1 ){
+          valueTxt = dataSet.value;
+          averageTxt = dataSet.average;
+        }else{
+          valueTxt = dataSet.value +' : '+ (100 - dataSet.value);
+          averageTxt = dataSet.average +' : '+ (100 - dataSet.average);
+        }
         box.append('<div class="legend"><em>'+ dataSet.tit +'</em><strong>'+ valueTxt +'</strong></div>');
       }
-      box.append('<div class="bar-wrap"><p class="average" style="left:'+ dataSet.average +'%;"><span>'+ dataSet.averageTxt +' '+ dataSet.average +'</span></p><div class="bar" style="background-color:'+ dataSet.bgColor +';"><span style="width:'+ dataSet.value +'%; background-color:'+ dataSet.barColor +';"></span></div></div>');
+      box.append('<div class="bar-wrap"><p class="average" style="left:'+ dataSet.average +'%;"><span>'+ dataSet.averageTxt +' '+ averageTxt +'</span></p><div class="bar" style="background-color:'+ dataSet.bgColor +';"><span style="width:'+ dataSet.value +'%; background-color:'+ dataSet.barColor +';"></span></div></div>');
     },
     achieveChart: function($this, data){
       var box = $($this),

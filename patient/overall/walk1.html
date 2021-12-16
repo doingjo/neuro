@@ -195,11 +195,7 @@
               </div>
             </div>
             <div class="bar_cycle">
-              <div class="cycle_ti clear">
-                <div>입각기<span>(Stance Phase)</span></div>
-                <div>유각기<span>(Swing Phase)</span></div>
-              </div>
-              <div class="chart_box" id="bar_cycle"></div>
+              <div class="walkchart-wrap"><div class="chart"></div></div>
               <div class="tixed tableth mt32">
                 <div class="tfcell">
                   Load<br />Response
@@ -240,11 +236,11 @@
             </div>
             <script>
               var barCycleData = [
-                {name:'왼발',stance:'67',swing:'33'},
+                {name:'왼발',stance:'100',swing:'33'},
                 {name:'오른발',stance:'63',swing:'37'},
                 {name:'표준',stance:'60',swing:'40'},
-              ]
-              barCycle(barCycleData, 'bar_cycle')
+              ];
+              chart.walkChart('.walkchart-wrap .chart', barCycleData);
             </script>
           </div>
           <div class="over_box">
