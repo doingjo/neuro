@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q,
+samp, small, strong, sub, sup, var, b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {margin:0; outline:0 none; padding:0; font-family:Roboto, "Noto Sans KR", "Apple SD Gothic", "sans-serif", sans-serif;vertical-align:top}
+html {width:100%;height:100%}
+body {width:100%;height:100%;word-break:break-all}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
+h1, h2, h3, h4 {font-size:100%;}
+nav ul, ul, ol, li {list-style:outside none none}
+img {border:0 none; vertical-align:top}
+fieldset {border:0 none}
+a{text-decoration:none; color:#333}
+hr {display:none}
+input, select, textarea {vertical-align:middle; font-family:Roboto, "Noto Sans KR", "Apple SD Gothic", "sans-serif", sans-serif}
+em, address {font-style:normal}
+button {border:0 none; cursor:pointer; padding:0; background-color:transparent;font-family:Roboto, "Noto Sans KR", "Apple SD Gothic",  "sans-serif", sans-serif}
+table {width:100%; border-collapse:collapse; border-spacing:0; table-layout:fixed}
+table th,table td{vertical-align:middle}
+table caption, legend {font-size:medium; height:0; line-height:normal; opacity:0; overflow:hidden; width:100%; word-break:break-all; display:none;}
+
+*{-webkit-text-size-adjust:none;}
+body{-webkit-user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}
+/* clear */
+.clear{*zoom:1;}
+.clear:after{content:"";display:block;clear:both;}
+/* ir */
+.ir-blind{height:0;width:0;position:absolute;overflow:hidden;clip:rect(1px 1px 1px 1px)}
+/* align */
+.tal{text-align:left !important;}
+.tac{text-align:center !important;}
+.tar{text-align:right !important;}
+
+.pr{position: relative;}
+
+.mt{margin-top:0 !important;}
+.mt8{margin-top:2.2222vw !important;}
+.mt10{margin-top:2.7778vw !important;}
+.mt12{margin-top:3.3333vw !important;}
+.mt20{margin-top:5.5556vw !important;}
+.mt24{margin-top:6.6667vw !important;}
+.mt32{margin-top:8.8889vw !important;}
+.mt40{margin-top:11.1111vw !important;}
+.pt48{padding-top:13.3333vw !important;}
+.pb0{padding-bottom:0vw !important;}
+.mb0{margin-bottom:0vw !important;}
+.mb12{margin-bottom:3.3333vw !important;}
+.mb20{margin-bottom:5.5556vw !important;}
+
+a:focus,
+button:focus,
+input:focus{outline:none;}
+
+input, textarea {appearance: none;-webkit-appearance: none;-webkit-border-radius: 0;}
+select {-webkit-appearance: none;-moz-appearance: none; appearance: none;background: #fff}
+::-webkit-input-placeholder {color:#ced4da;}
+:-ms-input-placeholder {color:#ced4da;}
+::placeholder {color:#ced4da;}
+/* iphone safe-area */
+#wrap{
+      padding-top:constant(safe-area-inset-top);
+      padding-right:constant(safe-area-inset-right);
+      padding-left:constant(safe-area-inset-left);
+      padding-top:env(safe-area-inset-top);
+      padding-right:env(safe-area-inset-right);
+      padding-left:env(safe-area-inset-left);
+      min-width: 320px;
+}
+
+

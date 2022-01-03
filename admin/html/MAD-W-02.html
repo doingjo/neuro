@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+
+    <title>Master Admin</title>
+</head>
+<body>
+
+<div id="wrap" class="main">
+    <header>
+        <h1><a href="/"><strong>NEUROGAIT</strong><em>Master Admin</em></a></h1>
+        <button class="btn_menu"><span></span><span></span><span></span></button>
+        <div class="util">
+            <!-- <p>관리자님 안녕하세요.</p> -->
+            <button class="btn_alarm">alarm</button>
+            <button class="btn_set">set-up</button>
+            <div class="user_wrap">
+                <div class="avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+                <div class="state">
+                    <p class="name_user">박재활님</p>
+                    <button type="button" class="btn_login">Login</button>
+                    <!-- <button type="button" class="btn_logout">Logout</button> -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="container">
+        <aside>
+            <nav>
+                <div class="head">
+                    <h1>Menu</h1>
+                    <button class="btn_close">close</button>
+                </div>
+                <ul>
+                    <li class="on">
+                        <a href="#">병원/의료진 관리</a>
+                        <div class="depth">
+                            <a href="#">병원(업체)</a>
+                            <a href="#">의료진</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">환자/사용자 관리</a>
+                        <div class="depth">
+                            <a href="#">환자/사용자관리</a>
+                            <a href="#">탈원 회원</a>
+                        </div>
+                    </li>
+                    <li><a href="#">운동관리</a></li>
+                    <li>
+                        <a href="#">사이트 관리</a>
+                        <div class="depth">
+                            <a href="#">공지사항</a>
+                            <a href="#">자주묻는질문</a>
+                            <a href="#">이벤트관리</a>
+                            <a href="#">알림</a>
+                            <a href="#">팝업관리</a>
+                            <a href="#">약관관리</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">관리자 관리</a>
+                        <div class="depth">
+                            <a href="#">관리자 관리</a>
+                            <a href="#">로그</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">코드 관리</a>
+                        <div class="depth">
+                            <a href="#">공통</a>
+                            <a href="#">병원(업체)</a>
+                        </div>
+                    </li>
+                    <li><a href="#">메뉴 관리</a></li>
+                    <li>
+                        <a href="#">통계 관리</a>
+                        <div class="depth">
+                            <a href="#">회원</a>
+                            <a href="#">데이터</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="contents">
+            <div class="tit">
+                <h1><em>Today</em> NEUROGAIT</h1>
+                <p><strong>김환자</strong> 관리자님 환영합니다.</p>
+            </div>
+            <div class="sec_wrap">
+                <div class="sec patient">
+                    <div class="tit">
+                        <h2>Patient App (전체)</h2>
+                        <a href="" target="_blank">더보기</a>
+                    </div>
+                    <div class="pie_chart by_country">
+                        <strong>국가별<br>회원 현황</strong>
+                        <div class="chart"></div>
+                    </div>
+                    <div class="pie_chart by_user">
+                        <strong>유형별<br>회원(사용자) 현황</strong>
+                        <div class="chart"></div>
+                    </div>
+                    <script>
+                      var countryData = [
+                        {id: '한국', percent: 90, color: '#5280e2'},
+                        {id: '미국', percent: 10, color: '#21d0b3'},
+                        {id: '유럽', percent: 0, color: '#343a40'}
+                      ]
+                      admin.pieChart('.by_country .chart', countryData);
+                      var userData = [
+                        {id: '진료', percent: 50, color: '#5280e2'},
+                        {id: '연구', percent: 30, color: '#21d0b3'},
+                        {id: '일반', percent: 20, color: '#343a40'}
+                      ]
+                      admin.pieChart('.by_user .chart', userData);
+                    </script>
+                </div>
+                <div class="sec hcp">
+                    <div class="tit">
+                        <h2>HCP (전체)</h2>
+                        <a href="" target="_blank">더보기</a>
+                    </div>
+                    <div class="pie_chart by_medical">
+                        <strong>의료진<br>시용 현황</strong>
+                        <div class="chart"></div>
+                    </div>
+                    <script>
+                      var medicalData = [
+                        {id: '사용중', percent: 50, color: '#5280e2'},
+                        {id: '대기중', percent: 35, color: '#21d0b3'},
+                        {id: '계정중지', percent: 15, color: '#343a40'}
+                      ]
+                      admin.pieChart('.by_medical .chart', medicalData);
+                    </script>
+                </div>
+                <div class="sec site">
+                    <div class="tit">
+                        <h2>사이트 관리</h2>
+                    </div>
+                    <div class="link">
+                        <a href="">공지사항</a>
+                        <a href="">팝업관리</a>
+                        <a href="">이벤트 관리</a>
+                        <a href="">알림관리</a>
+                    </div>
+                </div>
+                <div class="sec alarm">
+                    <div class="tit">
+                        <h2>알림</h2>
+                        <a href="" target="_blank">더보기</a>
+                    </div>
+                    <div class="alarm_wrap">
+                        <div class="alarm_box">
+                            <strong>진료유휴환자<span>(단위 명)</span></strong>
+                            <a href="#">54</a>
+                        </div>
+                        <div class="alarm_box">
+                            <strong>의료진 계정 문의<span>(단위 명)</span></strong>
+                            <a href="#">54</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+</body>
+</html>

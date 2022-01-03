@@ -249,7 +249,7 @@ var hcp = hcp || {
           //오늘 버튼 on / off 필요하면 쓰고 // 안쓰면 생기는건,, 해당 달일때 이벤트 disable 걸림
           ($('.fc-today-button').is(':disabled')) ? $('.btn_today').hide() : $('.btn_today').show() ;
         }
-      
+
         /* 월간, 주간 tridder */
         $('.btn_today').click(function() {
           $('.fc-today-button').trigger('click');
@@ -262,7 +262,7 @@ var hcp = hcp || {
           $('.time_wrap').fadeIn(300);
           $('.fc-timeGridWeek-button').trigger('click');
         });
-      
+
     },//fullcalendar
     daterangepicker: function(ele, type, single){
       var $this = $(ele),
@@ -340,6 +340,24 @@ var hcp = hcp || {
           $findEle.eq(getIndex).css("display","block");
         }
     },//tab menu
+    load: function(){
+        window.addEventListener('load', function(){
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    },
 };
 
 window.onload = function(){

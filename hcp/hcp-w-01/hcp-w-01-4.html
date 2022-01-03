@@ -61,8 +61,7 @@
     <!-- //Contents -->
     <div class="container">
       <div class="inner_join step02">
-        <!-- 2021-12-12 텍스트 수정 -->
-        <p class="tit">회원가입</p>
+        <p class="tit">의료진으로 가입</p>
         <div class="cont">
             <ul class="list_info">
                 <li>
@@ -71,7 +70,6 @@
                 </li>
                 <li>
                     <em class="tit">이메일</em>
-                    <!-- 2021-12-12 placeholder수정 -->
                     <input type="text" class="input_round" placeholder="업무에 사용하시는 이메일을 입력해 주세요.">
                 </li>
                 <li>
@@ -87,7 +85,6 @@
                 </li>
                 <li>
                     <em class="tit">계정 코드</em>
-                    <!-- 2021-12-12 placeholder 수정 -->
                     <input type="text" class="input_round" placeholder="계정 코드를 입력해 주세요.">
                 </li>
                 <li>
@@ -102,14 +99,21 @@
                         <input type="radio" name="job" id="job_04" checked>
                         <label for="job_04">직접입력</label>
                     </div>
-                    <!-- 2021-12-12 placeholder 수정 -->
                     <input type="text" class="input_round" placeholder="진료과를 입력해 주세요.">
                 </li>
             </ul>
             <div class="box_check">
                 <div class="check_type1">
-                    <!-- 2021-12-12 label텍스트 변경 -->
-                    <input type="checkbox" name="saveAuto" id="saveAuto" checked><label for="saveAuto">이용약관 / 개인정보 처리방침에 동의합니다.</label>
+                    <input type="checkbox" name="terms_of_service" id="terms_of_service"><label for="terms_of_service" onclick="hcp.modals_show('pop_terms_of_service')">서비스 이용 약관(필수)</label>
+                </div>
+                <div class="check_type1">
+                    <input type="checkbox" name="hcp_personal_information" id="hcp_personal_information"><label for="hcp_personal_information" onclick="hcp.modals_show('pop_hcp_personal_information')">개인정보 수집 및 이용 동의(필수)</label>
+                </div>
+                <div class="check_type1">
+                    <input type="checkbox" name="privacy_policy" id="privacy_policy"><label for="privacy_policy" onclick="hcp.modals_show('pop_privacy_policy')">개인정보 처리방침(필수)</label>
+                </div>
+                <div class="check_type1">
+                    <input type="checkbox" name="hcp_marketing_content" id="hcp_marketing_content"><label for="hcp_marketing_content" onclick="hcp.modals_show('pop_hcp_marketing_content')">마케팅 정보 수신(선택)</label>
                 </div>
             </div>
             <div class="box_btn">
@@ -132,5 +136,76 @@
     </footer>
     <!-- Footer// -->
   </div>
+
+<!-- layer popup -->
+<div class="modals board" id="pop_terms_of_service">
+    <div class="box">
+        <div class="mod_head">
+            <h3>서비스 이용 약관</h3>
+        </div>
+        <div class="mod_body">
+            <div class="overflow_body">
+              <div data-include-path="/common/terms_of_service.html"></div>
+            </div>
+            <div class="center_btn">
+                <button type="button" class="btn_xlarge color_actprimary">동의</button>
+            </div>
+        </div>
+        <button type="button" class="btn_close" onclick="hcp.modals_close('pop_terms_of_service')"><span class="hidden">창닫기</span></button>
+    </div>
+</div>
+<div class="modals board" id="pop_hcp_personal_information">
+    <div class="box">
+        <div class="mod_head">
+            <h3>개인정보 수집 및 이용 동의</h3>
+        </div>
+        <div class="mod_body">
+            <div class="overflow_body">
+              <div data-include-path="/common/hcp_concent_to_the_collecting_and_processing_of_personal_information.html"></div>
+            </div>
+            <div class="center_btn">
+                <button type="button" class="btn_xlarge color_actprimary">동의</button>
+            </div>
+        </div>
+        <button type="button" class="btn_close" onclick="hcp.modals_close('pop_hcp_personal_information')"><span class="hidden">창닫기</span></button>
+    </div>
+</div>
+<div class="modals board" id="pop_privacy_policy">
+    <div class="box">
+        <div class="mod_head">
+            <h3>개인정보 처리방침</h3>
+        </div>
+        <div class="mod_body">
+            <div class="overflow_body">
+              <div data-include-path="/common/privacy_policy.html"></div>
+            </div>
+            <div class="center_btn">
+                <button type="button" class="btn_xlarge color_actprimary">동의</button>
+            </div>
+        </div>
+        <button type="button" class="btn_close" onclick="hcp.modals_close('pop_privacy_policy')"><span class="hidden">창닫기</span></button>
+    </div>
+</div>
+<div class="modals board" id="pop_hcp_marketing_content">
+    <div class="box">
+        <div class="mod_head">
+            <h3>마케팅 정보 수신</h3>
+        </div>
+        <div class="mod_body">
+            <div class="overflow_body">
+              <div data-include-path="/common/hcp_consent_to_receive_marketing_content.html"></div>
+            </div>
+            <div class="center_btn">
+                <button type="button" class="btn_xlarge color_actprimary">동의</button>
+            </div>
+        </div>
+        <button type="button" class="btn_close" onclick="hcp.modals_close('pop_hcp_marketing_content')"><span class="hidden">창닫기</span></button>
+    </div>
+</div>
+<!-- //layer popup -->
+<script>
+    hcp.load();
+</script>
+
 </body>
 </html>

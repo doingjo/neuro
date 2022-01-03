@@ -371,7 +371,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 
 /** 약관 **/
 .cont.inner_rule{padding:28px 48px 87px;}
-.inner_rule h4{padding:15px 0 17px;background-color: #f8f9fa;font-size:16px;line-height:24px;color:#000;text-align: center;}
+/*.inner_rule h4{padding:15px 0 17px;background-color: #f8f9fa;font-size:16px;line-height:24px;color:#000;text-align: center;}
 .inner_rule h4 + h5{margin-top:40px;}
 .inner_rule h5 + p{margin-top:23px;}
 .inner_rule h5 + ul{margin-top:21px;}
@@ -383,7 +383,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .inner_rule p + h4,
 .inner_rule ul + h4{margin-top:40px;}
 .inner_rule p + h5,
-.inner_rule ul + h5{margin-top:32px;}
+.inner_rule ul + h5{margin-top:32px;}*/
 
 /** 공지사항 **/
 .cont.inner_notice{padding:19px 48px 70px;}
@@ -815,11 +815,12 @@ h4 + .balance_data {margin-top:34px;}
 .wrapper.join .inner_join.step02 .list_info .row_division div{flex:1;}
 .wrapper.join .inner_join.step02 .list_info .row_division div + div{margin-left:8px;}
 .wrapper.join .inner_join.step02 .list_info .row_division .round_select{flex:none;width:160px;}
-.wrapper.join .inner_join .box_check{margin:40px 0 25px;}
+.wrapper.join .inner_join .box_check{margin:30px 0; text-align:left}
 .wrapper.join .inner_join .box_check + .box_btn,
 .wrapper.join .inner_join .txt_warning + .box_btn,
 .wrapper.join .inner_join .box_link + .box_btn{margin-top:0;}
-.wrapper.join .inner_join .check_type1 label{font-size:13px;line-height:19px;color:#666;}
+.wrapper.join .inner_join .check_type1{margin-top:10px;}
+.wrapper.join .inner_join .check_type1 label{display:inline-block; font-size:13px;line-height:19px;color:#666;}
 .wrapper.join .inner_join .txt_warning{margin:32px 0 20px;}
 .wrapper.join .inner_join .txt_info{font-size:15px;line-height:21px;color:#343a40;font-weight:500;}
 .wrapper.join .inner_join .txt_info .txt_name{display: inline-block;color:#5280e2;}
@@ -948,7 +949,6 @@ h4 + .balance_data {margin-top:34px;}
 .schedule_cal_wrap .schedule_list .txt_name{margin-top:7px;font-size:13px;line-height:19px;color:#111;}
 .schedule_cal_wrap .schedule_list .active p{color:#fff;}
 
-
 /* daterangepicker */
 .datepicker_open{border:0; max-width:790px; display:flex !important;justify-content:space-between;}
 .datepicker_open{margin-top:0; top:0;left:0;}
@@ -967,7 +967,23 @@ h4 + .balance_data {margin-top:34px;}
 ::-webkit-scrollbar-track{overflow:hidden;width:4px;background-color: #eceff6;border-radius:2px;box-shadow: inset 0 1px 3px 0 rgba(114, 114, 114, 0.23);}
 ::-webkit-scrollbar-thumb{width:100%;background-color:#000;border-radius: 2px;}
 
-
+/* terms */
+.terms_wrap{font-size:14px;color:#696969;text-align:left;word-break:keep-all;}
+.terms_wrap h2{margin-top:40px;padding:15px; border-radius:8px;background-color:#f8f8f8; font-size:16px;color:#000;font-weight:500;text-align:center;}
+.terms_wrap h2:first-child{margin-top:0}
+.terms_wrap h3{margin-top:30px; font-size:16px;color:#000;font-weight:700}
+.terms_wrap li{margin-top:7px;padding-left:24px;text-indent:-24px;}
+.terms_wrap li ul{margin-top:7px;}
+.terms_wrap li li{margin-top:5px;}
+.terms_wrap >p,.terms_wrap >div,.terms_wrap >ul{margin-top:20px;}
+.terms_wrap li strong{display:block; margin-top:15px;}
+.terms_wrap li strong +p{margin-top:5px;}
+.terms_wrap div strong{display:block; margin-top:15px;}
+.terms_wrap div strong +p{margin-top:5px;}
+.terms_wrap >strong{display:block; margin-top:40px;color:#000;}
+.terms_wrap >table{margin-top:30px; border:1px solid #e2e2e2; text-align:center;}
+.terms_wrap >table th{padding:10px 0; border-left:1px solid #e2e2e2;background-color:#f8f8f8; font-size:14px;color:#000;}
+.terms_wrap >table td{padding:10px 0; border-top:1px solid #e2e2e2;border-left:1px solid #e2e2e2; font-size:14px;color:#333;}
 
 
 @media screen and (max-width: 1400px) {
