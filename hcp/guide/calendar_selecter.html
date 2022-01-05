@@ -61,16 +61,17 @@
 <script>
 $(function() {
 
-    daterangepicker('.datepicker', true);
+    daterangepicker('.datepicker', false, true);
 
 });//function
 
-function daterangepicker(ele, type){
+function daterangepicker(ele, type, single){
   var $this = $(ele),
       clickDay = '';
   $this.daterangepicker({
     autoApply:true,
     inline: type,
+    singleDatePicker: single,
     "locale": {
       "format": "YYYY.MM.DD",
       "separator": " - ",

@@ -30,23 +30,39 @@
       </span>
       <ul class="agree_list">
         <li>
-          <span class="checkbox_i">
+          <span class="checkbox_i require">
             <input type="checkbox" name="" id="terms_of_service">
             <span class="ico"></span>
-            <label for="terms_of_service">서비스 이용 약관(필수)</label>
+            <label for="terms_of_service">앱 서비스 이용약관(필수)</label>
           </span>
           <a href="javascript:;" onclick="modals_show('pop_terms_of_service')">보기</a>
         </li>
         <li>
-          <span class="checkbox_i">
-            <input type="checkbox" name="" id="hcp_personal_information">
+          <span class="checkbox_i require">
+            <input type="checkbox" name="" id="patient_personal_information">
             <span class="ico"></span>
-            <label for="hcp_personal_information">개인정보 수집 및 이용 동의(필수)</label>
+            <label for="patient_personal_information">개인정보 수집 및 이용 동의(필수)</label>
           </span>
-          <a href="javascript:;" onclick="modals_show('pop_hcp_personal_information')">보기</a>
+          <a href="javascript:;" onclick="modals_show('pop_patient_personal_information')">보기</a>
         </li>
         <li>
-          <span class="checkbox_i">
+          <span class="checkbox_i require">
+            <input type="checkbox" name="" id="sensitive_information">
+            <span class="ico"></span>
+            <label for="sensitive_information">민감 정보 수집 및 이용 동의(필수)</label>
+          </span>
+          <a href="javascript:;" onclick="modals_show('pop_patient_sensitive_information')">보기</a>
+        </li>
+        <li>
+          <span class="checkbox_i require">
+            <input type="checkbox" name="" id="third_parties">
+            <span class="ico"></span>
+            <label for="third_parties">개인(민감)정보 제3자 제공 동의(필수)</label>
+          </span>
+          <a href="javascript:;" onclick="modals_show('pop_patient_third_parties')">보기</a>
+        </li>
+        <li>
+          <span class="checkbox_i require">
             <input type="checkbox" name="" id="privacy_policy">
             <span class="ico"></span>
             <label for="privacy_policy">개인정보 처리방침(필수)</label>
@@ -55,11 +71,11 @@
         </li>
         <li>
           <span class="checkbox_i">
-            <input type="checkbox" name="" id="hcp_marketing_content">
+            <input type="checkbox" name="" id="patient_marketing_content">
             <span class="ico"></span>
-            <label for="hcp_marketing_content">마케팅 정보 수신(선택)</label>
+            <label for="patient_marketing_content">마케팅 정보 수신 동의(선택)</label>
           </span>
-          <a href="javascript:;" onclick="modals_show('pop_hcp_marketing_content')">보기</a>
+          <a href="javascript:;" onclick="modals_show('pop_patient_marketing_content')">보기</a>
         </li>
       </ul>
       <div class="bottom_btn"><button type="submit" class="button_default" disabled>다음</button></div>
@@ -69,7 +85,7 @@
     <div id="pop_terms_of_service" class="allpop">
       <div class="w">
         <div class="head">
-          <h2>서비스 이용 약관</h2>
+          <h2>앱 서비스 이용약관</h2>
           <a href="javascript:;"  onclick="modals_close('pop_terms_of_service')" class="page_close">닫기</a>
         </div>
         <div class="scroll_wrap">
@@ -78,14 +94,38 @@
         <div class="bottom_btn"><button type="submit" class="button_default">동의</button></div>
       </div>
     </div>
-    <div id="pop_hcp_personal_information" class="allpop">
+    <div id="pop_patient_personal_information" class="allpop">
       <div class="w">
         <div class="head">
           <h2>개인정보 수집 및 이용 동의</h2>
-          <a href="javascript:;"  onclick="modals_close('pop_hcp_personal_information')" class="page_close">닫기</a>
+          <a href="javascript:;"  onclick="modals_close('pop_patient_personal_information')" class="page_close">닫기</a>
         </div>
         <div class="scroll_wrap">
-          <div data-include-path="/common/hcp_concent_to_the_collecting_and_processing_of_personal_information.html"></div>
+          <div data-include-path="/common/patient_concent_to_the_collecting_and_processing_of_personal_information.html"></div>
+        </div>
+        <div class="bottom_btn"><button type="submit" class="button_default">동의</button></div>
+      </div>
+    </div>
+    <div id="pop_patient_sensitive_information" class="allpop">
+      <div class="w">
+        <div class="head">
+          <h2>민감 정보 수집 및 이용 동의</h2>
+          <a href="javascript:;"  onclick="modals_close('pop_patient_sensitive_information')" class="page_close">닫기</a>
+        </div>
+        <div class="scroll_wrap">
+          <div data-include-path="/common/patient_concent_to_the_collecting_and_processing_of_sensitive_information.html"></div>
+        </div>
+        <div class="bottom_btn"><button type="submit" class="button_default">동의</button></div>
+      </div>
+    </div>
+    <div id="pop_patient_third_parties" class="allpop">
+      <div class="w">
+        <div class="head">
+          <h2>개인(민감)정보 제3자 제공 동의</h2>
+          <a href="javascript:;"  onclick="modals_close('pop_patient_third_parties')" class="page_close">닫기</a>
+        </div>
+        <div class="scroll_wrap">
+          <div data-include-path="/common/patient_consent_to_provide_personal_sensitive_information_to_a_third_parties.html"></div>
         </div>
         <div class="bottom_btn"><button type="submit" class="button_default">동의</button></div>
       </div>
@@ -102,14 +142,14 @@
         <div class="bottom_btn"><button type="submit" class="button_default">동의</button></div>
       </div>
     </div>
-    <div id="pop_hcp_marketing_content" class="allpop">
+    <div id="pop_patient_marketing_content" class="allpop">
       <div class="w">
         <div class="head">
           <h2>마케팅 정보 수신</h2>
-          <a href="javascript:;"  onclick="modals_close('pop_hcp_marketing_content')" class="page_close">닫기</a>
+          <a href="javascript:;"  onclick="modals_close('pop_patient_marketing_content')" class="page_close">닫기</a>
         </div>
         <div class="scroll_wrap">
-          <div data-include-path="/common/hcp_consent_to_receive_marketing_content.html"></div>
+          <div data-include-path="/common/patient_consent_to_receive_marketing_content.html"></div>
         </div>
         <div class="bottom_btn"><button type="submit" class="button_default">동의</button></div>
       </div>
@@ -134,17 +174,29 @@
     $("#agreeAll").click(function(){
       if($("#agreeAll").prop("checked")) {
         $(".agree_list input[type=checkbox]").prop("checked",true);
+        $(".button_default").prop("disabled",false);
       } else {
         $(".agree_list input[type=checkbox]").prop("checked",false);
+        $(".button_default").prop("disabled",true);
       }
     });
     $(".agree_list input[type=checkbox]").click(function(){
       var lengths = $('.agree_list input[type=checkbox]').length -1;
-      $('.agree_list input:checkbox[type=checkbox]:checked').each(function (index) {
+      $('.agree_list input[type=checkbox]:checked').each(function (index) {
         if(index==lengths){
           $("#agreeAll").prop("checked",true);
         }else{
           $("#agreeAll").prop("checked",false);
+        }
+      });
+    });
+    $(".agree_list input[type=checkbox]").click(function(){
+      var lengths = $('.agree_list .require input[type=checkbox]').length -1;
+      $('.agree_list .require input[type=checkbox]:checked').each(function (index) {
+        if(index==lengths){
+          $(".button_default").prop("disabled",false);
+        }else{
+          $(".button_default").prop("disabled",true);
         }
       });
     });

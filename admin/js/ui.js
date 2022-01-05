@@ -25,6 +25,11 @@ if (Browser.ie7) {
 var admin = admin || {
     init:function() {
       admin.gnb();
+      admin.lnb();
+      admin.checkAll();
+      admin.selectPlaceholder();
+      admin.fileLoad();
+
     },
     gnb: function(){
       // $(window).on("scroll", function(){
@@ -41,6 +46,31 @@ var admin = admin || {
         $('.avatar').removeClass('on').next('.state').fadeOut();
       });
     },//gnb
+    lnb: function(i,j){
+        $('nav li').eq(i).addClass('active').find('.depth a').eq(j).addClass('active');
+
+        $('nav li a').on('click', function(){
+          $(this).parent().addClass('active').siblings().removeClass("active");
+        });
+
+
+        /*
+        <aside>
+                    <nav>
+                        <div class="head">
+                            <h1>Menu</h1>
+                            <button class="btn_close">close</button>
+                        </div>
+                        <ul>
+                            <li class="active">
+                                <a href="#">병원/의료진 관리</a>
+                                <div class="depth">
+                                    <a href="#">병원(업체)</a>
+                                    <a href="#">의료진</a>
+                                </div>
+                            </li>
+        */
+    },
     pieChart:function($this, data) {
         var box = $($this),
             dataSet = data,
@@ -88,6 +118,76 @@ var admin = admin || {
                   });
             });
     },//pieChart
+    checkAll:function(){
+        if($('.check_all_wrap').length == 0){return;}
+        $('#checkAll').on('click', function(){
+            $('.check_all_wrap input[type="checkbox"]').prop('checked', $(this).prop('checked'));
+        });
+        $('.check_all input[type="checkbox"]').on('click', function(){
+            var $length = $('.check_all input[type="checkbox"]').length,
+                $checked = $('.check_all input[type="checkbox"]:checked').length;
+            if($length === $checked){
+                $('#checkAll').prop('checked', true);
+            }else{
+                $('#checkAll').prop('checked', false);
+            }
+        });
+    },//checkAll
+    selectPlaceholder: function (){
+        if($('.inp_select').length == 0){return;}
+        $("select").change(function(){
+            $(this).closest('.inp_select').addClass("selected");
+        });
+    },
+    fileLoad: function(){
+        if($('.inp_file').length == 0){return;}
+        $('input[type="file"]').on('change', function(){
+            var nameFile = $(this).val();
+            $(this).parent('.inp_file').children('input[type="text"]').val(nameFile);
+            $(this).parent('.inp_file').children('.btn_del').show();
+        });
+        $('.btn_del').on('click', function(){
+            $(this).parent('.inp_file').children('input[type="text"]').val("");
+            $(this).parent('.inp_file').children('.btn_del').hide();
+        });
+        $('input[type="text"]').on('click', function(){
+            $(this).next('.btn_file').trigger('click');
+        });
+    },
+    daterangepicker: function(ele, type, single){
+      var $this = $(ele),
+          clickDay = '';
+      $this.daterangepicker({
+        autoApply:true,
+        inline: type,
+        singleDatePicker: single,
+        "locale": {
+          "format": "YYYY.MM.DD",
+          "separator": " - ",
+          "applyLabel": "선택완료",
+          "cancelLabel": "취소",
+          "daysOfWeek": [ "일","월","화","수","목","금","토" ],
+          "monthNames": [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
+          "firstDay": 0,
+          "startDate": new Date(),
+          "endDate": new Date(),
+          "drops": "auto"
+        },
+        }, function(start, end, label){
+          clickDay = start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD');
+          console.log(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+        if (type === true && $(ele).parents(".inner_schedule_add")) {
+            $(".checked_range").remove();
+            $(ele).parents('.inner_schedule_add').addClass("show_rangebox").append('<p class="checked_range">' + clickDay + '</p>')
+        } else if (type === true) {
+            $(".checked_range").remove();
+            $('.datepicker_wrap').before('<p class="checked_range">' + clickDay + '</p>')
+          };
+      });
+      if(type === true){
+        $('.daterangepicker').addClass('datepicker_open');
+      }
+    },
     tab : {
         init: function(){
           if($(".as_tab_wrap").length == 0){return;}

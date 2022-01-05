@@ -12,16 +12,26 @@
     <meta name="description" content="">
 
     <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
     <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
     <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
     <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
     <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
     <script type="text/javascript" src="../js/ui.js"></script>
     <noscript>
       <link rel="stylesheet" href="../css/NotoSansKR.css">
       <link rel="stylesheet" href="../css/Montserrat.css">
     </noscript>
     <link rel="stylesheet" href="../css/contents.css">
+
+    <link rel="stylesheet" href="../js/plugin/syntaxhighlighter_3.0.83/styles/shCore.css">
+    <link rel="stylesheet" href="../js/plugin/syntaxhighlighter_3.0.83/styles/shThemeRDark.css">
+    <script type="text/javascript" src="../js/plugin/syntaxhighlighter_3.0.83/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../js/plugin/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../js/plugin/syntaxhighlighter_3.0.83/scripts/shBrushCss.js"></script>
+    <script type="text/javascript" src="../js/plugin/syntaxhighlighter_3.0.83/scripts/shBrushXml.js"></script>
 
     <title>Master Admin</title>
 </head>
@@ -116,11 +126,390 @@
                 </div>
             </div>
             <div class="content">
-                2
+                <style>
+                    .sec{margin-top:50px;}
+                    .sec hr{display:block; border-top:1px solid #f5f5f5}
+                    .sec h2{margin-bottom:20px; font-size:20px}
+                    .sec h3{margin-bottom:10px; font-size:15px;color:#666;font-weight:500}
+                    .sec .exp h3 {margin:20px 0 -5px; color:#999}
+                </style>
+                <div class="sec">
+                    <h2>버튼</h2>
+                    <a href="#" class="btns">버튼</a>
+                    <a href="#" class="btns blue">버튼</a>
+                    <a href="#" class="btns black">버튼</a>
+                    <hr>
+                    <h3>small-button</h3>
+                    <button class="btns small">버튼</button>
+                    <button class="btns small blue">버튼</button>
+                    <button class="btns small black">버튼</button>
+                    <hr>
+                    <h3>fill-button</h3>
+                    <button class="btns fill">버튼</button>
+                    <div class="exp">
+                        <h3>code pattern</h3>
+                        <pre class="brush: xhtml; gutter: false; toolbar:false">
+                            <!-- button -->
+                            <a href="#" class="btns">버튼</a>
+                            <a href="#" class="btns blue">버튼</a>
+                            <a href="#" class="btns black">버튼</a>
+
+                            <!-- small-button -->
+                            <button class="btns small">버튼</button>
+                            <button class="btns small blue">버튼</button>
+                            <button class="btns small black">버튼</button>
+
+                            <!-- fill-button -->
+                            <button class="btns fill">버튼</button>
+                        </pre>
+                    </div>
+                </div>
+                <div class="sec">
+                    <h2>정렬</h2>
+                    <h3>default - left</h3>
+                    <div class="align_flex">
+                        <button class="btns">버튼</button>
+                        <button class="btns blue">버튼</button>
+                        <button class="btns black">버튼</button>
+                    </div>
+                    <hr>
+                    <h3>right</h3>
+                    <div class="align_flex right">
+                        <button class="btns">버튼</button>
+                        <button class="btns blue">버튼</button>
+                        <button class="btns black">버튼</button>
+                    </div>
+                    <hr>
+                    <h3>center</h3>
+                    <div class="align_flex center">
+                        <button class="btns">버튼</button>
+                        <button class="btns blue">버튼</button>
+                        <button class="btns black">버튼</button>
+                    </div>
+                    <hr>
+                    <h3>between</h3>
+                    <div class="align_flex between">
+                        <button class="btns">버튼</button>
+                        <button class="btns blue">버튼</button>
+                        <button class="btns black">버튼</button>
+                    </div>
+                    <div class="exp">
+                        <h3>code pattern</h3>
+                        <pre class="brush: xhtml; gutter: false; toolbar:false">
+                            <!-- default - left -->
+                            <div class="align_flex">
+                                <button class="btns">버튼</button>
+                                <button class="btns blue">버튼</button>
+                                <button class="btns black">버튼</button>
+                            </div>
+
+                            <!-- right -->
+                            <div class="align_flex right">
+                                <button class="btns">버튼</button>
+                                <button class="btns blue">버튼</button>
+                                <button class="btns black">버튼</button>
+                            </div>
+
+                            <!-- center -->
+                            <div class="align_flex center">
+                                <button class="btns">버튼</button>
+                                <button class="btns blue">버튼</button>
+                                <button class="btns black">버튼</button>
+                            </div>
+
+                            <!-- between -->
+                            <div class="align_flex between">
+                                <button class="btns">버튼</button>
+                                <button class="btns blue">버튼</button>
+                                <button class="btns black">버튼</button>
+                            </div>
+                        </pre>
+                    </div>
+                </div>
+                <div class="sec">
+                    <h2>radio & checkbox</h2>
+                    <h3>input[radio] + label[with label text] 혼자 쓸때</h3>
+                    <div class="inp_radio">
+                        <span class="form_ele"><input type="radio" id="radio0" name="radio"><label for="radio0">uncheck</label></span>
+                    </div>
+                    <hr>
+                    <h3>input[radio] + label[with label text] 일반적인 형태 + 상태옵션</h3>
+                    <div class="inp_radio">
+                        <span class="form_ele"><input type="radio" id="radio1" name="radio"><label for="radio1">uncheck</label></span>
+                        <span class="form_ele"><input type="radio" id="radio2" name="radio" checked><label for="radio2">check</label></span>
+                        <span class="form_ele"><input type="radio" id="radio3" name="radio" disabled><label for="radio3">disabled</label></span>
+                    </div>
+                    <hr>
+                    <h3>input[checkbox] + label[with label text] 혼자 쓸때</h3>
+                    <div class="inp_check">
+                        <span class="form_ele"><input type="checkbox" id="checkbox0" name="checkbox0"><label for="checkbox0">uncheck</label></span>
+                    </div>
+                    <hr>
+                    <h3>input[checkbox] + label[with label text] 일반적인 형태 + 상태옵션</h3>
+                    <div class="inp_check">
+                        <span class="form_ele"><input type="checkbox" id="checkbox1" name="checkbox"><label for="checkbox1">uncheck</label></span>
+                        <span class="form_ele"><input type="checkbox" id="checkbox2" name="checkbox" checked><label for="checkbox2">check</label></span>
+                        <span class="form_ele"><input type="checkbox" id="checkbox3" name="checkbox" disabled><label for="checkbox3">disabled</label></span>
+                    </div>
+                    <hr>
+                    <h3>input[checkbox] 전체선택JS</h3>
+                    <div class="inp_check check_all_wrap">
+                        <span class="form_ele"><input type="checkbox" id="checkAll" name="agree-all"><label for="checkAll">모두 동의</label></span>
+                        <div class="check_all">
+                            <span class="form_ele"><input type="checkbox" id="TermsService" name="agree"><label for="TermsService">이용약관 동의</label></span>
+                            <span class="form_ele"><input type="checkbox" id="Privacy" name="agree"><label for="Privacy">개인정보 수집 및 이용에 대한 안내</label></span>
+                            <span class="form_ele"><input type="checkbox" id="LocationInfo" name="agree"><label for="LocationInfo">위치정보 이용약관 동의</label></span>
+                        </div>
+                    </div>
+                    <div class="exp">
+                        <h3>code pattern</h3>
+                        <pre class="brush: xhtml; gutter: false; toolbar:false">
+                            <!-- input[radio] + label[with label text] 혼자 쓸때 -->
+                            <div class="inp_radio">
+                                <span class="form_ele"><input type="radio" id="radio0" name="radio"><label for="radio0">uncheck</label></span>
+                            </div>
+
+                            <!-- input[radio] + label[with label text] 일반적인 형태 + 상태옵션 -->
+                            <div class="inp_radio">
+                                <span class="form_ele"><input type="radio" id="radio1" name="radio"><label for="radio1">uncheck</label></span>
+                                <span class="form_ele"><input type="radio" id="radio2" name="radio" checked><label for="radio2">check</label></span>
+                                <span class="form_ele"><input type="radio" id="radio3" name="radio" disabled><label for="radio3">disabled</label></span>
+                            </div>
+
+                            <!-- input[checkbox] + label[with label text] 혼자 쓸때 -->
+                            <div class="inp_check">
+                                <span class="form_ele"><input type="checkbox" id="checkbox0" name="checkbox0"><label for="checkbox0">uncheck</label></span>
+                            </div>
+
+                            <!-- input[checkbox] + label[with label text] 일반적인 형태 + 상태옵션 -->
+                            <div class="inp_check">
+                                <span class="form_ele"><input type="checkbox" id="checkbox1" name="checkbox"><label for="checkbox1">uncheck</label></span>
+                                <span class="form_ele"><input type="checkbox" id="checkbox2" name="checkbox" checked><label for="checkbox2">check</label></span>
+                                <span class="form_ele"><input type="checkbox" id="checkbox3" name="checkbox" disabled><label for="checkbox3">disabled</label></span>
+                            </div>
+
+                            <!-- input[checkbox] 전체선택JS -->
+                            <div class="inp_check check_all_wrap">
+                                <span class="form_ele"><input type="checkbox" id="checkAll" name="agree-all"><label for="checkAll">모두 동의</label></span>
+                                <div class="check_all">
+                                    <span class="form_ele"><input type="checkbox" id="TermsService" name="agree"><label for="TermsService">이용약관 동의</label></span>
+                                    <span class="form_ele"><input type="checkbox" id="Privacy" name="agree"><label for="Privacy">개인정보 수집 및 이용에 대한 안내</label></span>
+                                    <span class="form_ele"><input type="checkbox" id="LocationInfo" name="agree"><label for="LocationInfo">위치정보 이용약관 동의</label></span>
+                                </div>
+                            </div>
+                        </pre>
+                    </div>
+                </div>
+                <div class="sec">
+                    <h2>스위치 버튼</h2>
+                    <h3>스위치 버튼1</h3>
+                    <div class="switch_check" style="width:250px;">
+                        <label>스위치1  <input type="checkbox"/><span class="onoff-switch"></span></label>
+                    </div>
+                    <div class="switch_check" style="width:250px;">
+                        <label>스위치2  <input type="checkbox"/><span class="onoff-switch"></span></label>
+                    </div>
+                    <hr>
+                    <h3>스위치 버튼2</h3>
+                    <div class="switch_radio" style="width:320px;">
+                        <span><input type="radio" id="switch1" name="switch" checked><label for="switch1">7일</label></span>
+                        <span><input type="radio" id="switch2" name="switch"><label for="switch2">1개월</label></span>
+                        <span><input type="radio" id="switch3" name="switch"><label for="switch3">3개월</label></span>
+                        <span><input type="radio" id="switch4" name="switch"><label for="switch4">상시</label></span>
+                    </div>
+                    <div class="exp">
+                        <h3>code pattern</h3>
+                        <pre class="brush: xhtml; gutter: false; toolbar:false">
+                            <!-- 버튼마다 사이즈 설정 필요 -->
+                            <!-- 스위치 버튼1 -->
+                            <div class="switch_check">
+                                <label>스위치1  <input type="checkbox"/><span class="onoff-switch"></span></label>
+                            </div>
+                            <div class="switch_check">
+                                <label>스위치2  <input type="checkbox"/><span class="onoff-switch"></span></label>
+                            </div>
+
+                            <!-- 스위치 버튼2 -->
+                            <div class="switch_radio">
+                                <span><input type="radio" id="switch1" name="switch" checked><label for="switch1">7일</label></span>
+                                <span><input type="radio" id="switch2" name="switch"><label for="switch2">1개월</label></span>
+                                <span><input type="radio" id="switch3" name="switch"><label for="switch3">3개월</label></span>
+                                <span><input type="radio" id="switch4" name="switch"><label for="switch4">상시</label></span>
+                            </div>
+                        </pre>
+                    </div>
+                </div>
+                <div class="sec">
+                    <h2>custom inp</h2>
+                    <h3>select</h3>
+                    <div class="inp_select">
+                        <select id="srch-select">
+                            <option>제목</option>
+                            <option>내용</option>
+                            <option>제목+내용</option>
+                        </select>
+                    </div>
+                    <div class="inp_select">
+                        <select id="srch-select">
+                            <option>제목</option>
+                            <option>내용</option>
+                            <option>제목+내용</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <h3>input</h3>
+                    <div class="inp_box">
+                        <input type="text" id="" name="" placeholder="검색어를 입력해주세요.">
+                    </div>
+                    <div class="inp_box error" style="margin-top:10px;"><!-- 에러일 때 error -->
+                        <input type="text" id="" name="" placeholder="검색어를 입력해주세요.">
+                    </div>
+                    <hr>
+                    <h3>mail</h3>
+                    <div class="inp_box mail">
+                        <span class="form_ele"><input type="text" id="" name="" placeholder="주소를 입력해 주세요."></span>
+                        <div class="inp_select">
+                            <select id="srch-select">
+                                <option>salted.com</option>
+                                <option>gmail.com</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <h3>number</h3>
+                    <div class="inp_box phone">
+                        <div class="inp_select">
+                            <select id="srch-select">
+                                <option>010</option>
+                            </select>
+                        </div>
+                        <span class="form_ele"><input type="number" id="" name="" placeholder="1234"></span>
+                        <span class="form_ele"><input type="number" id="" name="" placeholder="5678"></span>
+                    </div>
+                    <hr>
+                    <h3>파일첨부</h3>
+                    <div class="inp_file" style="width:400px;">
+                        <input type="text" placeholder="파일첨부">
+                        <label for="btn_file" class="btn_file">파일선택</label>
+                        <input type="file" id="btn_file">
+                        <button type="button" class="btn_del"></button>
+                    </div>
+                    <hr>
+                    <h3>달력</h3>
+                    <div class="datepicker_wrap" style="width:400px;">
+                        <input type="text" class="datepicker" name="" value="" />
+                    </div>
+                    <script>
+                        admin.daterangepicker('.datepicker', false, true);
+                    </script>
+                    <div class="exp">
+                        <h3>code pattern</h3>
+                        <pre class="brush: xhtml; gutter: false; toolbar:false">
+
+                            <!-- select -->
+                            <div class="inp_select">
+                                <select id="srch-select">
+                                    <option>제목</option>
+                                    <option>내용</option>
+                                    <option>제목+내용</option>
+                                </select>
+                            </div>
+
+                            <!-- input -->
+                            <div class="inp_box">
+                                <input type="text" id="" name="" placeholder="검색어를 입력해주세요.">
+                            </div>
+
+                            <div class="inp_box error"><!-- 에러일 때 error -->
+                                <input type="text" id="" name="" placeholder="검색어를 입력해주세요.">
+                            </div>
+
+                            <!-- mail -->
+                            <div class="inp_box mail">
+                                <span class="form_ele"><input type="text" id="" name="" placeholder="주소를 입력해 주세요."></span>
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>salted.com</option>
+                                        <option>gmail.com</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- number -->
+                            <div class="inp_box phone">
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>010</option>
+                                    </select>
+                                </div>
+                                <span class="form_ele"><input type="number" id="" name="" placeholder="1234"></span>
+                                <span class="form_ele"><input type="number" id="" name="" placeholder="5678"></span>
+                            </div>
+
+                            <!-- 파일첨부 필요에따라 width 사이즈 설정 필요 (default 100%) -->
+                            <div class="inp_file">
+                                <input type="text" placeholder="파일첨부">
+                                <label for="btn_file" class="btn_file">파일선택</label>
+                                <input type="file" id="btn_file">
+                                <button type="button" class="btn_del"></button>
+                            </div>
+
+                            <!-- 달력 필요에따라 width 사이즈 설정 필요 (default 100%) -->
+                            <div class="datepicker_wrap" style="width:400px;">
+                                <input type="text" class="datepicker" name="" value="" />
+                            </div>
+                            <script>
+                                admin.daterangepicker('.datepicker', false, true);
+                            </script>
+
+                        </pre>
+                    </div>
+                </div>
+                <div class="sec">
+                    <h2>textarea</h2>
+                    <h3>textarea 기본</h3>
+                    <div class="inp_textarea">
+                      <textarea id="" name="" cols="50" rows="5" placeholder="기타사항 입력"></textarea>
+                    </div>
+                    <h3>textarea Read Only</h3>
+                    <div class="inp_textarea">
+                      <textarea id="" name="" cols="70" rows="5" placeholder="Read Only" readonly></textarea>
+                    </div>
+                    <h3>textarea Disabled</h3>
+                    <div class="inp_textarea">
+                      <textarea id="" name="" cols="100" rows="5" placeholder="Disabled" disabled></textarea>
+                    </div>
+                    <div class="exp">
+                        <h3>code pattern</h3>
+                        <pre class="brush: xhtml; gutter: false; toolbar:false">
+                            <!-- textarea 기본 -->
+                            <div class="inp_textarea">
+                              <textarea id="" name="" cols="50" rows="5" placeholder="기타사항 입력"></textarea>
+                            </div>
+
+                            <!-- textarea Read Only -->
+                            <div class="inp_textarea">
+                              <textarea id="" name="" cols="70" rows="5" placeholder="Read Only" readonly></textarea>
+                            </div>
+
+                            <!-- textarea Disabled -->
+                            <div class="inp_textarea">
+                              <textarea id="" name="" cols="100" rows="5" placeholder="Disabled" disabled></textarea>
+                            </div>
+                        </pre>
+                    </div>
+                </div>
+
+
             </div>
         </section>
     </section>
 </div>
-
+<script>
+$(function(){
+  //SyntaxHighlighter
+  SyntaxHighlighter.all();
+});
+</script>
 </body>
 </html>

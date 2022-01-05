@@ -13,8 +13,7 @@
 
   <link rel="stylesheet" href="../css/ini.min.css">
   <link rel="stylesheet" href="../css/swiper.min.css">
-  <!-- 임시로 일단 넣어둔거 실제로 캘린더 넣으면 교체 해야함 -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" href="../css/daterangepicker.css">
   <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
   <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
   <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
@@ -127,7 +126,7 @@
                 </select>
               </div>
               <div class="box_period">
-                  <input type="text" id="calendar" class="input_round" value="2021.9.12 - 2021.9.12" onfocus="this.blur()" inputmode="none">
+                  <input type="text" id="" class="input_round datepicker" value="2021.9.12 - 2021.9.12" onfocus="this.blur()" inputmode="none">
               </div>
               <div class="round_select">
                 <select name="" id="" class="">
@@ -166,7 +165,7 @@
                 </select>
               </div>
               <div class="box_period">
-                  <input type="text" id="calendar" class="input_round" value="" placeholder="0000.00.00 - 0000.00.00" onfocus="this.blur()" inputmode="none">
+                  <input type="text" id="" class="input_round datepicker" value="" placeholder="0000.00.00 - 0000.00.00" onfocus="this.blur()" inputmode="none">
               </div>
               <div class="round_select">
                 <select name="" id="" class="">
@@ -325,7 +324,7 @@
           </div>
         </div>
         <!-- 통계_옵션선택// -->
-        
+
         <!-- 하단버튼// -->
       </div>
       <!-- 컨텐츠 영역// -->
@@ -345,7 +344,11 @@
     </footer>
     <!-- Footer// -->
   </div>
-  <!-- 임시 <script type="text/javascript" src="../js/daterange.js"></script>
-  <script>daterangepicker();</script> -->
+
+  <script>
+    $(function() {
+        hcp.daterangepicker('.datepicker', false);
+    });
+  </script>
 </body>
 </html>
