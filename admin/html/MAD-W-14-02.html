@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+
+    <title>Master Admin</title>
+</head>
+<body>
+<script>
+    $(function(){
+        admin.lnb(0,1);
+    });
+</script>
+<div id="wrap">
+    <header>
+        <h1><a href="/"><strong>NEUROGAIT</strong><em>Master Admin</em></a></h1>
+        <button class="btn_menu"><span></span><span></span><span></span></button>
+        <div class="util">
+            <p>관리자님 안녕하세요.</p>
+            <button class="btn_alarm">alarm</button>
+            <button class="btn_set">set-up</button>
+            <div class="user_wrap">
+                <div class="avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+                <div class="state">
+                    <p class="name_user">박재활님</p>
+                    <button type="button" class="btn_login">Login</button>
+                    <!-- <button type="button" class="btn_logout">Logout</button> -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="container">
+        <aside>
+            <div class="dimmed"></div>
+            <nav>
+                <div class="head">
+                    <h1>Menu</h1>
+                    <button class="btn_close">close</button>
+                </div>
+                <ul>
+                    <li class="on">
+                        <a href="#">HCP/Medical staff Management</a>
+                        <div class="depth">
+                            <a href="#">HCP</a>
+                            <a href="#">Medical staff</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Patient/User Management</a>
+                        <div class="depth">
+                            <a href="#">Patient/User</a>
+                            <a href="#">탈원 회원</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Exercise Management</a></li>
+                    <li>
+                        <a href="#">Website Management</a>
+                        <div class="depth">
+                            <a href="#">공지사항</a>
+                            <a href="#">자주묻는질문</a>
+                            <a href="#">이벤트관리</a>
+                            <a href="#">알림</a>
+                            <a href="#">팝업관리</a>
+                            <a href="#">약관관리</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Administrator Management</a>
+                        <div class="depth">
+                            <a href="#">관리자 관리</a>
+                            <a href="#">Log</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Code Management</a>
+                        <div class="depth">
+                            <a href="#">Common</a>
+                            <a href="#">Hospital(company)</a>
+                        </div>
+                    </li>
+                    <li class="link"><a href="#">Menu Management</a></li>
+                    <li>
+                        <a href="#">Stats</a>
+                        <div class="depth">
+                            <a href="#">회원</a>
+                            <a href="#">데이터</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="contents">
+            <div class="head">
+                <div class="title">
+                    <strong class="active"><a href="#">진료유휴환자</a></strong>
+                </div>
+                <div class="breadcrumbs">
+                    <a href="/">홈</a>
+                    <a href="#">알림</a>
+                    <a href="#">진료유후환자</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="table_wrap mt0">
+                    <div class="scroll_wrap">
+                        <table>
+                            <colgroup>
+                                <col width="140px"><col width="180px"><col width="400"><col width="180px"><col width="180px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>국가</th>
+                                    <th>환자이름</th>
+                                    <th>최근 매칭 의료진정보</th>
+                                    <th>의료진 상태</th>
+                                    <th>관리</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state">대기중</span></td><!-- 대기중 : state, 사용 : state use, 중지 : state stop  -->
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state use">사용중</span></td>
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state stop">중지</span></td>
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state">대기중</span></td>
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state use">사용중</span></td>
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state stop">중지</span></td>
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state">대기중</span></td>
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state use">사용중</span></td>
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                                <tr>
+                                    <td>한국</td>
+                                    <td>김*희</td>
+                                    <td>원주연세세브란스병원 / 김아무개</td>
+                                    <td><span class="state stop">중지</span></td>
+                                    <td><button class="btns">의료진 매칭하기</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+</body>
+</html>

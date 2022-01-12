@@ -26,6 +26,7 @@ var admin = admin || {
     init:function() {
       admin.gnb();
       admin.lnb();
+      admin.tab.init();
       admin.checkAll();
       admin.selectPlaceholder();
       admin.fileLoad();
@@ -47,29 +48,49 @@ var admin = admin || {
       });
     },//gnb
     lnb: function(i,j){
+        var _nav = $('.container aside');
+        $('.btn_menu').on('click', function(){
+          $('html,body').css({'overflow':'hidden','position':'fixed','height':'100%'});
+          _nav.show().animate({right:0},300);
+        });
+        $('nav .btn_close, .dimmed').on('click', function(e){
+          $('html,body').attr('style','');
+          _nav.animate({right:'100%'},200, function(){
+            $(this).hide();
+          });
+        });
+
         $('nav li').eq(i).addClass('active').find('.depth a').eq(j).addClass('active');
 
         $('nav li a').on('click', function(){
           $(this).parent().addClass('active').siblings().removeClass("active");
         });
-
-
-        /*
-        <aside>
-                    <nav>
-                        <div class="head">
-                            <h1>Menu</h1>
-                            <button class="btn_close">close</button>
-                        </div>
-                        <ul>
-                            <li class="active">
-                                <a href="#">병원/의료진 관리</a>
-                                <div class="depth">
-                                    <a href="#">병원(업체)</a>
-                                    <a href="#">의료진</a>
-                                </div>
-                            </li>
-        */
+    },
+    modalsClose: function(id){
+      $('html,body').attr('style','');
+      $('#'+id).removeClass('show');
+      setTimeout(() => {
+        $('#'+id).removeClass('on');
+      }, 500);
+    },
+    modalsShow: function(id){
+      var name_id = $('#'+id),
+          $htmlH = $("html").scrollTop();
+      $('html,body').css({'overflow':'hidden','position':'fixed','height':'100%'});
+      name_id.addClass('on');
+      setTimeout(() => {
+          name_id.addClass('show');
+      }, 200);
+      name_id.find('.btn_close').click(function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $('html,body').attr('style','');
+            name_id.removeClass('show');
+            setTimeout(() => {
+                name_id.removeClass('on');
+            }, 500);
+            $('html').scrollTop($htmlH)
+      });
     },
     pieChart:function($this, data) {
         var box = $($this),
@@ -123,9 +144,9 @@ var admin = admin || {
         $('#checkAll').on('click', function(){
             $('.check_all_wrap input[type="checkbox"]').prop('checked', $(this).prop('checked'));
         });
-        $('.check_all input[type="checkbox"]').on('click', function(){
-            var $length = $('.check_all input[type="checkbox"]').length,
-                $checked = $('.check_all input[type="checkbox"]:checked').length;
+        $('.check_all input[type="checkbox"], tbody input[type="checkbox"]').on('click', function(){
+            var $length = $('.check_all input[type="checkbox"], tbody input[type="checkbox"]').length,
+                $checked = $('.check_all input[type="checkbox"]:checked, tbody input[type="checkbox"]:checked').length;
             if($length === $checked){
                 $('#checkAll').prop('checked', true);
             }else{
@@ -192,7 +213,7 @@ var admin = admin || {
         init: function(){
           if($(".as_tab_wrap").length == 0){return;}
           $tabEle = $(".as_tab_menu > li");
-          console.log('tab')
+
           this.event();
         },
         event: function(){
@@ -202,15 +223,15 @@ var admin = admin || {
           $tabEle.on("click", function(e){
             tab.action($(this), $(this).closest(".as_tab_menu").find(" > li").index(this));
           });
-          $tabEle.not(":hidden").each(function() {
-            if ($(this).parent(".as_tab_menu").hasClass("flexible")){
-              return;
-            } else {
-              var menuEa = $(this).parent(".as_tab_menu").find("li").length;
-              var menuSize = (100/menuEa);
-              $(this).parent(".as_tab_menu").find("li").width(menuSize+"%");
-            }
-          });
+          // $tabEle.not(":hidden").each(function() {
+          //   if ($(this).parent(".as_tab_menu").hasClass("flexible")){
+          //     return;
+          //   } else {
+          //     var menuEa = $(this).parent(".as_tab_menu").find("li").length;
+          //     var menuSize = (100/menuEa);
+          //     $(this).parent(".as_tab_menu").find("li").width(menuSize+"%");
+          //   }
+          // });
           if (($tabEle).hasClass("active")) {
             $(".as_tab_wrap .as_tab_menu > li.active > a").trigger("click");
           } else {

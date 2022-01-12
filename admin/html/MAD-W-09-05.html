@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+
+    <title>Master Admin</title>
+</head>
+<body>
+<script>
+    $(function(){
+        admin.lnb(0,1);
+    });
+</script>
+<div id="wrap">
+    <header>
+        <h1><a href="/"><strong>NEUROGAIT</strong><em>Master Admin</em></a></h1>
+        <button class="btn_menu"><span></span><span></span><span></span></button>
+        <div class="util">
+            <p>관리자님 안녕하세요.</p>
+            <button class="btn_alarm">alarm</button>
+            <button class="btn_set">set-up</button>
+            <div class="user_wrap">
+                <div class="avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+                <div class="state">
+                    <p class="name_user">박재활님</p>
+                    <button type="button" class="btn_login">Login</button>
+                    <!-- <button type="button" class="btn_logout">Logout</button> -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="container">
+        <aside>
+            <div class="dimmed"></div>
+            <nav>
+                <div class="head">
+                    <h1>Menu</h1>
+                    <button class="btn_close">close</button>
+                </div>
+                <ul>
+                    <li class="on">
+                        <a href="#">HCP/Medical staff Management</a>
+                        <div class="depth">
+                            <a href="#">HCP</a>
+                            <a href="#">Medical staff</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Patient/User Management</a>
+                        <div class="depth">
+                            <a href="#">Patient/User</a>
+                            <a href="#">탈원 회원</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Exercise Management</a></li>
+                    <li>
+                        <a href="#">Website Management</a>
+                        <div class="depth">
+                            <a href="#">공지사항</a>
+                            <a href="#">자주묻는질문</a>
+                            <a href="#">이벤트관리</a>
+                            <a href="#">알림</a>
+                            <a href="#">팝업관리</a>
+                            <a href="#">약관관리</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Administrator Management</a>
+                        <div class="depth">
+                            <a href="#">관리자 관리</a>
+                            <a href="#">Log</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Code Management</a>
+                        <div class="depth">
+                            <a href="#">Common</a>
+                            <a href="#">Hospital(company)</a>
+                        </div>
+                    </li>
+                    <li class="link"><a href="#">Menu Management</a></li>
+                    <li>
+                        <a href="#">Stats</a>
+                        <div class="depth">
+                            <a href="#">회원</a>
+                            <a href="#">데이터</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="contents">
+            <div class="content">
+                <button class="btns blue" onclick="admin.modalsShow('modals')">이벤트 수정</button>
+            </div>
+        </section>
+    </section>
+</div>
+<!-- layerPop -->
+<div class="modals" id="modals">
+    <div class="pop_layer">
+        <div class="layer_head">
+            <h2>event Modification</h2>
+            <button class="btn_close">Close</button>
+        </div>
+        <div class="layer_cont">
+            <div class="table_wrap write">
+                <table class="">
+                    <colgroup>
+                        <col width="130px"><col width="*">
+                    </colgroup>
+                    <tr>
+                        <th>Country</th>
+                        <td>
+                            <div class="inp_check check_all_wrap">
+                                <span class="form_ele"><input type="checkbox" id="checkAll" name="country-all"><label for="checkAll">전체</label></span>
+                                <div class="check_all">
+                                    <span class="form_ele"><input type="checkbox" id="ko" name="country"><label for="ko">한국</label></span>
+                                    <span class="form_ele"><input type="checkbox" id="us" name="country"><label for="us">미국</label></span>
+                                    <span class="form_ele"><input type="checkbox" id="jp" name="country"><label for="jp">일본</label></span>
+                                </div>
+                            </div>
+                            <p class="txt">※ The time period below applies to the time zone of your chosen country</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Duration</th>
+                        <td>
+                            <div class="switch_radio">
+                                <span><input type="radio" id="switch1" name="switch"><label for="switch1">week</label></span>
+                                <span><input type="radio" id="switch2" name="switch" checked><label for="switch2">month</label></span>
+                                <span><input type="radio" id="switch3" name="switch"><label for="switch3">3 months</label></span>
+                                <span><input type="radio" id="switch4" name="switch"><label for="switch4">Always</label></span>
+                            </div>
+                            <div class="set_period">
+                                <div class="datepicker_wrap">
+                                    <input type="text" class="datepicker" name="" value="" />
+                                </div>
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>13시</option>
+                                        <option>14시</option>
+                                    </select>
+                                </div>
+                                <div class="datepicker_wrap">
+                                    <input type="text" class="datepicker" name="" value="" />
+                                </div>
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>13시</option>
+                                        <option>14시</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <script>
+                                admin.daterangepicker('.datepicker', false, true);
+                            </script>
+                        </td>
+                    </tr>
+                </table>
+                <div class="align_flex between mt15">
+                    <p class="txt">※ When common items are changed, input contents for each language may be initialized.</p>
+                    <button class="btns small black">Apply</button>
+                </div>
+                <div class="tab_wrap type2 mt30">
+                    <ul class="tab_menu">
+                        <li class="active"><a href="#">한국어</a></li>
+                        <li><a href="#">영어</a></li>
+                        <li><a href="#">일본어</a></li>
+                    </ul>
+                    <div class="inner_depth">
+                        <div class="tab_inner">
+                            <table class="">
+                                <colgroup>
+                                    <col width="130px"><col width="*">
+                                </colgroup>
+                                <tr>
+                                    <th>Title</th>
+                                    <td>
+                                        <div class="inp_box">
+                                            <input type="text" id="" name="" placeholder="제목을 입력해주세요.">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Contents</th>
+                                    <td>
+                                        <div class="inp_textarea">
+                                            <textarea id="" name="" cols="50" rows="5" placeholder=""></textarea>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>URL</th>
+                                    <td>
+                                        <div class="inp_box">
+                                            <input type="text" id="" name="" placeholder="URL을 입력해주세요.">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Attachment</th>
+                                    <td>
+                                        <div class="inp_file">
+                                            <p class="txt">Attachments can only be images, documents(pdf), and compressed files.</p>
+                                            <div>
+                                                <input type="text" placeholder="Attach file">
+                                                <label for="btn_file" class="btn_file">Attach file</label>
+                                                <input type="file" id="btn_file">
+                                                <button type="button" class="btn_del"></button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="align_flex right mt15">
+                                <button class="btns small">Cancel</button>
+                                <button class="btns small blue">Register</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

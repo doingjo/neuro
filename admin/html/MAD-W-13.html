@@ -29,13 +29,17 @@
     <title>Master Admin</title>
 </head>
 <body>
-
-<div id="wrap" class="main">
+<script>
+    $(function(){
+        admin.lnb(6,0);
+    });
+</script>
+<div id="wrap">
     <header>
         <h1><a href="/"><strong>NEUROGAIT</strong><em>Master Admin</em></a></h1>
         <button class="btn_menu"><span></span><span></span><span></span></button>
         <div class="util">
-            <!-- <p>관리자님 안녕하세요.</p> -->
+            <p>관리자님 안녕하세요.</p>
             <button class="btn_alarm">alarm</button>
             <button class="btn_set">set-up</button>
             <div class="user_wrap">
@@ -109,82 +113,59 @@
             </nav>
         </aside>
         <section class="contents">
-            <div class="tit">
-                <h1><em>Today</em> NEUROGAIT</h1>
-                <p><strong>김환자</strong> 관리자님 환영합니다.</p>
+            <div class="head">
+                <div class="title">
+                    <strong class="active"><a href="#">Menu management</a></strong>
+                    <p>You can manage the menu after selecting a country.</p>
+                </div>
+                <div class="breadcrumbs">
+                    <a href="/">Home</a>
+                    <a href="#">Menu Management</a>
+                </div>
             </div>
-            <div class="sec_wrap">
-                <div class="sec patient">
-                    <div class="tit">
-                        <h2>Patient App (전체)</h2>
-                        <a href="" target="_blank">More Stats</a>
+            <div class="content">
+                <div class="top_line">
+                    <div class="inp_select w240">
+                        <select id="srch-select">
+                            <option>한국</option>
+                        </select>
                     </div>
-                    <div class="pie_chart by_country">
-                        <strong>Member<br>status by country</strong>
-                        <div class="chart"></div>
-                    </div>
-                    <div class="pie_chart by_user">
-                        <strong>Member(User)<br>status by type</strong>
-                        <div class="chart"></div>
-                    </div>
-                    <script>
-                      var countryData = [
-                        {id: 'Korea', percent: 90, color: '#5280e2'},
-                        {id: 'US', percent: 10, color: '#21d0b3'},
-                        {id: 'EU', percent: 0, color: '#343a40'}
-                      ]
-                      admin.pieChart('.by_country .chart', countryData);
-                      var userData = [
-                        {id: 'Diagnosis', percent: 50, color: '#5280e2'},
-                        {id: 'Research', percent: 30, color: '#21d0b3'},
-                        {id: 'General', percent: 20, color: '#343a40'}
-                      ]
-                      admin.pieChart('.by_user .chart', userData);
-                    </script>
-                </div>
-                <div class="sec hcp">
-                    <div class="tit">
-                        <h2>HCP (전체)</h2>
-                        <a href="" target="_blank">More Stats</a>
-                    </div>
-                    <div class="pie_chart by_medical">
-                        <strong>Medical staff<br>usage status</strong>
-                        <div class="chart"></div>
-                    </div>
-                    <script>
-                      var medicalData = [
-                        {id: 'In Use', percent: 50, color: '#5280e2'},
-                        {id: 'Waiting', percent: 35, color: '#21d0b3'},
-                        {id: 'Account Suspension', percent: 15, color: '#343a40'}
-                      ]
-                      admin.pieChart('.by_medical .chart', medicalData);
-                    </script>
-                </div>
-                <div class="sec site">
-                    <div class="tit">
-                        <h2>Site Management</h2>
-                    </div>
-                    <div class="link">
-                        <a href="">Notice</a>
-                        <a href="">Pop-up Management</a>
-                        <a href="">Events Pop-up Management</a>
-                        <a href="">Notification Management</a>
+                    <div class="inp_select w240">
+                        <select id="srch-select">
+                            <option>Patient APP</option>
+                        </select>
                     </div>
                 </div>
-                <div class="sec alarm">
-                    <div class="tit">
-                        <h2>Alarm</h2>
-                        <a href="" target="_blank">More Stats</a>
+                <div class="menu_control">
+                    <div>
+                        <strong>First menu</strong>
+                        <button class="btn_more">Register new +</button>
+                        <ul class="switch_check">
+                            <li><label>Home  <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                            <li><label>Schedule  <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                            <li><label>Exercise  <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                            <li><label>Insole  <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                            <li><label>Comprehensive evaluation result <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                            <li><label>Profile  <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                        </ul>
+                        <button class="btns white">Save privacy status</button>
                     </div>
-                    <div class="alarm_wrap">
-                        <div class="alarm_box">
-                            <strong>Patient<span>(단위 명)</span></strong>
-                            <a href="#">54</a>
-                        </div>
-                        <div class="alarm_box">
-                            <strong>Medical staff account inquiry<span>(단위 명)</span></strong>
-                            <a href="#">54</a>
-                        </div>
+                    <div>
+                        <strong>Second menu</strong>
+                        <button class="btn_more">Register new +</button>
+                        <ul class="switch_check">
+                            <li><label>Alarm  <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                        </ul>
+                        <button class="btns white">Save privacy status</button>
+                    </div>
+                    <div>
+                        <strong>Third menu</strong>
+                        <button class="btn_more">Register new +</button>
+                        <ul class="switch_check">
+                            <li><label>Notice  <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                            <li><label>Event  <input type="checkbox"><span class="onoff-switch"></span></label></li>
+                        </ul>
+                        <button class="btns white">Save privacy status</button>
                     </div>
                 </div>
             </div>

@@ -193,6 +193,37 @@
                         <button class="btns blue">버튼</button>
                         <button class="btns black">버튼</button>
                     </div>
+                    <h3>예외</h3>
+                    <div class="align_flex between">
+                        <span>&nbsp;</span>
+                        <button class="btns blue">버튼</button>
+                        <button class="btns black">버튼</button>
+                    </div>
+                    <h3>paging</h3>
+                    <div class="align_flex paging">
+                        <div class="left">
+                            <button class="btns black">거래 중지 처리</button>
+                        </div>
+                        <div class="pagination">
+                            <span class="nav first"><a href="#">첫 페이지</a></span>
+                            <span class="nav prev"><a href="#">이전 페이지</a></span>
+                            <span><a href="#">1</a></span>
+                            <span class="active"><a href="#">2</a></span>
+                            <span><a href="#">3</a></span>
+                            <span><a href="#">4</a></span>
+                            <span><a href="#">5</a></span>
+                            <span><a href="#">6</a></span>
+                            <span><a href="#">7</a></span>
+                            <span><a href="#">8</a></span>
+                            <span><a href="#">9</a></span>
+                            <span><a href="#">10</a></span>
+                            <span class="nav next"><a href="#">다음 페이지</a></span>
+                            <span class="nav last"><a href="#">마지막 페이지</a></span>
+                        </div>
+                        <div class="right">
+                            <button class="btns blue" onclick="admin.modalsShow('modals')">등록</button>
+                        </div>
+                    </div>
                     <div class="exp">
                         <h3>code pattern</h3>
                         <pre class="brush: xhtml; gutter: false; toolbar:false">
@@ -223,6 +254,39 @@
                                 <button class="btns blue">버튼</button>
                                 <button class="btns black">버튼</button>
                             </div>
+
+                            <!-- 예외 -->
+                            <div class="align_flex between">
+                                <span>&nbsp;</span>
+                                <button class="btns blue">버튼</button>
+                                <button class="btns black">버튼</button>
+                            </div>
+
+                            <!-- paging -->
+                            <div class="align_flex paging">
+                                <div class="left">
+                                    <button class="btns black">거래 중지 처리</button>
+                                </div>
+                                <div class="pagination">
+                                    <span class="nav first"><a href="#">첫 페이지</a></span>
+                                    <span class="nav prev"><a href="#">이전 페이지</a></span>
+                                    <span><a href="#">1</a></span>
+                                    <span class="active"><a href="#">2</a></span>
+                                    <span><a href="#">3</a></span>
+                                    <span><a href="#">4</a></span>
+                                    <span><a href="#">5</a></span>
+                                    <span><a href="#">6</a></span>
+                                    <span><a href="#">7</a></span>
+                                    <span><a href="#">8</a></span>
+                                    <span><a href="#">9</a></span>
+                                    <span><a href="#">10</a></span>
+                                    <span class="nav next"><a href="#">다음 페이지</a></span>
+                                    <span class="nav last"><a href="#">마지막 페이지</a></span>
+                                </div>
+                                <div class="right">
+                                    <button class="btns blue" onclick="admin.modalsShow('modals')">등록</button>
+                                </div>
+                            </div>
                         </pre>
                     </div>
                 </div>
@@ -230,14 +294,14 @@
                     <h2>radio & checkbox</h2>
                     <h3>input[radio] + label[with label text] 혼자 쓸때</h3>
                     <div class="inp_radio">
-                        <span class="form_ele"><input type="radio" id="radio0" name="radio"><label for="radio0">uncheck</label></span>
+                        <span class="form_ele"><input type="radio" id="radio0" name="radio"><label for="radio0"> uncheck</label></span>
                     </div>
                     <hr>
                     <h3>input[radio] + label[with label text] 일반적인 형태 + 상태옵션</h3>
                     <div class="inp_radio">
-                        <span class="form_ele"><input type="radio" id="radio1" name="radio"><label for="radio1">uncheck</label></span>
-                        <span class="form_ele"><input type="radio" id="radio2" name="radio" checked><label for="radio2">check</label></span>
-                        <span class="form_ele"><input type="radio" id="radio3" name="radio" disabled><label for="radio3">disabled</label></span>
+                        <span class="form_ele"><input type="radio" id="radio1" name="radio"><label for="radio1"> uncheck</label></span>
+                        <span class="form_ele"><input type="radio" id="radio2" name="radio" checked><label for="radio2"> check</label></span>
+                        <span class="form_ele"><input type="radio" id="radio3" name="radio" disabled><label for="radio3"> disabled</label></span>
                     </div>
                     <hr>
                     <h3>input[checkbox] + label[with label text] 혼자 쓸때</h3>
@@ -254,7 +318,7 @@
                     <hr>
                     <h3>input[checkbox] 전체선택JS</h3>
                     <div class="inp_check check_all_wrap">
-                        <span class="form_ele"><input type="checkbox" id="checkAll" name="agree-all"><label for="checkAll">모두 동의</label></span>
+                        <span class="form_ele"><input type="checkbox" id="checkAll" name="agree-all"><label for="checkAll"> 모두 동의</label></span>
                         <div class="check_all">
                             <span class="form_ele"><input type="checkbox" id="TermsService" name="agree"><label for="TermsService">이용약관 동의</label></span>
                             <span class="form_ele"><input type="checkbox" id="Privacy" name="agree"><label for="Privacy">개인정보 수집 및 이용에 대한 안내</label></span>
@@ -385,19 +449,45 @@
                         </div>
                         <span class="form_ele"><input type="number" id="" name="" placeholder="1234"></span>
                         <span class="form_ele"><input type="number" id="" name="" placeholder="5678"></span>
+                        <strong>내선번호</strong>
+                        <span class="form_ele"><input type="number" id="" name="" placeholder="000"></span>
                     </div>
                     <hr>
                     <h3>파일첨부</h3>
                     <div class="inp_file" style="width:400px;">
-                        <input type="text" placeholder="파일첨부">
-                        <label for="btn_file" class="btn_file">파일선택</label>
-                        <input type="file" id="btn_file">
-                        <button type="button" class="btn_del"></button>
+                        <p class="txt">첨부파일은 이미지, 문서(pdf), 압축파일만 가능합니다.</p>
+                        <div>
+                            <input type="text" placeholder="파일첨부">
+                            <label for="btn_file" class="btn_file">파일첨부</label>
+                            <input type="file" id="btn_file">
+                            <button type="button" class="btn_del"></button>
+                        </div>
                     </div>
                     <hr>
                     <h3>달력</h3>
                     <div class="datepicker_wrap" style="width:400px;">
                         <input type="text" class="datepicker" name="" value="" />
+                    </div>
+                    <br>
+                    <div class="set_period">
+                        <div class="datepicker_wrap">
+                            <input type="text" class="datepicker" name="" value="" />
+                        </div>
+                        <div class="inp_select">
+                            <select id="srch-select">
+                                <option>13시</option>
+                                <option>14시</option>
+                            </select>
+                        </div>
+                        <div class="datepicker_wrap">
+                            <input type="text" class="datepicker" name="" value="" />
+                        </div>
+                        <div class="inp_select">
+                            <select id="srch-select">
+                                <option>13시</option>
+                                <option>14시</option>
+                            </select>
+                        </div>
                     </div>
                     <script>
                         admin.daterangepicker('.datepicker', false, true);
@@ -444,19 +534,45 @@
                                 </div>
                                 <span class="form_ele"><input type="number" id="" name="" placeholder="1234"></span>
                                 <span class="form_ele"><input type="number" id="" name="" placeholder="5678"></span>
+                                <strong>내선번호</strong>
+                                <span class="form_ele"><input type="number" id="" name="" placeholder="000"></span>
                             </div>
 
                             <!-- 파일첨부 필요에따라 width 사이즈 설정 필요 (default 100%) -->
                             <div class="inp_file">
-                                <input type="text" placeholder="파일첨부">
-                                <label for="btn_file" class="btn_file">파일선택</label>
-                                <input type="file" id="btn_file">
-                                <button type="button" class="btn_del"></button>
+                                <p class="txt">첨부파일은 이미지, 문서(pdf), 압축파일만 가능합니다.</p>
+                                <div>
+                                    <input type="text" placeholder="파일첨부">
+                                    <label for="btn_file" class="btn_file">파일선택</label>
+                                    <input type="file" id="btn_file">
+                                    <button type="button" class="btn_del"></button>
+                                </div>
                             </div>
 
                             <!-- 달력 필요에따라 width 사이즈 설정 필요 (default 100%) -->
-                            <div class="datepicker_wrap" style="width:400px;">
+                            <div class="datepicker_wrap">
                                 <input type="text" class="datepicker" name="" value="" />
+                            </div>
+                            <!-- 기간 설정 -->
+                            <div class="set_period">
+                                <div class="datepicker_wrap">
+                                    <input type="text" class="datepicker" name="" value="" />
+                                </div>
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>13시</option>
+                                        <option>14시</option>
+                                    </select>
+                                </div>
+                                <div class="datepicker_wrap">
+                                    <input type="text" class="datepicker" name="" value="" />
+                                </div>
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>13시</option>
+                                        <option>14시</option>
+                                    </select>
+                                </div>
                             </div>
                             <script>
                                 admin.daterangepicker('.datepicker', false, true);
@@ -499,8 +615,48 @@
                         </pre>
                     </div>
                 </div>
+                <div class="sec">
+                    <h2>pagination</h2>
+                    <div class="pagination">
+                        <span class="nav first"><a href="#">첫 페이지</a></span>
+                        <span class="nav prev"><a href="#">이전 페이지</a></span>
+                        <span><a href="#">1</a></span>
+                        <span class="active"><a href="#">2</a></span>
+                        <span><a href="#">3</a></span>
+                        <span><a href="#">4</a></span>
+                        <span><a href="#">5</a></span>
+                        <span><a href="#">6</a></span>
+                        <span><a href="#">7</a></span>
+                        <span><a href="#">8</a></span>
+                        <span><a href="#">9</a></span>
+                        <span><a href="#">10</a></span>
+                        <span class="nav next"><a href="#">다음 페이지</a></span>
+                        <span class="nav last"><a href="#">마지막 페이지</a></span>
+                    </div>
+                    <div class="exp">
+                        <h3>code pattern</h3>
+                        <pre class="brush: xhtml; gutter: false; toolbar:false">
 
+                            <div class="pagination">
+                                <span class="nav first"><a href="#">첫 페이지</a></span>
+                                <span class="nav prev"><a href="#">이전 페이지</a></span>
+                                <span><a href="#">1</a></span>
+                                <span class="active"><a href="#">2</a></span>
+                                <span><a href="#">3</a></span>
+                                <span><a href="#">4</a></span>
+                                <span><a href="#">5</a></span>
+                                <span><a href="#">6</a></span>
+                                <span><a href="#">7</a></span>
+                                <span><a href="#">8</a></span>
+                                <span><a href="#">9</a></span>
+                                <span><a href="#">10</a></span>
+                                <span class="nav next"><a href="#">다음 페이지</a></span>
+                                <span class="nav last"><a href="#">마지막 페이지</a></span>
+                            </div>
 
+                        </pre>
+                    </div>
+                </div>
             </div>
         </section>
     </section>

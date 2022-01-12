@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
+    <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <noscript>
+      <link rel="stylesheet" href="../css/NotoSansKR.css">
+      <link rel="stylesheet" href="../css/Montserrat.css">
+    </noscript>
+    <link rel="stylesheet" href="../css/contents.css">
+
+    <title>Master Admin</title>
+</head>
+<body>
+<script>
+    $(function(){
+        admin.lnb(3,5);
+    });
+</script>
+<div id="wrap">
+    <header>
+        <h1><a href="/"><strong>NEUROGAIT</strong><em>Master Admin</em></a></h1>
+        <button class="btn_menu"><span></span><span></span><span></span></button>
+        <div class="util">
+            <p>관리자님 안녕하세요.</p>
+            <button class="btn_alarm">alarm</button>
+            <button class="btn_set">set-up</button>
+            <div class="user_wrap">
+                <div class="avatar"></div><!-- .box_avatar는 기본(비로그인), box_avatar.login(로그인), box_avatar.on(비로그인 클릭) -->
+                <div class="state">
+                    <p class="name_user">박재활님</p>
+                    <button type="button" class="btn_login">Login</button>
+                    <!-- <button type="button" class="btn_logout">Logout</button> -->
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="container">
+        <aside>
+            <div class="dimmed"></div>
+            <nav>
+                <div class="head">
+                    <h1>Menu</h1>
+                    <button class="btn_close">close</button>
+                </div>
+                <ul>
+                    <li class="on">
+                        <a href="#">HCP/Medical staff Management</a>
+                        <div class="depth">
+                            <a href="#">HCP</a>
+                            <a href="#">Medical staff</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Patient/User Management</a>
+                        <div class="depth">
+                            <a href="#">Patient/User</a>
+                            <a href="#">탈원 회원</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Exercise Management</a></li>
+                    <li>
+                        <a href="#">Website Management</a>
+                        <div class="depth">
+                            <a href="#">공지사항</a>
+                            <a href="#">자주묻는질문</a>
+                            <a href="#">이벤트관리</a>
+                            <a href="#">알림</a>
+                            <a href="#">팝업관리</a>
+                            <a href="#">약관관리</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Administrator Management</a>
+                        <div class="depth">
+                            <a href="#">관리자 관리</a>
+                            <a href="#">Log</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#">Code Management</a>
+                        <div class="depth">
+                            <a href="#">Common</a>
+                            <a href="#">Hospital(company)</a>
+                        </div>
+                    </li>
+                    <li class="link"><a href="#">Menu Management</a></li>
+                    <li>
+                        <a href="#">Stats</a>
+                        <div class="depth">
+                            <a href="#">회원</a>
+                            <a href="#">데이터</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <section class="contents">
+            <div class="head">
+                <div class="title">
+                    <strong class="active"><a href="#">Terms management</a></strong>
+                </div>
+                <div class="breadcrumbs">
+                    <a href="/">Home</a>
+                    <a href="#">Website Management</a>
+                    <a href="#">3뎁스</a>
+                </div>
+            </div>
+            <div class="content">
+                <div class="tab_wrap as_tab_wrap flexible">
+                    <div class="scroll_wrap">
+                        <ul class="tab_menu as_tab_menu">
+                            <li class="active"><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Provision of Sensitive information</a></li>
+                            <li><a href="#">Bluetooth communication</a></li>
+                            <li><a href="#">Use of location information</a></li>
+                            <li><a href="#">Marketing received information</a></li>
+                            <li><a href="#">Provision of personal information to third parties</a></li>
+                        </ul>
+                    </div>
+                    <div class="inner_depth">
+                        <div class="tab_inner">
+                            <div class="list_wrap">
+                                <div class="control_wrap">
+                                    <div class="inp_select w240">
+                                        <select id="srch-select">
+                                            <option>채널선택</option>
+                                        </select>
+                                    </div>
+                                    <div class="inp_box">
+                                        <input type="text" id="" name="" placeholder="Search for…">
+                                    </div>
+                                    <button class="btns small blue">Search</button>
+                                </div>
+                                <div class="table_wrap">
+                                    <div class="align_flex right">
+                                        <button class="btns blue btn_write">Register</button>
+                                    </div>
+                                    <div class="scroll_wrap">
+                                        <table>
+                                            <colgroup>
+                                                <col width="*">
+                                            </colgroup>
+                                            <thead>
+                                                <tr>
+                                                    <th>Version</th>
+                                                    <th>Channel</th>
+                                                    <th>Enforcement date</th>
+                                                    <th>Notice date</th>
+                                                    <th>Information mail</th>
+                                                    <th>Status</th>
+                                                    <th>Last modified date</th>
+                                                    <th>Last Posted by</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1.0</td>
+                                                    <td>Patient</td>
+                                                    <td>2021.10.22</td>
+                                                    <td>2021.10.22</td>
+                                                    <td><span class="state">unsent</span></td><!-- unsent : state, Sent : state use  -->
+                                                    <td><span class="state">Unposted</span></td><!-- Unposted : state, Posted : state use  -->
+                                                    <td>2021.03.01</td>
+                                                    <td>Admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1.1</td>
+                                                    <td>HCP</td>
+                                                    <td>2021.10.22</td>
+                                                    <td>2021.10.22</td>
+                                                    <td><span class="state use">Sent</span></td>
+                                                    <td><span class="state use">Posted</span></td>
+                                                    <td>2021.03.01</td>
+                                                    <td>Admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1.0</td>
+                                                    <td>Patient</td>
+                                                    <td>2021.10.22</td>
+                                                    <td>2021.10.22</td>
+                                                    <td><span class="state">unsent</span></td>
+                                                    <td><span class="state">Unposted</span></td>
+                                                    <td>2021.03.01</td>
+                                                    <td>Admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1.1</td>
+                                                    <td>HCP</td>
+                                                    <td>2021.10.22</td>
+                                                    <td>2021.10.22</td>
+                                                    <td><span class="state use">Sent</span></td>
+                                                    <td><span class="state use">Posted</span></td>
+                                                    <td>2021.03.01</td>
+                                                    <td>Admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1.0</td>
+                                                    <td>Patient</td>
+                                                    <td>2021.10.22</td>
+                                                    <td>2021.10.22</td>
+                                                    <td><span class="state">unsent</span></td>
+                                                    <td><span class="state">Unposted</span></td>
+                                                    <td>2021.03.01</td>
+                                                    <td>Admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1.1</td>
+                                                    <td>HCP</td>
+                                                    <td>2021.10.22</td>
+                                                    <td>2021.10.22</td>
+                                                    <td><span class="state use">Sent</span></td>
+                                                    <td><span class="state use">Posted</span></td>
+                                                    <td>2021.03.01</td>
+                                                    <td>Admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1.0</td>
+                                                    <td>Patient</td>
+                                                    <td>2021.10.22</td>
+                                                    <td>2021.10.22</td>
+                                                    <td><span class="state">unsent</span></td>
+                                                    <td><span class="state">Unposted</span></td>
+                                                    <td>2021.03.01</td>
+                                                    <td>Admin</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>1.1</td>
+                                                    <td>HCP</td>
+                                                    <td>2021.10.22</td>
+                                                    <td>2021.10.22</td>
+                                                    <td><span class="state use">Sent</span></td>
+                                                    <td><span class="state use">Posted</span></td>
+                                                    <td>2021.03.01</td>
+                                                    <td>Admin</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="align_flex paging">
+                                        <div class="pagination">
+                                            <span class="nav first"><a href="#">first</a></span>
+                                            <span class="nav prev"><a href="#">prev</a></span>
+                                            <span><a href="#">1</a></span>
+                                            <span class="active"><a href="#">2</a></span>
+                                            <span><a href="#">3</a></span>
+                                            <span><a href="#">4</a></span>
+                                            <span><a href="#">5</a></span>
+                                            <span><a href="#">6</a></span>
+                                            <span><a href="#">7</a></span>
+                                            <span><a href="#">8</a></span>
+                                            <span><a href="#">9</a></span>
+                                            <span><a href="#">10</a></span>
+                                            <span class="nav next"><a href="#">next</a></span>
+                                            <span class="nav last"><a href="#">last</a></span>
+                                        </div>
+                                        <div class="right">
+                                            <button class="btns blue btn_write">Register</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="write_wrap">
+                                <div class="table_wrap write">
+                                    <table class="">
+                                        <colgroup>
+                                            <col width="160px"><col width="*">
+                                        </colgroup>
+                                        <tr>
+                                            <th>국가</th>
+                                            <td>한국 외</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Channel</th>
+                                            <td>
+                                                <div class="inp_select w240">
+                                                    <select id="srch-select">
+                                                        <option>Choose channel</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Version</th>
+                                            <td>Automatically created.</td>
+                                        </tr>
+                                        <tr>
+                                            <th>내용</th>
+                                            <td>
+                                                <div class="inp_textarea">
+                                                    <textarea id="" name="" cols="50" rows="5" placeholder=""></textarea>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Enforcement date</th>
+                                            <td>
+                                                <div class="datepicker_wrap w290">
+                                                    <input type="text" class="datepicker" name="" value="">
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Notice date</th>
+                                            <td>
+                                                <div class="datepicker_wrap w290">
+                                                    <input type="text" class="datepicker" name="" value="">
+                                                </div>
+                                                <script>
+                                                    admin.daterangepicker('.datepicker', false, true);
+                                                </script>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Account details</th>
+                                            <td>
+                                                <div class="inp_textarea">
+                                                    <textarea id="" name="" cols="50" rows="5" placeholder=""></textarea>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>Posting status</th>
+                                            <td>
+                                                <div class="inp_check">
+                                                    <span class="form_ele"><input type="checkbox" id="checkbox0" name="checkbox0"><label for="checkbox0">Post</label></span>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="align_flex right">
+                                        <button class="btns">Cancel</button>
+                                        <button class="btns blue">Modify</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                /* 퍼블리싱 보여주기 위한 스크립트 // 개발시 삭제 해주세요. */
+                                $(function(){
+                                    $('.write_wrap').hide();
+
+                                    $('.list_wrap .table_wrap .btn_write').on('click', function(){
+                                        $('.list_wrap').hide().next('.write_wrap').fadeIn();
+                                    });
+                                    $('.write_wrap .align_flex button').on('click', function(){
+                                        $('.write_wrap').hide().prev('.list_wrap').fadeIn();
+                                    });
+                                });
+                                /* 퍼블리싱 보여주기 위한 스크립트 // 개발시 삭제 해주세요. */
+                            </script>
+                        </div>
+                        <div class="tab_inner">
+                            개인정보처리방침
+                        </div>
+                        <div class="tab_inner">
+                            민감정보제공
+                        </div>
+                        <div class="tab_inner">
+                            블루투스통신
+                        </div>
+                        <div class="tab_inner">
+                            위치정보이용
+                        </div>
+                        <div class="tab_inner">
+                            마케팅수신정보
+                        </div>
+                        <div class="tab_inner">
+                            개인정보 제3자 제공
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</div>
+
+</body>
+</html>

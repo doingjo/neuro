@@ -12,10 +12,13 @@
     <meta name="description" content="">
 
     <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
     <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
     <script type="text/javascript" src="../js/webfont-NotoSansKR.js"></script>
     <script type="text/javascript" src="../js/webfont-Montserrat.js"></script>
     <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
     <script type="text/javascript" src="../js/ui.js"></script>
     <noscript>
       <link rel="stylesheet" href="../css/NotoSansKR.css">
@@ -28,9 +31,8 @@
 <body>
 <script>
     $(function(){
-    admin.lnb(1,1);
-    })
-
+        admin.lnb(0,1);
+    });
 </script>
 <div id="wrap">
     <header>
@@ -52,29 +54,30 @@
     </header>
     <section class="container">
         <aside>
+            <div class="dimmed"></div>
             <nav>
                 <div class="head">
                     <h1>Menu</h1>
                     <button class="btn_close">close</button>
                 </div>
                 <ul>
-                    <li>
-                        <a href="#">병원/의료진 관리</a>
+                    <li class="on">
+                        <a href="#">HCP/Medical staff Management</a>
                         <div class="depth">
-                            <a href="#">병원(업체)</a>
-                            <a href="#">의료진</a>
+                            <a href="#">HCP</a>
+                            <a href="#">Medical staff</a>
                         </div>
                     </li>
                     <li>
-                        <a href="#">환자/사용자 관리</a>
+                        <a href="#">Patient/User Management</a>
                         <div class="depth">
-                            <a href="#">환자/사용자관리</a>
+                            <a href="#">Patient/User</a>
                             <a href="#">탈원 회원</a>
                         </div>
                     </li>
-                    <li><a href="#">운동관리</a></li>
+                    <li><a href="#">Exercise Management</a></li>
                     <li>
-                        <a href="#">사이트 관리</a>
+                        <a href="#">Website Management</a>
                         <div class="depth">
                             <a href="#">공지사항</a>
                             <a href="#">자주묻는질문</a>
@@ -85,22 +88,22 @@
                         </div>
                     </li>
                     <li>
-                        <a href="#">관리자 관리</a>
+                        <a href="#">Administrator Management</a>
                         <div class="depth">
                             <a href="#">관리자 관리</a>
-                            <a href="#">로그</a>
+                            <a href="#">Log</a>
                         </div>
                     </li>
                     <li>
-                        <a href="#">코드 관리</a>
+                        <a href="#">Code Management</a>
                         <div class="depth">
-                            <a href="#">공통</a>
-                            <a href="#">병원(업체)</a>
+                            <a href="#">Common</a>
+                            <a href="#">Hospital(company)</a>
                         </div>
                     </li>
-                    <li><a href="#">메뉴 관리</a></li>
+                    <li class="link"><a href="#">Menu Management</a></li>
                     <li>
-                        <a href="#">통계 관리</a>
+                        <a href="#">Stats</a>
                         <div class="depth">
                             <a href="#">회원</a>
                             <a href="#">데이터</a>
@@ -112,19 +115,281 @@
         <section class="contents">
             <div class="head">
                 <div class="title">
-                    <strong class="active"><a href="#">병원(업체)</a></strong>
+                    <strong class="active"><a href="#">Hospital(company)</a></strong>
                 </div>
                 <div class="breadcrumbs">
-                    <a href="/">홈</a>
-                    <a href="#">병원</a>
+                    <a href="/">Home</a>
+                    <a href="#">Hospital</a>
                     <a href="#">3뎁스</a>
                 </div>
             </div>
             <div class="content">
-                <div class="control_wrap"></div>
+                <div class="control_wrap">
+                    <div class="inp_select w140">
+                        <select id="srch-select">
+                            <option>Country</option>
+                        </select>
+                    </div>
+                    <div class="inp_select w140">
+                        <select id="srch-select">
+                            <option>Management status</option>
+                        </select>
+                    </div>
+                    <div class="inp_box">
+                        <input type="text" id="" name="" placeholder="Search for…">
+                    </div>
+                    <button class="btns small blue">Search</button>
+                </div>
+                <div class="table_wrap inp_check check_all_wrap">
+                    <p class="total">Total posts <span>10</span></p>
+                    <div class="align_flex between">
+                        <button class="btns black">Suspend service of the selected hospital(Company)</button>
+                        <button class="btns blue" onclick="admin.modalsShow('modals')">Register</button>
+                    </div>
+                    <div class="scroll_wrap">
+                        <table>
+                            <colgroup>
+                                <col width="80px"><col width="100px"><col width="*"><col width="100px"><col width="120px"><col width="100px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <span class="form_ele"><input type="checkbox" id="checkAll" name=""><label for="checkAll"></label></span>
+                                    </th>
+                                    <th>Country</th>
+                                    <th>Name of Hospital(company)</th>
+                                    <th>Manager</th>
+                                    <th>Registration date</th>
+                                    <th>Management</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list01" name="list"><label for="list01"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state use">Use</span></td><!-- Use : state use, Pause : state stop  -->
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list02" name="list"><label for="list02"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state use">Use</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list03" name="list"><label for="list03"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state stop">Pause</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list04" name="list"><label for="list04"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state stop">Pause</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list05" name="list"><label for="list05"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state stop">Pause</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list06" name="list"><label for="list06"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state stop">Pause</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list07" name="list"><label for="list07"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state stop">Pause</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list08" name="list"><label for="list08"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state stop">Pause</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list09" name="list"><label for="list09"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state stop">Pause</span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="form_ele"><input type="checkbox" id="list10" name="list"><label for="list10"></label></span></td>
+                                    <td>Korea</td>
+                                    <td>원주연세세브란스병원</td>
+                                    <td>김*희</td>
+                                    <td>2021.03.01</td>
+                                    <td><span class="state stop">Pause</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="align_flex paging">
+                        <div class="pagination">
+                            <span class="nav first"><a href="#">first</a></span>
+                            <span class="nav prev"><a href="#">prev</a></span>
+                            <span><a href="#">1</a></span>
+                            <span class="active"><a href="#">2</a></span>
+                            <span><a href="#">3</a></span>
+                            <span><a href="#">4</a></span>
+                            <span><a href="#">5</a></span>
+                            <span><a href="#">6</a></span>
+                            <span><a href="#">7</a></span>
+                            <span><a href="#">8</a></span>
+                            <span><a href="#">9</a></span>
+                            <span><a href="#">10</a></span>
+                            <span class="nav next"><a href="#">next</a></span>
+                            <span class="nav last"><a href="#">last</a></span>
+                        </div>
+                    </div>
+                    <div class="align_flex between">
+                        <div class="left">
+                            <button class="btns black">Suspend service of the selected hospital(Company)</button>
+                        </div>
+                        <div class="right">
+                            <button class="btns blue" onclick="admin.modalsShow('modals')">Register</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </section>
+</div>
+<!-- layerPop -->
+<div class="modals" id="modals">
+    <div class="pop_layer">
+        <div class="layer_head">
+            <h2>Hospital(company) information Modification</h2>
+            <button class="btn_close">Close</button>
+        </div>
+        <div class="layer_cont">
+            <div class="table_wrap write">
+                <p class="noti right">" <span>·</span> " mandatory</p>
+                <table class="">
+                    <colgroup>
+                        <col width="150px"><col width="*">
+                    </colgroup>
+                    <tr>
+                        <th>Name of Hospital<br>(Company)<span></span></th>
+                        <td>한국 1:1 트레이닝센터</td>
+                    </tr>
+                    <tr>
+                        <th>Name<span></span></th>
+                        <td>
+                            <div class="inp_box w240">
+                                <input type="text" id="" name="" placeholder="관리자">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Email<span></span></th>
+                        <td>
+                            <div class="inp_box mail">
+                                <span class="form_ele"><input type="text" id="" name="" placeholder="Email을 입력해 주세요."></span>
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>salted.com</option>
+                                        <option>gmail.com</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Contact Number<span></span></th>
+                        <td>
+                            <div class="inp_box phone">
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>010</option>
+                                    </select>
+                                </div>
+                                <span class="form_ele"><input type="number" id="" name="" placeholder="1234"></span>
+                                <span class="form_ele"><input type="number" id="" name="" placeholder="5678"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Contact Number</th>
+                        <td>
+                            <div class="inp_box phone">
+                                <div class="inp_select">
+                                    <select id="srch-select">
+                                        <option>010</option>
+                                    </select>
+                                </div>
+                                <span class="form_ele"><input type="number" id="" name="" placeholder="1234"></span>
+                                <span class="form_ele"><input type="number" id="" name="" placeholder="5678"></span>
+                            </div>
+                            <div class="inp_box phone">
+                                <strong>Extension number</strong>
+                                <span class="form_ele"><input type="number" id="" name="" placeholder="0000"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>
+                            <div class="inp_radio">
+                                <span class="form_ele"><input type="radio" id="radio1" name="radio"><label for="radio1">Use</label></span>
+                                <span class="form_ele"><input type="radio" id="radio2" name="radio"><label for="radio2">Pause</label></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Attachment</th>
+                        <td>
+                            <div class="inp_file">
+                                <p class="txt">Attachments can only be images, documents(pdf), and compressed files.</p>
+                                <div>
+                                    <input type="text" placeholder="Attach file">
+                                    <label for="btn_file" class="btn_file">Attach file</label>
+                                    <input type="file" id="btn_file">
+                                    <button type="button" class="btn_del"></button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Note</th>
+                        <td>
+                            <div class="inp_textarea">
+                                <textarea id="" name="" cols="50" rows="5" placeholder=""></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <div class="align_flex right">
+                    <button class="btns small">Delete</button>
+                    <button class="btns small">Cancel</button>
+                    <button class="btns small blue">Modify</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
