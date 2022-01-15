@@ -195,9 +195,9 @@ button{white-space: nowrap;}
 .deco_search input{width:100%;padding:13px 16px 14px;border:0;}
 .deco_search .btn_search{position:absolute;top:13px;right:24px;}
 .inner_title .box_link{font-size:0;text-align: right;}
-.inner_title .box_link > a{position:relative;display:inline-block;margin-left:41px;font-weight:500;font-size:16px;line-height:24px;color:#adb5bd;}
+.inner_title .box_link > a{position:relative;display:inline-block;margin-left:31px;font-weight:500;font-size:16px;line-height:24px;color:#adb5bd;}
 .inner_title .box_link > a:first-child{margin-left:0;}
-.inner_title .box_link > a::before{content: "";position:absolute;top:8px;left:-20px;width:1px;height:10px;background-color: #e0e0e0;}
+.inner_title .box_link > a::before{content: "";position:absolute;top:8px;left:-15px;width:1px;height:10px;background-color: #e0e0e0;}
 .inner_title .box_link > a:first-child::before{content:none;}
 .inner_title .box_link > a.on{border-bottom:1px solid #5280e2;color:#5280e2;}
 .inner_title .box_link + .deco_select{display:none}
@@ -205,7 +205,7 @@ button{white-space: nowrap;}
 .cont_both.home .cont:first-child{max-width:888px;}
 .cont{padding:48px;background-color:#fff;box-shadow:0 12px 40px 0 rgba(223, 226, 232, 0.5);border-radius: 20px;}
 .cont h3{font-size:18px;line-height:26px;color:#000;}
-.tit_cnt {display: flex;justify-content: space-between;align-items: flex-end;margin-bottom:22px;border-radius: 8px;}
+.tit_cnt {display: flex;justify-content: space-between;align-items: center;margin-bottom:22px;border-radius: 8px;}
 .tit_cnt .box_search{display:flex;align-items: center;}
 .tit_cnt .txt_date{line-height:26px;}
 .txt_date{font-size:14px;line-height:20px;color:#687078;}
@@ -304,7 +304,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 
 
 /* 홈 */
-.inner_chart + .tit_cnt{margin-top:32px;}
+.home .inner_chart{margin-top:40px;}
 .home .deco_search{width:480px;}
 .home .tbl_notice td:nth-child(3) > div{color:#000;}
 .home .tbl_notice tr:hover td:nth-child(2) > div{color:#5280e2}
@@ -347,6 +347,10 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .box_info .list_info{display: flex;justify-content: space-between;align-items: flex-start;flex-wrap: wrap}
 .box_info .list_info li:nth-child(odd){width:calc(50% - 20px);margin-right:20px;}
 .box_info .list_info li:nth-child(even){width:calc(50% - 20px);margin-left:20px;}
+.box_info .list_info li.memo{width:100%;margin:0;}
+.box_info .list_info li.memo .info{width:90%;}
+.box_info .list_info li.memo .info textarea{width:calc(100% - 40px);height:30px; padding:0 10px; border:0; font-size:15px;text-align:right;}
+.box_info .list_info li.memo .info button{width:30px; font-size:15px;color:#343a40;text-decoration:underline;}
 .box_info .list_info li{justify-content: space-between;}
 .box_info .list_info li .tit{width:auto}
 .box_info .list_info li .info{flex:none;}
@@ -435,7 +439,7 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .inner_detail_title .area_etc + h2{margin-top:16px;}
 .inner_detail_title h2 + .area_etc{margin-top:9px;}
 .inner_detail_title .txt_date{font-size:13px;line-height:15px;color:#343a40;font-weight:500}
-.inner_detail_title .txt_datentime{font-weight:300;font-size:14px;line-height:19px;color:#999;}
+.inner_detail_title .txt_datentime{display:inline-block;margin-left:10px; font-weight:300;font-size:14px;line-height:19px;color:#999;vertical-align:middle;}
 .inner_editor{padding:20px 0;}
 .inner_editor.view_ask{padding:32px 0;}
 .inner_file{padding:20px 0;border-top:1px solid #e9ecef;border-bottom:1px solid #e9ecef;}
@@ -815,6 +819,7 @@ h4 + .balance_data {margin-top:34px;}
 .wrapper.join .inner_join.step02 .list_info .row_division div{flex:1;}
 .wrapper.join .inner_join.step02 .list_info .row_division div + div{margin-left:8px;}
 .wrapper.join .inner_join.step02 .list_info .row_division .round_select{flex:none;width:160px;}
+.wrapper.join .inner_join.step02 .txt_info{margin-top:15px;}
 .wrapper.join .inner_join .box_check{margin:30px 0; text-align:left}
 .wrapper.join .inner_join .box_check + .box_btn,
 .wrapper.join .inner_join .txt_warning + .box_btn,
@@ -1003,6 +1008,7 @@ h4 + .balance_data {margin-top:34px;}
     .box_info .list_info li:nth-child(even){width:100%;margin:0 0 0 0;}
     .cont_both .box_info .list_info li:nth-child(odd),
     .cont_both .box_info .list_info li:nth-child(even){width:50%;margin:0 0 0 0;}
+    .cont_both .box_info .list_info li.memo{width:100%;margin:0;}
     .cont_both .box_info .list_info li .tit{flex:none;width:90px;}
     .cont_both .box_info .list_info li .info{flex:auto;}
     /** 공지사항 **/
