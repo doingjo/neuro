@@ -437,8 +437,10 @@ function walk_tdata(data){
   var weeklistArr = [];
   var dataLength = data.length ;
   //var startDay = data[0].day.getDate() - 1;
-  var startDay = new Date(data[0].day.getFullYear(), data[0].day.getMonth(), data[0].day.getDate() - 1);
-  var endDay = new Date(data[dataLength - 1].day.getFullYear(), data[dataLength - 1].day.getMonth(), data[dataLength - 1].day.getDate() + 1);
+  var startDay = new Date(data[0].day);
+  var endDay = new Date(data[dataLength - 1].day);
+  var startDay = new Date(startDay.getFullYear(), startDay.getMonth(), startDay.getDate() - 1);
+  var endDay = new Date(endDay.getFullYear(), endDay.getMonth(), endDay.getDate() + 1);
   //var endDay = data[dataLength - 1].day.getDate()+2;
   const ojstag = document.getElementById('walkTchart');
   ojstag.style.width = dataLength * 11.5 + "vw";
@@ -448,20 +450,20 @@ function walk_tdata(data){
   const xScale = d3.scaleTime().domain([startDay, endDay]).range([0, width]);
   const yScale = d3.scaleLinear().domain([0, 3.3]).range([height - 50, 0]);
   const xAxisSVG = d3.select("svg").append("g").attr("transform", "translate(0, "+height+")").attr('class', 'day');
-  const xAxis = d3.axisBottom(xScale).tickSize(1).tickFormat(d3.timeFormat("%d")).tickValues(data.map(d=>d.day));
+  const xAxis = d3.axisBottom(xScale).tickSize(1).tickFormat(d3.timeFormat("%d")).tickValues(data.map(d=>new Date(d.day)));
   xAxis(xAxisSVG);
   d3.select("svg").selectAll(".domain").remove();
   d3.select("svg").selectAll(".tick").attr('class', 'days');
   d3.select("svg").call(d => d.selectAll('line').remove());
-  const linearGenerator = d3.line().x(d=>xScale(d.day)).y(d=>yScale(d.value))
+  const linearGenerator = d3.line().x(d=>xScale(new Date(d.day))).y(d=>yScale(d.value))
   d3.select("svg").append("path").attr("d", linearGenerator(data)).attr("fill", "none").attr("stroke-width", 4).attr("stroke", "#5280e2").attr("stroke-linecap", "round");
-  d3.select("svg").selectAll("circle").data(data).enter().append("circle").attr('class', 'cir').attr("r", 8).attr("cx", d=>xScale(d.day)).attr("cy", d=>yScale(d.value)).style("fill", "#5280e2").attr("stroke-width", 3).attr("stroke", "#fff")
+  d3.select("svg").selectAll("circle").data(data).enter().append("circle").attr('class', 'cir').attr("r", 8).attr("cx", d=>xScale(new Date(d.day))).attr("cy", d=>yScale(d.value)).style("fill", "#5280e2").attr("stroke-width", 3).attr("stroke", "#fff")
   const bar_chart = document.getElementById('weeklist')
   for (let index = 0; index < data.length; index++) {
     var leftx = $('.days').eq(index).attr('transform').replaceAll("translate","").replace(/\)/g,'').replace(/\(/g,'').slice(0, -2);
-    var liHtml = `<li style="transform:translateX(${leftx}px)" yearName="${data[index].day.getFullYear()}" monthName="${data[index].day.getMonth()+1}"><span class="liwa">${data[index].week}</span><span class="liday">${data[index].day.getDate()}</span></li>`
+    var liHtml = `<li style="transform:translateX(${leftx}px)" yearName="${data[index].day.substr(0, 4)}" monthName="${parseInt(data[index].day.substr(5, 2))+1}"><span class="liwa">${data[index].week}</span><span class="liday">${data[index].day.substr(8, 2)}</span></li>`
     bar_chart.innerHTML += liHtml;
-    weeklistArr.push({left:leftx, year:data[index].day.getFullYear(), month:data[index].day.getMonth()+1 })
+    weeklistArr.push({left:leftx, year:data[index].day.substr(0, 4), month:parseInt(data[index].day.substr(5, 2))+1 })
   }
   let uniqueArr = weeklistArr.filter((thing, index, self) =>index === self.findIndex((t) => (t.month === thing.month)))
   ojs.onscroll = logScroll;
@@ -568,4 +570,22 @@ function weekHome(data){
     var liHtml = `<div class="ba_chart clear ${isSports} ${today}"><a href="#"><span>${daysOfWeek[i]}</span><strong>${dd}</strong></a></div>`
     weekListHome.innerHTML += liHtml;
   }
+}
+function provision_load(){
+    window.addEventListener('load', function(){
+        var allElements = document.getElementsByTagName('*');
+        Array.prototype.forEach.call(allElements, function(el) {
+            var includePath = el.dataset.includePath;
+            if (includePath) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                        el.outerHTML = this.responseText;
+                    }
+                };
+                xhttp.open('GET', includePath, true);
+                xhttp.send();
+            }
+        });
+    });
 }

@@ -458,7 +458,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 
 /* 설정 */
 .setup .page_head .back_btn{padding:4.4444vw 5.5556vw;}
-
+.setup .provision{margin-top:6.5556vw;}
 /* 고객센터 */
 .board_list{margin-top: 3.3333vw;}
 .board_list li{border-top:1px solid #e9ecef;padding:5.5556vw 0;}
