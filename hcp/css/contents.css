@@ -114,7 +114,7 @@ button{white-space: nowrap;}
 .box_tooltip .txt_tooltip{position:relative;display:inline-block;padding-right:17px;font-size:13px;line-height:20px;color:#212529;}
 .box_tooltip .txt_tooltip::after{content:"i";position:absolute;top:3px;right:0;width:13px;height:13px;line-height:13px;border:1px solid #212529;border-radius:7px;background-color:#fff;font-weight:bold;font-size:10px;color:#212529;text-align:center;}
 .box_tooltip:hover .txt_tooltip::after{content:"i";background-color:#212529;font-weight:bold;font-size:10px;color:#fff;}
-.box_tooltip .cnt_tooltip{position:absolute;left:0;display:none;min-width:260px;margin-top:10px;padding:20px 24px;border:1px solid #e2e2e2;border-radius:16px;background-color:#fff;box-shadow: 0 12px 70px 0 rgba(42, 72, 136, 0.1);}
+.box_tooltip .cnt_tooltip{position:absolute;left:0;z-index:1;display:none;min-width:260px;margin-top:10px;padding:20px 24px;border:1px solid #e2e2e2;border-radius:16px;background-color:#fff;box-shadow: 0 12px 70px 0 rgba(42, 72, 136, 0.1);}
 .box_tooltip:hover .cnt_tooltip{display:block;}
 .box_tooltip .cnt_tooltip p{font-weight:300;font-size:13px;line-height:19px;color:#868e96;}
 .box_tooltip .cnt_tooltip p + p{margin-top:3px;}

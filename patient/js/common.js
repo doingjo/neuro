@@ -91,9 +91,15 @@
     /* 회원가입 개인정보 동의  */
 
     /* 도움말 팝업 */
-    $(".tip_icon").click(function(){
-      $(this).toggleClass('on').parent().find('.tip_pop').toggleClass('on');
+    $('.tip_icon').on('click', function(e){
+      var _pop = $(this).parent().find('.tip_pop');
+      $(this).addClass('on');
+      _pop.addClass('on').after('<div class="dimmed"></div>');
       return false;
+    });
+    $(document).on('click', '.tip_pop +.dimmed', function(e){
+      $(this).remove();
+      $('.tip_icon, .tip_pop').removeClass('on');
     });
     /* 도움말 팝업 */
 

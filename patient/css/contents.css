@@ -21,7 +21,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .tip_pop .tip_popb .tx{margin-top:2.2222vw;color: #868e96;font-size: 3.6111vw;font-weight: normal;word-break: keep-all;}
 .tip_pop .tip_popb .box{height: 31.1111vw;border-radius: 1.1111vw;background-color: #f8f9fa;margin-top: 4.4444vw;}
 .tip_pop.on{display: block;}
-
+.tip_pop +.dimmed{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1}
 /* button */
 .button_default{display: block;width:100%;background: #5280e2;height:15.5556vw;line-height:15.5556vw;border-radius: 7.7778vw;color: #fff;font-size: 4.4444vw;text-align: center;}
 .button_default:disabled{background-color: #e9ecef;color: #adb5bd;}
