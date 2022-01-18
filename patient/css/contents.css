@@ -624,8 +624,9 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .default_page.overall_main .overall_head{padding:0 6.6667vw;}
 .default_page.overall_main .overall_head .back_btn{padding:4.4444vw 0;height:15.5556vw;line-height: 15.5556vw;text-align: left;position: relative;z-index: 101;}
 .default_page.overall_main .overall_head .back_btn a{display: inline-block;width:6.6667vw;height:6.6667vw;font-size: 0;background:url('../images/icon-navigation-back.svg')no-repeat center center;background-size: 100%;}
-.default_page.overall_main .overall_head h1{margin:4.4444vw 0 2.2222vw;font-size: 6.6667vw;font-weight: bold;line-height: 1.5;color: #212529;}
+.default_page.overall_main .overall_head h1{margin:4.4444vw 0 1vw;font-size: 6.6667vw;font-weight: bold;line-height: 1.5;color: #212529;}
 .default_page.overall_main .overall_head h1 span{ font-family: Roboto;}
+.default_page.overall_main .overall_head > em{display:block; margin-bottom:3.222vw; font-size: 3.6111vw;color:#999;line-height: 1.23;word-break:keep-all;text-indent:-2.23vw;}
 .default_page.overall_main .overall_head > p{ font-family: Roboto;font-size: 3.6111vw;line-height: 1.23;color: #868e96;margin-bottom:8.8889vw;}
 .default_page.overall_main .overall_head .overall_data{margin:0 -1.1111vw 8.8889vw;}
 .default_page.overall_main .overall_head .overall_data li{margin-top:3.3333vw;padding: 5.5556vw 15.5556vw 6.6667vw 6.6667vw ;border-radius: 3.3333vw;box-shadow: 0 4.4444vw 6.6667vw 0 rgba(9, 33, 87, 0.1), inset 0.2778vw 0.2778vw 0 0 #fff;background-color: #f3f7fa;position: relative;}
@@ -1090,3 +1091,6 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .terms_wrap >table{margin-top:8vw; border:1px solid #e2e2e2; text-align:center;}
 .terms_wrap >table th{padding:10px 0; border-left:1px solid #e2e2e2;background-color:#f8f8f8; font-size:3.7334vw;color:#000;}
 .terms_wrap >table td{padding:10px 0; border-top:1px solid #e2e2e2;border-left:1px solid #e2e2e2; font-size:3.7334vw;color:#333;}
+
+.noti_box{margin-bottom:4.444vw;padding:3vw 3vw 3vw 4.85vw;background-color:#f8f9fa; font-size:3.0856vw;color:#868e96;line-height:1.5;word-break:keep-all;text-indent:-1.85vw}
+.noti_box2{margin-bottom:2.222vw;padding-left:1.85vw; font-size:3.0856vw;color:#868e96;line-height:1.5;word-break:keep-all;text-indent:-1.85vw}
