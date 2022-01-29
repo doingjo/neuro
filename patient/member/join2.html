@@ -55,14 +55,13 @@
                     </div>
                   </div>
                 </div>
-                <div class="text err">8~16 자리, 영문/숫자/특수문자 조합이 아닙니다.</div>
+                <div class="text err">비밀번호가 형식에 맞지 않습니다.</div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
                   <label for="name">이름</label>
                   <input type="text" name="" id="name" placeholder="실명 입력" />
                 </div>
-                <div class="text err">에러 메시지</div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
@@ -78,7 +77,6 @@
                     <option value="" selected>선택</option>
                   </select>
                 </div>
-                <div class="text err">에러 메시지</div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
@@ -138,20 +136,38 @@
                   <label for="residence">거주지</label>
                   <input type="text" name="" id="residence" value="" placeholder="거주지 입력" />
                 </div>
-                <div class="text err">에러 메시지</div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="size">키</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="tel" name="" id="size" placeholder="숫자 입력" /></div>
+                    <div class="tfcell suffix" style="width:10vw">cm</div>
+                  </div>
+                </div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="size">체중</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="tel" name="" id="size" placeholder="숫자 입력" /></div>
+                    <div class="tfcell suffix" style="width:10vw">kg</div>
+                  </div>
+                </div>
               </div>
               <div class="form_ti">발 사이즈 정보
                 <a href="#" class="tip_icon">설명</a>
                 <div class="tip_pop">
-                  <div class="tip_poph">
-                    발 사이즈 / 다리길이 측정 방법
-                  </div>
+                  <div class="tip_poph">발 사이즈 / 다리길이 측정 방법</div>
                   <div class="tip_popb">
-                    <p>01. 발 사이즈</p>
-                    <div class="tx">발을 종이 위에 올리고 가장 긴 발가락 끝과 발뒤꿈치를 기준으로 체크합니다.</div>
-                    <p>02. 다리길이</p>
-                    <div class="tx">골반에서 안쪽 복사뼈까지 길이를 기준으로 체크 합니다.</div>
-                    <div class="box"></div>
+                    <div>
+                      <strong>01. 발 사이즈</strong>
+                      <p>발을 종이 위에 올리고 가장 긴 발가락 끝과 발뒤꿈치를 기준으로 체크합니다.</p>
+                    </div>
+                    <div>
+                      <strong>02. 다리길이</strong>
+                      <p>골반에서 안쪽 복사뼈까지 길이를 기준으로 체크 합니다.</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -163,7 +179,6 @@
                     <div class="tfcell suffix" style="width:10vw">mm</div>
                   </div>
                 </div>
-                <div class="text err">에러 메시지</div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
@@ -173,7 +188,6 @@
                     <div class="tfcell suffix" style="width:10vw">cm</div>
                   </div>
                 </div>
-                <div class="text err">에러 메시지</div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
@@ -183,7 +197,6 @@
                     <div class="tfcell suffix" style="width:10vw">cm</div>
                   </div>
                 </div>
-                <div class="text err">에러 메시지</div>
               </div>
               <hr class="line" />
               <div class="form_tx">이용약관, 개인정보 수집 및 이용, 민감정보 제공, 블루투스 통신, 위치정보 이용, 마케팅정보 수신(선택), 개인정보 제3자 제공(선택) 동의 하십니까?</div>
@@ -197,49 +210,49 @@
                   <span class="checkbox_i">
                     <input type="checkbox" name="" id="agree1" />
                     <span class="ico"></span>
-                    <label for="agree1">이용약관</label>
+                    <label for="agree1">이용약관(필수)</label>
                   </span>
-                  <a href="javascript:;" onclick="modals_show('terms_of_service')">보기</a>
+                  <a href="javascript:;" onclick="modals_show('terms_of_service')">전문보기</a>
                 </li>
                 <li>
                   <span class="checkbox_i">
                     <input type="checkbox" name="" id="agree2" />
                     <span class="ico"></span>
-                    <label for="agree2">개인정보 처리방침</label>
+                    <label for="agree2">개인정보 처리방침(필수)</label>
                   </span>
-                  <a href="javascript:;" onclick="modals_show('privacy_policy')">보기</a>
+                  <a href="javascript:;" onclick="modals_show('privacy_policy')">전문보기</a>
                 </li>
                 <li>
                   <span class="checkbox_i">
                     <input type="checkbox" name="" id="agree3" />
                     <span class="ico"></span>
-                    <label for="agree3">개인정보 수집ㆍ이용 동의</label>
+                    <label for="agree3">개인정보 수집ㆍ이용 동의(필수)</label>
                   </span>
-                  <a href="javascript:;" onclick="modals_show('personal_information')">보기</a>
+                  <a href="javascript:;" onclick="modals_show('personal_information')">전문보기</a>
                 </li>
                 <li>
                   <span class="checkbox_i">
                     <input type="checkbox" name="" id="agree4" />
                     <span class="ico"></span>
-                    <label for="agree4">민감정보 수집ㆍ이용 동의</label>
+                    <label for="agree4">민감정보 수집ㆍ이용 동의(필수)</label>
                   </span>
-                  <a href="javascript:;" onclick="modals_show('sensitive_information')">보기</a>
+                  <a href="javascript:;" onclick="modals_show('sensitive_information')">전문보기</a>
                 </li>
                 <li>
                   <span class="checkbox_i">
                     <input type="checkbox" name="" id="agree5" />
                     <span class="ico"></span>
-                    <label for="agree5">개인(민감)정보 제3자 제공 동의</label>
+                    <label for="agree5">개인(민감)정보 제3자 제공 동의(필수)</label>
                   </span>
-                  <a href="javascript:;" onclick="modals_show('third_parties')">보기</a>
+                  <a href="javascript:;" onclick="modals_show('third_parties')">전문보기</a>
                 </li>
                 <li>
                   <span class="checkbox_i">
                     <input type="checkbox" name="" id="agree6" />
                     <span class="ico"></span>
-                    <label for="agree6">마케팅 정보 수신 동의</label>
+                    <label for="agree6">마케팅 정보 수신 동의(선택)</label>
                   </span>
-                  <a href="javascript:;" onclick="modals_show('marketing_content')">보기</a>
+                  <a href="javascript:;" onclick="modals_show('marketing_content')">전문보기</a>
                 </li>
               </ul>
               <div class="bottom_btn"><button type="submit" class="button_default" disabled>회원가입</button></div>

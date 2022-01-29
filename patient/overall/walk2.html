@@ -27,7 +27,7 @@
   </head>
 <body>
   <div id="wrap">
-    <div class="default_page">
+    <div class="default_page exercise">
       <div class="page">
         <div class="page_head">
           <h1>보행</h1>
@@ -36,95 +36,51 @@
           <span class="headbg"></span>
         </div>
         <div class="container">
-          <div class="noti_box">* 본 결과지는 정보전달에 목적이 있으니, 정확한 진단 및 치료는 전문의와 상의하세요.</div>
-          <div class="walk_wr">
-            <div class="ti"><span class="year"></span>.<span class="month"></span></div>
-            <div class="walk_tchart">
-              <div id="walk_tchart">
-                <ul class="walkline">
-                  <li><span>L치우침</span></li>
-                  <li><span>정상</span></li>
-                  <li><span>R치우침</span></li>
-                </ul>
-                <div id="walkTchart">
-                  <svg></svg>
-                  <ul id="weeklist"></ul>
+          <h2>
+            <em>Partial Weight Bearing</em>
+            <strong>Single Heel Raise(Afficted Side)</strong>
+          </h2>
+          <div class="balancechart_wrap"><div class="chart_wrap"><div class="chart"></div></div></div>
+          <script>
+            var balanceData = [
+              { value : 2, day : "2022-01-24", week : '월' },
+              { value : 2, day : "2022-01-25", week : '화' },
+              { value : 3, day : "2022-01-26", week : '수' },
+              { value : 2, day : "2022-01-27", week : '목' },
+              { value : 3, day : "2022-01-28", week : '금' },
+
+              { value : 3, day : "2022-01-31", week : '월' },
+              { value : 1, day : "2022-02-01", week : '화' },
+              { value : 3, day : "2022-02-02", week : '수' },
+              { value : 2, day : "2022-02-03", week : '목' },
+              { value : 3, day : "2022-02-04", week : '금' },
+
+              { value : 2, day : "2022-02-07", week : '월' },
+              { value : 2, day : "2022-02-08", week : '화' },
+              { value : 3, day : "2022-02-09", week : '수' },
+              { value : 2, day : "2022-02-10", week : '목' },
+              { value : 3, day : "2022-02-11", week : '금' },
+            ];
+            chart.balanceChart('.balancechart_wrap .chart', balanceData);
+          </script>
+          <hr class="line full mt" />
+          <div class="tixed timetable">
+            <div class="tfcell">
+              <select name="" id="" class="form_select tal">
+                <option value="">1회</option>
+              </select>
+            </div>
+            <div class="tfcell">
+              <div class="swiper walk_category aotoswiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="#" class="on">전체</a></div>
+                  <div class="swiper-slide"><a href="#">13:55</a></div>
+                  <div class="swiper-slide"><a href="#">11:23</a></div>
+                  <div class="swiper-slide"><a href="#">11:10</a></div>
+                  <div class="swiper-slide"><a href="#">10:15</a></div>
+                  <div class="swiper-slide"><a href="#">09:00</a></div>
                 </div>
               </div>
-              <script>
-                // var walkTdata = [
-                //   { value : 2, day : new Date("2021, 12, 22"), week : '일' },
-                //   { value : 3, day : new Date("2021, 12, 23"), week : '월' },
-                //   { value : 1, day : new Date("2021, 12, 24"), week : '화' },
-                //   { value : 1, day : new Date("2021, 12, 25"), week : '일' },
-                //   { value : 2, day : new Date("2021, 12, 26"), week : '월' },
-                //   { value : 2, day : new Date("2021, 12, 27"), week : '화' },
-                //   { value : 3, day : new Date("2021, 12, 28"), week : '수' },
-                //   { value : 2, day : new Date("2021, 12, 29"), week : '목' },
-                //   { value : 3, day : new Date("2021, 12, 30"), week : '금' },
-                //   { value : 3, day : new Date("2021, 12, 31"), week : '토' },
-                //   { value : 2, day : new Date("2022, 1, 1"), week : '일' },
-                //   { value : 3, day : new Date("2022, 1, 2"), week : '월' },
-                //   { value : 1, day : new Date("2022, 1, 3"), week : '화' },
-                //   { value : 2, day : new Date("2022, 1, 4"), week : '화' },
-                //   { value : 3, day : new Date("2022, 1, 5"), week : '수' },
-                //   { value : 2, day : new Date("2022, 1, 6"), week : '목' },
-                //   { value : 3, day : new Date("2022, 1, 7"), week : '금' },
-                //   { value : 3, day : new Date("2022, 1, 8"), week : '토' },
-                //   { value : 1, day : new Date("2022, 1, 9"), week : '일' },
-                //   { value : 2, day : new Date("2022, 1, 10"), week : '월' },
-                //   { value : 2, day : new Date("2022, 1, 11"), week : '화' },
-                //   { value : 3, day : new Date("2022, 1, 12"), week : '수' },
-                //   { value : 2, day : new Date("2022, 1, 13"), week : '목' },
-                //   { value : 3, day : new Date("2022, 1, 14"), week : '금' },
-                //   { value : 3, day : new Date("2022, 1, 15"), week : '토' },
-                // ];
-                var walkTdata = [
-                  { value : 2, day : "2021-10-22", week : '일' },
-                  { value : 3, day : "2021-10-23", week : '월' },
-                  { value : 1, day : "2021-10-24", week : '화' },
-                  { value : 1, day : "2021-10-25", week : '일' },
-                  { value : 2, day : "2021-10-26", week : '월' },
-                  { value : 2, day : "2021-10-27", week : '화' },
-                  { value : 3, day : "2021-10-28", week : '수' },
-                  { value : 2, day : "2021-10-29", week : '목' },
-                  { value : 3, day : "2021-10-30", week : '금' },
-                  { value : 3, day : "2021-10-31", week : '토' },
-                  { value : 2, day : "2021-11-01", week : '일' },
-                  { value : 3, day : "2021-11-02", week : '월' },
-                  { value : 1, day : "2021-11-03", week : '화' },
-                  { value : 2, day : "2021-11-04", week : '화' },
-                  { value : 3, day : "2021-11-05", week : '수' },
-                  { value : 2, day : "2021-11-06", week : '목' },
-                  { value : 3, day : "2021-11-07", week : '금' },
-                  { value : 3, day : "2021-11-08", week : '토' },
-                  { value : 1, day : "2021-11-09", week : '일' },
-                  { value : 2, day : "2021-11-10", week : '월' },
-                  { value : 2, day : "2021-11-11", week : '화' },
-                  { value : 3, day : "2021-11-12", week : '수' },
-                  { value : 2, day : "2021-11-13", week : '목' },
-                  { value : 3, day : "2021-11-14", week : '금' },
-                  { value : 3, day : "2021-11-15", week : '토' },
-                ];
-                walk_tdata(walkTdata); //차트 그리기
-                walk_on(0); //날짜 활성화  index
-                $('#weeklist li').on("click", function(e) {
-                  var index = $(this).index();
-                  walk_on(index)
-                  return false;
-                });
-              </script>
-            </div>
-          </div>
-          <hr class="line full mt" />
-          <div class="swiper walk_category aotoswiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><a href="#">전체</a></div>
-              <div class="swiper-slide"><a href="#" class="on">13:55</a></div>
-              <div class="swiper-slide"><a href="#">11:23</a></div>
-              <div class="swiper-slide"><a href="#">11:10</a></div>
-              <div class="swiper-slide"><a href="#">10:15</a></div>
-              <div class="swiper-slide"><a href="#">09:00</a></div>
             </div>
           </div>
           <div class="over_box">
@@ -280,6 +236,7 @@
             <div class="ti mb12">분석 결과</div>
             <div class="tx c0">발을 끄는 경향이 있으며, 보행속도가 느린편입니다. 보행 안정성을 위해서 좀 더 넓은 보폭과 빠른 속도로 걸어보세요.</div>
           </div>
+          <div class="noti_box">* 본 결과지는 정보전달에 목적이 있으니, 정확한 진단 및 치료는 전문의와 상의하세요.</div>
         </div>
       </div>
     </div>

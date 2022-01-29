@@ -26,6 +26,76 @@ var chart = chart || {
     init:function() {
 
     },
+    balanceChart:function($this, data){
+      if($($this).length == 0){return}
+      var box = $($this),
+          boxWrap = box.closest('.chart_wrap'),
+          dataSet = data,
+          dataLength = data.length;
+      box.css('width', dataLength*11.1111+'vw');
+      var width = box.width(),
+          height = box.height();
+      var xScale = d3.scaleBand()
+          .domain(dataSet.map(function(d){return d.day}))
+          .range([0, width]);
+      var yScale = d3.scaleLinear()
+          .domain([1, 3])
+          .range([(height/6)*4, 0]);
+      var svg = d3.select($this).append('svg').attr('width', width).attr('height', height);
+          g = svg.append('g').attr('transform', 'translate(0,'+(height/6)*1+')');
+      // line chart
+      var line = d3.line()
+         .x(function(d){return xScale(d.day) + xScale.bandwidth() / 2})
+         .y(function(d){return yScale(d.value)})
+      g.append('path')
+         .attr('class', function(d, i){return 'line'})
+         .attr('d', line(dataSet));
+      g.selectAll('rect')
+          .data(dataSet)
+          .enter()
+          .append('circle')
+          .attr('class', 'dot')
+          .attr('cx', function(d){return xScale(d.day) + xScale.bandwidth() / 2})
+          .attr('cy', function(d){return yScale(d.value)})
+          .attr('r', '8');
+      // calendar
+      var _liHtml = '',
+          weeklistArr = [];
+      for(var idx = 0; idx < dataLength; idx++){
+        _liHtml += '<li><em>'+dataSet[idx].week+'</em><span>'+dataSet[idx].day.substr(8, 2)+'</span></li>';
+        weeklistArr.push({left:(width/dataLength)*idx, year:dataSet[idx].day.substr(0, 4), month:parseInt(dataSet[idx].day.substr(5, 2))});
+      }
+      box.append('<ul>'+_liHtml+'</ul>');
+      // scroll check month
+      var uniqueArr = weeklistArr.filter((thing, index, self) =>index === self.findIndex((t) => (t.month === thing.month)));
+      boxWrap.before('<div class="date">'+uniqueArr[0].year+'.'+uniqueArr[0].month+'</div>');
+      boxWrap.before('<ul class="ticks"><li><span>L치우침</span></li><li><span>정상</span></li><li><span>R치우침</span></li></ul>');
+      var target = false;
+      boxWrap.on('scroll', function(e){
+        if(uniqueArr[1].left <= e.target.scrollLeft && !target){
+          $('.date').html(uniqueArr[1].year+'.'+uniqueArr[1].month);
+          target=true;
+        }
+        if(uniqueArr[1].left > e.target.scrollLeft && target && uniqueArr[0].left <= e.target.scrollLeft){
+          $('.date').html(uniqueArr[0].year+'.'+uniqueArr[0].month);
+          target=false;
+        }
+      });
+      //event
+      var _dateLi = box.find('li');
+      _dateLi.on('click', function(e){
+        var index = $(this).index();
+        $(this).addClass('on').siblings().removeClass('on');
+        box.find('.dot').eq(index).addClass('on').siblings().removeClass('on');
+      });
+      if(!_dateLi.hasClass('on')){ _dateLi.eq(0).trigger("click"); }
+
+          //   $(".as_tab_wrap .as_tab_menu > li.active > a").trigger("click");
+          // } else {
+          //   $(".as_tab_wrap .as_tab_menu > li:first-child > a").trigger("click");
+          // }
+
+    },
     lineChart:function($this, data){
       if($($this).length == 0){return}
       var box = $($this),
@@ -137,7 +207,7 @@ var chart = chart || {
         box.append('<p class="pin"></p>');
         $pin = (dataSet.value <= 100)? -(dataSet.value*.9) : (dataSet.value-100)*.9;
         $val = (dataSet.value <= 100)? dataSet.value : dataSet.value-100;
-        box.append('<p class="txt_val">'+ $val +'</p>');
+        //box.append('<p class="txt_val">'+ $val +'</p>');
         box.find('.pin').css('-webkit-transform','rotate('+ $pin +'deg)');
         box.css("height", height);
         var svg = d3.select($this).append("svg").attr("width", width).attr("height", height);
@@ -203,7 +273,7 @@ var chart = chart || {
             color = '';
         if(left >= 92 && left < 97){leftClass='f'}else if(left >= 97){if(left == 100){leftClass='fff'}else{leftClass='ff'}}
         if(name == '왼발'){color='left'}else if(name == '오른발'){color='right'}else{color='aver'}
-        var liHtml = `<div class="bar-wrap ${leftClass} ${color}"><div class="bar"><span class="stance" style="width:${left}%"> </span></div><span class="stance_tx" style="left:${left}%">${left}</span><span class="swing_tx">${right}</span><span class="name">${name}</span></div>`
+        var liHtml = `<div class="bar-wrap ${leftClass} ${color}"><span class="name">${name}</span><div class="bar"><span class="stance" style="width:${left}%"> </span></div><span class="stance_tx" style="left:${left}%">${left}</span><span class="swing_tx">${right}</span></div>`
         box.append(liHtml);
       }
     },

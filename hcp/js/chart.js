@@ -137,7 +137,7 @@ var chart = chart || {
         box.append('<p class="pin"></p>');
         $pin = (dataSet.value <= 100)? -(dataSet.value*.9) : (dataSet.value-100)*.9;
         $val = (dataSet.value <= 100)? dataSet.value : dataSet.value-100;
-        box.append('<p class="txt_val">'+ $val +'</p>');
+        //box.append('<p class="txt_val">'+ $val +'</p>');
         box.find('.pin').css('-webkit-transform','rotate('+ $pin +'deg)');
         box.css({'width': width, 'height': height});
         var svg = d3.select($this).append("svg").attr("width", width).attr("height", height);
@@ -203,7 +203,7 @@ var chart = chart || {
             color = '';
         if(left >= 92 && left < 97){leftClass='f'}else if(left >= 97){if(left == 100){leftClass='fff'}else{leftClass='ff'}}
         if(name == '왼발'){color='left'}else if(name == '오른발'){color='right'}else{color='aver'}
-        var liHtml = `<div class="bar-wrap ${leftClass} ${color}"><div class="bar"><span class="stance" style="width:${left}%"> </span></div><span class="stance_tx" style="left:${left}%">${left}</span><span class="swing_tx">${right}</span><span class="name">${name}</span></div>`
+        var liHtml = `<div class="bar-wrap ${leftClass} ${color}"><span class="name">${name}</span><div class="bar"><span class="stance" style="width:${left}%"> </span></div><span class="stance_tx" style="left:${left}%">${left}</span><span class="swing_tx">${right}</span></div>`
         box.append(liHtml);
       }
     },
@@ -229,7 +229,7 @@ var chart = chart || {
         (valueMax === dataSet[i].value)? max = 'max' : max = '';
         barWRap += '<p class="bar '+max+'"><em class="tick">'+ dataSet[i].day +'</em><span style="height:'+ dataSet[i].value +'%;"></span></p>'
       }
-      box.append('<div class="legend"><p>100</p><p>75</p><p>50</p><p>25</p><p>0</p><p>달성도(%)</p></div>');
+      box.append('<div class="legend"><p>100</p><p>75</p><p>50</p><p>25</p><p>0</p><p>달성률(%)</p></div>');
       box.append('<div class="bar-wrap">'+ barWRap +'</div>');
     }
 };

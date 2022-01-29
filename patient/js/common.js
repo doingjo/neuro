@@ -260,9 +260,9 @@ function bubble(data){
   var tatgetTag = document.querySelector('.bubble_texts');
   for (let index = 0; index < data.children.length; index++) {
     let element = document.createElement('li');
-    let text = JSON.stringify(data.children[index].name).replace(/\"/gi, "");
-    let color = JSON.stringify(data.children[index].color).replace(/\"/gi, "");
-    element.innerHTML = "<span><i style='background:"+color+"'></i>"+text+"</span>";
+    // let text = JSON.stringify(data.children[index].name).replace(/\"/gi, "");
+    // let color = JSON.stringify(data.children[index].color).replace(/\"/gi, "");
+    element.innerHTML = "<i style='background:"+data.children[index].color+"'></i>"+data.children[index].num+"<span>"+data.children[index].session+"</span><strong>"+data.children[index].name+"</strong>";
     tatgetTag.append(element);
   }
 }
@@ -453,6 +453,7 @@ function walk_tdata(data){
   const ojs = document.getElementById('walk_tchart');
   const width = ojstag.offsetWidth;
   const height = ojs.offsetHeight;
+  
   const xScale = d3.scaleTime().domain([startDay, endDay]).range([0, width]);
   const yScale = d3.scaleLinear().domain([0, 3.3]).range([height - 50, 0]);
   const xAxisSVG = d3.select("svg").append("g").attr("transform", "translate(0, "+height+")").attr('class', 'day');
@@ -492,6 +493,42 @@ function walk_tdata(data){
     }
   }
 }
+function balanceChart($this, data){
+  if($($this).length == 0){return}
+  var boxWrap = $($this),
+      box = boxWrap.find('.chart'),
+      dataSet = data,
+      width = box.width(),
+      height = box.height();
+
+  boxWrap.before('<div class="date"></div>');
+  boxWrap.prepend('<ul class="ticks"><li><span>L치우침</span></li><li><span>정상</span></li><li><span>R치우침</span></li></ul>');
+
+box.append('<ul></ul>');
+  
+
+/*
+<div class="balancechart-wrap"><div class="chart-wrap"><div class="chart"></div></div></div>
+
+<div class="walk_wr">
+            <div class="ti"><span class="year"></span>.<span class="month"></span></div>
+            <div class="walk_tchart">
+              <div id="walk_tchart">
+                <ul class="ticks">
+                  <li><span>L치우침</span></li>
+                  <li><span>정상</span></li>
+                  <li><span>R치우침</span></li>
+                </ul>
+                <div id="walkTchart">
+                  <svg></svg>
+                  <ul id="weeklist"></ul>
+                </div>
+              </div>
+*/
+
+}
+
+
 
 function walk_on(index){
   $('#weeklist li').eq(index).addClass("on").siblings().removeClass("on");

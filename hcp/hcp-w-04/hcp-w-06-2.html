@@ -39,7 +39,7 @@
           <ul class="list_gnb">
             <li><a href="#none"><span>홈</span></a></li>
             <li class="on"><a href="#none"><span>환자</span></a></li>
-            <li><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>스케줄</span></a></li>
             <li><a href="#none"><span>문의</span></a></li>
             <li><a href="#none"><span>통계</span></a></li>
             <li><a href="#none"><span>설정</span></a></li>
@@ -103,17 +103,17 @@
                             <em class="tit">거주지</em>
                             <span class="info">서울</span>
                         </li>
-                        <li>
+                        <!-- <li>
                             <em class="tit">질환명</em>
                             <span class="info">-</span>
+                        </li> -->
+                        <li>
+                            <em class="tit">생년월일</em>
+                            <span class="info">2020.03.04</span>
                         </li>
                         <li>
                             <em class="tit">휴대폰 번호</em>
                             <span class="info">010-1234-5688</span>
-                        </li>
-                        <li>
-                            <em class="tit">생년월일</em>
-                            <span class="info">2020.03.04</span>
                         </li>
                         <li>
                             <em class="tit">이메일</em>
@@ -165,8 +165,8 @@
               <ul class="tab_menu">
                   <li><a href="#">문진</a></li>
                   <li><a href="#">Upright Posture</a></li>
-                  <li class="active"><a href="#">촬영검사</a></li>
-                  <li><a href="#">운동기록</a></li>
+                  <li class="active"><a href="#">촬영 검사</a></li>
+                  <li><a href="#">운동 기록</a></li>
               </ul>
               <div class="box_search">
                   <div class="box_period">
@@ -183,321 +183,340 @@
             </div>
             <div class="inner_depth">
                 <div class="tab_inner inner_pdt32px">
-                    <p class="txt_date">최근 검사 : 2021.11.02</p>
-                    <div class="tit_cnt02">
-                        <h3>보행 1</h3>
-                    </div>
-                    <div class="inner_flex1box">
-                        <div class="box_flex1box">
-                            <div class="box_video">
-                                <img src="" alt="동영상썸네일">
-                                <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                            </div>
-                            <div class="box_video">
-                                <img src="" alt="이미지썸네일">
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_left">
-                                <h4>보행 분석</h4>
-                                <p>발을 끄는 경향이 있으며, 보행속도가 느린편입니다.</p>
-                                <p>보행 안정성을 위해서 좀 더 넓은 보폭과 빠른 속도로 걸어보세요.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="inner_flex1box">
-                       <div class="box_flex1box">
-                           <h4>좌우 GCT 밸런스(ms)</h4>
-                           <div class="gct_box">
-                               <div>
-                                    <div class="box_graph_gct">
-                                        <div class="piechart-wrap">
-                                            <div class="chart"></div>
+                    <p class="txt_date">최근 검사 : 2021.11.02
+                        <span class="noti-right">* 본 결과지는 정보전달에 목적이 있습니다.</span>
+                    </p>
+                    <div class="tab_wrap type2">
+                        <ul class="tab_menu">
+                            <li class="active"><a href="#">Ankle</a></li>
+                            <li><a href="#">Heel</a></li>
+                            <li><a href="#">Sarcopenia</a></li>
+                            <li><a href="#">Balance</a></li>
+                            <li><a href="#">Gait</a></li>
+                            <li><a href="#">Partial Weight Bearing</a></li>
+                        </ul>
+                        <div class="inner_depth">
+                            <div class="tab_inner">
+                                <div class="memo_box">
+                                    메모 : <p>촬영 시 입력한 메모 내용이 출력됩니다. 메모메모메모메모메모 <a href="#" class="modify">편집</a></p>
+                                </div>
+                                <div class="tit_cnt02">
+                                    <h3>보행 1</h3>
+                                </div>
+                                <div class="inner_flex1box">
+                                    <div class="box_flex1box">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player')"><span class="hidden">재생</span></button>
+                                        </div>
+                                        <div class="box_video">
+                                            <img src="" alt="이미지썸네일" onclick="hcp.modals_show('laypop_player_sm')">
                                         </div>
                                     </div>
-                                    <p class="result_val">오른쪽으로 치우침</p>
-                               </div>
-                               <div>
-                                    <div class="gct_data">
-                                        <div class="data">
-                                            <p class="tit_data">왼발 GCT</p>
-                                            <p class="val_data">300</p>
-                                        </div>
-                                        <div class="data">
-                                            <p class="tit_data">오른발 GTC</p>
-                                            <p class="val_data">280</p>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_left">
+                                            <h4>보행 분석</h4>
+                                            <p>발을 끄는 경향이 있으며, 보행속도가 느린편입니다.</p>
+                                            <p>보행 안정성을 위해서 좀 더 넓은 보폭과 빠른 속도로 걸어보세요.</p>
                                         </div>
                                     </div>
-                               </div>
-                           </div>
-                       </div>
-                       <div class="box_flex1box">
-                           <div class="space_cnt_left">
-                                <h4>보행 길이(cm)</h4>
-                                <div class="length_box">
-                                    <div class="length_data">
-                                        <div>
-                                            <p>보장(Step Length)</p>
-                                            <p class="txt_sub">성인 평균 64~74cm</p>
-                                        </div>
-                                        <div class="flex_data">
-                                            <div class="data">
-                                                <em class="feet">왼발</em>
-                                                <span class="length_val">60</span>
+                                </div>
+                                <div class="inner_flex1box">
+                                   <div class="box_flex1box">
+                                       <h4>좌우 GCT 밸런스(ms)</h4>
+                                       <div class="gct_box">
+                                           <div>
+                                                <div class="box_graph_gct">
+                                                    <div class="piechart-wrap">
+                                                        <div class="chart"></div>
+                                                    </div>
+                                                </div>
+                                                <p class="result_val">오른쪽으로 치우침</p>
+                                           </div>
+                                           <div>
+                                                <div class="gct_data">
+                                                    <div class="data">
+                                                        <p class="tit_data">왼발 GCT</p>
+                                                        <p class="val_data">300</p>
+                                                    </div>
+                                                    <div class="data">
+                                                        <p class="tit_data">오른발 GCT</p>
+                                                        <p class="val_data">280</p>
+                                                    </div>
+                                                </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <div class="box_flex1box">
+                                       <div class="space_cnt_left">
+                                            <h4>보행 길이(cm)</h4>
+                                            <div class="length_box">
+                                                <div class="length_data">
+                                                    <div>
+                                                        <p>보장(Step Length)</p>
+                                                        <p class="txt_sub">성인 평균 64~74cm</p>
+                                                    </div>
+                                                    <div class="flex_data">
+                                                        <div class="data">
+                                                            <em class="feet">왼발</em>
+                                                            <span class="length_val">60</span>
+                                                        </div>
+                                                        <div class="data">
+                                                            <em class="feet">오른발</em>
+                                                            <span class="length_val">64</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="length_data">
+                                                    <div>
+                                                        <p>활보장(Stride Length)</p>
+                                                        <p class="txt_sub">성인 평균 135~150cm</p>
+                                                    </div>
+                                                    <div>
+                                                        <div class="data total">
+                                                            <em class="feet">왼발 오른발 합계</em>
+                                                            <span class="length_val">124</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div class="data">
-                                                <em class="feet">오른발</em>
-                                                <span class="length_val">64</span>
+                                        </div>
+                                   </div>
+                                </div>
+                                <div class="inner_flex1box">
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_right">
+                                            <h4>보행 주기(%)</h4>
+                                            <div>
+                                                <div class="box_graph_phase">
+                                                    <div class="walkchart-wrap"><div class="chart"></div></div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="length_data">
-                                        <div>
-                                            <p>활보장(Stride Length)</p>
-                                            <p class="txt_sub">성인 평균 135~150cm</p>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_left">
+                                            <table class="tbl_mini">
+                                                <colgroup>
+                                                    <col style="width:10%">
+                                                    <col style="width:24%">
+                                                    <col style="width:19.4%">
+                                                    <col style="width:24%">
+                                                    <col>
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th><div>&nbsp;</div></th>
+                                                        <th><div>Load Response</div></th>
+                                                        <th><div>Pre-Swing</div></th>
+                                                        <th><div>Double Support</div></th>
+                                                        <th><div>Single Support</div></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>왼발</th>
+                                                        <td>6</td>
+                                                        <td>32</td>
+                                                        <td>38</td>
+                                                        <td>28</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>오른발</th>
+                                                        <td>32</td>
+                                                        <td>6</td>
+                                                        <td>38</td>
+                                                        <td>16</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th>표준</th>
+                                                        <td>10</td>
+                                                        <td>10</td>
+                                                        <td>20</td>
+                                                        <td>40</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        <div>
-                                            <div class="data total">
-                                                <em class="feet">왼발 오른발 합계</em>
-                                                <span class="length_val">124</span>
+                                    </div>
+                                </div>
+                                <div class="tit_cnt02">
+                                    <h3>제자리 서기</h3>
+                                </div>
+                                <div class="inner_flex1box sm">
+                                    <div class="box_flex1box">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                        <div class="box_video">
+                                            <img src="" alt="이미지썸네일">
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_both">
+                                            <h4>평균 밸런스(%)</h4>
+                                            <div class="balance_data">
+                                                <div class="data">
+                                                    <p>좌 : 우<span class="txt_sub">(표준 50 : 50)</span></p>
+                                                    <p class="val_data">50 : 50</p>
+                                                </div>
+                                                <div class="data">
+                                                    <p>앞 : 뒤<span class="txt_sub">(표준 40 : 60)</span></p>
+                                                    <p class="val_data">47 :53</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_left sm">
+                                            <h4>자세 분석</h4>
+                                            <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
+                                            <div>
+                                                <div class="analysis-wrap standing-wrap"><div class="chart"></div></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                       </div>
-                    </div>
-                    <div class="inner_flex1box">
-                        <div class="box_flex1box">
-                            <div class="space_cnt_right">
-                                <h4>보행 주기(%)</h4>
-                                <div>
-                                    <div class="box_graph_phase">
-                                        <div class="walkchart-wrap"><div class="chart"></div></div>
+                                <div class="tit_cnt02">
+                                    <h3>스쿼트</h3>
+                                </div>
+                                <div class="inner_flex1box sm">
+                                    <div class="box_flex1box">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                        <div class="box_video">
+                                            <img src="" alt="이미지썸네일">
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_both">
+                                            <h4>평균 밸런스(%)</h4>
+                                            <div class="balance_data">
+                                                <div class="data">
+                                                    <p>좌 : 우<span class="txt_sub">(표준 50 : 50)</span></p>
+                                                    <p class="val_data">50 : 50</p>
+                                                </div>
+                                                <div class="data">
+                                                    <p>앞 : 뒤<span class="txt_sub">(표준 40 : 60)</span></p>
+                                                    <p class="val_data">47 :53</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_left sm">
+                                            <h4>자세 분석</h4>
+                                            <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
+                                            <div>
+                                                <div class="analysis-wrap squat-wrap"><div class="chart"></div></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_left">
-                                <table class="tbl_mini">
-                                    <colgroup>
-                                        <col style="width:10%">
-                                        <col style="width:24%">
-                                        <col style="width:19.4%">
-                                        <col style="width:24%">
-                                        <col>
-                                    </colgroup>
-                                    <thead>
-                                        <tr>
-                                            <th><div>&nbsp;</div></th>
-                                            <th><div>Load Response</div></th>
-                                            <th><div>Pre-Swing</div></th>
-                                            <th><div>Double Support</div></th>
-                                            <th><div>Single Support</div></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th>왼발</th>
-                                            <td>6</td>
-                                            <td>32</td>
-                                            <td>38</td>
-                                            <td>28</td>
-                                        </tr>
-                                        <tr>
-                                            <th>오른발</th>
-                                            <td>32</td>
-                                            <td>6</td>
-                                            <td>38</td>
-                                            <td>16</td>
-                                        </tr>
-                                        <tr>
-                                            <th>표준</th>
-                                            <td>10</td>
-                                            <td>10</td>
-                                            <td>20</td>
-                                            <td>40</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tit_cnt02">
-                        <h3>제자리 서기</h3>
-                    </div>
-                    <div class="inner_flex1box sm">
-                        <div class="box_flex1box">
-                            <div class="box_video">
-                                <img src="" alt="동영상썸네일">
-                                <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                            </div>
-                            <div class="box_video">
-                                <img src="" alt="이미지썸네일">
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_both">
-                                <h4>평균 밸런스(%)</h4>
-                                <div class="balance_data">
-                                    <div class="data">
-                                        <p>좌 : 우<span class="txt_sub">(표준 50 : 50)</span></p>
-                                        <p class="val_data">50 : 50</p>
+                                <div class="tit_cnt02">
+                                    <h3>왼발 외발서기</h3>
+                                </div>
+                                <div class="inner_flex1box sm">
+                                    <div class="box_flex1box">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                        <div class="box_video">
+                                            <img src="" alt="이미지썸네일">
+                                        </div>
                                     </div>
-                                    <div class="data">
-                                        <p>앞 : 뒤<span class="txt_sub">(표준 40 : 60)</span></p>
-                                        <p class="val_data">47 :53</p>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_both">
+                                            <h4>평균 밸런스(%)</h4>
+                                            <div class="balance_data">
+                                                <div class="data">
+                                                    <p>흔들림 정도<span class="txt_sub">(추천 : 10% 이하)</span></p>
+                                                    <p class="val_data">7%</p>
+                                                </div>
+                                                <div class="data">
+                                                    <p>외발 서기 시간</p>
+                                                    <p class="val_data">0’’</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_left sm">
+                                            <h4>자세 분석</h4>
+                                            <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
+                                            <div>
+                                                <div class="analysis-wrap left-standing-wrap"><div class="chart"></div></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_left sm">
-                                <h4>자세 분석</h4>
-                                <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
-                                <div>
-                                    <div class="analysis-wrap standing-wrap"><div class="chart"></div></div>
+                                <div class="tit_cnt02">
+                                    <h3>오른발 외발서기</h3>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tit_cnt02">
-                        <h3>스쿼트</h3>
-                    </div>
-                    <div class="inner_flex1box sm">
-                        <div class="box_flex1box">
-                            <div class="box_video">
-                                <img src="" alt="동영상썸네일">
-                                <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                            </div>
-                            <div class="box_video">
-                                <img src="" alt="이미지썸네일">
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_both">
-                                <h4>평균 밸런스(%)</h4>
-                                <div class="balance_data">
-                                    <div class="data">
-                                        <p>좌 : 우<span class="txt_sub">(표준 50 : 50)</span></p>
-                                        <p class="val_data">50 : 50</p>
+                                <div class="inner_flex1box sm">
+                                    <div class="box_flex1box">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                        <div class="box_video">
+                                            <img src="" alt="이미지썸네일">
+                                        </div>
                                     </div>
-                                    <div class="data">
-                                        <p>앞 : 뒤<span class="txt_sub">(표준 40 : 60)</span></p>
-                                        <p class="val_data">47 :53</p>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_both">
+                                            <h4>평균 밸런스(%)</h4>
+                                            <div class="balance_data">
+                                                <div class="data">
+                                                    <p>흔들림 정도<span class="txt_sub">(추천 : 10% 이하)</span></p>
+                                                    <p class="val_data">7%</p>
+                                                </div>
+                                                <div class="data">
+                                                    <p>외발 서기 시간</p>
+                                                    <p class="val_data">0’’</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_left sm">
-                                <h4>자세 분석</h4>
-                                <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
-                                <div>
-                                    <div class="analysis-wrap squat-wrap"><div class="chart"></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tit_cnt02">
-                        <h3>왼발 외발서기</h3>
-                    </div>
-                    <div class="inner_flex1box sm">
-                        <div class="box_flex1box">
-                            <div class="box_video">
-                                <img src="" alt="동영상썸네일">
-                                <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                            </div>
-                            <div class="box_video">
-                                <img src="" alt="이미지썸네일">
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_both">
-                                <h4>평균 밸런스(%)</h4>
-                                <div class="balance_data">
-                                    <div class="data">
-                                        <p>흔들림 정도<span class="txt_sub">(추천 : 10% 이하)</span></p>
-                                        <p class="val_data">7%</p>
-                                    </div>
-                                    <div class="data">
-                                        <p>외발 서기 시간</p>
-                                        <p class="val_data">0’’</p>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_left sm">
+                                            <h4>자세 분석</h4>
+                                            <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
+                                            <div>
+                                                <div class="analysis-wrap right-standing-wrap"><div class="chart"></div></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_left sm">
-                                <h4>자세 분석</h4>
-                                <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
-                                <div>
-                                    <div class="analysis-wrap left-standing-wrap"><div class="chart"></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tit_cnt02">
-                        <h3>오른발 외발서기</h3>
-                    </div>
-                    <div class="inner_flex1box sm">
-                        <div class="box_flex1box">
-                            <div class="box_video">
-                                <img src="" alt="동영상썸네일">
-                                <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                            </div>
-                            <div class="box_video">
-                                <img src="" alt="이미지썸네일">
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_both">
-                                <h4>평균 밸런스(%)</h4>
-                                <div class="balance_data">
-                                    <div class="data">
-                                        <p>흔들림 정도<span class="txt_sub">(추천 : 10% 이하)</span></p>
-                                        <p class="val_data">7%</p>
-                                    </div>
-                                    <div class="data">
-                                        <p>외발 서기 시간</p>
-                                        <p class="val_data">0’’</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box_flex1box">
-                            <div class="space_cnt_left sm">
-                                <h4>자세 분석</h4>
-                                <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
-                                <div>
-                                    <div class="analysis-wrap right-standing-wrap"><div class="chart"></div></div>
-                                </div>
+                                <script>
+                                  var piechartData = {
+                                      value : 156 //왼쪽 0~100, 오른쪽 100~200
+                                  };
+                                  var barCycleData = [
+                                      {name:'왼발',stance:'67',swing:'33'},
+                                      {name:'오른발',stance:'63',swing:'37'},
+                                      {name:'표준',stance:'60',swing:'40'},
+                                  ];
+                                  var standingData = {tit:'', value: 80, averageTxt: '평균', average: 70, barColor: '#5280e2', bgColor: '#f1f3f5'};
+                                  var squatData = {tit:'', value: 90, averageTxt: '평균', average: 40, barColor: '#5280e2', bgColor: '#f1f3f5'};
+                                  var leftStandingData = {tit:'', value: 60, averageTxt: '평균', average: 50, barColor: '#5280e2', bgColor: '#f1f3f5'};
+                                  var rightStandingData = {tit:'', value: 80, averageTxt: '평균', average: 50, barColor: '#5280e2', bgColor: '#f1f3f5'};
+                                  $(function(){
+                                      chart.pieChart('.piechart-wrap .chart', piechartData);
+                                      chart.walkChart('.walkchart-wrap .chart', barCycleData);
+                                      chart.analysisChart('.standing-wrap .chart', standingData, 3);
+                                      chart.analysisChart('.squat-wrap .chart', squatData, 3);
+                                      chart.analysisChart('.left-standing-wrap .chart', leftStandingData, 3);
+                                      chart.analysisChart('.right-standing-wrap .chart', rightStandingData, 3);
+                                  });
+                                </script>
                             </div>
                         </div>
                     </div>
-                    <script>
-                      var piechartData = {
-                          value : 156 //왼쪽 0~100, 오른쪽 100~200
-                      };
-                      var barCycleData = [
-                          {name:'왼발',stance:'67',swing:'33'},
-                          {name:'오른발',stance:'63',swing:'37'},
-                          {name:'표준',stance:'60',swing:'40'},
-                      ];
-                      var standingData = {tit:'', value: 80, averageTxt: '평균', average: 70, barColor: '#5280e2', bgColor: '#f1f3f5'};
-                      var squatData = {tit:'', value: 90, averageTxt: '평균', average: 40, barColor: '#5280e2', bgColor: '#f1f3f5'};
-                      var leftStandingData = {tit:'', value: 60, averageTxt: '평균', average: 50, barColor: '#5280e2', bgColor: '#f1f3f5'};
-                      var rightStandingData = {tit:'', value: 80, averageTxt: '평균', average: 50, barColor: '#5280e2', bgColor: '#f1f3f5'};
-                      $(function(){
-                          chart.pieChart('.piechart-wrap .chart', piechartData);
-                          chart.walkChart('.walkchart-wrap .chart', barCycleData);
-                          chart.analysisChart('.standing-wrap .chart', standingData, 3);
-                          chart.analysisChart('.squat-wrap .chart', squatData, 3);
-                          chart.analysisChart('.left-standing-wrap .chart', leftStandingData, 3);
-                          chart.analysisChart('.right-standing-wrap .chart', rightStandingData, 3);
-                      });
-                    </script>
                 </div>
             </div>
         </div>

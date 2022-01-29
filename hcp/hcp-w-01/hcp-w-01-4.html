@@ -38,7 +38,7 @@
           <ul class="list_gnb">
             <li><a href="#none"><span>홈</span></a></li>
             <li class="on"><a href="#none"><span>환자</span></a></li>
-            <li><a href="#none"><span>스케쥴</span></a></li>
+            <li><a href="#none"><span>스케줄</span></a></li>
             <li><a href="#none"><span>문의</span></a></li>
             <li><a href="#none"><span>통계</span></a></li>
             <li><a href="#none"><span>설정</span></a></li>
@@ -81,7 +81,7 @@
                 </li>
                 <li>
                     <em class="tit">휴대폰 번호</em>
-                    <input type="text" class="input_round" placeholder="숫자만 입력해 주세요.">
+                    <input type="text" class="input_round" placeholder="‘-’ 없이 숫자만 입력해 주세요.">
                 </li>
                 <li>
                     <em class="tit">계정 코드</em>
@@ -91,29 +91,29 @@
                     <em class="tit">직군</em>
                     <div class="radio_type1">
                         <input type="radio" name="job" id="job_01">
-                        <label for="job_01">의료진</label>
+                        <label for="job_01">의사</label>
                         <input type="radio" name="job" id="job_02">
-                        <label for="job_02">간호사</label>
+                        <label for="job_02">물리치료사</label>
                         <input type="radio" name="job" id="job_03">
-                        <label for="job_03">물리치료사</label>
+                        <label for="job_03">운동치료사</label>
                         <input type="radio" name="job" id="job_04" checked>
                         <label for="job_04">직접입력</label>
                     </div>
-                    <input type="text" class="input_round" placeholder="진료과를 입력해 주세요.">
+                    <input type="text" class="input_round" placeholder="진료과를 직접 입력해 주세요.">
                 </li>
             </ul>
             <div class="box_check">
                 <div class="check_type1">
-                    <input type="checkbox" name="terms_of_service" id="terms_of_service"><label for="terms_of_service" onclick="hcp.modals_show('pop_terms_of_service')">서비스 이용 약관(필수)</label>
+                    <input type="checkbox" name="terms_of_service" id="terms_of_service"><label for="terms_of_service" onclick="hcp.modals_show('pop_terms_of_service')"><em>[필수]</em> 이용약관에 동의합니다.</label>
                 </div>
                 <div class="check_type1">
-                    <input type="checkbox" name="hcp_personal_information" id="hcp_personal_information"><label for="hcp_personal_information" onclick="hcp.modals_show('pop_hcp_personal_information')">개인정보 수집 및 이용 동의(필수)</label>
+                    <input type="checkbox" name="hcp_personal_information" id="hcp_personal_information"><label for="hcp_personal_information" onclick="hcp.modals_show('pop_hcp_personal_information')"><em>[필수]</em> 개인정보 처리방침에 동의합니다.</label>
                 </div>
                 <div class="check_type1">
-                    <input type="checkbox" name="privacy_policy" id="privacy_policy"><label for="privacy_policy" onclick="hcp.modals_show('pop_privacy_policy')">개인정보 처리방침(필수)</label>
+                    <input type="checkbox" name="privacy_policy" id="privacy_policy"><label for="privacy_policy" onclick="hcp.modals_show('pop_privacy_policy')"><em>[필수]</em> 개인정보 수집 및 이용에 동의합니다.</label>
                 </div>
                 <div class="check_type1">
-                    <input type="checkbox" name="hcp_marketing_content" id="hcp_marketing_content"><label for="hcp_marketing_content" onclick="hcp.modals_show('pop_hcp_marketing_content')">마케팅 정보 수신(선택)</label>
+                    <input type="checkbox" name="hcp_marketing_content" id="hcp_marketing_content"><label for="hcp_marketing_content" onclick="hcp.modals_show('pop_hcp_marketing_content')">[선택] 마케팅 정보 수신에 동의합니다.</label>
                 </div>
             </div>
             <div class="box_btn">

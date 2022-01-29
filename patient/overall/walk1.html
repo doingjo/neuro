@@ -27,7 +27,7 @@
   </head>
 <body>
   <div id="wrap">
-    <div class="default_page">
+    <div class="default_page exercise">
       <div class="page">
         <div class="page_head">
           <h1>보행</h1>
@@ -36,68 +36,51 @@
           <span class="headbg"></span>
         </div>
         <div class="container">
-          <div class="noti_box">* 본 결과지는 정보전달에 목적이 있으니, 정확한 진단 및 치료는 전문의와 상의하세요.</div>
-          <div class="walk_wr">
-            <div class="ti"><span class="year"></span>.<span class="month"></span></div>
-            <div class="walk_tchart">
-              <div id="walk_tchart">
-                <ul class="walkline">
-                  <li><span>L치우침</span></li>
-                  <li><span>정상</span></li>
-                  <li><span>R치우침</span></li>
-                </ul>
-                <div id="walkTchart">
-                  <svg></svg>
-                  <ul id="weeklist"></ul>
+          <h2>
+            <em>Partial Weight Bearing</em>
+            <strong>Single Heel Raise(Afficted Side)</strong>
+          </h2>
+          <div class="balancechart_wrap"><div class="chart_wrap"><div class="chart"></div></div></div>
+          <script>
+            var balanceData = [
+              { value : 2, day : "2022-01-24", week : '월' },
+              { value : 2, day : "2022-01-25", week : '화' },
+              { value : 3, day : "2022-01-26", week : '수' },
+              { value : 2, day : "2022-01-27", week : '목' },
+              { value : 3, day : "2022-01-28", week : '금' },
+
+              { value : 3, day : "2022-01-31", week : '월' },
+              { value : 1, day : "2022-02-01", week : '화' },
+              { value : 3, day : "2022-02-02", week : '수' },
+              { value : 2, day : "2022-02-03", week : '목' },
+              { value : 3, day : "2022-02-04", week : '금' },
+
+              { value : 2, day : "2022-02-07", week : '월' },
+              { value : 2, day : "2022-02-08", week : '화' },
+              { value : 3, day : "2022-02-09", week : '수' },
+              { value : 2, day : "2022-02-10", week : '목' },
+              { value : 3, day : "2022-02-11", week : '금' },
+            ];
+            chart.balanceChart('.balancechart_wrap .chart', balanceData);
+          </script>
+          <hr class="line full mt" />
+          <div class="tixed timetable">
+            <div class="tfcell">
+              <select name="" id="" class="form_select tal">
+                <option value="">1회</option>
+              </select>
+            </div>
+            <div class="tfcell">
+              <div class="swiper walk_category aotoswiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"><a href="#" class="on">전체</a></div>
+                  <div class="swiper-slide"><a href="#">13:55</a></div>
+                  <div class="swiper-slide"><a href="#">11:23</a></div>
+                  <div class="swiper-slide"><a href="#">11:10</a></div>
+                  <div class="swiper-slide"><a href="#">10:15</a></div>
+                  <div class="swiper-slide"><a href="#">09:00</a></div>
                 </div>
               </div>
-              <script>
-                var walkTdata = [
-                  { value : 2, day : "2021-10-22", week : '일' },
-                  { value : 3, day : "2021-10-23", week : '월' },
-                  { value : 1, day : "2021-10-24", week : '화' },
-                  { value : 1, day : "2021-10-25", week : '일' },
-                  { value : 2, day : "2021-10-26", week : '월' },
-                  { value : 2, day : "2021-10-27", week : '화' },
-                  { value : 3, day : "2021-10-28", week : '수' },
-                  { value : 2, day : "2021-10-29", week : '목' },
-                  { value : 3, day : "2021-10-30", week : '금' },
-                  { value : 3, day : "2021-10-31", week : '토' },
-                  { value : 2, day : "2021-11-01", week : '일' },
-                  { value : 3, day : "2021-11-02", week : '월' },
-                  { value : 1, day : "2021-11-03", week : '화' },
-                  { value : 2, day : "2021-11-04", week : '화' },
-                  { value : 3, day : "2021-11-05", week : '수' },
-                  { value : 2, day : "2021-11-06", week : '목' },
-                  { value : 3, day : "2021-11-07", week : '금' },
-                  { value : 3, day : "2021-11-08", week : '토' },
-                  { value : 1, day : "2021-11-09", week : '일' },
-                  { value : 2, day : "2021-11-10", week : '월' },
-                  { value : 2, day : "2021-11-11", week : '화' },
-                  { value : 3, day : "2021-11-12", week : '수' },
-                  { value : 2, day : "2021-11-13", week : '목' },
-                  { value : 3, day : "2021-11-14", week : '금' },
-                  { value : 3, day : "2021-11-15", week : '토' },
-                ];
-                walk_tdata(walkTdata); //차트 그리기
-                walk_on(0); //날짜 활성화  index
-                $('#weeklist li').on("click", function(e) {
-                  var index = $(this).index();
-                  walk_on(index)
-                  return false;
-                });
-              </script>
-            </div>
-          </div>
-          <hr class="line full mt" />
-          <div class="swiper walk_category aotoswiper">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide"><a href="#" class="on">전체</a></div>
-              <div class="swiper-slide"><a href="#">13:55</a></div>
-              <div class="swiper-slide"><a href="#">11:23</a></div>
-              <div class="swiper-slide"><a href="#">11:10</a></div>
-              <div class="swiper-slide"><a href="#">10:15</a></div>
-              <div class="swiper-slide"><a href="#">09:00</a></div>
             </div>
           </div>
           <div class="over_box">
@@ -186,7 +169,7 @@
                   보행 주기 (Gait Cycle)
                 </div>
                 <div class="tip_popb">
-                  <p>01. Stance 주기 내 Double / Single support </p>
+                  <p>01. Stance 주기 내 Double / Single support</p>
                   <div class="tx">보행 주기는 크게 지면에 닿아 있는 Stance(입각기)와 Swing (유각기)로 분류됩니다. 해당 주기는 60:40의 비율이 일반적입니다.</div>
                   <p>02. 활보장 (Stirde Length)</p>
                   <div class="tx">Stance 주기는 크게 양발을 동시에 디디는 Double support와 한발만 디디는 Single Support 로 구분됩니다.<br />해당 비율은 20:40의 비율이 일반적입니다.<br /><br />Double support는 Stance 시작시 발생하는 Load response 구간과Stance 끝날 때 발생하는 Pre swing 구간으로 나뉘며, 이는 10:10의 비율이 일반적입니다. </div>
@@ -237,7 +220,7 @@
             </div>
             <script>
               var barCycleData = [
-                {name:'왼발',stance:'100',swing:'33'},
+                {name:'왼발',stance:'0',swing:'100'},
                 {name:'오른발',stance:'63',swing:'37'},
                 {name:'표준',stance:'60',swing:'40'},
               ];
@@ -248,6 +231,7 @@
             <div class="ti mb12">분석 결과</div>
             <div class="tx c0">발을 끄는 경향이 있으며, 보행속도가 느린편입니다. 보행 안정성을 위해서 좀 더 넓은 보폭과 빠른 속도로 걸어보세요.</div>
           </div>
+          <div class="noti_box">* 본 결과지는 정보전달에 목적이 있으니, 정확한 진단 및 치료는 전문의와 상의하세요.</div>
         </div>
       </div>
     </div>

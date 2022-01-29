@@ -31,8 +31,10 @@
         <div class="overall_head">
           <div class="back_btn"><a href="#"><span>뒤로가기</span></a></div>
           <h1>정수화님<br />뉴로게이트 종합결과입니다.</h1>
-          <em>* 본 결과지는 정보전달에 목적이 있으니, 정확한 진단 및 치료는 전문의와 상의하세요.</em>
-          <p>2021.10.03 - 2021.10.13</p>
+          <p>
+            <span>시작일 : 2021.10.03</span>
+            <span>마지막 운동일 : 2021.10.03</span>
+          </p>
           <ul class="overall_data">
             <li>
               <div class="ti">보행 운동 평균 등급</div>
@@ -74,11 +76,11 @@
             <script>
               var bubbleData = {
                 'children': [
-                  {'name': '1 보행', 'value': 32, 'color':'#0fb095'},
-                  {'name': '2 제자리 서기', 'value': 15, 'color':'#5280e2'},
-                  {'name': '3 스쿼트', 'value': 10, 'color':'#4dbffd'},
-                  {'name': '4 왼발 외발서기', 'value': 5, 'color':'#21d0b3'},
-                  {'name': '5 오른발 외발서기', 'value': 3, 'color':'#2f455c'}
+                  {'num': '1','session': 'Partial Weight Bearing','name': 'Single Hell Raise(Afficted Side)', 'value': 32, 'color':'#0fb095'},
+                  {'num': '2','session': 'Partial Weight Bearing','name': 'Single Hell Raise(Afficted Side)', 'value': 15, 'color':'#5280e2'},
+                  {'num': '3','session': '부분부하보행','name': '외발 발뒤꿈치 들기(환측)', 'value': 10, 'color':'#4dbffd'},
+                  {'num': '4','session': 'Partial Weight Bearing','name': 'Single Hell Raise(Afficted Side)', 'value': 5, 'color':'#21d0b3'},
+                  {'num': '5','session': 'Partial Weight Bearing','name': 'Single Hell Raise(Afficted Side)', 'value': 3, 'color':'#2f455c'}
                 ]
               }
               bubble(bubbleData)
@@ -86,7 +88,7 @@
           </div>
           <div class="over_box">
             <div class="ti mb12">
-              운동 요일 순위
+              운동 완료 횟수
             </div>
             <div class="barchart">
               <ul id="barchart" class="clear"></ul>
@@ -126,37 +128,55 @@
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-walking.svg" alt=""></i>
-                    <span class="tx">보행</span>
+                    <div class="name">
+                      <span>Partial Weight Bearing</span>
+                      <em>Single Hell Raise(Afficted Side)</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-stand.svg" alt=""></i>
-                    <span class="tx">제자리 서기</span>
+                    <div class="name">
+                      <span>제자리 서기</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-squat.svg" alt=""></i>
-                    <span class="tx">스쿼트</span>
+                    <div class="name">
+                      <span>스쿼트</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-left-onefoot.svg" alt=""></i>
-                    <span class="tx">왼발 외발서기</span>
+                    <div class="name">
+                      <span>왼발 외발서기</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-right-onefoot.svg" alt=""></i>
-                    <span class="tx">오른발 외발서기</span>
+                    <div class="name">
+                      <span>오른발 외발서기</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-up-down.svg" alt=""></i>
-                    <span class="tx">계단 오르기/내리기</span>
+                    <div class="name">
+                      <span>계단 오르기/내리기</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -167,42 +187,61 @@
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-left-onefoot.svg" alt=""></i>
-                    <span class="tx">왼발 외발서기</span>
+                    <div class="name">
+                      <span>왼발 외발서기</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-right-onefoot.svg" alt=""></i>
-                    <span class="tx">오른발 외발서기</span>
+                    <div class="name">
+                      <span>오른발 외발서기</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-up-down.svg" alt=""></i>
-                    <span class="tx">계단 오르기/내리기</span>
+                    <div class="name">
+                      <span>계단 오르기/내리기</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-walking.svg" alt=""></i>
-                    <span class="tx">보행</span>
+                    <div class="name">
+                      <span>보행</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-stand.svg" alt=""></i>
-                    <span class="tx">제자리 서기</span>
+                    <div class="name">
+                      <span>제자리 서기</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="sports_ions">
                     <i><img src="../images/ico-squat.svg" alt=""></i>
-                    <span class="tx">스쿼트</span>
+                    <div class="name">
+                      <span>스쿼트</span>
+                      <em>보행</em>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="noti_box">* 본 결과지는 정보전달에 목적이 있으니, 정확한 진단 및 치료는 전문의와 상의하세요.</div>
         </div>
       </div>
     </div>
