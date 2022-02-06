@@ -119,6 +119,10 @@
                             <em class="tit">이메일</em>
                             <span class="info">Salted@gmail.com</span>
                         </li>
+                        <li>
+                            <em class="tit">연결일자</em>
+                            <span class="info">아직 환자와 연결되지 않았습니다.</span>
+                        </li>
                         <li class="memo">
                             <em class="tit">메모</em>
                             <span class="info">
@@ -199,6 +203,31 @@
                             <div class="tab_inner">
                                 <div class="memo_box">
                                     메모 : <p>촬영 시 입력한 메모 내용이 출력됩니다. 메모메모메모메모메모 <a href="#" class="modify">편집</a></p>
+                                </div>
+                                <div class="tit_cnt02">
+                                    <h3>Left Partial Weight Bearing</h3>
+                                </div>
+                                <div class="inner_flex2box">
+                                    <div class="box_video">
+                                        <img src="" alt="동영상썸네일">
+                                        <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player_bearing')"><span class="hidden">재생</span></button>
+                                    </div>
+                                    <div class="inner_cont">
+                                        <p>총 <em>00</em>회의 잘못된 보행이 측정되었습니다.</p>
+                                        <a href="#">자세히</a>
+                                    </div>
+                                </div>
+                                <div class="tit_cnt02">
+                                    <h3>Right Partial Weight Bearing</h3>
+                                </div>
+                                <div class="inner_flex2box">
+                                    <div class="box_video">
+                                        <img src="" alt="동영상썸네일">
+                                        <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player_bearing')"><span class="hidden">재생</span></button>
+                                    </div>
+                                    <div class="inner_cont no_data"><!-- 데이터가 없을 때 no_data -->
+                                        <p>결과지는 준비중에 있습니다.</p>
+                                    </div>
                                 </div>
                                 <div class="tit_cnt02">
                                     <h3>보행 1</h3>
@@ -492,6 +521,84 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="tit_cnt02">
+                                    <h3>Left Partial Weight Bearing</h3>
+                                </div>
+                                <div class="inner_flex1box bearing_txt">총 <em>00</em>회의 잘못된 보행이 측정되었습니다</div>
+                                <div class="inner_flex1box sm">
+                                    <div class="box_flex1box">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                        <div class="box_video">
+                                            <img src="" alt="이미지썸네일">
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_both">
+                                            <h4>평균 밸런스(%)</h4>
+                                            <div class="balance_data">
+                                                <div class="data">
+                                                    <p>흔들림 정도<span class="txt_sub">(추천 : 10% 이하)</span></p>
+                                                    <p class="val_data">7%</p>
+                                                </div>
+                                                <div class="data">
+                                                    <p>외발 서기 시간</p>
+                                                    <p class="val_data">0’’</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_left sm">
+                                            <h4>자세 분석</h4>
+                                            <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
+                                            <div>
+                                                <div class="analysis-wrap right-standing-wrap"><div class="chart"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tit_cnt02">
+                                    <h3>Right Partial Weight Bearing</h3>
+                                </div>
+                                <div class="inner_flex1box bearing_txt">총 <em>00</em>회의 잘못된 보행이 측정되었습니다</div>
+                                <div class="inner_flex1box sm">
+                                    <div class="box_flex1box">
+                                        <div class="box_video">
+                                            <img src="" alt="동영상썸네일">
+                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                        </div>
+                                        <div class="box_video">
+                                            <img src="" alt="이미지썸네일">
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_both">
+                                            <h4>평균 밸런스(%)</h4>
+                                            <div class="balance_data">
+                                                <div class="data">
+                                                    <p>흔들림 정도<span class="txt_sub">(추천 : 10% 이하)</span></p>
+                                                    <p class="val_data">7%</p>
+                                                </div>
+                                                <div class="data">
+                                                    <p>외발 서기 시간</p>
+                                                    <p class="val_data">0’’</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box_flex1box">
+                                        <div class="space_cnt_left sm">
+                                            <h4>자세 분석</h4>
+                                            <p class="txt_pose">오른쪽으로 쏠리는 경향을 보입니다.</p>
+                                            <div>
+                                                <div class="analysis-wrap right-standing-wrap"><div class="chart"></div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                                 <script>
                                   var piechartData = {
                                       value : 156 //왼쪽 0~100, 오른쪽 100~200
@@ -537,5 +644,92 @@
     </footer>
     <!-- Footer// -->
   </div>
+<!-- layerpop -->
+<div class="modals" id="laypop_player_bearing">
+    <div class="wrapper_laypop type_basic bearing">
+        <div class="inner_laypop">
+            <div class="box_tit">
+              <h1>Left Partial Weight Bearing</h1>
+              <div>
+                <p>수술전 기준1</p>
+                <span>L####, 30%</span>
+                <span>R####, 30%</span>
+              </div>
+            </div>
+            <div class="box_cnt">
+              <div class="player_view">
+                  <div>
+                      <p class="tit">족저압</p>
+                      <div class="box_data">
+                          <img src="../images/dummy_foot.png" alt="" style="width:100%;">
+                      </div>
+                  </div>
+                  <div>
+                      <p class="tit">그래프</p>
+                      <div class="box_data">
+                          <img src="../images/dummy_graph2.png" alt="" style="width:100%;">
+                      </div>
+                  </div>
+              </div>
+              <div class="player_control">
+                <img src="../images/dummy_control.png" alt="">
+              </div>
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player_bearing');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
+</div>
+<div class="modals" id="laypop_player">
+    <div class="wrapper_laypop type_basic player">
+        <div class="inner_laypop">
+            <div class="box_cnt">
+                <div class="seg_data">
+                    <div class="tit_data icon_data01">
+                        <p class="tit">족저압</p>
+                    </div>
+                    <div class="box_data">
+                        <img src="../images/dummy_foot.png" alt="">
+                    </div>
+                    <div class="tit_data icon_data02">
+                        <p class="tit">그래프</p>
+                    </div>
+                    <div class="box_data">
+                        <img src="../images/dummy_graph.png" alt="">
+                    </div>
+                </div>
+                <div class="seg_video" style="background-color: #d8d8d8;">
+                    비디오 영역
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
+</div>
+<div class="modals" id="laypop_player_sm">
+    <div class="wrapper_laypop type_basic player_sm">
+        <div class="inner_laypop">
+            <div class="box_cnt">
+                <div class="seg_data">
+                    <p class="tit">발끝</p>
+                    <p class="txt_percent">94%</p>
+                    <p class="txt_direction">L</p>
+                    <p class="tit">뒤꿈치</p>
+                    <p class="txt_percent">6%</p>
+                </div>
+                <div class="seg_video" style="background-color: #000">
+                    비디오 영역
+                </div>
+                <div class="seg_data">
+                    <p class="tit">발끝</p>
+                    <p class="txt_percent">94%</p>
+                    <p class="txt_direction">R</p>
+                    <p class="tit">뒤꿈치</p>
+                    <p class="txt_percent">6%</p>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player_sm');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

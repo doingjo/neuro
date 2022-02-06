@@ -60,6 +60,11 @@
         $(this).closest('.check_mark').find('.input').hide();
       }
     });
+    disabled()
+    function disabled(){
+      if($('.inp_disabled').length == 0){return;}
+      $('.inp_disabled').find('input').attr('disabled', true);
+    }
 
     /* 탭메뉴 */
     $('.tab_default li > span').on("click", function(e) {
@@ -453,7 +458,7 @@ function walk_tdata(data){
   const ojs = document.getElementById('walk_tchart');
   const width = ojstag.offsetWidth;
   const height = ojs.offsetHeight;
-  
+
   const xScale = d3.scaleTime().domain([startDay, endDay]).range([0, width]);
   const yScale = d3.scaleLinear().domain([0, 3.3]).range([height - 50, 0]);
   const xAxisSVG = d3.select("svg").append("g").attr("transform", "translate(0, "+height+")").attr('class', 'day');
@@ -505,7 +510,7 @@ function balanceChart($this, data){
   boxWrap.prepend('<ul class="ticks"><li><span>L치우침</span></li><li><span>정상</span></li><li><span>R치우침</span></li></ul>');
 
 box.append('<ul></ul>');
-  
+
 
 /*
 <div class="balancechart-wrap"><div class="chart-wrap"><div class="chart"></div></div></div>
