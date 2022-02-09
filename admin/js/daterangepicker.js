@@ -717,7 +717,7 @@
                 html += '<th></th>';
             }
 
-            var dateHtml = calendar[1][1].format(" YYYY") +'.'+ this.locale.monthNames[calendar[1][1].month()];
+            var dateHtml = this.locale.monthNames[calendar[1][1].month()] + calendar[1][1].format(" YYYY");
 
             if (this.showDropdowns) {
                 var currentMonth = calendar[1][1].month();
@@ -749,7 +749,7 @@
                 }
                 yearHtml += '</select>';
 
-                dateHtml = yearHtml + monthHtml;
+                dateHtml = monthHtml + yearHtml;
             }
 
             html += '<th colspan="5" class="month"><div>' + dateHtml + '</div></th>';

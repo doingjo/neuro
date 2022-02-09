@@ -39,7 +39,7 @@
         <h1><a href="/"><strong>NEUROGAIT</strong><em>Master Admin</em></a></h1>
         <button class="btn_menu"><span></span><span></span><span></span></button>
         <div class="util">
-            <p>관리자님 안녕하세요.</p>
+            <p>Hi, Manager 김환자</p>
             <button class="btn_alarm">alarm</button>
             <button class="btn_set">set-up</button>
             <div class="user_wrap">
@@ -62,51 +62,51 @@
                 </div>
                 <ul>
                     <li class="on">
-                        <a href="#">HCP/Medical staff Management</a>
+                        <a href="#">Hospital/HCP</a>
                         <div class="depth">
                             <a href="#">HCP</a>
-                            <a href="#">Medical staff</a>
+                            <a href="#">Hospital(Customer)</a>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Patient/User Management</a>
+                        <a href="#">Patient/User</a>
                         <div class="depth">
                             <a href="#">Patient/User</a>
-                            <a href="#">탈원 회원</a>
+                            <a href="#">Withdrawal member</a>
                         </div>
                     </li>
-                    <li><a href="#">Exercise Management</a></li>
+                    <li><a href="#">Exercise</a></li>
                     <li>
-                        <a href="#">Website Management</a>
+                        <a href="#">Pages</a>
                         <div class="depth">
-                            <a href="#">공지사항</a>
-                            <a href="#">자주묻는질문</a>
-                            <a href="#">이벤트관리</a>
-                            <a href="#">알림</a>
-                            <a href="#">팝업관리</a>
-                            <a href="#">약관관리</a>
+                            <a href="#">Announcement</a>
+                            <a href="#">FAQ</a>
+                            <a href="#">Event</a>
+                            <a href="#">Notification</a>
+                            <a href="#">Pop-up</a>
+                            <a href="#">Terms</a>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Administrator Management</a>
+                        <a href="#">Administrator</a>
                         <div class="depth">
-                            <a href="#">관리자 관리</a>
+                            <a href="#">Administrator</a>
                             <a href="#">Log</a>
                         </div>
                     </li>
                     <li>
-                        <a href="#">Code Management</a>
+                        <a href="#">Code</a>
                         <div class="depth">
                             <a href="#">Common</a>
-                            <a href="#">Hospital(company)</a>
+                            <a href="#">Hospital(Customer)</a>
                         </div>
                     </li>
-                    <li class="link"><a href="#">Menu Management</a></li>
+                    <li class="link"><a href="#">Menu</a></li>
                     <li>
                         <a href="#">Stats</a>
                         <div class="depth">
-                            <a href="#">회원</a>
-                            <a href="#">데이터</a>
+                            <a href="#">Member</a>
+                            <a href="#">Data</a>
                         </div>
                     </li>
                 </ul>
@@ -115,7 +115,7 @@
         <section class="contents">
             <div class="head">
                 <div class="title">
-                    <strong class="active"><a href="#">Hospital(company)</a></strong>
+                    <strong class="active"><a href="#">Hospital(Customer)</a></strong>
                 </div>
                 <div class="breadcrumbs">
                     <a href="/">Home</a>
@@ -132,24 +132,24 @@
                     </div>
                     <div class="inp_select w140">
                         <select id="srch-select">
-                            <option>Management status</option>
+                            <option>Status</option>
                         </select>
                     </div>
                     <div class="inp_box">
-                        <input type="text" id="" name="" placeholder="Search for…">
+                        <input type="text" id="" name="" placeholder="Search…">
                     </div>
                     <button class="btns small blue">Search</button>
                 </div>
                 <div class="table_wrap inp_check check_all_wrap">
-                    <p class="total">Total posts <span>10</span></p>
+                    <p class="total">Total <span>10</span></p>
                     <div class="align_flex between">
-                        <button class="btns black">Suspend service of the selected hospital(Company)</button>
-                        <button class="btns blue" onclick="admin.modalsShow('modals')">Register</button>
+                        <button class="btns black">Switch Selected Items as Paused</button>
+                        <button class="btns blue" onclick="admin.modalsShow('modals')">Create new</button>
                     </div>
                     <div class="scroll_wrap">
                         <table>
                             <colgroup>
-                                <col width="80px"><col width="100px"><col width="*"><col width="100px"><col width="120px"><col width="100px">
+                                <col width="80px"><col width="100px"><col width="*"><col width="100px"><col width="120px"><col width="120px">
                             </colgroup>
                             <thead>
                                 <tr>
@@ -157,10 +157,10 @@
                                         <span class="form_ele"><input type="checkbox" id="checkAll" name=""><label for="checkAll"></label></span>
                                     </th>
                                     <th>Country</th>
-                                    <th>Name of Hospital(company)</th>
-                                    <th>Manager</th>
-                                    <th>Registration date</th>
-                                    <th>Management</th>
+                                    <th>Name of Hospital(customer)</th>
+                                    <th>Representative</th>
+                                    <th>Registered</th>
+                                    <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -169,80 +169,80 @@
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state use">Use</span></td><!-- Use : state use, Pause : state stop  -->
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state use">In Use</span></td><!-- In Use : state use, Paused : state stop, Negotiating : state ing  -->
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list02" name="list"><label for="list02"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state use">Use</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state stop">Paused</span></td>
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list03" name="list"><label for="list03"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state stop">Pause</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state ing">Negotiating</span></td>
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list04" name="list"><label for="list04"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state stop">Pause</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state stop">Paused</span></td>
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list05" name="list"><label for="list05"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state stop">Pause</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state stop">Paused</span></td>
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list06" name="list"><label for="list06"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state stop">Pause</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state stop">Paused</span></td>
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list07" name="list"><label for="list07"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state stop">Pause</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state stop">Paused</span></td>
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list08" name="list"><label for="list08"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state stop">Pause</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state stop">Paused</span></td>
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list09" name="list"><label for="list09"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state stop">Pause</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state stop">Paused</span></td>
                                 </tr>
                                 <tr>
                                     <td><span class="form_ele"><input type="checkbox" id="list10" name="list"><label for="list10"></label></span></td>
                                     <td>Korea</td>
                                     <td>원주연세세브란스병원</td>
                                     <td>김*희</td>
-                                    <td>2021.03.01</td>
-                                    <td><span class="state stop">Pause</span></td>
+                                    <td>Mar. 01, 2021</td>
+                                    <td><span class="state stop">Paused</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -267,10 +267,10 @@
                     </div>
                     <div class="align_flex between">
                         <div class="left">
-                            <button class="btns black">Suspend service of the selected hospital(Company)</button>
+                            <button class="btns black">Switch Selected Items as Paused</button>
                         </div>
                         <div class="right">
-                            <button class="btns blue" onclick="admin.modalsShow('modals')">Register</button>
+                            <button class="btns blue" onclick="admin.modalsShow('modals')">Create new</button>
                         </div>
                     </div>
                 </div>
