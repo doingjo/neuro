@@ -940,7 +940,7 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .linechat .bar_tip li span::after{content: '';position: absolute;left:50%;top:100%;display: inline-block;width: 0px;height: 0px;margin-left:-1.1111vw;border-top: 1.1111vw solid #212529;border-left: 1.1111vw solid transparent;border-right: 1.1111vw solid transparent;}
 
 .period_search{height: 15.5556vw;position: relative;margin-bottom:13.3333vw;}
-.period_search input{width:100%;border-radius: 3.3333vw;border: solid 1px #dee2e6;height:15.5556vw;line-height:15.5556vw;outline: none;padding-left: 5.5556vw; font-family: Roboto;font-size: 4.4444vw;font-weight: bold;color: #212121;}
+.period_search input{position:relative;z-index:1; background-color:transparent; width:100%;border-radius: 3.3333vw;border: solid 1px #dee2e6;height:15.5556vw;line-height:15.5556vw;outline: none;padding-left: 5.5556vw; font-family: Roboto;font-size: 4.4444vw;font-weight: bold;color: #212121;}
 .period_search .btn{display: inline-block;width: 6.6667vw;height: 6.6667vw;position: absolute;right:5.5556vw;top:4.4444vw;background:url('../images/icon-ui-search.svg') repeat-y center top;background-size: 100%;font-size: 0;}
 
 .sports_swiper {margin:0 -6.6667vw;}
@@ -1010,9 +1010,12 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .sports_add .sports li:first-child{margin-top:0;}
 .sports_add .sports li .radio_mark label span{display: block;margin:1.3889vw 0 0 0;font-size:4.4444vw;font-weight:700;letter-spacing:-.5px}
 
+.line.full +.schedule_list{padding-top:0;}
+.schedule_list{margin:0 -6.6667vw;padding:10.25641vw 6.6667vw;}
+.schedule_list.medical{background-color:#f8f9fa}
 .schedule_list h2{font-family: Montserrat;font-size: 5.0000vw;font-weight: bold;color: #000;padding-bottom:5.5556vw;}
 .schedule_list .today_btn{display: inline-block;float:right;width: 11.6667vw;height: 6.6667vw;line-height: 6.6667vw;border-radius: 3.3333vw;border: solid 0.2778vw #6183e2;font-size: 3.0556vw;font-weight: bold;text-align: center;color: #6183e2;margin-top:-11.9444vw}
-.schedule_list > ul{padding:1.6667vw 0 17.7778vw;}
+.schedule_list > ul{padding:1.6667vw 0 0;}
 .schedule_list > ul > li .card{display: block;padding:6.6667vw 0 6.6667vw 17.5000vw;position: relative;}
 .schedule_list > ul > li .card .icon{position: absolute;top:6.6667vw;left:0;display: inline-block; width: 11.6667vw;height: 11.6667vw;border-radius: 4.4444vw;background-color: #5280e2;}
 .schedule_list > ul > li .card .icon img{width:100%;height:100%;}
