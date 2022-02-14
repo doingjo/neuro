@@ -750,7 +750,6 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .probar .semicircle .ru ul li.on{background: rgb(82, 128, 226);}
 .probar .text{display: block;margin:4.4444vw auto 8.8889vw;text-align: center;font-size: 5.0000vw;font-weight: bold;color: #212529;}
 
-
 .piechart-wrap{margin:0 auto;width:56.4102vw}
 .piechart-wrap .chart{position:relative}
 .piechart-wrap .chart .dot-list li{position:absolute;bottom:0;display:inline-block;width:1.282vw;height:1.282vw;background:#dee2e6;border-radius:100%}
@@ -770,6 +769,23 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .piechart-wrap .chart .pin{position:absolute;bottom:1.111vw;left:calc(50% - 1.5384vw); transform:rotate(0deg);transform-origin:bottom center}
 .piechart-wrap .chart .pin::before{content:'';display:inline-block; width:3.3333vw;height:11.3889vw;margin-bottom:-1.5384vw; background:url('../images/chart_pointer.png') no-repeat center center;background-size:100% 100%}
 .piechart-wrap .txt_val{font-weight:bold;font-size:7.6923vw;line-height:8.9743vw;color:#2f455c;text-align:center; position:absolute;left:50%;bottom:-2.5641vw;transform: translateX(-50%);}
+
+.bearing_barchart_wrap{margin-top:5.5556vw;padding:6.9444vw 0 6.1111vw; border-top:.2778vw solid #e9ecef;}
+.bearing_barchart_wrap >strong{font-size:3.8889vw;color:#212529;font-weight:500}
+.bearing_barchart_wrap .chart{display:flex;position:relative; height:33.3333vw;margin-top:8.8888vw;}
+.bearing_barchart_wrap .chart::after{content:'';position:absolute;bottom:1.666vw;left:0;right:0;height:.2778vw; background:url('../images/line_7.svg') no-repeat 0 0;background-size:100%}
+.bearing_barchart_wrap .chart >div{position:relative; margin:0 2.0833vw;width:3.3334vw; text-align:center}
+.bearing_barchart_wrap .chart >div strong{position:absolute;top:100%;left:-2.0833vw;right:-2.0833vw; margin-top:1.9444vw; font-family:Montserrat;font-size:3.3334vw;color:#000;}
+.bearing_barchart_wrap .chart >div p{position:absolute;bottom:0; width:100%;min-height:3.3334vw; border-radius:3.3334vw; background-color:#5280e2;}
+.bearing_barchart_wrap .chart >div p span{position:absolute;bottom:100%;left:-2.0833vw;right:-2.0833vw; font-family:Montserrat;font-size:2.5vw;color:#5280e2;line-height:1.8;font-weight:700;word-break:keep-all;}
+
+.bearing_linechart_wrap{margin-top:6.3888vw;padding:8.3333vw 0 6.9444vw 5.5556vw; border-top:.2778vw solid #e9ecef;}
+.bearing_linechart_wrap .chart{position:relative; height:22.2222vw;}
+.bearing_linechart_wrap .chart::before{content:''; position:absolute;top:0;left:0;width:100%;height:.2778vw; background:url('../images/line_7.svg') no-repeat 0 0;background-size:100%}
+.bearing_linechart_wrap .chart::after{content:''; position:absolute;bottom:0;left:0;width:100%;height:.2778vw; background:url('../images/line_7.svg') no-repeat 0 0;background-size:100%}
+.bearing_linechart_wrap .chart .baseline{position:absolute;bottom:50%;left:-7.5vw;width:100%;height:3.3333vw;margin-bottom:-1.6667vw; font-size:2.5vw;color:#868e96;}
+.bearing_linechart_wrap .chart .baseline::after{content:''; position:absolute;top:1.6667vw;left:7.5vw;right:-7.5vw; height:.2778vw; background:url('../images/line_7.svg') no-repeat 0 0;background-size:100%}
+.bearing_linechart_wrap .chart .tick span{position:absolute;top:calc(100% + 3.3333vw);font-size:3.0556vw;color:#5280e2;font-weight:500;word-break:keep-all; transform:translate(-50%, 0);}
 
 .bubble_texts{margin-top:5vw;}
 .bubble_texts li{margin-bottom:2.222vw;padding-left:4.4445vw;text-indent:-4.4445vw; font-size:3.0556vw;font-weight: 700;line-height: 1.4;color: #212529;}

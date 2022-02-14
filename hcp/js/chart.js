@@ -231,5 +231,85 @@ var chart = chart || {
       }
       box.append('<div class="legend"><p>100</p><p>75</p><p>50</p><p>25</p><p>0</p><p>달성률(%)</p></div>');
       box.append('<div class="bar-wrap">'+ barWRap +'</div>');
-    }
+    },
+    bearingBarChart: function($this, data){
+      var box = $($this),
+          dataSet = data,
+          barWRap = '',
+          valueMax = dataSet.map(function(d){return d.value});
+          valueMax = Math.max.apply(null, valueMax);
+          for(var i = 0; i < dataSet.length; i++){
+            (valueMax === dataSet[i].value)? max = 'max' : max = '';
+            var percent = dataSet[i].value / (valueMax /100);
+            barWRap += '<div class="'+max+'"><p style="height:'+percent+'%;"><span>'+dataSet[i].value+'</span></p><strong>'+ (i+1) +'</strong></div>'
+          }
+          box.append(barWRap);
+    },
+    bearingLineChart:function($this, data){
+      if($($this).length == 0){return}
+      var box = $($this),
+          dataSet = data,
+          dataValue = data.data,
+          width = box.width(),
+          boxWidth = (width / 900) * dataSet.totalTime,
+          height = box.height(),
+          max = Math.ceil(d3.max(dataValue, function(d){return d.value}));
+      box.append('<p class="baseline" style="bottom:'+ dataSet.baseline/(max/100) +'%;">기준</p>');
+      box.append('<div class="tick"><span style="left:'+ (width / 900) * 240 +'px;">04:00</span><span style="left:'+ (width / 900) * 720 +'px;">12:00</span></div>');
+      var xScale = d3.scaleBand()
+          .domain(dataValue.map(function(d, i){return d.date}))
+          .range([0, boxWidth]);
+      var yScale = d3.scaleLinear()
+          .domain([0, max])
+          .range([height, 0]);
+      var svg = d3.select($this).append('svg').attr('width', boxWidth).attr('height', height);
+          g = svg.append("g").attr("transform", "translate(0,0)");
+
+      const line = d3.line()
+        .defined(d => !isNaN(d.value))
+        .x(d => xScale(d.date))
+        .y(d => yScale(d.value));
+
+      const area = d3.area()
+        .x(d => xScale(d.date))
+        .y0(yScale(dataSet.baseline))
+        .y1(d => yScale(d.value));
+
+      const grad = g.append("defs").append("linearGradient")
+        .attr("id", "grad")
+        .attr("x1", "0%")
+        .attr("x2", "0%")
+        .attr("y1", "0%")
+        .attr("y2", "100%");
+
+      grad.append("stop")
+        .attr("offset", "0%")
+        .style("stop-color", "#3fb3ff")
+        .style("stop-opacity", 0);
+
+      grad.append("stop")
+        .attr("offset", "100%")
+        .style("stop-color", "#3fb3ff")
+         .style("stop-opacity", .5);
+
+      var lineWrap = g.append('g')
+                      .attr('class', 'line')
+                      .attr('transform', 'translate('+ (width / dataValue.length)/2 +',0)');
+      lineWrap.append("path")
+        .datum(dataValue)
+        .style("fill", "url(#grad)")
+        .attr("d", line)
+        .attr("d", area);
+
+      lineWrap.append("path")
+        .datum(dataValue)
+        .attr("fill", "none")
+        .attr("stroke", "#5280e2")
+        .attr("stroke-width", 2)
+        .attr("stroke-linejoin", "round")
+        .attr("stroke-linecap", "round")
+        .attr("d", line);
+
+      svg.node();
+    },
 };

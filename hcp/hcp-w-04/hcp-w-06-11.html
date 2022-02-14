@@ -97,23 +97,40 @@
                     <div class="box_flex1box">
                         <h4 class="tac">Left Partial Weight Bearing Graph</h4>
                         <script>
-                          /* 최대 10까지 생성 */
-                          var bearingBarChartData = [
-                            {value: 100},
-                            {value: 200},
-                            {value: 355},
-                            {value: 255},
-                            {value: 0},
-                            {value: 1000},
-                            {value: 307},
-                          ];
+                          var bearingLineChartData = {
+                            totalTime : '600', //1초 단위, max : 900 = 15 * 60
+                            baseline : 600, //기준
+                            'data' : [
+                              {date:'01', value: 1100},
+                              {date:'02', value: 1110},
+                              {date:'03', value: 1200},
+                              {date:'04', value: 1050},
+                              {date:'05', value: 1080},
+                              {date:'06', value: 1100},
+                              {date:'07', value: 1120},
+                              {date:'08', value: 1140},
+                              {date:'09', value: 1200},
+                              {date:'10', value: 1100},
+                              {date:'11', value: 1100},
+                              {date:'12', value: 1110},
+                              {date:'13', value: 1200},
+                              {date:'14', value: 1050},
+                              {date:'15', value: 1080},
+                              {date:'16', value: 1100},
+                              {date:'17', value: 1120},
+                              {date:'18', value: 1140},
+                              {date:'19', value: 1200},
+                              {date:'20', value: 1100},
+                            ]
+                          }
                           $(function(){
-                            chart.bearingBarChart('.bearing_barchart_wrap .chart', bearingBarChartData);
+                            chart.bearingLineChart('.bearing_linechart_wrap .chart', bearingLineChartData);
                           });
                         </script>
-                        <div class="bearing_barchart_wrap"><div class="chart"></div></div>
+                        <div class="bearing_linechart_wrap"><div class="chart"></div></div>
                     </div>
                 </div>
+
             </div>
         </div>
 

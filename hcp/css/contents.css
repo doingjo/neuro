@@ -498,8 +498,9 @@ footer .inner_logo{margin-top:32px;text-align: center;}
 .inner_option_data .area_data{overflow:hidden;margin-top:16px;margin-left:8px;padding:10px 12px;background-color: #fff;border-radius:8px;}
 .inner_option_data .area_data.hidden{display: none;}
 .inner_option_data .area_data p{float:left;padding:0 8px;font-size:13px;line-height:19px;color:#868e96;}
-.linechart-wrap{margin:32px 0 24px; overflow-x:auto; border-radius: 8px;border: solid 1px #e9ecef;}
-.tbl_notice.type_data + .both_btn{margin-top:24px;}
+.linechart-wrap{margin-top:32px; overflow-x:auto; border-radius: 8px;border: solid 1px #e9ecef;}
+.tbl_notice.type_data,
+.inner_tbl_overx +.both_btn{margin-top:24px;}
 
 /* 문의 */
 .inner_reply{padding:32px;background-color:#f8f9fc;border-radius:8px;}
@@ -665,12 +666,13 @@ h4 + .balance_data {margin-top:34px;}
 .wrap_inner_flex1box .inner_flex1box{flex:1 1 0;margin:0 10px;}
 .wrap_inner_flex1box .inner_flex1box{margin-top:0;}
 .wrap_inner_flex1box + .inner_flex1box{margin-top:20px;}
-.bearing.wrap_inner_flex1box .inner_flex1box:nth-child(1){display:block;flex:none; width:240px;padding:35px 40px;}
+.bearing.wrap_inner_flex1box .inner_flex1box:nth-child(1){display:block;flex:none; width:360px;padding:35px 40px;}
 .bearing.wrap_inner_flex1box .inner_flex1box >p{font-size:14px;line-height:1.5;color:#212529;font-weight:500}
 .bearing.wrap_inner_flex1box .inner_flex1box >p em{color:#5280e2;}
 .bearing.wrap_inner_flex1box .inner_flex1box:nth-child(1) >div{margin-top:20px;padding-top:20px; border-top:1px solid #e9ecef;}
 .bearing.wrap_inner_flex1box .inner_flex1box:nth-child(1) >div strong{font-size:15px;color:#212529;font-weight:400}
 .bearing.wrap_inner_flex1box .inner_flex1box:nth-child(1) >div p{font-size:24px;color:#212529;font-weight:700}
+.bearing.wrap_inner_flex1box .inner_flex1box:nth-child(2){padding:40px 48px 22px;}
 .inner_board_base{padding:48px 0;border-bottom:1px solid #e9ecef;}
 .box_connect_wayto{overflow:hidden;width:640px;margin:32px auto;border-radius:20px;background-color:#fff;}
 .inner_record.empty .box_connect_wayto .tit_wayto{padding:16px;background-color:#50638a;font-weight:300;font-size:13px;line-height:19px;color:#fff;}
@@ -702,7 +704,6 @@ h4 + .balance_data {margin-top:34px;}
 .tit_nbadge .txt{font-size:15px;color:#212529;font-weight:700;letter-spacing:-.5px}
 .seg_schedule .box_cnt .txt_gauge{margin-top:4px;font-weight:bold;font-size:13px;line-height:16px;color:#5280e2;}
 .box_graph_phase{margin-top:24px;}
-
 
 .modals .mod_body .txt_msg{margin-bottom:24px;font-weight:bold;font-size:15px;line-height:26px;color:#212529;}
 .modals .mod_body .box_msg{min-width:296px;padding:13px 20px;background-color:#f4f6fc;border-radius: 8px;text-align: center;}
@@ -843,6 +844,19 @@ h4 + .balance_data {margin-top:34px;}
 .achieve-wrap .chart .bar-wrap .bar:last-child .tick{color:#434cff;}
 .achieve-wrap .chart .bar-wrap .bar.max span{background-color:#5280e2}
 
+.bearing_barchart_wrap{width:800px;margin:30px auto 0;padding:20px 0 25px;}
+.bearing_barchart_wrap .chart{display:flex; height:120px;padding:0 40px; border-bottom:1px solid #ced4da;}
+.bearing_barchart_wrap .chart >div{position:relative; margin:0 20px;width:32px; text-align:center}
+.bearing_barchart_wrap .chart >div strong{position:absolute;top:100%;left:-20px;right:-20px; margin-top:7px; font-size:15px}
+.bearing_barchart_wrap .chart >div p{position:absolute;bottom:0; width:100%; background-image: linear-gradient(to bottom, #34f5c6 0%, #5280e2 100%);}
+.bearing_barchart_wrap .chart >div p span{position:absolute;bottom:100%;left:-20px;right:-20px; font-size:14px;color:#5280e2;font-weight:700;word-break:keep-all;}
+
+.bearing_linechart_wrap{margin-top:40px;padding:0 0 55px 20px;}
+.bearing_linechart_wrap .chart{position:relative; height:100px; border-top:1px solid #ced4da;border-bottom:1px solid #ced4da;}
+.bearing_linechart_wrap .chart .baseline{position:absolute;bottom:50%;left:-35px;width:100%;height:20px;margin-bottom:-10px; font-size:12px;color:#868e96;}
+.bearing_linechart_wrap .chart .baseline::after{content:''; position:absolute;top:10px;left:35px;right:-35px; height:1px; background-color:#ced4da}
+.bearing_linechart_wrap .chart .tick span{position:absolute;top:calc(100% + 27px);font-size:13px;color:#5280e2;font-weight:500;word-break:keep-all; transform:translate(-50%, 0);}
+
 /* 회원가입 */
 .wrapper.join .header{height:90px;}
 .wrapper.join .inner_gnb,
@@ -938,6 +952,9 @@ h4 + .balance_data {margin-top:34px;}
 .list_gauge .txt_name strong{display:block; font-weight:500}
 .list_gauge .txt_rate{font-size:13px;line-height:15px;color:#212529;}
 .inner_overbox{position: absolute;top:96px;right:22px;bottom:36px;left:26px;overflow-y:scroll;padding:0 22px 12px;}
+.inner_overbox::-webkit-scrollbar{position:relative;right:12px;width:4px;}
+.inner_overbox::-webkit-scrollbar-track{overflow:hidden;width:4px;background-color: #eceff6;border-radius:2px;box-shadow: inset 0 1px 3px 0 rgba(114, 114, 114, 0.23);}
+.inner_overbox::-webkit-scrollbar-thumb{width:100%;background-color:#000;border-radius: 2px;}
 .flex_schedule .box_schedule::after{content:"";position:absolute;left:0;bottom:24px;width:100%;height:24px;background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff 50%);}
 
 .inner_schedule_add + .inner_schedule_add{margin-top:16px;}
@@ -1023,11 +1040,11 @@ h4 + .balance_data {margin-top:34px;}
 .datepicker_open .calendar-table td{width:auto;height:40px;}
 .datepicker_open .calendar-table thead tr:nth-child(2) th{padding-top:auto;height:auto;}
 
-/* scroll */
+/* scroll *
 ::-webkit-scrollbar{position:relative;right:12px;width:4px;}
 ::-webkit-scrollbar-track{overflow:hidden;width:4px;background-color: #eceff6;border-radius:2px;box-shadow: inset 0 1px 3px 0 rgba(114, 114, 114, 0.23);}
 ::-webkit-scrollbar-thumb{width:100%;background-color:#000;border-radius: 2px;}
-
+*/
 /* terms */
 .terms_wrap{font-size:14px;color:#696969;text-align:left;word-break:keep-all;}
 .terms_wrap h2{margin-top:40px;padding:15px; border-radius:8px;background-color:#f8f8f8; font-size:16px;color:#000;font-weight:500;text-align:center;}
@@ -1049,6 +1066,12 @@ h4 + .balance_data {margin-top:34px;}
 
 @media screen and (max-width: 1400px) {
     .container{width:94.7916vw;}
+
+    .bearing_barchart_wrap{width:100%;}
+    .bearing_barchart_wrap .chart{padding:0 5%;}
+    .bearing_barchart_wrap .chart >div{margin:0 2.5%;}
+    .bearing_barchart_wrap .chart >div strong{left:-50%;right:-50%;}
+    .bearing_barchart_wrap .chart >div p span{left:-50%;right:-50%;}
 }
 @media screen and (max-width: 1350px) {
     .inner_gnb {text-align: right;}
@@ -1079,7 +1102,7 @@ h4 + .balance_data {margin-top:34px;}
     .inner_detail_title.type_both > :last-child{margin-top:20px;align-self: flex-start;}
     .inner_detail_title.type_both.short > :last-child{margin-top:0;align-self:center;}
     /* 통계 */
-    .inner_tbl_overx{overflow-x:scroll;}
+    .inner_tbl_overx{overflow-x:auto;}
     .inner_option_data .area_select{width:100%;flex-direction: column;}
     .inner_option_data .box_input{width:100%;align-self:flex-start;}
     .inner_option_data .box_input > *{margin-bottom:12px;}
