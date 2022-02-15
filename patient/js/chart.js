@@ -327,30 +327,37 @@ var chart = chart || {
       if($($this).length == 0){return}
       var box = $($this),
           dataSet = data,
-          dataValue = data.data,
+          dataValue = [],
           width = box.width(),
-          boxWidth = (width / 900) * dataSet.totalTime,
+          boxWidth = (width / 900000) * dataSet.totalTime,
           height = box.height(),
-          max = Math.ceil(d3.max(dataValue, function(d){return d.value}));
-
-      box.append('<p class="baseline" style="bottom:'+ dataSet.baseline/(max/100) +'%;">기준</p>');
-      box.append('<div class="tick"><span style="left:'+ (width / 900) * 240 +'px;">04:00</span><span style="left:'+ (width / 900) * 720 +'px;">12:00</span></div>');
+          max = dataSet.baseline*1.2,
+          min = dataSet.baseline*.8;
+      for(var i = 0; i < data.data.length; i++){
+        if(data.data[i].value > max){
+          data.data[i].value = max
+        }else if(data.data[i].value < min){
+          data.data[i].value = min
+        }
+        dataValue.push({value:data.data[i].value});
+      }
+      box.append('<p class="baseline">기준</p>');
+      box.append('<div class="tick"><span style="left:'+ (width/900000)*240000 +'px;">04:00</span><span style="left:'+ (width/900000)*720000 +'px;">12:00</span></div>');
       var xScale = d3.scaleBand()
-          .domain(dataValue.map(function(d, i){return d.date}))
+          .domain(dataValue.map(function(d, i){return i}))
           .range([0, boxWidth]);
       var yScale = d3.scaleLinear()
-          .domain([0, max])
+          .domain([min, max])
           .range([height, 0]);
       var svg = d3.select($this).append('svg').attr('width', boxWidth).attr('height', height);
           g = svg.append("g").attr("transform", "translate(0,0)");
 
       const line = d3.line()
-        .defined(d => !isNaN(d.value))
-        .x(d => xScale(d.date))
+        .x(function(d,i){return xScale(i)})
         .y(d => yScale(d.value));
 
       const area = d3.area()
-        .x(d => xScale(d.date))
+        .x(function(d,i){return xScale(i)})
         .y0(yScale(dataSet.baseline))
         .y1(d => yScale(d.value));
 
