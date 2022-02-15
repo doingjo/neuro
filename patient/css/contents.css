@@ -68,7 +68,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .input_default label{color: #868e96;font-size: 3.3333vw;}
 .input_default input{width:100%;border:0;height:13.3333vw;line-height:13.3333vw;outline: none;font-size: 5vw;font-weight: bold;padding: 0;}
 .input_default input::placeholder{color:#ced4da;}
-.input_default input:disabled{color:#ced4da;background-color: transparent;}
+.input_default input:disabled{color:#ced4da;background-color:#fff;opacity:1}
 .input_default .text{/*position: absolute;left:0;bottom:0.8333vw;*/color: #868e96;font-size: 3.3333vw;margin-top: 1.9444vw;word-break:keep-all;word-wrap:break-word;}
 .input_default .text.err{display: none;}
 .input_default .input::after{content: '';position: absolute;left:0;bottom:-1px;width:0;height:2px;background: #5280e2;transition: all 0.2s ease-out 0s;}
