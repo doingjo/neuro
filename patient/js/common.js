@@ -367,9 +367,12 @@ function balance(data){
   //function resizer(){
   const yScale = d3.scaleLinear().domain([endDay, startDay]).range([10, height]);
   const xScale = d3.scaleLinear().domain([6, 0]).range([width, 10]);
-  const yAxisSVG = d3.select("svg").append("g")//.select('text');
+  const yAxisSVG = d3.select("svg").append("g").attr('class','ticks')//.select('text');
   const yAxis = d3.axisRight(yScale).tickSize(0).ticks(dataLength);
   yAxis(yAxisSVG);
+
+console.log(dataLength)
+
   const linearGenerator = d3.line()
     .x(function(d, index) {
       if(d.value == null || d.value == ''){
@@ -400,7 +403,7 @@ function balance(data){
     if(data[index].value == null || data[index].value == ''){
       return "nodata";
     }else{
-      return 'tick';
+      //return 'tick';
     }
   }).selectAll("text").text(function(d) {
     return (d < 10) ? ("0" + d) : d;

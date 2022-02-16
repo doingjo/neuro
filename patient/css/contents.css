@@ -835,8 +835,10 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 
 #balance{padding-top:14.1111vw;}
 #balance .domain{opacity: 0;}
-#balance .tick{font-family: Montserrat !important;font-size: 3.3333vw;font-weight: bold;line-height: 1.67;color: #000;}
+
+#balance .ticks g text{font-family: Montserrat !important;font-size: 3.3333vw;font-weight: bold;line-height: 1.67;color: #000;}
 #balance .nodata{font-family: Montserrat !important;font-size: 3.3333vw;font-weight: bold;line-height: 1.67;color: #ced4da;}
+
 #balance .balance{padding-left:11.1111vw;position: absolute;left:6.1111vw;top:8.8889vw;right:6.1111vw;bottom:0;}
 #balance .balance > div{height: 100%;float:left;text-align: center;width:33.3%;font-size: 3.8889vw;font-weight: bold;line-height: 1.43;text-align: center;color: #212529;}
 #balance .balance > div:first-child{text-align: left;color: #868e96;font-weight: 500;}
@@ -1134,3 +1136,12 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 
 /*.noti_box{margin-bottom:4.444vw;padding:3vw 3vw 3vw 4.85vw;background-color:#f8f9fa; font-size:3.0856vw;color:#868e96;line-height:1.5;word-break:keep-all;text-indent:-1.85vw}*/
 .noti_box{margin-top:5.556vw;padding-left:1.85vw; font-size:3.0556vw;color:#868e96;line-height:1.5;word-break:keep-all;text-indent:-1.85vw}
+
+/* error */
+.data-wrap{width:100%;height:100%; text-align:center;}
+.data-wrap .lottie{margin:0 auto;width:19.4445vw;height:19.4445vw;max-width:80px;max-height:80px;}
+.data-wrap .cont{width:80vw; position:absolute;top:50%;left:50%;transform:translate(-50%, -65%);}
+.data-wrap .cont >strong{display:inline-block; margin-top:40px; font-size:26px;line-height:1.3;color:#212529;font-weight:700;}
+.data-wrap .cont >p{margin-top:13px; font-size:14px;color:#868e96;word-break:keep-all;}
+.data-wrap .btn-bottom{position:fixed;bottom:12.8205vw;left:7.1794vw;right:7.1794vw; }
+.data-wrap .btn-bottom a{display:inline-block;width:100%; height:56px; font-size:16px;line-height:56px;color:#fff;font-weight:700; border-radius:28px;background-color:#5280e2;}
