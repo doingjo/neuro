@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <link rel="stylesheet" href="../css/NotoSansKR.css">
+    <link rel="stylesheet" href="../css/Montserrat.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/lottie-player.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page botbtn">
+        <div class="page_head">
+          <h1>Schedule</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <div class="hselect">
+            <select name="" id="" class="form_select">
+              <option value="month">Month</option>
+              <option value="week">Week</option>
+            </select>
+          </div>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div id='calendar'></div>
+          <hr class="line full" />
+          <div class="schedule_list"><!-- 의료진 등록 시 medical -->
+            <h2>10.01</h2>
+            <a href="#none" class="today_btn">Today</a>
+            <hr class="line_box" />
+            <!--
+              운동 아이콘 명칭
+              까치발 = tiptoe
+              왼발 부하 = left-overload
+              오른발 부하 = right-overload
+              의자 앉기 = sit
+              계단 오르 내리기 = up-down
+              왼발 외발서기 = left-onefoot
+              오른발 외발서기 = right-onefoot
+              스쿼트 = squat
+              제자리 서기 = stand
+              러닝 = running
+              보행 = walking
+            -->
+            <ul>
+              <li>
+                <a href="#" class="card ing">
+                  <span class="icon"><img src="../images/ico-walking.svg" alt=""></span>
+                  <span class="state">In Progress</span>
+                  <div class="ti">Partial Weight Bearing</div>
+                  <div class="tx">Single heel raise(afficted side)</div>
+                  <ol class="txlist">
+                    <li>1. 무릎 천천리 올리기</li>
+                    <li>2. 골반 높이까지 올리세요</li>
+                    <li>3. 자세한 설명이 들어가는 영역입니다.</li>
+                  </ol>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card stop">
+                  <span class="icon"><img src="../images/ico-tiptoe.svg" alt=""></span>
+                  <span class="state">Not Achieved</span>
+                  <div class="ti">Ankle</div>
+                  <div class="tx">10 meter walking</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card end">
+                  <span class="icon"><img src="../images/ico-left-onefoot.svg" alt=""></span>
+                  <span class="state">Achieved</span>
+                  <div class="ti">Ankle</div>
+                  <div class="tx">10 meter walking</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card ing">
+                  <span class="icon"><img src="../images/ico-squat.svg" alt=""></span>
+                  <span class="state">In Progress</span>
+                  <div class="ti">Partial Weight Bearing</div>
+                  <div class="tx">Single heel raise(afficted side)</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="schedule_list medical">
+            <h2>10.01</h2>
+            <a href="#none" class="today_btn">Today</a>
+            <hr class="line_box" />
+            <ul>
+              <li>
+                <a href="#" class="card ing">
+                  <span class="icon"><img src="../images/ico-walking.svg" alt=""></span>
+                  <span class="state">In Progress</span>
+                  <div class="ti">Partial Weight Bearing</div>
+                  <div class="tx">Single heel raise(afficted side)</div>
+                  <ol class="txlist">
+                    <li>1. 무릎 천천리 올리기</li>
+                    <li>2. 골반 높이까지 올리세요</li>
+                    <li>3. 자세한 설명이 들어가는 영역입니다.</li>
+                  </ol>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card stop">
+                  <span class="icon"><img src="../images/ico-tiptoe.svg" alt=""></span>
+                  <span class="state">Not Achieved</span>
+                  <div class="ti">Ankle</div>
+                  <div class="tx">10 meter walking</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card end">
+                  <span class="icon"><img src="../images/ico-left-onefoot.svg" alt=""></span>
+                  <span class="state">Achieved</span>
+                  <div class="ti">Ankle</div>
+                  <div class="tx">10 meter walking</div>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="card ing">
+                  <span class="icon"><img src="../images/ico-squat.svg" alt=""></span>
+                  <span class="state">In Progress</span>
+                  <div class="ti">Partial Weight Bearing</div>
+                  <div class="tx">Single heel raise(afficted side)</div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="bottom_btn"><a href="#" class="button_default r">Add New Schedule</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/schedule.js"></script>
+  <script>
+    var Language = ['S','M','T','W','T','F','S']
+    schedule(Language);
+  </script>
+</body>
+</html>

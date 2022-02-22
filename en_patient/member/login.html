@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <link rel="stylesheet" href="../css/NotoSansKR.css">
+    <link rel="stylesheet" href="../css/Montserrat.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/lottie-player.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="login_page">
+      <div class="login_form">
+        <h1><img src="../images/bi.svg" alt="NEUROGAIT" /></h1>
+        <div class="form">
+          <h2>Sign in</h2>
+          <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+            <div class="input pl20">
+              <select name="" id="" class="form_select dis">
+                <option value="" disabled selected>Select</option>
+                <option value="Research">Research</option>
+              </select>
+            </div>
+            <div class="text err">에러 메시지</div>
+          </div>
+          <div class="input_default login_id"><!-- class "error" 넣으면 에러표시함-->
+            <div class="input">
+              <label for="login_id">
+                <input type="text" name="" id="login_id" placeholder="ID" />
+              </label>
+            </div>
+            <div class="text err">에러 메시지</div>
+          </div>
+          <div class="input_default login_pw"><!-- class "error" 넣으면 에러표시함-->
+            <div class="input">
+              <label for="login_pw">
+                <input type="password" name="" id="login_pw" placeholder="Password" />
+              </label>
+            </div>
+            <div class="text err">에러 메시지</div>
+          </div>
+          <div class="save_check">
+            <span class="checkbox">
+              <input type="checkbox" name="" id="save" />
+              <label for="save">Keep me logged in</label>
+            </span>
+          </div>
+          <button type="submit" onclick="modals_show('modals')">Login</button>
+          <div class="join_text">
+            <a href="#">Create a New Account?</a>
+          </div>
+        </div>
+        <ul class="but_link">
+          <li><a href="#">Find ID</a></li>
+          <li><a href="#">Reset Password</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="modals" id="modals">
+      <div class="box">
+        <div class="mod_hade">
+          <p>Notice</p>
+        </div>
+        <div class="mod_body">
+          Your account is already logged in on another device.<br />When you try to log in, your account on other devices will be automatically logged out.
+        </div>
+        <div class="mod_bott">
+          <div class="tfixed">
+            <div class="tfcell">
+              <button onclick="modals_close('modals')">Cancel</button>
+            </div>
+            <div class="tfcell">
+              <button onclick="modals_close('modals')">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/common.js"></script>
+</body>
+</html>

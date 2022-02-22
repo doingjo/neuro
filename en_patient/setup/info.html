@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <link rel="stylesheet" href="../css/NotoSansKR.css">
+    <link rel="stylesheet" href="../css/Montserrat.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/lottie-player.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page"><!-- 데이터 없을때 class=nodata 추가 -->
+        <div class="page_head">
+          <h1>Profile</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <form action="">
+              <div class="info_member">
+                <a href="#" class="img">
+                  <!--
+                    남성 : profile-male.svg , 여성 : profile-female.svg
+                  -->
+                  <div><img src="../images/profile-male.svg" alt=""></div>
+                  <span></span>
+                </a>
+                <div class="name">정수화</div>
+                <div class="id">jeongsoohwa</div>
+              </div>
+              <div class="input_default">
+                <div class="input">
+                  <label for="uesrid">ID</label>
+                  <input type="text" name="" id="uuesrid" placeholder="jeongsoohwa" />
+                </div>
+              </div>
+              <div class="tixed">
+                <div class="tfcell">
+                  <div class="input_default">
+                    <div class="input">
+                      <label for="">Name</label>
+                      <input type="text" name="" id="" value="수화" placeholder="이름" />
+                    </div>
+                  </div>
+                </div>
+                <div class="tfcell" style="width:4.4444vw;"></div>
+                <div class="tfcell">
+                  <div class="input_default">
+                    <div class="input">
+                      <label for="">Family Name</label>
+                      <input type="text" name="" id="" value="정" placeholder="성" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="sex">Sex</label>
+                  <select name="" id="sex" class="form_select">
+                    <option value="">선택</option>
+                    <option value="" selected>여자</option>
+                  </select>
+                </div>
+                <div class="text err">에러 메시지</div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="birth">Date of Birth</label>
+                  <input type="text" name="" id="birth" value="1999.09.09" placeholder="YYYY.MM.DD" />
+                </div>
+                <div class="text err">생년월일을 확인해 주세요.</div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="birth">Country</label>
+                  <input type="text" name="" id="birth" value="대한민국" placeholder="국가" disabled />
+                </div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="residence">Residence</label>
+                  <input type="text" name="" id="residence" value="서울" placeholder="거주지 입력" />
+                </div>
+                <div class="text err">에러 메시지</div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="">Mobile number</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="tel" name="" id="" value="+82 10-1234-5678" placeholder="‘-’없이 입력" /></div>
+                    <div class="tfcell">
+                      <a href="#"  class="button_small">변경</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="text err">휴대폰 번호를 확인해 주세요.</div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="">Email</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="text" name="" id="" value="abcd@gmail.com" placeholder="이메일 입력" /></div>
+                    <div class="tfcell">
+                      <a href="#"  class="button_small">변경</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="text err">이메일를 확인해 주세요.</div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="pw">Password</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="password" name="" id="pw" value="1111111111" placeholder="8~16 자리, 영문/숫자/특수문자 조합" /></div>
+                    <div class="tfcell">
+                      <a href="#"  class="button_small">변경</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="text err">8~16 자리, 영문/숫자/특수문자 조합이 아닙니다.</div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="size">키</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="tel" name="" id="size" value="170 cm" placeholder="숫자 입력" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="size">체중</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="tel" name="" id="size" value="55 kg" placeholder="숫자 입력" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="form_ti">발 사이즈 정보
+                <a href="#" class="tip_icon">설명</a>
+                <div class="tip_pop">
+                  <div class="tip_poph">발 사이즈 / 다리길이 측정 방법</div>
+                  <div class="tip_popb">
+                    <div>
+                      <strong>01. 발 사이즈</strong>
+                      <p>발을 종이 위에 올리고 가장 긴 발가락 끝과 발뒤꿈치를 기준으로 체크합니다.</p>
+                    </div>
+                    <div>
+                      <strong>02. 다리길이</strong>
+                      <p>골반에서 안쪽 복사뼈까지 길이를 기준으로 체크 합니다.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="size">발 사이즈</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="tel" name="" id="size" value="310 mm" placeholder="숫자 입력" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="leftsize">왼쪽 다리길이(선택)</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="tel" name="" id="leftsize" value="101.3 cm" placeholder="숫자 입력" /></div>
+                  </div>
+                </div>
+              </div>
+              <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
+                <div class="input">
+                  <label for="rightsize">오른쪽 다리길이(선택)</label>
+                  <div class="tixed">
+                    <div class="tfcell"><input type="tel" name="" id="rightsize" value="99.3 cm" placeholder="숫자 입력" /></div>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="btn_medical">Examinations</a>
+
+              <div class=""><button type="submit" class="button_default">수정 완료</button></div>
+          </form>
+          <a href="#" class="leavebtn">Delete My Account</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

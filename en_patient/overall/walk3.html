@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <link rel="stylesheet" href="../css/NotoSansKR.css">
+    <link rel="stylesheet" href="../css/Montserrat.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/lottie-player.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>Overall Results</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="period_search">
+            <input type="text" id="calendar" name="" value="2021.10.3 - 2021.10.3" onfocus="this.blur()" inputmode="none" />
+            <a href="#" class="btn">검색</a>
+          </div>
+          <p class="over_ti">GCT 밸런스</p>
+          <div class="over_box mb gct">
+            <div id="balance" style=" width: 100%;">
+              <div class="balance clear">
+                <div><strong>Lean to L</strong></div>
+                <div><strong>Normal</strong><span class="bg"></span></div>
+                <div><strong>Lean to R</strong></div>
+              </div>
+              <svg id="balancesvg" style="width: 100%;">
+              </svg>
+              <a href="#" class="more">펼쳐보기</a>
+            </div>
+            <script>
+              const balanceData = [
+                { value : 1, day : "08" },
+                { value : 2, day : "10" },
+                { value : 2, day : "11" },
+                { value : 3, day : "15" },
+                { value : 2, day : "17" },
+                { value : 4, day : "18" },
+                { value : 5, day : "19" },
+                { value : 1, day : "20" }
+              ];
+              balance(balanceData)
+            </script>
+          </div>
+          <p class="over_ti">보행 주기</p>
+          <div class="over_box mb bachart_box">
+            <div class="ba_ti clear">
+              <div>왼발<span style="left:60%"><s>표준</s></span></div>
+              <div>오른발<span style="left:60%"><s>표준</s></span></div>
+            </div>
+            <div id="bachart">
+            </div>
+            <script>
+              const bachartData = [
+                { left : 60, right : 60, day : '08' },
+                { left : 60, right : 60, day : "09" },
+                { left : 60, right : 60, day : "10" },
+                { left : 60, right : 60, day : "11" },
+                { left : null, right : null, day : "12" },
+                { left : 60, right : 60, day : "13" },
+                { left : 60, right : 60, day : "14" },
+                { left : 60, right : 60, day : "15" },
+                { left : '', right : '', day : "16" },
+                { left : 60, right : 60, day : "17" },
+                { left : 60, right : 60, day : "18" },
+                { left : 60, right : 60, day : "19" },
+                { left : 60, right : 60, day : "20" },
+              ];
+              bachart(bachartData,'bachart')
+            </script>
+            <a href="#" class="more">펼쳐보기</a>
+          </div>
+          <p class="over_ti">Comparison of Start/End Date GCT Balance</p>
+          <div class="balance_sw">
+            <div class="swiper aotoswiperc">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="ti">Left-right GCT Balance
+                      <a href="#" class="tip_icon">설명</a>
+                      <div class="tip_pop">
+                        <div class="tip_poph">
+                          지면 접촉 시간 (GCT)
+                        </div>
+                        <div class="tip_popb">
+                          <div>
+                            <p>각발이 지면에 닿아있는 시간이 각발의 GCT입니다. GCT밸런스는 각 시간을 비율로 환산한 값으로 51.2% 이내이면 정상 밸런스로 간주합니다.</p>
+                            <p>GCT밸런스 차이가 클 수록 좌우의 비대칭을 보여 줍니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="data">2021.10.15</span>
+                    </div>
+                    <div class="probar">
+                      <div class="piechart-wrap piechart-wrap01"><div class="chart"></div></div>
+                      <div class="text">오른쪽으로 치우침</div>
+                    </div>
+                    <script>
+                      var piechartData01 = {
+                          value : 120 //왼쪽 0~100, 오른쪽 100~200
+                      };
+                      chart.pieChart('.piechart-wrap01 .chart', piechartData01);
+                    </script>
+                    <div class="over_data tfixed pb0">
+                      <div class="tfcell">
+                        <p class="ti">왼발 GCT(ms)</p>
+                        <div class="data">300</div>
+                      </div>
+                      <div class="tfcell">
+                        <p class="ti">오른발 GCT(ms)</p>
+                        <div class="data">280</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="ti">Left-right GCT Balance
+                      <a href="#" class="tip_icon">설명</a>
+                      <div class="tip_pop">
+                        <div class="tip_poph">
+                          지면 접촉 시간 (GCT)
+                        </div>
+                        <div class="tip_popb">
+                          <div>
+                            <p>각발이 지면에 닿아있는 시간이 각발의 GCT입니다. GCT밸런스는 각 시간을 비율로 환산한 값으로 51.2% 이내이면 정상 밸런스로 간주합니다.</p>
+                            <p>GCT밸런스 차이가 클 수록 좌우의 비대칭을 보여 줍니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="data">2021.10.15</span>
+                    </div>
+                    <div class="probar">
+                      <div class="piechart-wrap piechart-wrap02"><div class="chart"></div></div>
+                      <div class="text">오른쪽으로 치우침</div>
+                    </div>
+                    <script>
+                      var piechartData02 = {
+                          value : 140 //왼쪽 0~100, 오른쪽 100~200
+                      };
+                      chart.pieChart('.piechart-wrap02 .chart', piechartData02);
+                    </script>
+                    <div class="over_data tfixed pb0">
+                      <div class="tfcell">
+                        <p class="ti">왼발 GCT(ms)</p>
+                        <div class="data">300</div>
+                      </div>
+                      <div class="tfcell">
+                        <p class="ti">오른발 GCT(ms)</p>
+                        <div class="data">280</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="ti">Left-right GCT Balance
+                      <a href="#" class="tip_icon">설명</a>
+                      <div class="tip_pop">
+                        <div class="tip_poph">
+                          지면 접촉 시간 (GCT)
+                        </div>
+                        <div class="tip_popb">
+                          <div>
+                            <p>각발이 지면에 닿아있는 시간이 각발의 GCT입니다. GCT밸런스는 각 시간을 비율로 환산한 값으로 51.2% 이내이면 정상 밸런스로 간주합니다.</p>
+                            <p>GCT밸런스 차이가 클 수록 좌우의 비대칭을 보여 줍니다.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="data">2021.10.15</span>
+                    </div>
+                    <div class="probar">
+                      <div class="piechart-wrap piechart-wrap03"><div class="chart"></div></div>
+                      <div class="text">오른쪽으로 치우침</div>
+                    </div>
+                    <script>
+                      var piechartData03 = {
+                          value : 160 //왼쪽 0~100, 오른쪽 100~200
+                      };
+                      chart.pieChart('.piechart-wrap03 .chart', piechartData03);
+                    </script>
+                    <div class="over_data tfixed pb0">
+                      <div class="tfcell">
+                        <p class="ti">왼발 GCT(ms)</p>
+                        <div class="data">300</div>
+                      </div>
+                      <div class="tfcell">
+                        <p class="ti">오른발 GCT(ms)</p>
+                        <div class="data">280</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="noti_box">* This result is for informational purpose, please consult with a specialist for accurate diagnosis and treatment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../js/daterange.js"></script>
+  <script>
+    var Language = ['S','M','T','W','T','F','S']
+    daterangepicker('Select', 'Cancel', Language);
+  </script>
+</body>
+</html>

@@ -2,22 +2,22 @@
     /* faq */
     $('.faq  a').on("click", function(e) {
       if($(this).hasClass("on")){
-				$(this).removeClass("on").parent().find('.faq_view').slideUp();
-			}else{
-				$(this).addClass("on").parent().siblings().find('a').removeClass("on");
-				$(this).parent().find('.faq_view').slideDown().parent().siblings().find('.faq_view').slideUp();
-			}
+        $(this).removeClass("on").parent().find('.faq_view').slideUp();
+      }else{
+        $(this).addClass("on").parent().siblings().find('a').removeClass("on");
+        $(this).parent().find('.faq_view').slideDown().parent().siblings().find('.faq_view').slideUp();
+      }
       return false;
     });
     /* faq */
     /* 문답 내역 */
     $('.inquire_list  .tn').on("click", function(e) {
       if($(this).hasClass("on")){
-				$(this).removeClass("on").parent().find('.cn').slideUp();
-			}else{
-				$(this).addClass("on").parent().siblings().find('a').removeClass("on");
-				$(this).parent().find('.cn').slideDown().parent().siblings().find('.cn').slideUp();
-			}
+        $(this).removeClass("on").parent().find('.cn').slideUp();
+      }else{
+        $(this).addClass("on").parent().siblings().find('a').removeClass("on");
+        $(this).parent().find('.cn').slideDown().parent().siblings().find('.cn').slideUp();
+      }
       return false;
     });
     /* 문답 내역 */
@@ -248,7 +248,7 @@ function mainBalanceData(data){
   overall_data.find('.num strong').html(data.value)
 }
 
-function bubble(data){
+function bubble(data, lang){
   var diameter = 600,color = d3.scaleOrdinal(d3.schemeCategory20c);
   var bubble = d3.pack().size([diameter, diameter]).padding(5);
   var svg = d3.select('#bubble_chart').append('svg').attr('viewBox','0 0 ' + diameter + ' ' + diameter).attr('width', '100%').attr('height', '100%').attr('class', 'chart-svg');
@@ -260,7 +260,7 @@ function bubble(data){
   });
   node.append("text").attr("dy", ".3em").style("font-weight", "bold").style("text-anchor", "middle")
   .text(function(d) {
-    return d.data.value + '회';
+    return d.data.value + lang;
   }).style("fill", "#ffffff").style("font-size", function(d) { return (d.r/11) + 'vw'; })
   var tatgetTag = document.querySelector('.bubble_texts');
   for (let index = 0; index < data.children.length; index++) {
@@ -272,18 +272,18 @@ function bubble(data){
   }
 }
 
-function barchart(data, id, aver){
+function barchart(data, id, lang, aver){
   const bar_chart = document.getElementById(id)
   var valdata = data.map(function(v){return v.value});
   valdata= Math.max.apply(null,valdata);
   for (let index = 0; index < data.length; index++) {
     const element = data[index].value;
     if(aver){
-      var liHtml = `<li><strong>${data[index].value}점</strong><div class="b"><div class="r" style="height:${data[index].value}%"></div></div><span>${data[index].name}</span></li>`
+      var liHtml = `<li><strong>${data[index].value}`+lang+`</strong><div class="b"><div class="r" style="height:${data[index].value}%"></div></div><span>${data[index].name}</span></li>`
       bar_chart.innerHTML += liHtml;
     }else{
       const ratio = Math.floor(100/valdata*element)
-      var liHtml = `<li class=${ratio==100?'on':''}><strong>${data[index].value}회</strong><div class="b"><div class="r" style="height:${ratio}%"></div></div><span>${data[index].name}</span></li>`
+      var liHtml = `<li class=${ratio==100?'on':''}><strong>${data[index].value}`+lang+`</strong><div class="b"><div class="r" style="height:${ratio}%"></div></div><span>${data[index].name}</span></li>`
       bar_chart.innerHTML += liHtml;
     }
     const r = $('#'+id+' .b').eq(index).find('.r');
@@ -501,42 +501,6 @@ function walk_tdata(data){
     }
   }
 }
-function balanceChart($this, data){
-  if($($this).length == 0){return}
-  var boxWrap = $($this),
-      box = boxWrap.find('.chart'),
-      dataSet = data,
-      width = box.width(),
-      height = box.height();
-
-  boxWrap.before('<div class="date"></div>');
-  boxWrap.prepend('<ul class="ticks"><li><span>L치우침</span></li><li><span>정상</span></li><li><span>R치우침</span></li></ul>');
-
-box.append('<ul></ul>');
-
-
-/*
-<div class="balancechart-wrap"><div class="chart-wrap"><div class="chart"></div></div></div>
-
-<div class="walk_wr">
-            <div class="ti"><span class="year"></span>.<span class="month"></span></div>
-            <div class="walk_tchart">
-              <div id="walk_tchart">
-                <ul class="ticks">
-                  <li><span>L치우침</span></li>
-                  <li><span>정상</span></li>
-                  <li><span>R치우침</span></li>
-                </ul>
-                <div id="walkTchart">
-                  <svg></svg>
-                  <ul id="weeklist"></ul>
-                </div>
-              </div>
-*/
-
-}
-
-
 
 function walk_on(index){
   $('#weeklist li').eq(index).addClass("on").siblings().removeClass("on");

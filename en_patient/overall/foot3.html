@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <link rel="stylesheet" href="../css/NotoSansKR.css">
+    <link rel="stylesheet" href="../css/Montserrat.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/lottie-player.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>Overall Results</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="period_search">
+            <input type="text" id="calendar" name="" value="2021.10.3 - 2021.10.7" onfocus="this.blur()" inputmode="none" />
+            <a href="#" class="btn">검색</a>
+          </div>
+          <p class="over_ti">자세 분석 점수 </p>
+          <div class="over_box">
+            <div class="averchart">
+              <div class="barchart">
+                <ul id="barchart1" class="clear average"></ul>
+              </div>
+              <div class="averline"><span class="line"></span><span class="tx">평균</span></div>
+            </div>
+            <script>
+              const bardata1 = [
+                  {name: 17, value: 10},
+                  {name: 18, value: 29},
+                  {name: 19, value: 32},
+                  {name: 20, value: 70},
+                  {name: 21, value: 80},
+                  {name: 22, value: 0},
+                  {name: 23, value: 70},
+                  {name: 24, value: 80},
+                  {name: 25, value: 100}
+                ];
+                barchart(bardata1, 'barchart1', '점', 70);
+                $('#barchart1 li').eq(3).addClass('on')
+            </script>
+          </div>
+          <p class="over_ti">좌/우 앞/뒤 밸런스</p>
+          <div class="over_box mb bachart_box fandr">
+            <div class="ba_ti clear">
+              <div>좌&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;우<span style="left:60%"><s>표준</s></span></div>
+              <div>앞&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;뒤<span style="left:60%"><s>표준</s></span></div>
+            </div>
+            <div id="bachart">
+            </div>
+            <script>
+              const bachartData = [
+                { left : 60, right : 60, day : '08' },
+                { left : 60, right : 60, day : "09" },
+                { left : 60, right : 60, day : "10" },
+                { left : 60, right : 60, day : "11" },
+                { left : null, right : null, day : "12" },
+                { left : 60, right : 60, day : "13" },
+                { left : 60, right : 60, day : "14" },
+                { left : 60, right : 60, day : "15" },
+                { left : '', right : '', day : "16" },
+                { left : 60, right : 60, day : "17" },
+                { left : 60, right : 60, day : "18" },
+                { left : 60, right : 60, day : "19" },
+                { left : 60, right : 60, day : "20" },
+              ];
+              bachart(bachartData,'bachart')
+            </script>
+          </div>
+          <div class="noti_box">* This result is for informational purpose, please consult with a specialist for accurate diagnosis and treatment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../js/daterange.js"></script>
+  <script>
+    var Language = ['S','M','T','W','T','F','S']
+    daterangepicker('Select', 'Cancel', Language);
+  </script>
+</body>
+</html>

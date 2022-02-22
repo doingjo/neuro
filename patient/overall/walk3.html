@@ -32,7 +32,7 @@
     <div class="default_page">
       <div class="page">
         <div class="page_head">
-          <h1>기간 조회</h1>
+          <h1>종합결과</h1>
           <a href="#" class="back_btn"><span>뒤로가기</span></a>
           <span class="headbg"></span>
         </div>
@@ -226,6 +226,9 @@
   </div>
 
   <script type="text/javascript" src="../js/daterange.js"></script>
-  <script>daterangepicker();</script>
+  <script>
+    var Language = [ '일','월','화','수','목','금','토']
+    daterangepicker('선택완료', '취소', Language);
+  </script>
 </body>
 </html>

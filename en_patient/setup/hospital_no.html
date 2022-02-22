@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <link rel="stylesheet" href="../css/NotoSansKR.css">
+    <link rel="stylesheet" href="../css/Montserrat.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/lottie-player.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page nodata"><!-- 데이터 없을때 class=nodata 추가 -->
+        <div class="page_head">
+          <h1>Center / hospital</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <a href="#" class="cord_btn" onclick="modals_show('modals')"><span>Connect to HCP</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="no_data hospital">
+            <div>
+              <span class="ico hospital"><img src="../images/ico-nohospital.svg" alt=""></span>
+              <p>Center/hospital not matched.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modals" id="modals">
+      <div class="box">
+        <div class="mod_hade">
+          <p>Connect to HCP</p>
+        </div>
+        <div class="mod_body tac">
+          My Code : <strong class="co_bu">000000</strong>
+        </div>
+        <div class="mod_bott">
+          <button onclick="modals_close('modals')">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

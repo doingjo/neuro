@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <link rel="stylesheet" href="../css/NotoSansKR.css">
+    <link rel="stylesheet" href="../css/Montserrat.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/lottie-player.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="home_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>Hi, 김운동님</h1>
+          <p class="day">2021.10</p>
+          <a href="#" class="setbtn">설정</a>
+          <div class="head_data">
+            <div>
+              <p class="ti">Achievement</p>
+              <div class="data">67%</div>
+            </div>
+            <div>
+              <p class="ti">Today’s Exercise</p>
+              <div class="data">6</div>
+            </div>
+            <div>
+              <p class="ti">Not Achieved</p>
+              <div class="data red">3</div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="overall_data tfixed nodata">
+            <div class="tfcell">
+              <div class="data">아직 운동을 진행하지 않았어요<br />운동 후 결과를 확인 하세요</div>
+            </div>
+          </div>
+          <div class="overall_data tfixed nodata">
+            <div class="tfcell">
+              <div class="data">오늘을 휴식을 취하셨습니다.</div>
+            </div>
+          </div>
+          <!-- <div class="overall_data tfixed">
+            <div class="tfcell">
+              <p class="ti">보행 운동<br />종합 결과</p>
+              <div class="data">약간 왼쪽 치우침</div>
+              <div class="imo"><img src="../images/combined-shape.svg" width="100%" alt=""></div>
+            </div>
+            <div class="tfcell">
+              <p class="ti">밸런스 운동<br />종합 결과</p>
+              <div class="data"><span>4</span>등급</div>
+              <div class="pie" datanum="60"></div>
+              <script>
+                const main_balanceData = {
+                  all:5, //전체 등급
+                  value:4, // 본인 등급
+                }
+                mainBalanceData(main_balanceData)
+              </script>
+            </div>
+          </div> -->
+          <div class="title">Today’s Exercise</div>
+          <div class="today_sports">
+            <div class="swiper aotoswiperc">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="image">
+                      <span class="state">진행중</span>
+                      <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202006/03/b5bf911b-c5f3-4261-96a0-171413035f06.jpg" alt="">
+                    </div>
+                    <div class="txbox">
+                      <div class="ti">Partial Weight Bearing</div>
+                      <div class="tx">Single Heel Raise(Afficted Side)</div>
+                      <a href="#" class="play">플레이</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="image">
+                      <span class="state">진행중</span>
+                      <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202006/03/b5bf911b-c5f3-4261-96a0-171413035f06.jpg" alt="">
+                    </div>
+                    <div class="txbox">
+                      <div class="ti">무릎 들어올리기</div>
+                      <div class="tx">무릎, 엉덩이, 허벅지</div>
+                      <a href="#" class="play">플레이</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="over_box">
+                    <div class="image">
+                      <span class="state">진행중</span>
+                      <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202006/03/b5bf911b-c5f3-4261-96a0-171413035f06.jpg" alt="">
+                    </div>
+                    <div class="txbox">
+                      <div class="ti">무릎 들어올리기</div>
+                      <div class="tx">무릎, 엉덩이, 허벅지</div>
+                      <a href="#" class="play">플레이</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <div class="title">Today’s Gait</div>
+          <div class="over_box today_record">
+            <img src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/202006/03/b5bf911b-c5f3-4261-96a0-171413035f06.jpg" alt="">
+            <div class="txexc">
+              <div class="ti">Record Your Gait</div>
+              <div class="tx">You can check your gait pattern with analysis on this app.</div>
+              <a href="#">Go to Record</a>
+            </div>
+          </div>
+          <div class="title">Today’s Gait</div>
+          <a href="#" class="record">Go to Record</a>
+          <div class="over_box pt48">
+            <div class="probar">
+              <div class="piechart-wrap"><div class="chart"></div></div>
+              <div class="txs">Left-right balance</div>
+              <div class="text">Biased to right</div>
+            </div>
+            <script>
+              var piechartData = {
+                  value : 180 //왼쪽 0~100, 오른쪽 100~200
+              };
+              chart.pieChart('.piechart-wrap .chart', piechartData);
+            </script>
+            <div class="over_data tfixed pb0">
+              <div class="tfcell">
+                <p class="ti">걸음 시간</p>
+                <div class="data">5' 30''</div>
+              </div>
+              <div class="tfcell">
+                <p class="ti">Steps</p>
+                <div class="data">1,000</div>
+              </div>
+            </div>
+            <a href="#" class="details">View Results</a>
+          </div>
+        </div>
+        <!-- 211211 -->
+        <div class="home_menu">
+          <div class="w">
+            <div class="swiper day_week">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="#"><span class="liwa sunday">S</span><span class="liday">3</span></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">M</span><span class="liday">3</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">T</span><span class="liday">4</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">W</span><span class="liday">5</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">T</span><span class="liday">6</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">F</span><span class="liday">7</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa saturday">S</span><span class="liday">8</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa sunday">S</span><span class="liday">9</span></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">M</span><span class="liday">10</span></a></a></div>
+                <div class="swiper-slide"><a href="#" class="on"><span class="liwa">T</span><span class="liday">11</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">W</span><span class="liday">12</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">T</span><span class="liday">13</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa">F</span><span class="liday">14</span></a></a></div>
+                <div class="swiper-slide"><a href="#"><span class="liwa saturday">S</span><span class="liday">15</span></a></a></div>
+              </div>
+            </div>
+            <div class="nav">
+              <a href="#" class="home active">홈</a>
+              <a href="#" class="schedule">스케줄</a>
+              <a href="#" class="training">운동</a>
+              <a href="#" class="insole">인솔</a>
+              <a href="#" class="result">종합결과</a>
+            </div>
+          </div>
+        </div>
+        <!-- //211211 -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

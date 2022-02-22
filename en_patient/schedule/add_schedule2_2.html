@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+    <meta name="author" content="">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="../css/ini.min.css">
+    <link rel="stylesheet" href="../css/swiper.min.css">
+    <link rel="stylesheet" href="../css/daterangepicker.css">
+    <link rel="stylesheet" href="../css/fullcalendar.css">
+    <link rel="stylesheet" href="../css/NotoSansKR.css">
+    <link rel="stylesheet" href="../css/Montserrat.css">
+    <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+    <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+    <script type="text/javascript" src="../js/swiper.min.js"></script>
+    <script type="text/javascript" src="../js/lottie-player.js"></script>
+    <script type="text/javascript" src="../js/moment.min.js"></script>
+    <script type="text/javascript" src="../js/daterangepicker.js"></script>
+    <script type="text/javascript" src="../js/fullcalendar.js"></script>
+    <script type="text/javascript" src='../js/chart.js'></script>
+    <script type="text/javascript" src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/contents.css">
+    <title>NEUROGAIT</title>
+  </head>
+<body>
+  <div id="wrap">
+    <div class="default_page">
+      <div class="page">
+        <div class="page_head">
+          <h1>Add New Schedule</h1>
+          <a href="#" class="back_btn"><span>뒤로가기</span></a>
+          <span class="headbg"></span>
+        </div>
+        <div class="container">
+          <div class="schedule_add">
+            <h2>Select Days and Numbers of Set</h2>
+            <div class="tx">You can select different days/sets for each exercise.</div>
+            <div class="category_tab">
+              <div class="swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide bin"></div>
+                  <div class="swiper-slide">
+                    <a href="#" class="box on">
+                      <em>Partial Weight Bearing</em>
+                      <strong>Single Heel Raise(Afficted Side)</strong>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="box">
+                      <em>Partial Weight Bearing</em>
+                      <strong>Single Heel Raise(Afficted Side)</strong>
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a href="#" class="box">
+                      <em>Partial Weight Bearing</em>
+                      <strong>Single Heel Raise(Afficted Side)</strong>
+                    </a>
+                  </div>
+                  <div class="swiper-slide bin"></div>
+                </div>
+              </div>
+            </div>
+            <hr class="line_box" />
+            <div class="sports_set">
+              <div class="ti">Select Exercise Day(able to select multiple)</div>
+              <div class="set_tab">
+                <div class="swiper aotoswiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide bin"></div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Sunday" />
+                        <label for="Sunday">Sun</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Monday" />
+                        <label for="Monday">Mon</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Tuesday" />
+                        <label for="Tuesday">Tue</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Wednesday" />
+                        <label for="Wednesday">Wed</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Thursday" />
+                        <label for="thursday">Thu</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Friday" />
+                        <label for="Friday">Fri</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_checkbox">
+                        <input type="checkbox" name="" id="Saturday" />
+                        <label for="Saturday">Sat</label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ti">Select number of set</div>
+              <div class="set_tab">
+                <div class="swiper inp_disabled"><!-- 비활성화일때 inp_disabled -->
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide bin"></div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set1" />
+                        <label for="set1">1 Set</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set2" />
+                        <label for="set2">2 Sets</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set3" />
+                        <label for="set3">3 Sets</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set4" />
+                        <label for="set4">4 Sets</label>
+                      </span>
+                    </div>
+                    <div class="swiper-slide">
+                      <span class="box_radio">
+                        <input type="radio" name="set" id="set5" />
+                        <label for="set5">5 Sets</label>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <p class="txt">※ 부분부하보행운동은 세트를 지정하여 운동하지 않습니다.</p>
+              </div>
+              <div class="ti">Select time</div>
+              <div class="input_default">
+                <div class="input">
+                  <select name="" id="" class="form_select">
+                    <option value="">2 min</option>
+                  </select>
+                </div>
+              </div>
+              <div class="ti">부분부하보행 기준치 입력</div>
+              <div class="input_default">
+                <div class="input">
+                  <input type="tel" name="" id="email" placeholder="기준치를 입력해 주세요." />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom_btn"><a href="#" class="button_default r">Next</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
