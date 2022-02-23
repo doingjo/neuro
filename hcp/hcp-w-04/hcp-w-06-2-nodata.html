@@ -173,7 +173,7 @@
               </ul>
               <div class="box_search">
                   <div class="box_period">
-                    <input type="text" id="calendar" class="input_round" value="2021.9.12" onfocus="this.blur()" inputmode="none">
+                    <input type="text" id="calendar" class="input_round datepicker" value="2021.9.12" onfocus="this.blur()" inputmode="none">
                   </div>
                   <div class="round_select">
                       <select name="" id="" class="">
@@ -232,5 +232,11 @@
     </footer>
     <!-- Footer// -->
   </div>
+  <script>
+      $(function(){
+        var Language = ['일','월','화','수','목','금','토'];
+        hcp.daterangepicker('.datepicker', Language, false, true);
+      });
+  </script>
 </body>
 </html>

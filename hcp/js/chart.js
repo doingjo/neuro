@@ -193,7 +193,6 @@ var chart = chart || {
       var box = $($this),
           averNo = data.find(x => x.name === '표준').stance,
           averHtml = `<span class="averline" style="left:${averNo}%"></span>`;
-      box.append(`<div class="legend"><strong>입각기 <span>(Stance Phase)</span></strong><strong>유각기 <span>(Swing Phase)</span></strong></div>`);
       box.append(averHtml);
       for(var  index = 0; index < data.length; index++){
         var name = data[index].name,
@@ -221,7 +220,7 @@ var chart = chart || {
     },
     achieveChart: function($this, data){
       var box = $($this),
-          dataSet = data,
+          dataSet = data.data,
           barWRap = '',
           valueMax = dataSet.map(function(d){return d.value});
           valueMax = Math.max.apply(null, valueMax);
@@ -229,7 +228,7 @@ var chart = chart || {
         (valueMax === dataSet[i].value)? max = 'max' : max = '';
         barWRap += '<p class="bar '+max+'"><em class="tick">'+ dataSet[i].day +'</em><span style="height:'+ dataSet[i].value +'%;"></span></p>'
       }
-      box.append('<div class="legend"><p>100</p><p>75</p><p>50</p><p>25</p><p>0</p><p>달성률(%)</p></div>');
+      box.append('<div class="legend"><p>100</p><p>75</p><p>50</p><p>25</p><p>0</p><p>'+data.tick+'</p></div>');
       box.append('<div class="bar-wrap">'+ barWRap +'</div>');
     },
     bearingBarChart: function($this, data){
@@ -263,7 +262,7 @@ var chart = chart || {
         }
         dataValue.push({value: data.data[i].value});
       }
-      box.append('<p class="baseline">기준</p>');
+      box.append('<p class="baseline">'+dataSet.baseLang+'</p>');
       box.append('<div class="tick"><span style="left:'+ (width/900000)*240000 +'px;">04:00</span><span style="left:'+ (width/900000)*720000 +'px;">12:00</span></div>');
       var xScale = d3.scaleBand()
           .domain(dataValue.map(function(d, i){return i}))

@@ -407,15 +407,18 @@
     </div>
     <!-- //layer popup -->
 <script>
-    var achieveData = [
-        {day:'일', value: 20},
-        {day:'월', value: 30},
-        {day:'화', value: 60},
-        {day:'수', value: 100},
-        {day:'목', value: 80},
-        {day:'금', value: 40},
-        {day:'토', value: 0},
-    ];
+    var achieveData = {
+        tick : '달성률(%)',
+        'data' : [
+            {day:'일', value: 20},
+            {day:'월', value: 30},
+            {day:'화', value: 60},
+            {day:'수', value: 100},
+            {day:'목', value: 80},
+            {day:'금', value: 40},
+            {day:'토', value: 0},
+        ]
+    };
     var scheduleData = [
         {
           title: '5명',
@@ -435,7 +438,8 @@
         },
     ];
     chart.achieveChart('.achieve-wrap .chart', achieveData);
-    hcp.fullcalendar('home_calendar', 'home', scheduleData);
+    var Language = ['일','월','화','수','목','금','토'];
+    hcp.fullcalendar('home_calendar', 'home', scheduleData, Language);
     hcp.modals_show("main_pop");
 </script>
 </body>

@@ -145,7 +145,7 @@ var hcp = hcp || {
         }
       });
     },
-    fullcalendar: function(id, home, data){
+    fullcalendar: function(id, home, data, langArr){
       var $id = $('#'+id),
           headerToolbar = '',
           fixedWeekCount = '';
@@ -189,13 +189,13 @@ var hcp = hcp || {
             views: {
               dayGridMonth: {
                   dayHeaderContent: ({date}) => {
-                      var weekdays = ['일','월','화','수','목','금','토']
+                      var weekdays = langArr;
                       return weekdays[date.getDay()]
                   },
               },
               timeGridWeek: {
                   dayHeaderContent: ({date}) => {
-                      var weekdays = ['일','월','화','수','목','금','토']
+                      var weekdays = langArr;
                       return {html: `<div class="col-header">${weekdays[date.getDay()]}</div><div class="col-day col-day`+date.getDate()+`">${date.getDate()}</div>`}
                   },
               }
@@ -264,7 +264,7 @@ var hcp = hcp || {
         });
 
     },//fullcalendar
-    daterangepicker: function(ele, type, single){
+    daterangepicker: function(ele, langArr, type, single){
       var $this = $(ele),
           clickDay = '';
       $this.daterangepicker({
@@ -274,9 +274,9 @@ var hcp = hcp || {
         "locale": {
           "format": "YYYY.MM.DD",
           "separator": " - ",
-          "applyLabel": "선택완료",
-          "cancelLabel": "취소",
-          "daysOfWeek": [ "일","월","화","수","목","금","토" ],
+          // "applyLabel": "선택완료",
+          // "cancelLabel": "취소",
+          "daysOfWeek": langArr,
           "monthNames": [ "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" ],
           "firstDay": 0,
           "startDate": new Date(),

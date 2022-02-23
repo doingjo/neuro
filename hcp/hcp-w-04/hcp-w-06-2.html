@@ -173,7 +173,7 @@
               </ul>
               <div class="box_search">
                   <div class="box_period">
-                    <input type="text" id="calendar" class="input_round" value="2021.9.12" onfocus="this.blur()" inputmode="none">
+                    <input type="text" id="calendar" class="input_round datepicker" value="2021.9.12" onfocus="this.blur()" inputmode="none">
                   </div>
                   <div class="round_select">
                       <select name="" id="" class="">
@@ -317,7 +317,14 @@
                                             <h4>보행 주기(%)</h4>
                                             <div>
                                                 <div class="box_graph_phase">
-                                                    <div class="walkchart-wrap"><div class="chart"></div></div>
+                                                    <div class="walkchart-wrap">
+                                                        <div class="chart">
+                                                            <div class="legend">
+                                                                <strong>입각기 <span>(Stance Phase)</span></strong>
+                                                                <strong>유각기 <span>(Swing Phase)</span></strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -643,6 +650,12 @@
     </footer>
     <!-- Footer// -->
   </div>
+  <script>
+      $(function(){
+        var Language = ['일','월','화','수','목','금','토'];
+        hcp.daterangepicker('.datepicker', Language, false, true);
+      });
+  </script>
 <!-- layerpop -->
 <div class="modals" id="laypop_player_bearing">
     <div class="wrapper_laypop type_basic bearing">

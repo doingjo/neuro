@@ -404,7 +404,8 @@
   </div>
   <script>
     $(function() {
-        hcp.daterangepicker('.main_rangedatepicker', true);
+        var Language = ['일','월','화','수','목','금','토'];
+        hcp.daterangepicker('.main_rangedatepicker', Language, true);
         new Sortable(sortable_ex, {handle: '.area_ex_handler', animation: 150,});
         $(".btn_toggle").on("click", function(){
             $(this).toggleClass("on");
