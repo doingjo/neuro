@@ -127,7 +127,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .check_mark input[type="checkbox"]:checked + label::before{background:url('../images/checkmark-selected.svg')no-repeat center center;background-size: 100%;}
 .check_mark .input{display: block;padding: 6.1111vw 5.5556vw;color: #868e96;font-weight: 500;font-size: 3.8889vw;position: relative;line-height: normal;}
 .check_mark .input::before{content: '';position: absolute;left:5.5556vw;right:5.5556vw;top:0;background-color: #e9ecef;height:1px;}
-.check_mark .input textarea{outline: none;width:100%;height: 9.1667vw;border:0;resize: none; font-size: 3.8889vw;}
+.check_mark .input textarea{outline: none;width:100%;height:16.6667vw;border:0;resize: none; font-size: 3.8889vw;}
 .check_mark.on{border-color: #5280e2;}
 .check_mark.on .input{color: #212529;}
 
@@ -368,8 +368,10 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .default_page .page_head .page_close span{display: inline-block;width:6.6667vw;height:6.6667vw;font-size: 0;background:url('../images/icon-navigation-close.svg')no-repeat center center;background-size: 100%;}
 .default_page .page_head .back_btn{padding:4.4444vw 6.6667vw;position: absolute;left:0;top:0;z-index: 102;}
 .default_page .page_head .back_btn span{display: inline-block;width:6.6667vw;height:6.6667vw;font-size: 0;background:url('../images/icon-navigation-back.svg')no-repeat center center;background-size: 100%;}
-.default_page .page_head .skip_btn{position: absolute;right:0;top:0;z-index: 103;display: inline-block;width:20vw;height:15.5556vw;line-height:15.5556vw;text-align:center;color: #5280e2;font-family: Roboto;font-weight: bold;font-size: 3.3333vw;white-space: nowrap;}
-.default_page .page_head .cord_btn{position: absolute;right:5.5556vw;top:0;z-index: 103;display: inline-block;/*width:19.4444vw;*/height:15.5556vw;line-height:15.5556vw;text-align:right;color: #5280e2;font-weight: 600;font-size: 3.3333vw;white-space: nowrap;}
+.default_page .page_head .skip_btn{position: absolute;right:0;top:0;z-index: 103;display: inline-block;width:20vw;height:15.5556vw;line-height:15.5556vw;text-align:center;color: #5280e2;font-family: Roboto;font-weight: bold;font-size: 3.3333vw;}
+.default_page .page_head .skip_btn span{white-space:nowrap;}
+.default_page .page_head .cord_btn{position: absolute;right:5.5556vw;top:0;z-index: 103;display: inline-block;/*width:19.4444vw;*/height:15.5556vw;line-height:15.5556vw;text-align:right;color: #5280e2;font-weight: 600;font-size: 3.3333vw;}
+.default_page .page_head .cord_btn span{white-space:nowrap;}
 .default_page .page_head .hselect{position: absolute;right:5.5556vw;top:0;z-index: 103;}
 .default_page .page_head .hselect select{font-size: 3.3333vw;height:15.2778vw;line-height:15.2778vw;}
 .default_page .page_head .noti{position: absolute;right:6.6667vw;top:4.4444vw;display: inline-block;width: 6.6667vw;height:6.6667vw;z-index: 104;}
@@ -535,7 +537,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .category_tab .swiper{width:100%;overflow: hidden;}
 .category_tab .swiper-slide.bin{width:6.6667vw;}
 .category_tab .swiper-slide{width: auto;padding-right: 1.1111vw;}
-.category_tab .box{display: inline-block; background-color:#fff;border: solid 1px #dee2e6;border-radius: 5.5556vw;padding:2.7778vw 4.1667vw;}
+.category_tab .box{display: inline-block; background-color:#fff;border: solid 1px #dee2e6;border-radius: 5.5556vw;padding:2.7778vw 4.1667vw; white-space: nowrap}
 .category_tab .box em{font-size:3.3333vw;color:#868e96;}
 .category_tab .box strong{display:block; font-size:3.8889vw;color:#212529;font-weight:700;}
 .category_tab .box.on{background: #5280e2;border-color: #5280e2;color:#fff;}

@@ -45,10 +45,19 @@ function daterangepicker(apply, cancel, langArr, page){
       $('.daterangepicker').wrap('<div class="wrap-layer"></div>').before('<div class="dimmed"></div>');
       $('.daterangepicker').prepend('<div class="header"><div class="date"></div><button class="btn-prev"></button><button class="btn-next"></button></div>');
     }
-    $('html,body').css({'overflow':'hidden','position':'fixed','height':'100%'});
     var first = $('.drp-calendar.left .month').text(),
         last = $('.drp-calendar.right .month').text();
     $('.date').html(first+' - '+last);
+    $('html,body').css({'overflow':'hidden','position':'fixed','height':'100%'});
+    $(window).resize(function(){
+        var win_h = $(window).outerHeight();
+        var pop_h = $('.daterangepicker').outerHeight();
+        var position_top =  (win_h - pop_h) / 2;
+        if(position_top <= 0){position_top = 0;}
+        $('.daterangepicker').css('top',position_top);
+        pop_h >= win_h ? $('.dimmed').css('height',pop_h) : $('.dimmed').css('height', 100 + "%");
+        //console.log('win_h : '+win_h+', pop_h : '+pop_h+', position_top : '+position_top )
+    }).resize();
   });
   $(document).on('click', '.dimmed, .drp-buttons .btn', function(){
     $('.dimmed').remove();

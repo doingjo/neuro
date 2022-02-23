@@ -11,7 +11,7 @@
   width:92vw;
   max-width: none;
   padding:30px 24px;
-  top:50% !important;left:4vw !important;right:4vw !important;transform:translate(0, -50%);
+  top:50%;left:4vw !important;right:4vw !important;
   z-index: 3001;
   display: none;
   font-family: arial;line-height: 1em;
