@@ -188,6 +188,7 @@
       resizeObserver: true,
       pagination: {
         el: ".aotoswiperc .swiper-pagination",
+        type: "fraction",
       },
     });
     if($('.day_week').length){
@@ -370,8 +371,6 @@ function balance(data){
   const yAxisSVG = d3.select("svg").append("g").attr('class','ticks')//.select('text');
   const yAxis = d3.axisRight(yScale).tickSize(0).ticks(dataLength);
   yAxis(yAxisSVG);
-
-console.log(dataLength)
 
   const linearGenerator = d3.line()
     .x(function(d, index) {

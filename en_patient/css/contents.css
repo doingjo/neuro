@@ -302,12 +302,11 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .home_page .container .today_sports .txbox .ti{font-family:Roboto;font-size:3.3334vw;color:#868e96;}
 .home_page .container .today_sports .txbox .tx{margin-top: 1.1111vw; font-family:Roboto;font-size:3.8462vw;color:#212529;font-weight:700}
 .home_page .container .today_sports .txbox .play{position: absolute;right:0;top:6.1111vw;display: inline-block;width: 10.0000vw;height: 10.0000vw;background:url('../images/button-play-color.svg')no-repeat center center;background-size: 100%;font-size: 0;border-radius: 100%;}
-.home_page .container .today_sports .swiper-container-horizontal>.swiper-pagination-bullets,
-.home_page .container .today_sports .swiper-pagination-custom,
-.home_page .container .today_sports .swiper-pagination-fraction{bottom: auto;left: auto;width: auto;right:8.8889vw;top:-9.2778vw;}
-.home_page .container .today_sports .swiper-pagination-bullet{width: 1.6667vw;height: 1.6667vw;margin: 0 1.6667vw;background-color: #ced4da;opacity: 1;}
+.home_page .container .today_sports .swiper-pagination{bottom: auto;left: auto;width: auto;right:8.8889vw;top:-11.282vw; font-family: Montserrat;font-size:3.8461vw;font-weight: bold;line-height: 1.44;color: #5280e2;}
+.home_page .container .today_sports .swiper-pagination >span{font-family: Montserrat;}
+/*.home_page .container .today_sports .swiper-pagination-bullet{width: 1.6667vw;height: 1.6667vw;margin: 0 1.6667vw;background-color: #ced4da;opacity: 1;}
 .home_page .container .today_sports .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 0 0 1.6667vw}
-.home_page .container .today_sports .swiper-pagination-bullet-active{background: #5280e2;}
+.home_page .container .today_sports .swiper-pagination-bullet-active{background: #5280e2;}*/
 .home_page .container .record{float:right;font-size: 3.8889vw;font-weight: bold;color: #5280e2;margin-top:-10.8333vw;}
 .home_page .container .today_record{padding:0;overflow: hidden;background: #000;height:62.2222vw;position: relative;}
 .home_page .container .today_record > img{opacity: 0.4;}

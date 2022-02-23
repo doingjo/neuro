@@ -2,22 +2,22 @@
     /* faq */
     $('.faq  a').on("click", function(e) {
       if($(this).hasClass("on")){
-				$(this).removeClass("on").parent().find('.faq_view').slideUp();
-			}else{
-				$(this).addClass("on").parent().siblings().find('a').removeClass("on");
-				$(this).parent().find('.faq_view').slideDown().parent().siblings().find('.faq_view').slideUp();
-			}
+        $(this).removeClass("on").parent().find('.faq_view').slideUp();
+      }else{
+        $(this).addClass("on").parent().siblings().find('a').removeClass("on");
+        $(this).parent().find('.faq_view').slideDown().parent().siblings().find('.faq_view').slideUp();
+      }
       return false;
     });
     /* faq */
     /* 문답 내역 */
     $('.inquire_list  .tn').on("click", function(e) {
       if($(this).hasClass("on")){
-				$(this).removeClass("on").parent().find('.cn').slideUp();
-			}else{
-				$(this).addClass("on").parent().siblings().find('a').removeClass("on");
-				$(this).parent().find('.cn').slideDown().parent().siblings().find('.cn').slideUp();
-			}
+        $(this).removeClass("on").parent().find('.cn').slideUp();
+      }else{
+        $(this).addClass("on").parent().siblings().find('a').removeClass("on");
+        $(this).parent().find('.cn').slideDown().parent().siblings().find('.cn').slideUp();
+      }
       return false;
     });
     /* 문답 내역 */
@@ -188,6 +188,7 @@
       resizeObserver: true,
       pagination: {
         el: ".aotoswiperc .swiper-pagination",
+        type: "fraction",
       },
     });
     if($('.day_week').length){
@@ -370,8 +371,6 @@ function balance(data){
   const yAxisSVG = d3.select("svg").append("g").attr('class','ticks')//.select('text');
   const yAxis = d3.axisRight(yScale).tickSize(0).ticks(dataLength);
   yAxis(yAxisSVG);
-
-console.log(dataLength)
 
   const linearGenerator = d3.line()
     .x(function(d, index) {
