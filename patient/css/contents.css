@@ -83,7 +83,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .suffix{text-align: right;color: #212529;font-size: 4.4444vw;font-weight: bold;}
 .only_input{width:100%;height: 15.5556vw;line-height: 15.5556vw;outline: none;font-size: 4.4444vw;font-weight: bold;padding: 4.4444vw 42.2222vw 4.4444vw 5.5556vw;border-radius: 3.3333vw;border: solid 1px #dee2e6;background-color: #fff;}
 .only_input::placeholder{color:#ced4da;}
-.linelink{margin-top:-8.3333vw;position:relative;}
+.linelink{margin-top:-4.4444vw;position:relative;}
 .linelink a{font-size: 3.3333vw;line-height: 1.33;color: #868e96;text-decoration: underline;}
 
 /* checkbox */
@@ -533,7 +533,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 /* 카테고리 */
 .category_tab{margin:6.6667vw -6.6667vw 0;position: relative;}
 /*.category_tab::before{content: '';position: absolute;left:0;top:0;bottom: 0;width:6.6667vw;background: linear-gradient(to right, #fff 20%, transparent );z-index: 2;}*/
-.category_tab::after{content: '';position: absolute;right:0;top:0;bottom: 0;z-index: 1;width:10vw;background:url('../images/categorybg.png')no-repeat center center;background-size: 100%;opacity:0.96;}
+.category_tab::after{content: '';position: absolute;right:0;top:0;bottom: 0;z-index: 1;width:10vw;background:url('../images/categorybg.png')no-repeat center center;background-size:100% 100%;opacity:0.96;}
 .category_tab .swiper{width:100%;overflow: hidden;}
 .category_tab .swiper-slide.bin{width:6.6667vw;}
 .category_tab .swiper-slide{width: auto;padding-right: 1.1111vw;}
@@ -620,7 +620,7 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .medical_list li .ti{font-size: 4.4444vw;color: #212529;word-break:keep-all}
 .medical_list li .box{height: 11.1111vw;line-height: 11.1111vw;margin-top:4.4444vw;border-radius: 2.2222vw;border: solid 1px #e9ecef;background-color: #fff;font-size: 3.8889vw;font-weight: 500;text-align: center;color: #5280e2;}
 .medical_list li .box +.box{margin-top:2.2222vw;}
-.medical_list li .txbox{margin-top:2.2222vw;padding: 4.7222vw 4.7222vw 4.4444vw;border-radius: 2.2222vw;border: solid 1px #e9ecef;background-color: #f8f9fa;font-size: 3.6111vw;line-height: 1.38;color: #343a40;word-break:keep-all}
+.medical_list li .txbox{margin-top:2.2222vw;padding: 4.7222vw 4.7222vw 4.4444vw;border-radius: 2.2222vw;border: solid 1px #e9ecef;background-color: #f8f9fa;font-size: 3.6111vw;line-height: 1.38;color: #343a40;word-wrap:break-word;word-break:keep-all}
 
 /* 알림 */
 .noti_list{margin-top:6.6667vw}
@@ -669,10 +669,10 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .over_data .data{font-family: Montserrat;font-size: 7.2222vw;font-weight: bold;line-height: 1.54;color: #212529;}
 
 .over_ti{font-size: 5.0000vw;font-weight: bold;line-height: 1.44;color: #212529;margin:13.3333vw 0 6.6667vw;word-break:keep-all;word-wrap:break-word;}
-.over_ti span.t{float:right;font-size: 3.6111vw;line-height: 1.38;text-align: right;color: #868e96;font-weight: normal;padding-top:0.5556vw;}
+.over_ti span.t{display:block; font-size: 3.6111vw;line-height: 1.38;color: #868e96;font-weight: normal;padding-top:0.5556vw;}
 .over_box{padding: 6.6667vw;border-radius: 3.3333vw;border: solid 1px #e9ecef;position: relative;margin-top:3.3333vw;}
 .over_box > .ti{font-size: 4.4444vw;font-weight: bold;line-height: 1.5;color: #212529;position: relative;margin-bottom:6.6667vw;}
-.over_box > .ti .btn{position: absolute;right:0;top:50%;margin-top:-4.4444vw;display: inline-block;height: 8.8889vw;line-height: 8.8889vw;padding: 0 3.3333vw;border-radius: 1.6667vw;border: solid 1px #dee2e6;background-color: #fff;font-size: 3.8889vw;font-weight: 500;text-align: center;color: #343a40;}
+.over_box > .ti .btn{margin-top:1.9444vw;display: inline-block;height: 8.8889vw;line-height: 8.8889vw;padding: 0 3.3333vw;border-radius: 1.6667vw;border: solid 1px #dee2e6;background-color: #fff;font-size: 3.8889vw;font-weight: 500;text-align: center;color: #343a40;}
 .over_box > .ti .data{float:right;font-family: Roboto;font-size: 3.6111vw;text-align: right;color: #adb5bd;position: relative;top:0.5556vw;}
 .over_box .tis{font-size: 3.8889vw;font-weight: 500;line-height: 1.43;color: #212529;margin-bottom:4.4444vw;}
 .over_box .tx{font-size: 3.8889vw;line-height: 1.43;color: #868e96;font-weight: normal;word-wrap:break-word;word-break:keep-all;}
@@ -680,7 +680,7 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .over_box .tx.c0{color:#343a40}
 .over_box .data_n{font-family: Montserrat;font-size: 7.2222vw;font-weight: bold;color: #212529;}
 .over_box .mainswiper{margin:0 -6.6667vw;overflow: hidden;}
-.over_box .mainswiper .swiper-slide{width: auto;padding-right:3.3333vw;}
+.over_box .mainswiper .swiper-slide{width: auto;padding-right:3.3333vw}
 .over_box .mainswiper .swiper-slide:first-child{padding-left:6.6667vw}
 .over_box .tip_pop{margin:0 -6.6667vw}
 .over_box .tableth{padding: 2.2222vw 4.4444vw 2.2222vw 9.4444vw;border-radius: 1.6667vw;background-color: #f8f9fa;}
@@ -975,9 +975,9 @@ ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 .sports_swiper .swiper-slide{width: 85.5556vw;}
 .sports_swiper .box{border-radius: 3.3333vw;border: solid 2px #dee2e6;width: 83.3333vw;}
 .sports_swiper .sports_box{width: 83.3333vw;padding:8.8889vw 0 8.8889vw 6.6667vw;position: relative;}
-.sports_swiper .sports_box p{font-size:3.8889vw;line-height:1.5;color:#868e96;}
-.sports_swiper .sports_box div{font-size:4.4444vw;line-height: 1.43;color:#000;font-weight:700;margin-top:1.1111vw;}
-.sports_swiper .sports_box .state{position: absolute;right:4.4444vw;top:4.4444vw;display: inline-block;min-width: 12.2222vw;padding:1.6667vw 2.2222vw 1.1111vw;border-radius: 3.3333vw;font-size: 2.7778vw;line-height:1;font-weight: bold;text-align:center;}
+.sports_swiper .sports_box p{padding-left:2.2222vw;margin-top:1.1111vw; font-size:3.8889vw;line-height:1.5;color:#868e96;}
+.sports_swiper .sports_box div{padding-left:2.2222vw;margin-top:1.1111vw; font-size:4.4444vw;line-height: 1.43;color:#000;font-weight:700;}
+.sports_swiper .sports_box .state{display: inline-block;min-width: 12.2222vw;padding:1.6667vw 2.2222vw 1.1111vw;border-radius: 3.3333vw;font-size: 2.7778vw;line-height:1;font-weight: bold;text-align:center;}
 .sports_swiper .sports_box.ing .state{background-color: #f5f7fa;color: #6183e2;}
 .sports_swiper .sports_box.end .state{background-color: #8c8f93;color: #fff;}
 .sports_swiper .swiper-slide-active .box{border: 2px solid transparent;width: 83.3333vw;border-radius: 3.3333vw;background-image: linear-gradient(#fff, #fff), linear-gradient(to right, #87edb8 0%, #a3aafe 100%);;background-origin: border-box;background-clip: content-box, border-box;}
@@ -1047,9 +1047,9 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .schedule_list > ul > li .card{display: block;padding:6.6667vw 0 6.6667vw 17.5000vw;position: relative;}
 .schedule_list > ul > li .card .icon{position: absolute;top:6.6667vw;left:0;display: inline-block; width: 11.6667vw;height: 11.6667vw;border-radius: 4.4444vw;background-color: #5280e2;}
 .schedule_list > ul > li .card .icon img{width:100%;height:100%;}
-.schedule_list > ul > li .card .state{position: absolute;top:6.6667vw;right:0;display: inline-block;min-width: 11.3889vw;min-height: 5.0000vw;padding:1.1111vw 2vw .5556vw; border-radius: 3.3333vw;font-size: 2.7778vw;font-weight: bold;text-align: center;}
-.schedule_list > ul > li .card .ti{font-size: 3.8889vw;line-height: 1.38;color:#868e96;margin-bottom:.5556vw;}
-.schedule_list > ul > li .card .tx{font-size: 4.4444vw;font-weight:700;line-height: 1.43;color:#000;letter-spacing:-.5px; padding-bottom:4.4444vw;}
+.schedule_list > ul > li .card .state{display: inline-block;margin-bottom:1.6667vw;min-width: 11.3889vw;min-height: 5.0000vw;padding:1.1111vw 2vw .5556vw; border-radius: 3.3333vw;font-size: 2.7778vw;font-weight: bold;text-align: center;}
+.schedule_list > ul > li .card .ti{padding-left:2vw;margin-bottom:.5556vw; font-size: 3.8889vw;line-height: 1.38;color:#868e96;}
+.schedule_list > ul > li .card .tx{padding:0 0 4.4444vw 2vw; font-size: 4.4444vw;font-weight:700;line-height: 1.43;color:#000;letter-spacing:-.5px;}
 .schedule_list > ul > li .card .txlist{border-top: dashed 1px #dee2e6;padding-top:4.1667vw;}
 .schedule_list > ul > li .card .txlist li{font-size: 3.6111vw;line-height: 1.38;color: #5280e2;}
 .schedule_list > ul > li .card::before{content: '';position: absolute;left:17.5000vw;right:0;top:0;height:1px;background: #eaeef0;}

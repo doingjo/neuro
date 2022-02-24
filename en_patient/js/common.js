@@ -273,18 +273,18 @@ function bubble(data, lang){
   }
 }
 
-function barchart(data, id, lang, aver){
+function barchart(data, id, aver){
   const bar_chart = document.getElementById(id)
   var valdata = data.map(function(v){return v.value});
   valdata= Math.max.apply(null,valdata);
   for (let index = 0; index < data.length; index++) {
     const element = data[index].value;
     if(aver){
-      var liHtml = `<li><strong>${data[index].value}`+lang+`</strong><div class="b"><div class="r" style="height:${data[index].value}%"></div></div><span>${data[index].name}</span></li>`
+      var liHtml = `<li><strong>${data[index].value}</strong><div class="b"><div class="r" style="height:${data[index].value}%"></div></div><span>${data[index].name}</span></li>`
       bar_chart.innerHTML += liHtml;
     }else{
       const ratio = Math.floor(100/valdata*element)
-      var liHtml = `<li class=${ratio==100?'on':''}><strong>${data[index].value}`+lang+`</strong><div class="b"><div class="r" style="height:${ratio}%"></div></div><span>${data[index].name}</span></li>`
+      var liHtml = `<li class=${ratio==100?'on':''}><strong>${data[index].value}</strong><div class="b"><div class="r" style="height:${ratio}%"></div></div><span>${data[index].name}</span></li>`
       bar_chart.innerHTML += liHtml;
     }
     const r = $('#'+id+' .b').eq(index).find('.r');
