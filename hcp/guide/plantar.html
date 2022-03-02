@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
+  <link rel="stylesheet" href="../css/daterangepicker.css">
+  <link rel="stylesheet" href="../css/NotoSansKR.css">
+  <link rel="stylesheet" href="../css/Montserrat.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/fullcalendar.js"></script>
+  <script type="text/javascript" src="../js/moment.min.js"></script>
+  <script type="text/javascript" src="../js/daterangepicker.js"></script>
+  <script type="text/javascript" src="../js/Sortable.js"></script>
+  <script type="text/javascript" src="../js/chart.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <link rel="stylesheet" href="../css/contents.css">
+  <title>HCP</title>
+</head>
+<body>
+<style>
+    .plantar{width:480px;height:576px;background-image:url('../images/plantar/l_bg.png'), url('../images/plantar/r_bg.png');background-size:240px 576px, 240px 576px;background-position:left 0,right 0;background-repeat:no-repeat; position:relative;}
+
+    .plantar .left{background:url('../images/plantar/l_bg.png')no-repeat 0 0;}
+    .plantar .right{background:url('../images/plantar/r_bg.png')no-repeat 0 0;}
+    .plantar >p{position:absolute; width:240px; background-size:100% !important}
+
+    .plantar >p:nth-child(12n+1){top:6.3%; height:280px;}
+    .plantar >p:nth-child(12n+2){top:19.6%; height:152px;}
+    .plantar >p:nth-child(12n+3){top:22.4%; height:108px;}
+    .plantar >p:nth-child(12n+4){top:2.8%; height:196px;}
+    .plantar >p:nth-child(12n+5){top:5.6%; height:128px;}
+    .plantar >p:nth-child(12n+6){top:8.4%; height:92px;}
+    .plantar >p:nth-child(12n+7){top:3.5%; height:400px;}
+    .plantar >p:nth-child(12n+8){top:15.4%; height:236px;}
+    .plantar >p:nth-child(12n+9){top:20.3%; height:156px;}
+    .plantar >p:nth-child(12n+10){top:50.3%; height:260px;}
+    .plantar >p:nth-child(12n+11){top:62.2%; height:176px;}
+    .plantar >p:nth-child(12n+12){top:60.7%; height:128px;}
+
+    .plantar .sensor_0_g{left:0;background:url('../images/plantar/l_sensor_1_g.png');}
+    .plantar .sensor_0_y{left:0;background:url('../images/plantar/l_sensor_1_y.png');}
+    .plantar .sensor_0_r{left:0;background:url('../images/plantar/l_sensor_1_r.png');}
+    .plantar .sensor_1_g{left:0;background:url('../images/plantar/l_sensor_2_g.png');}
+    .plantar .sensor_1_y{left:0;background:url('../images/plantar/l_sensor_2_y.png');}
+    .plantar .sensor_1_r{left:0;background:url('../images/plantar/l_sensor_2_r.png');}
+    .plantar .sensor_2_g{left:0;background:url('../images/plantar/l_sensor_3_g.png');}
+    .plantar .sensor_2_y{left:0;background:url('../images/plantar/l_sensor_3_y.png');}
+    .plantar .sensor_2_r{left:0;background:url('../images/plantar/l_sensor_3_r.png');}
+    .plantar .sensor_3_g{left:0;background:url('../images/plantar/l_sensor_4_g.png');}
+    .plantar .sensor_3_y{left:0;background:url('../images/plantar/l_sensor_4_y.png');}
+    .plantar .sensor_3_r{left:0;background:url('../images/plantar/l_sensor_4_r.png');}
+
+    .plantar .sensor_4_g{right:0;background:url('../images/plantar/r_sensor_1_g.png');}
+    .plantar .sensor_4_y{right:0;background:url('../images/plantar/r_sensor_1_y.png');}
+    .plantar .sensor_4_r{right:0;background:url('../images/plantar/r_sensor_1_r.png');}
+    .plantar .sensor_5_g{right:0;background:url('../images/plantar/r_sensor_2_g.png');}
+    .plantar .sensor_5_y{right:0;background:url('../images/plantar/r_sensor_2_y.png');}
+    .plantar .sensor_5_r{right:0;background:url('../images/plantar/r_sensor_2_r.png');}
+    .plantar .sensor_6_g{right:0;background:url('../images/plantar/r_sensor_3_g.png');}
+    .plantar .sensor_6_y{right:0;background:url('../images/plantar/r_sensor_3_y.png');}
+    .plantar .sensor_6_r{right:0;background:url('../images/plantar/r_sensor_3_r.png');}
+    .plantar .sensor_7_g{right:0;background:url('../images/plantar/r_sensor_4_g.png');}
+    .plantar .sensor_7_y{right:0;background:url('../images/plantar/r_sensor_4_y.png');}
+    .plantar .sensor_7_r{right:0;background:url('../images/plantar/r_sensor_4_r.png');}
+.bar{position:relative; width:440px;height:4px; border-radius:2px;background-color:#333;}
+#dragdiv{position:absolute; width:16px;height:16px; border-radius:100%;background-color:#5280e2; cursor:move;}
+
+#slider{position:relative; width:440px;height:4px; border-radius:2px;background-color:#333;}
+#slider .ui-slider-handle{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%); width:16px;height:16px; border-radius:100%;background-color:#5280e2; cursor:move;}
+#slider .ui-slider-range{height:100%; background-color:#5280e2;}
+</style>
+<div class="plantar">
+    <p class="sensor_0_g"></p><p class="sensor_0_y"></p><p class="sensor_0_r"></p>
+    <p class="sensor_1_g"></p><p class="sensor_1_y"></p><p class="sensor_1_r"></p>
+    <p class="sensor_2_g"></p><p class="sensor_2_y"></p><p class="sensor_2_r"></p>
+    <p class="sensor_3_g"></p><p class="sensor_3_y"></p><p class="sensor_3_r"></p>
+    <p class="sensor_4_g"></p><p class="sensor_4_y"></p><p class="sensor_4_r"></p>
+    <p class="sensor_5_g"></p><p class="sensor_5_y"></p><p class="sensor_5_r"></p>
+    <p class="sensor_6_g"></p><p class="sensor_6_y"></p><p class="sensor_6_r"></p>
+    <p class="sensor_7_g"></p><p class="sensor_7_y"></p><p class="sensor_7_r"></p>
+</div>
+<!-- <div class="bar">
+<div id="dragdiv"></div>
+</div> -->
+
+<div id="slider"></div>
+<p class="txt">00</p>
+<button class="play">재생</button>
+<button class="stop">멈춤</button>
+
+<script>
+
+
+$( "#slider" ).slider({
+    range: 'min',
+    animate: 'fast',
+    max: 36000,
+    slide: function( event, ui ) {
+        $( ".txt" ).text( ui.value );
+      }
+});
+
+
+    $.ajax({
+        url: '../data/1644630973338.csv',
+        dataType: 'text',
+    }).done(successFunction);
+
+
+    function successFunction(allText){
+        var allTextLines = allText.split(/\r\n|\n/);
+        var linesArray = [];
+        var timestampArray = [];
+        for(var i=3; i<allTextLines.length-1; i++){
+            var data = allTextLines[i].split(',');
+            var tarr = [];
+            for (var j=0; j<data.length; j++) {
+                tarr.push(data[j]);
+            }
+            timestampArray.push(data[0])
+            linesArray.push(tarr);
+        }
+        // console.log(timestampArray)
+        // console.log(linesArray)
+        for (var i=0; i<8; i++){
+            (i == 1 || i == 5) ? alpha = (linesArray[2][i+1]/ 100.0) : alpha = (linesArray[2][i+1]/ 100.0) * 1.5;
+            //console.log(i+' : '+alpha)
+            getGYRAlphaValue(i, alpha)
+        }
+        //현재 알파값으로 녹/노/빨 알파값을 구하는 함수
+        function getGYRAlphaValue($this ,alpha){
+            var alphaGYRArray = [];
+            var green = (alpha * 2);
+                green = (green > 1.0) ? 1.0 : green;
+            var yellow = alpha - 0.25;
+                yellow = (yellow < 0.0) ? 0.0 : yellow;
+                yellow = (yellow > 0.5) ? 0.5 : yellow;
+                yellow *= 2.0;
+            var red = alpha - 0.6;
+                red = (red < 0.0) ? 0.0 : red;
+                red = (red > 0.5) ? 0.5 : red;
+                red *= 2.0;
+            alphaGYRArray.push(green, yellow, red);
+            alphaGYRArray.forEach(gyrArray)
+            function gyrArray(element, index){
+                idx = $this*3;
+                $('.plantar p').eq(idx+index).css('opacity',element)
+            }
+        }
+    }
+
+
+</script>
+
+</body>
+</html>

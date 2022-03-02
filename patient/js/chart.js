@@ -328,7 +328,7 @@ var chart = chart || {
           dataSet = data,
           dataValue = [],
           width = box.width(),
-          boxWidth = (width / 900000) * dataSet.totalTime,
+          boxWidth = width,
           height = box.height(),
           max = dataSet.baseline*1.2,
           min = dataSet.baseline*.8;
@@ -341,7 +341,6 @@ var chart = chart || {
         dataValue.push({value:data.data[i].value});
       }
       box.append('<p class="baseline">'+dataSet.baseLang+'</p>');
-      box.append('<div class="tick"><span style="left:'+ (width/900000)*240000 +'px;">04:00</span><span style="left:'+ (width/900000)*720000 +'px;">12:00</span></div>');
       var xScale = d3.scaleBand()
           .domain(dataValue.map(function(d, i){return i}))
           .range([0, boxWidth]);
@@ -394,7 +393,16 @@ var chart = chart || {
         .attr("stroke-linejoin", "round")
         .attr("stroke-linecap", "round")
         .attr("d", line);
-
       svg.node();
+      box.append('<div class="tick"><span style="left:30%">04:00</span><span style="left:70%">12:00</span></div>');
+      function time(seconds, i) {
+        var seconds = seconds / 1000;
+        var hour = parseInt(seconds/3600) < 10 ? '0'+ parseInt(seconds/3600) : parseInt(seconds/3600);
+        var min = parseInt((seconds%3600)/60) < 10 ? '0'+ parseInt((seconds%3600)/60) : parseInt((seconds%3600)/60);
+        var sec = seconds % 60 < 10 ? '0'+Math.round(seconds % 60) : Math.round(seconds % 60);
+        $('.tick span').eq(i).text(min+":"+sec);
+      }
+      time(dataSet.totalTime*.3334, 0);
+      time(dataSet.totalTime*.6667, 1);
     },
 };

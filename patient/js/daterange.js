@@ -10,6 +10,7 @@ function daterangepicker(apply, cancel, langArr, page){
     maxDateDay = yesterday;
   }
   $('#calendar').daterangepicker({
+    autoApply:true,
     maxDate: maxDateDay,
     minDate: minDateDay,
     autoUpdateInput:true,
@@ -26,6 +27,7 @@ function daterangepicker(apply, cancel, langArr, page){
       "drops": "auto"
     },
     }, function(start, end, label){
+      close();
       console.log(start.format('YYYY-MM-DD') +' - '+ end.format('YYYY-MM-DD'));
   });
   $(document).on('click', '.btn-prev', function(){
@@ -60,9 +62,13 @@ function daterangepicker(apply, cancel, langArr, page){
     }).resize();
   });
   $(document).on('click', '.dimmed, .drp-buttons .btn', function(){
+    close();
+  });
+  function close(){
     $('.dimmed').remove();
     $('.daterangepicker').unwrap();
     $('.header').remove();
     $('html,body').attr('style','');
-  });
+  }
+
 }

@@ -251,7 +251,8 @@
   display: none;
   line-height: 12px;
   vertical-align: middle;
-  display:flex !important;justify-content:space-between;
+  display: none;
+  /*display:flex !important;justify-content:space-between;*/
 }
 
 .daterangepicker .drp-selected {
