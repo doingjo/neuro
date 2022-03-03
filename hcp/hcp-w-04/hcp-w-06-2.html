@@ -25,6 +25,10 @@
   <script type="text/javascript" src="../js/chart.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
   <link rel="stylesheet" href="../css/contents.css">
+
+<link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+  <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+
   <title>HCP</title>
 </head>
 <body>
@@ -654,9 +658,68 @@
       $(function(){
         var Language = ['일','월','화','수','목','금','토'];
         hcp.daterangepicker('.datepicker', Language, false, true);
+
+        hcp.modals_show('laypop_player')
       });
   </script>
 <!-- layerpop -->
+<div class="modals" id="laypop_player">
+    <div class="wrapper_laypop type_basic player">
+        <div class="inner_laypop">
+            <div class="box_cnt">
+                <div class="seg_data">
+                    <div class="tit_data icon_data01">
+                        <p class="tit">족저압</p>
+                    </div>
+                    <div class="box_data">
+                        <img src="../images/dummy_foot.png" alt="">
+                    </div>
+                    <div class="tit_data icon_data02">
+                        <p class="tit">그래프</p>
+                    </div>
+                    <div class="box_data">
+                        <img src="../images/dummy_graph.png" alt="">
+                    </div>
+                </div>
+                <div class="seg_video">
+                    <video id="myVideo" class="video-js"></video>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+        .video-js{width:100%;max-height:100%;}
+        .video-js .vjs-big-play-button,
+        .video-js .vjs-volume-panel{display: none;}
+  </style>
+<script>
+$(function(){
+            var player = videojs('myVideo', {
+                sources: [
+                    {src: "../data/vedio.mp4", type: "video/mp4"}
+                ],
+                //poster: "[이미지 주소 등록]",
+                preload: "auto",
+                controls: true,
+                playsinline : true,
+                controlBar: {
+                    playToggle : true,
+                    progressControl : true,
+                    remainingTimeDisplay : false,
+                    //pictureInPictureToggle: false,
+                }
+            });
+
+            player.on('timeupdate', function () {
+                var current = player.currentTime();
+    console.log(current)
+});
+
+});
+</script>
+
 <div class="modals" id="laypop_player_bearing">
     <div class="wrapper_laypop type_basic bearing">
         <div class="inner_laypop">
@@ -691,32 +754,7 @@
         </div>
     </div>
 </div>
-<div class="modals" id="laypop_player">
-    <div class="wrapper_laypop type_basic player">
-        <div class="inner_laypop">
-            <div class="box_cnt">
-                <div class="seg_data">
-                    <div class="tit_data icon_data01">
-                        <p class="tit">족저압</p>
-                    </div>
-                    <div class="box_data">
-                        <img src="../images/dummy_foot.png" alt="">
-                    </div>
-                    <div class="tit_data icon_data02">
-                        <p class="tit">그래프</p>
-                    </div>
-                    <div class="box_data">
-                        <img src="../images/dummy_graph.png" alt="">
-                    </div>
-                </div>
-                <div class="seg_video" style="background-color: #d8d8d8;">
-                    비디오 영역
-                </div>
-            </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player');"><span class="hidden">창닫기</span></button>
-        </div>
-    </div>
-</div>
+
 <div class="modals" id="laypop_player_sm">
     <div class="wrapper_laypop type_basic player_sm">
         <div class="inner_laypop">

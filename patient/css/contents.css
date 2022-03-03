@@ -66,6 +66,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .input_default{position: relative;padding-bottom: 6.6667vw;margin-bottom: 2.2222vw;}
 .input_default .input{position: relative;border-bottom:1px solid #e9ecef;}
 .input_default label{color: #868e96;font-size: 3.3333vw;}
+.input_default label span{margin-right:.7692vw; color:#db3e3e;}
 .input_default input{width:100%;border:0;height:13.3333vw;line-height:13.3333vw;outline: none;font-size: 5vw;font-weight: bold;padding: 0;}
 .input_default input::placeholder{font-size:4.444vw;color:#ced4da;}
 .input_default input:disabled{color:#ced4da;background-color:#fff;opacity:1}
@@ -308,12 +309,13 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .home_page .container .today_sports .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{margin:0 0 0 1.6667vw}
 .home_page .container .today_sports .swiper-pagination-bullet-active{background: #5280e2;}*/
 .home_page .container .record{float:right;font-size: 3.8889vw;font-weight: bold;color: #5280e2;margin-top:-10.8333vw;}
-.home_page .container .today_record{padding:0;overflow: hidden;background: #000;height:62.2222vw;position: relative;}
-.home_page .container .today_record > img{opacity: 0.4;}
-.home_page .container .today_record .txexc{position: absolute;top:50%;left:0;right:0;transform: translate(0, -50%);text-align:center;}
+.home_page .container .today_record{padding:0;overflow: hidden;max-height:62.2222vw;position: relative;}
+.home_page .container .today_record::after{content:'';display:block; position:absolute;top:0;left:0;right:0;bottom:0; background-color:rgba(0,0,0,.6)}
+.home_page .container .today_record img{width:100%;}
+.home_page .container .today_record .txexc{position: absolute;top:50%;left:0;right:0;z-index:1; transform: translate(0, -50%);text-align:center;}
 .home_page .container .today_record .txexc .ti{font-size: 4.4444vw;font-weight: bold;line-height: 1.5;color: #fff;}
 .home_page .container .today_record .txexc .tx{margin: 2.2222vw 0 5.5556vw;padding:0 15vw;opacity: 0.75;font-size: 3.6111vw;font-weight: 400;line-height: 1.38;color: #fff;word-break:keep-all;word-wrap:break-word;}
-.home_page .container .today_record .txexc a{display:inline-block;padding:3.0556vw 5.5556vw 2.7778vw;min-width:36.111vw; border-radius:5.5556vw;border:.2778vw solid rgba(151, 151, 151, 0.5);background-color:rgba(255,255,255,.2); font-size:3.8889vw;color:#fff;font-weight:500}
+.home_page .container .today_record .txexc a{display:inline-block;padding:3.0556vw 5.5556vw 2.7778vw;min-width:36.111vw; border-radius:5.5556vw;border:.2778vw solid rgba(151, 151, 151, 0.5);background-color:rgba(255,255,255,.2); font-size:3.5897vw;color:#fff;font-weight:500}
 .home_page .container >h3{margin-top:26px; font-size:18px;color:#212529;font-weight:700}
 .home_page .container .columns{display:flex;flex-wrap:wrap;justify-content:space-between; margin-top:5.1282vw;}
 .home_page .container .columns li{width: 42.0512vw;margin-bottom:4.1026vw;border-radius: 5.1282vw;box-shadow: 1.0256vw 2.0513vw 4.1026vw 0 rgba(125, 151, 171, 0.18);background-color: #fff;overflow: hidden;}
@@ -387,7 +389,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .default_page .page_head.on h1::before{content: '';position: absolute;left:6.6667vw;right:6.6667vw;bottom:0px;height:1px;background: #e9ecef;}
 .default_page .page_head.on .head_menu{top:15.5556vw;opacity: 1;z-index: 80;}
 .default_page .page_head.on .head_menu ul{height:auto}
-.default_page .container{padding:4.4444vw 6.6667vw;}
+.default_page .container{padding:4.4444vw 6.6667vw;margin:0;}
 .default_page.medical{background-color: #f0f4f7;}
 .default_page.set{background-color: #f0f4f7;}
 /*.default_page.set .container{padding:4.4444vw 6.6667vw 17.7778vw;}*/
@@ -447,6 +449,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .join_ok .bottom_btn{left:6.6667vw;right:6.6667vw;}
 .pwshow{display: inline-block;width: 5.5556vw;height: 5.5556vw;background:url('../images/icon-eye-01.svg')no-repeat center center;background-size: 100%;font-size: 0;}
 .pwshow.on{background:url('../images/icon-eye-02.svg')no-repeat center center;}
+.form_default .noti_box{margin:5.556vw 0; color:#db3e3e;}
 
 /* 문진정보 */
 .medical .container{padding:3.3333vw 4.4444vw 3.3333vw;}

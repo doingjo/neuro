@@ -38,9 +38,10 @@
         </div>
         <div class="form_default">
             <form action="">
+              <div class="noti_box"><span>'*'</span>는 필수입력 항목입니다.</div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함, 통과일땐 class "ok"-->
                 <div class="input">
-                  <label for="uesrid">아이디</label>
+                  <label for="uesrid"><span>*</span>아이디</label>
                   <div class="tixed">
                     <div class="tfcell"><input type="text" name="" id="uuesrid" placeholder="아이디 입력" /></div>
                     <div class="tfcell">
@@ -52,7 +53,7 @@
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="pw">비밀번호</label>
+                  <label for="pw"><span>*</span>비밀번호</label>
                   <div class="tixed">
                     <div class="tfcell"><input type="password" name="" id="pw" class="pwinput" value="" placeholder="8~16 자리, 영문/숫자/특수문자 조합" /></div>
                     <div class="tfcell">
@@ -64,20 +65,20 @@
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="name">이름</label>
+                  <label for="name"><span>*</span>이름</label>
                   <input type="text" name="" id="name" placeholder="실명 입력" />
                 </div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="birth">생년월일</label>
+                  <label for="birth"><span>*</span>생년월일</label>
                   <input type="text" name="" id="birth" placeholder="YYYY.MM.DD" />
                 </div>
                 <div class="text err">생년월일을 확인해 주세요.</div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="sex">성별</label>
+                  <label for="sex"><span>*</span>성별</label>
                   <select name="" id="sex" class="form_select">
                     <option value="" selected>선택</option>
                   </select>
@@ -85,7 +86,7 @@
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="hp">휴대폰 번호</label>
+                  <label for="hp"><span>*</span>휴대폰 번호</label>
                   <div class="tixed">
                     <div class="tfcell email_select" style="width:20.5vw;padding-right: 4.4444vw;">
                       <select name="" id="" class="form_select tal">
@@ -102,7 +103,7 @@
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="attest">인증번호</label>
+                  <label for="attest"><span>*</span>인증번호</label>
                   <div class="tixed">
                     <div class="tfcell"><input type="tel" name="" id="attest" placeholder="인증번호 입력" /></div>
                     <div class="tfcell">
@@ -112,18 +113,20 @@
                 </div>
                 <div class="text attest">01:03</div>
               </div>
+              <!-- 인증번호 확인 일 때-->
               <div class="input_default ok"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="attest">인증번호</label>
+                  <label for="attest"><span>*</span>인증번호</label>
                   <div class="tixed">
                     <div class="tfcell"><input type="tel" name="" id="attest" placeholder="인증번호 입력" /></div>
                   </div>
                 </div>
-                <div class="text">01:03</div>
+                <div class="text attest">01:03</div>
               </div>
+              <!-- //인증번호 확인 일 때-->
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="email">이메일 </label>
+                  <label for="email"><span>*</span>이메일</label>
                   <div class="tfixed">
                     <div class="tfcell"><input type="text" name="" id="email" placeholder="이메일 주소" /></div>
                     <div class="tfcell email_select">
@@ -138,13 +141,13 @@
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="residence">거주지</label>
+                  <label for="residence"><span>*</span>거주지</label>
                   <input type="text" name="" id="residence" value="" placeholder="거주지 입력" />
                 </div>
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="size">키</label>
+                  <label for="size"><span>*</span>키</label>
                   <div class="tixed">
                     <div class="tfcell"><input type="tel" name="" id="size" placeholder="숫자 입력" /></div>
                     <div class="tfcell suffix" style="width:10vw">cm</div>
@@ -153,7 +156,7 @@
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="size">체중</label>
+                  <label for="size"><span>*</span>체중</label>
                   <div class="tixed">
                     <div class="tfcell"><input type="tel" name="" id="size" placeholder="숫자 입력" /></div>
                     <div class="tfcell suffix" style="width:10vw">kg</div>
@@ -178,7 +181,7 @@
               </div>
               <div class="input_default"><!-- class "error" 넣으면 에러표시함-->
                 <div class="input">
-                  <label for="size">발 사이즈</label>
+                  <label for="size"><span>*</span>발 사이즈</label>
                   <div class="tixed">
                     <div class="tfcell"><input type="tel" name="" id="size" placeholder="숫자 입력" /></div>
                     <div class="tfcell suffix" style="width:10vw">mm</div>
