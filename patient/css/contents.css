@@ -265,7 +265,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .home_page{background: #f0f4f7;min-height:100vh;position: relative;overflow: hidden;}
 .home_page .page_head{padding:8.8889vw 7.5000vw 0 8.8889vw}
 .home_page .page_head h1{font-size: 4.4444vw;line-height: 1.5;color: #343a40;font-weight: normal;}
-.home_page .page_head .day{margin-top: 2.2222vw;font-family: Montserrat;font-size: 7.2222vw;font-weight: bold;line-height: 1.31;color: #212529;}
+.home_page .page_head .day{margin-top: 2.2222vw;font-family: 'Montserrat';font-size: 7.2222vw;font-weight: bold;line-height: 1.31;color: #212529;}
 .home_page .page_head .setbtn{position: absolute;right: 8.8889vw;top:8.8889vw;display: inline-block;width: 6.6667vw;height: 6.6667vw;font-size: 0;background:url('../images/icon-ui-setting.svg')no-repeat center center;background-size: 100%;}
 .home_page .page_head .head_data{display:flex; margin-top:6.6667vw;}
 .home_page .page_head .head_data >div{display:flex;flex-direction:column;justify-content:space-between;/*flex:1;*/ position:relative;padding:0 6.6667vw;}
@@ -297,7 +297,8 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .home_page .container .today_sports .swiper-slide{padding-left:3.3333vw;width: 87.6923vw;}
 .home_page .container .today_sports .swiper-slide:first-child{padding-left: 0;}
 .home_page .container .today_sports .image{height:40vw;background: #444;position: relative;margin:-6.6667vw -6.6667vw 0;border-radius: 3.3333vw 3.3333vw 0 0;overflow: hidden;}
-.home_page .container .today_sports .image .state{position: absolute;top:5.5556vw;left:6.6667vw;display: inline-block;min-width: 12.2222vw;padding:1.6667vw 2.2222vw 1.1111vw;border-radius: 3.3333vw;background-color: rgba(0, 0, 0, .71);font-size: 2.7778vw;line-height:1;font-weight: bold;text-align: center;color: #fff;white-space:nowrap;}
+.home_page .container .today_sports .image::after{content:'';display:block; position:absolute;top:0;left:0;right:0;bottom:0; background-color:rgba(0,0,0,.26)}
+.home_page .container .today_sports .image .state{position:absolute;top:5.5556vw;left:6.6667vw;z-index:1; display: inline-block;min-width: 12.2222vw;padding:1.6667vw 2.2222vw 1.1111vw;border-radius: 3.3333vw;background-color: rgba(0, 0, 0, .71);font-size: 2.7778vw;line-height:1;font-weight: bold;text-align: center;color: #fff;white-space:nowrap;}
 .home_page .container .today_sports .image img{width:100%;}
 .home_page .container .today_sports .txbox{padding-top:6.6667vw;position: relative;}
 .home_page .container .today_sports .txbox .ti{font-family:Roboto;font-size:3.3334vw;color:#868e96;}
@@ -432,9 +433,9 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .default_page .bottom_btn{left:6.6667vw;right:6.6667vw;}
 
 /* 회원가입 */
-.join_step{float:right;font-weight: bold;color: #ced4da;font-size: 4.4444vw;margin-top: -6vw;}
-.join_step strong{color: #212529;font-family: Montserrat;}
-.join_step span{font-family: Montserrat;}
+.join_step{float:right;font-weight: bold;color: #ced4da;font-size: 4.4444vw;margin-top: -6vw;white-space:nowrap;}
+.join_step strong{color: #212529;font-family: Montserrat; white-space:nowrap;}
+.join_step span{font-family: Montserrat;white-space:nowrap;}
 .agree_list{margin-top:6.6667vw;}
 .agree_list li{position: relative;margin-bottom: 5vw;padding-right:22.2222vw;}
 .agree_list li a{position: absolute;right:0;color: #868e96;font-size: 3.3333vw;}
