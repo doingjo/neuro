@@ -552,6 +552,11 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 ul.category_tab{margin:6.6667vw 0 0;}
 ul.category_tab > li{float: left;padding-right: 1.1111vw;}
 
+.no_data{padding:17.7778vw 0 17.7778vw;display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;}
+.no_data > div{position: relative;}
+.no_data > div .ico{display: inline-block;width: 14.1025vw;height: 14.8717vw;margin: 0 41.6667vw 4.4444vw;margin-bottom:4.4444vw;}
+.no_data > div .ico img{width:100%;}
+.no_data > div p{font-size: 3.8889vw;line-height: 1.43;text-align: center;color: #555;}
 /* 회원 탈퇴 */
 .leave{margin:11.1111vw 0 6.6667vw;}
 .leave .leave_list li{margin-top:2.2222vw;}
@@ -1064,11 +1069,7 @@ span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;mar
 .schedule_list > ul > li .card.end .icon{background: #8b8b8b;opacity: 0.3;}
 .schedule_list > ul > li .card.end .ti,
 .schedule_list > ul > li .card.end .tx{opacity: 0.3;}
-.schedule_list .no_data{padding:17.7778vw 0 17.7778vw;display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;}
-.schedule_list .no_data > div{position: relative;}
-.schedule_list .no_data > div .ico{display: inline-block;width: 14.1025vw;height: 14.8717vw;margin: 0 41.6667vw 4.4444vw;margin-bottom:4.4444vw;}
-.schedule_list .no_data > div .ico img{width:100%;}
-.schedule_list .no_data > div p{font-size: 3.8889vw;line-height: 1.43;text-align: center;color: #555;}
+
 .schedule_add{padding:6.6667vw 0 22.2222vw;}
 .schedule_add h2{font-size: 6.1111vw;font-weight: bold;line-height: 1.45;color: #212529;letter-spacing:-.1944vw}
 .schedule_add .tx{margin: 4.4444vw 0 0 0;font-size: 3.8889vw;line-height: 1.43;color: #212529; word-break: keep-all;}

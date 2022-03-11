@@ -3,13 +3,13 @@ function daterangepicker(apply, cancel, langArr, page){
   var minDateDay = false;
   var now = new Date();
   var yesterday = new Date(now.setDate(now.getDate() - 1));
-
+  var calendar = $('#calendar');
   if(page == 'schedule'){
     minDateDay = new Date();
   }else{
     maxDateDay = yesterday;
   }
-  $('#calendar').daterangepicker({
+  calendar.daterangepicker({
     autoApply:true,
     maxDate: maxDateDay,
     minDate: minDateDay,
@@ -56,11 +56,14 @@ function daterangepicker(apply, cancel, langArr, page){
         var pop_h = $('.daterangepicker').outerHeight();
         var position_top =  (win_h - pop_h) / 2;
         if(position_top <= 0){position_top = 0;}
-        $('.daterangepicker').css('top',position_top);
+        $('.daterangepicker').attr('style', 'top:'+position_top+'px !important; display:block');
         pop_h >= win_h ? $('.dimmed').css('height',pop_h) : $('.dimmed').css('height', 100 + "%");
         //console.log('win_h : '+win_h+', pop_h : '+pop_h+', position_top : '+position_top )
     }).resize();
   });
+  if(page == 'schedule'){
+    $(document).find('.daterangepicker').addClass('schedule');
+  }
   $(document).on('click', '.dimmed, .drp-buttons .btn', function(){
     close();
   });
