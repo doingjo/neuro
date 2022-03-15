@@ -55,8 +55,9 @@ function daterangepicker(apply, cancel, langArr, page){
         var win_h = $(window).outerHeight();
         var pop_h = $('.daterangepicker').outerHeight();
         var position_top =  (win_h - pop_h) / 2;
-        if(position_top <= 0){position_top = 0;}
-        $('.daterangepicker').attr('style', 'top:'+position_top+'px !important; display:block');
+        if(position_top <= 0){
+          $('.daterangepicker').addClass('topTop');
+        }
         pop_h >= win_h ? $('.dimmed').css('height',pop_h) : $('.dimmed').css('height', 100 + "%");
         //console.log('win_h : '+win_h+', pop_h : '+pop_h+', position_top : '+position_top )
     }).resize();

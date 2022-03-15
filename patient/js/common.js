@@ -356,87 +356,143 @@ function barCycle(data, id){
   }
 }
 
+// function balance(data){
+//   var dataLength = data.length ;
+//   var startDay = data[0].day;
+//   var endDay = data[dataLength-1].day;
+//     if(startDay > endDay){
+//         startDay + 30
+//     }
+//     console.log(startDay)
+//   const ojstag = document.getElementById('balancesvg');
+
+//   ojstag.style.height = dataLength * 20 + "vw";
+//   const ojs = document.getElementById('balance');
+//   const width = ojs.offsetWidth;
+//   const height = ojs.offsetHeight;
+//   //function resizer(){
+//   const yScale = d3.scaleLinear().domain([endDay, startDay]).range([10, height*.8]);
+//   const xScale = d3.scaleLinear().domain([6, 0]).range([width, 10]);
+//   const yAxisSVG = d3.select("svg").append("g").attr('class','ticks')//.select('text');
+//   const yAxis = d3.axisRight(yScale).tickSize(0).ticks(endDay-startDay);
+//   yAxis(yAxisSVG);
+
+//   const linearGenerator = d3.line()
+//     .x(function(d, index) {
+//       if(d.value == null || d.value == ''){
+//         if(index == dataLength){
+//           return xScale(data[index - 1].value)
+//         }else{
+//           return xScale(data[index + 1].value)
+//         }
+//       }else{
+//         return xScale(d.value)
+//       }
+//     })
+//     .y(function(d, index) {
+//       if(d.value == null || d.value == ''){
+//         if(index == dataLength){
+//           return yScale(data[index - 1].day)
+//         }else{
+//           return yScale(data[index + 1].day)
+//         }
+//           return yScale(d.day)
+//       }else{
+//         return yScale(d.day)
+//       }
+//     });
+//   d3.select("svg").data(data).selectAll(".tick").attr('class', function(d) {
+//     var index = data.findIndex(i => i.day == d);
+//     if(index<0){return;}
+//     if(d == data[index].day){
+//         if(data[index].value == null || data[index].value == ''){
+//             return "nodata";
+//         }else{
+//             return "tick";
+//         }
+//     }
+//   }).selectAll("text").text(function(d) {
+//     return (d < 10) ? ("0" + d) : d;
+//   })
+
+//   d3.select("svg").append("path").attr("d", linearGenerator(data)).attr("fill", "none").attr("stroke-width", 4).attr("opacity", .1).attr("stroke", "#5280e3");
+//   d3.select("svg").selectAll("circle").data(data).enter().append("circle").attr("r", 7)
+//     .attr('cx', function(d, index) {
+//       if(d.value == null || d.value == ''){
+//         if(index == dataLength){
+//           return xScale(data[index - 1].value)
+//         }else{
+//           return xScale(data[index + 1].value)
+//         }
+//       }else{
+//         return xScale(d.value)
+//       }
+//     }).attr('cy', function(d, index) {
+//       if(d.value == null || d.value == ''){
+//         if(index == dataLength){
+//           return yScale(data[index - 1].day)
+//         }else{
+//           return yScale(data[index + 1].day)
+//         }
+//       }else{
+//         return yScale(d.day)
+//       }
+//     }).style("fill", "#fff").attr("stroke-width", 4).attr("stroke", "#5280e3");
+//   // };
+//   //   window.addEventListener('resize', resizer);
+//   //   resizer();
+// }
 function balance(data){
-  var dataLength = data.length ;
-  var startDay = data[0].day -1;
-  var endDay = data[dataLength - 1].day;
-  const ojstag = document.getElementById('balancesvg');
-  ojstag.style.height = dataLength * 13 + "vw";
-  const ojs = document.getElementById('balance');
-  const width = ojs.offsetWidth;
-  const height = ojs.offsetHeight - 20;
-  //function resizer(){
-  const yScale = d3.scaleLinear().domain([endDay, startDay]).range([10, height]);
-  const xScale = d3.scaleLinear().domain([6, 0]).range([width, 10]);
-  const yAxisSVG = d3.select("svg").append("g").attr('class','ticks')//.select('text');
-  const yAxis = d3.axisRight(yScale).tickSize(0).ticks(dataLength);
-  yAxis(yAxisSVG);
+    var box = $('#balancesvg'),
+        dataSet = data,
+        dataLength = data.length;
+    box.css('height', dataLength*11.1112+'vw');
+    var width = box.width(),
+        height = box.height();
 
-  const linearGenerator = d3.line()
-    .x(function(d, index) {
-      if(d.value == null || d.value == ''){
-        if(index == dataLength){
-          return xScale(data[index - 1].value)
-        }else{
-          return xScale(data[index + 1].value)
-        }
-      }else{
-        return xScale(d.value)
-      }
-    })
-    .y(function(d, index) {
-      if(d.value == null || d.value == ''){
-        if(index == dataLength){
-          return yScale(data[index - 1].day)
-        }else{
-          return yScale(data[index + 1].day)
-        }
-          return yScale(d.day)
-      }else{
-        return yScale(d.day)
-      }
-    });
-  d3.select("svg").data(data).selectAll(".tick").attr('class', function(d) {
-    var index = data.findIndex(i => i.day == d);
-    if(index<0){return;}
-    if(data[index].value == null || data[index].value == ''){
-      return "nodata";
-    }else{
-      //return 'tick';
+    var xScale = d3.scaleLinear()
+        .domain([5, 1])
+        .range([(width/10)*6.5, 0]);
+    var yScale = d3.scaleBand()
+        .domain(dataSet.map(function(d){return d.day}))
+        .range([height, 0]);
+    g = d3.select("svg").append('g').attr('transform', 'translate('+(width/10)*2+', 15)');
+    var line = d3.line()
+         .x(function(d){return xScale(d.value)})
+         .y(function(d){return yScale(d.day)})
+    g.append('path')
+         .attr('class', function(d, i){return 'line'})
+         .attr('d', line(dataSet)).attr("fill", "none").attr("stroke-width", 4).attr("opacity", .1).attr("stroke", "#5280e3");
+    g.selectAll('rect')
+          .data(dataSet)
+          .enter()
+          .append('circle')
+          .attr('class', 'dot')
+          .attr('cx', function(d){return xScale(d.value)})
+          .attr('cy', function(d){return yScale(d.day)})
+          .attr('r', '6').style("fill", "#fff").attr("stroke-width", 4).attr("stroke", "#5280e3");
+    var _liHtml = '';
+    for(var idx = dataLength-1; idx >= 0; idx--){
+        _liHtml += '<li>'+dataSet[idx].day+'</li>';
     }
-  }).selectAll("text").text(function(d) {
-    return (d < 10) ? ("0" + d) : d;
-})
-
-  d3.select("svg").append("path").attr("d", linearGenerator(data)).attr("fill", "none").attr("stroke-width", 4).attr("opacity", .1).attr("stroke", "#5280e3");
-  d3.select("svg").selectAll("circle").data(data).enter().append("circle").attr("r", 7)
-    .attr('cx', function(d, index) {
-      if(d.value == null || d.value == ''){
-        if(index == dataLength){
-          return xScale(data[index - 1].value)
-        }else{
-          return xScale(data[index + 1].value)
-        }
-      }else{
-        return xScale(d.value)
-      }
-    }).attr('cy', function(d, index) {
-      if(d.value == null || d.value == ''){
-        if(index == dataLength){
-          return yScale(data[index - 1].day)
-        }else{
-          return yScale(data[index + 1].day)
-        }
-      }else{
-        return yScale(d.day)
-      }
-    }).style("fill", "#fff").attr("stroke-width", 4).attr("stroke", "#5280e3");
-  // };
-  //   window.addEventListener('resize', resizer);
-  //   resizer();
+    box.after('<ul>'+_liHtml+'</ul>');
+    if(dataLength > 7){
+        $('.gct').addClass('mb').css('height', 111.112+'vw');
+        $('.gct .more').show();
+        $('.gct .more').on('click', function(e){
+            e.preventDefault();
+            if($(this).hasClass('active')){
+                $('.gct').css('height', 111.112+'vw');
+                $(this).removeClass('active').text('펼쳐보기');
+            }else{
+                $('.gct').css('height', 'auto');
+                $(this).addClass('active').text('닫기');
+            }
+        });
+    }
 }
-
 function bachart(data, id){
+   var dataLength = data.length;
   const bachart = document.getElementById(id);
   for (let index = data.length -1; index >= 0; index--) {
     var nodata = ''
@@ -444,6 +500,21 @@ function bachart(data, id){
     var liHtml = `<div class="ba_chart clear ${nodata}"><div class="day">${data[index].day}</div><div class="left bar"><span style="width:${data[index].left}%"></span></div><div class="right bar"><span style="width:${data[index].right}%"></span></div></div>`
     bachart.innerHTML += liHtml;
   }
+
+    if(dataLength > 7){
+        $('.bachart_box').addClass('mb').css('height', 121.112+'vw');
+        $('.bachart_box .more').show();
+        $('.bachart_box .more').on('click', function(e){
+            e.preventDefault();
+            if($(this).hasClass('active')){
+                $('.bachart_box').css('height', 111.112+'vw');
+                $(this).removeClass('active').text('펼쳐보기');
+            }else{
+                $('.bachart_box').css('height', 'auto');
+                $(this).addClass('active').text('닫기');
+            }
+        });
+    }
 }
 
 function walk_tdata(data){
