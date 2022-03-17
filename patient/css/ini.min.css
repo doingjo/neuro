@@ -37,6 +37,7 @@ body{-webkit-user-select:none;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-
 .tal{text-align:left !important;}
 .tac{text-align:center !important;}
 .tar{text-align:right !important;}
+.vat{vertical-align:top !important;}
 
 .pr{position: relative;}
 
