@@ -93,7 +93,6 @@ var chart = chart || {
           // } else {
           //   $(".as_tab_wrap .as_tab_menu > li:first-child > a").trigger("click");
           // }
-
     },
     lineChart:function($this, data){
       if($($this).length == 0){return}
@@ -404,5 +403,282 @@ var chart = chart || {
       }
       time(dataSet.totalTime*.3334, 0);
       time(dataSet.totalTime*.6667, 1);
+    },
+    plantar:{
+      init: function(data){
+          if($(".cop_pattern_wrap").length == 0){return;}
+          box = $(".cop_pattern_wrap");
+          _plantar = box.find('.plantar-wrap');
+          _plantarChart = box.find('.plantar-wrap .chart');
+          dataSet = data;
+          dataLength = dataSet.length;
+          ele = '';
+          rAF = '';
+          renderCount = 0;
+          this.build();
+      },
+      build: function(){
+          if($(".cop_pattern_wrap.build").length == 1){return;}
+          //plantar-wrap
+          for(var i=0; i<=7; i++){
+              ele += '<p class="sensor_'+i+'_g"></p><p class="sensor_'+i+'_y"></p><p class="sensor_'+i+'_r"></p>';
+          }
+          _plantarChart.append(ele);
+          _plantar.append('<div class="txt"><div class="left"><span>0</span><span>0</span></div><div class="right"><span>0</span><span>0</span></div></div>');
+          this.player();
+          this.copPath('.cop_pattern_wrap .plantar-wrap .chart');
+          box.addClass('build');
+      },
+      player: function(){
+          _wrap = this;
+          const animate = (cb) => {
+            requestAnimationFrame(cb);
+          };
+          const makeCb = (duration) => {
+            let fpsInterval = 1000 / 30;
+            let start;
+            let then;
+            return function cb(timestamp) {
+              if(start === undefined && then === undefined){
+                start = window.performance.now();
+                then = window.performance.now();
+              }
+              const elapsed = timestamp - then;
+              if(elapsed >= fpsInterval){
+                // draw
+                then = timestamp - (elapsed % fpsInterval);
+                renderCount++;
+                console.log(renderCount+' : '+timestamp)
+                _wrap.draw(renderCount)
+              }
+              rAF = requestAnimationFrame(cb);
+              //const totalElapsed = window.performance.now() - start;
+              if(renderCount >= duration){
+                cancelAnimationFrame(rAF);
+                renderCount = 0;
+                box.find('.btn_play').show();
+              }
+            };
+          };
+          box.find('.btn_play').on('click', function(){
+              animate(makeCb(dataLength-1));
+              $(this).hide();
+          });
+          // box.find('.btn_close').on('click', function(){
+          //     cancelAnimationFrame(rAF);
+          //     renderCount = 0;
+          //     _wrap.draw('0');
+          //     box.find('.btn-player').removeClass('paused, refresh');
+          // });
+      },
+      copPath: function($this){
+          var box = $($this),
+              width = box.width()*.75,
+              height = box.height()*.4486,
+              r = 3,
+              chartData = [],
+              x1 = width/2,
+              y1 = height/2;
+              console.log(dataLength)
+          for(var i=0; i<dataLength; i++){
+              each = [];
+              for(var j=0; j<=1; j++){
+                  (j === 0) ? each.push(dataSet[i][10]*(width/100)) : each.push(dataSet[i][12]*(height/100)) ;
+              }
+              chartData.push(each);
+          }
+          //console.log(chartData)
+          var lineGenerator = d3.line();
+          var pathString = lineGenerator(chartData);
+          //svg
+          var svg = d3.select($this).append('svg').attr('width', width).attr('height', height).attr('padding', r);
+              svg.append('path').attr('d', pathString).attr('style', 'fill:none;stroke:#888;stroke-width:2;');
+          g = svg.selectAll('g').data(chartData).enter().append("g");
+          g.append('line')
+           .each(function(d, i){
+              d3.select(this)
+                .attr('x1', x1)
+                .attr('y1', y1)
+                .attr('x2', chartData[i][0])
+                .attr('y2', chartData[i][1])
+                .attr('style', 'stroke:#7973ba;stroke-width:2;')
+                x1 = chartData[i][0];
+                y1 = chartData[i][1];
+          });
+          g.append('circle')
+           .each(function(d, i){
+              d3.select(this)
+                .attr('cx', chartData[i][0])
+                .attr('cy', chartData[i][1])
+                .attr('r', r)
+                .attr('style', 'fill:#fff;')
+          });
+      },
+      draw: function(count){
+        if(count == '0'){
+            //plantar-wrap
+            for(var j=1; j<=8; j++){
+              (j == 1 || j == 5) ? alpha = (0/ 100.0) : alpha = (0/ 100.0) * 1.5;
+              this.getGYRAlphaValue(j-1, alpha)
+            }
+            _plantar.find('.txt span').text(0);
+            //COP
+            _plantarChart.find('svg g').hide();
+        }else{
+            //plantar-wrap
+            for(var j=1; j<=8; j++){
+              (j == 1 || j == 5) ? alpha = (dataSet[count][j]/ 100.0) : alpha = (dataSet[count][j]/ 100.0) * 1.5;
+              this.getGYRAlphaValue(j-1, alpha)
+            }
+           _plantar.find('.txt .left span').eq(0).text(dataSet[count][13]);
+           _plantar.find('.txt .left span').eq(1).text(dataSet[count][14]);
+           _plantar.find('.txt .right span').eq(0).text(dataSet[count][15]);
+           _plantar.find('.txt .right span').eq(1).text(dataSet[count][16]);
+            //COP
+            _plantarChart.find('svg g:nth-child(n+'+count+'):nth-child(-n+'+dataLength+')').hide();
+            _plantarChart.find('svg g:nth-child(-n+'+(count-1)+')').find('circle').hide();
+            _plantarChart.find('svg g:nth-child(-n+'+count+')').show();
+            _plantarChart.find('svg g:nth-child('+count+')').find('circle').show();
+        }
+      },
+      getGYRAlphaValue: function($this ,alpha){
+        //현재 알파값으로 녹/노/빨 알파값을 구하는 함수
+        var alphaGYRArray = [];
+        var green = (alpha * 2);
+            green = (green > 1.0) ? 1.0 : green;
+        var yellow = alpha - 0.25;
+            yellow = (yellow < 0.0) ? 0.0 : yellow;
+            yellow = (yellow > 0.5) ? 0.5 : yellow;
+            yellow *= 2.0;
+        var red = alpha - 0.6;
+            red = (red < 0.0) ? 0.0 : red;
+            red = (red > 0.5) ? 0.5 : red;
+            red *= 2.0;
+        alphaGYRArray.push(green, yellow, red);
+        alphaGYRArray.forEach(gyrArray)
+        function gyrArray(element, index){
+            idx = $this*3;
+            _plantarChart.find('p').eq(idx+index).css('opacity',element)
+        }
+      }
+    },
+    posture:{
+      init: function(data, guide){
+          if($(".posture_wrap").length == 0){return;}
+          box = $(".posture_wrap");
+          _copChart = box.find('.cop_pattern .chart');
+          dataSet = data;
+          dataLength = dataSet.length;
+          ele = '';
+          rAF = '';
+          renderCount = 0;
+          this.build();
+      },
+      build: function(){
+          if($(".posture_wrap.build").length == 1){return;}
+          _copChart.after('<div class="tick"><div class="left"><span>LEFT</span><span>RIGHT</span></div><div class="top"><span>FRONT</span><span>BACK</span></div></div>');
+          _copChart.append('<div class="guide" style="top:'+(50-guide.front/2)+'%;bottom:'+(50-guide.back/2)+'%;left:'+(50-guide.left/2)+'%;right:'+(50-guide.right/2)+'%;"></div>');
+          this.player();
+          this.copPath('.posture_wrap .cop_pattern .chart');
+          box.addClass('build');
+      },
+      player: function(){
+          _wrap = this;
+          const animate = (cb) => {
+            requestAnimationFrame(cb);
+          };
+          const makeCb = (duration) => {
+            let fpsInterval = 1000 / 30;
+            let start;
+            let then;
+            return function cb(timestamp) {
+              if(start === undefined && then === undefined){
+                start = window.performance.now();
+                then = window.performance.now();
+              }
+              const elapsed = timestamp - then;
+              if(elapsed >= fpsInterval){
+                // draw
+                then = timestamp - (elapsed % fpsInterval);
+                renderCount++;
+                console.log(renderCount+' : '+timestamp)
+                _wrap.draw(renderCount)
+              }
+              rAF = requestAnimationFrame(cb);
+              //const totalElapsed = window.performance.now() - start;
+              if(renderCount >= duration){
+                cancelAnimationFrame(rAF);
+                renderCount = 0;
+                box.find('.btn_play').show();
+              }
+            };
+          };
+          box.find('.btn_play').on('click', function(){
+              animate(makeCb(dataLength-1));
+              $(this).hide();
+          });
+          // box.find('.btn_close').on('click', function(){
+          //     cancelAnimationFrame(rAF);
+          //     renderCount = 0;
+          //     _wrap.draw('0');
+          //     box.find('.btn-player').removeClass('paused, refresh');
+          // });
+      },
+      copPath: function($this){
+          var box = $($this),
+              width = box.width(),
+              height = box.height(),
+              r = 5,
+              chartData = [],
+              x1 = width/2,
+              y1 = height/2;
+              console.log(dataLength)
+          for(var i=0; i<dataLength; i++){
+              each = [];
+              for(var j=0; j<=1; j++){
+                  (j === 0) ? each.push(dataSet[i][10]*(width/100)) : each.push(dataSet[i][12]*(height/100)) ;
+              }
+              chartData.push(each);
+          }
+          //console.log(chartData)
+          var lineGenerator = d3.line();
+          var pathString = lineGenerator(chartData);
+          //svg
+          var svg = d3.select($this).append('svg').attr('width', width).attr('height', height).attr('padding', r);
+              svg.append('path').attr('d', pathString).attr('style', 'fill:none;stroke:#888;stroke-width:2;');
+          g = svg.selectAll('g').data(chartData).enter().append("g");
+          g.append('line')
+           .each(function(d, i){
+              d3.select(this)
+                .attr('x1', x1)
+                .attr('y1', y1)
+                .attr('x2', chartData[i][0])
+                .attr('y2', chartData[i][1])
+                .attr('style', 'stroke:#7973ba;stroke-width:2;')
+                x1 = chartData[i][0];
+                y1 = chartData[i][1];
+          });
+          g.append('circle')
+           .each(function(d, i){
+              d3.select(this)
+                .attr('cx', chartData[i][0])
+                .attr('cy', chartData[i][1])
+                .attr('r', r)
+                .attr('style', 'fill:#fff;')
+          });
+      },
+      draw: function(count){
+        if(count == '0'){
+            //COP
+            _copChart.find('svg g').hide();
+        }else{
+            //COP
+            _copChart.find('svg g:nth-child(n+'+count+'):nth-child(-n+'+dataLength+')').hide();
+            _copChart.find('svg g:nth-child(-n+'+(count-1)+')').find('circle').hide();
+            _copChart.find('svg g:nth-child(-n+'+count+')').show();
+            _copChart.find('svg g:nth-child('+count+')').find('circle').show();
+        }
+      },
+
     },
 };

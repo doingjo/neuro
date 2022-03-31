@@ -200,7 +200,7 @@
                                     <div class="area_video">
                                         <div class="box_video">
                                             <img src="" alt="동영상썸네일">
-                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
+                                            <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_posture')"><span class="hidden">재생</span></button>
                                         </div>
                                     </div>
                                     <div class="area_input">
@@ -325,6 +325,21 @@
     </footer>
     <!-- Footer// -->
   </div>
+<!-- layerpop -->
+<div class="modals" id="laypop_posture">
+    <div class="wrapper_laypop type_basic posture">
+        <div class="inner_laypop">
+            <div class="box_tit">
+              <h1>Upright Posture</h1>
+            </div>
+            <div class="box_cnt scroll_wrap">
+              <img src="../images/dummy_graph.png" alt="" style="height:1000px">
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_plantarBearing');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
+</div>
+
   <script>
       $(function(){
         var Language = ['일','월','화','수','목','금','토'];

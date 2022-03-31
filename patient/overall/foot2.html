@@ -111,7 +111,29 @@
           </div>
           <div class="over_box">
             <div class="ti mb12">나의 자세</div>
-            <div><img src="../images/footimg.png" width="100%" alt=""></div>
+            <div class="posture_wrap">
+              <div class="cop_pattern"><div class="chart"></div></div>
+              <button class="btn_play">play</button>
+            </div>
+            <script>
+              var linesArray = [];
+              var guide = {front:'90',back:'10',left:'20',right:'80'}//가이드영역
+              $.ajax({
+                  url: '../data/1644630973338.csv',
+                  dataType: 'text',
+              }).done(function(allText){
+                  var allTextLines = allText.split(/\r\n|\n/);
+                  for(var i=3; i<allTextLines.length-1; i++){
+                      var data = allTextLines[i].split(',');
+                      var tarr = [];
+                      for (var j=0; j<data.length; j++) {
+                          tarr.push(data[j]);
+                      }
+                      linesArray.push(tarr);
+                  }
+                  chart.posture.init(linesArray, guide);
+              });
+            </script>
             <ul class="poseimg">
               <li>무게 중심</li>
               <li>가이드 영역</li>

@@ -13,22 +13,23 @@
   <link rel="stylesheet" href="../css/swiper.min.css">
   <link rel="stylesheet" href="../css/fullcalendar.css">
   <link rel="stylesheet" href="../css/daterangepicker.css">
+  <!-- <link rel="stylesheet" href="../css/video-js.css"> -->
   <link rel="stylesheet" href="../css/NotoSansKR.css">
   <link rel="stylesheet" href="../css/Montserrat.css">
   <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../js/jquery.ui.touch-punch.min.js"></script>
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
   <script type="text/javascript" src="../js/fullcalendar.js"></script>
   <script type="text/javascript" src="../js/moment.min.js"></script>
   <script type="text/javascript" src="../js/daterangepicker.js"></script>
+  <!-- <script type="text/javascript" src="../js/video.min.js"></script> -->
   <script type="text/javascript" src="../js/Sortable.js"></script>
   <script type="text/javascript" src="../js/chart.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
+
   <link rel="stylesheet" href="../css/contents.css">
-
-<link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
-  <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
-
   <title>HCP</title>
 </head>
 <body>
@@ -213,14 +214,14 @@
                                 <div class="inner_flex2box">
                                     <div class="box_video">
                                         <img src="" alt="동영상썸네일">
-                                        <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player_bearing')"><span class="hidden">재생</span></button>
+                                        <button type="button" class="btn_play btn_bearing"><span class="hidden">재생</span></button>
                                     </div>
                                     <div class="inner_cont">
                                         <p>총 <em>00</em>회의 잘못된 보행이 측정되었습니다.</p>
                                         <a href="#">자세히</a>
                                     </div>
                                 </div>
-                                <div class="tit_cnt02">
+                                <!-- <div class="tit_cnt02">
                                     <h3>Right Partial Weight Bearing</h3>
                                 </div>
                                 <div class="inner_flex2box">
@@ -228,10 +229,10 @@
                                         <img src="" alt="동영상썸네일">
                                         <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player_bearing')"><span class="hidden">재생</span></button>
                                     </div>
-                                    <div class="inner_cont no_data"><!-- 데이터가 없을 때 no_data -->
+                                    <div class="inner_cont no_data"><!-- 데이터가 없을 때 no_data --
                                         <p>결과지는 준비중에 있습니다.</p>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="tit_cnt02">
                                     <h3>보행 1</h3>
                                 </div>
@@ -239,10 +240,10 @@
                                     <div class="box_flex1box">
                                         <div class="box_video">
                                             <img src="" alt="동영상썸네일">
-                                            <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player')"><span class="hidden">재생</span></button>
+                                            <button type="button" class="btn_play btn_vedio_plantar"><span class="hidden">재생</span></button>
                                         </div>
                                         <div class="box_video">
-                                            <img src="" alt="이미지썸네일" onclick="hcp.modals_show('laypop_player_sm')">
+                                            <a href="javascript:void(0)" class="btn_plantar"><img src="" alt="이미지썸네일"></a>
                                         </div>
                                     </div>
                                     <div class="box_flex1box">
@@ -658,13 +659,11 @@
       $(function(){
         var Language = ['일','월','화','수','목','금','토'];
         hcp.daterangepicker('.datepicker', Language, false, true);
-
-        hcp.modals_show('laypop_player')
       });
   </script>
 <!-- layerpop -->
-<div class="modals" id="laypop_player">
-    <div class="wrapper_laypop type_basic player">
+<div class="modals" id="laypop_VedioPlantar">
+    <div class="wrapper_laypop type_basic vedio_plantar">
         <div class="inner_laypop">
             <div class="box_cnt">
                 <div class="seg_data">
@@ -672,63 +671,59 @@
                         <p class="tit">족저압</p>
                     </div>
                     <div class="box_data">
-                        <img src="../images/dummy_foot.png" alt="">
+                        <div class="plantar-wrap"><div class="chart"></div></div>
                     </div>
                     <div class="tit_data icon_data02">
                         <p class="tit">그래프</p>
                     </div>
-                    <div class="box_data">
-                        <img src="../images/dummy_graph.png" alt="">
+                    <div class="box_data pressure-chart">
+                        <div class="plantar-LR"><div class="chart"></div></div>
+                        <div class="plantar-HT"><div class="chart"></div></div>
                     </div>
+                    <div class="tit_data icon_data02">
+                        <p class="tit">압력 데이터</p>
+                    </div>
+                    <div class="box_data pressure-flow"></div>
                 </div>
                 <div class="seg_video">
-                    <video id="myVideo" class="video-js"></video>
+                    <video id="video">
+                      <source src="../data/vedio3.mp4" type="video/mp4">
+                      Your browser does not support HTML video.
+                    </video>
                 </div>
             </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player');"><span class="hidden">창닫기</span></button>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_VedioPlantar');"><span class="hidden">창닫기</span></button>
         </div>
     </div>
 </div>
-<style type="text/css">
-        .video-js{width:100%;max-height:100%;}
-        .video-js .vjs-big-play-button,
-        .video-js .vjs-volume-panel{display: none;}
-  </style>
-<script>
-$(function(){
-            var player = videojs('myVideo', {
-                sources: [
-                    {src: "../data/vedio.mp4", type: "video/mp4"}
-                ],
-                //poster: "[이미지 주소 등록]",
-                preload: "auto",
-                controls: true,
-                playsinline : true,
-                controlBar: {
-                    playToggle : true,
-                    progressControl : true,
-                    remainingTimeDisplay : false,
-                    //pictureInPictureToggle: false,
-                }
-            });
-
-            player.on('timeupdate', function () {
-                var current = player.currentTime();
-    console.log(current)
-});
-
-});
-</script>
-
-<div class="modals" id="laypop_player_bearing">
-    <div class="wrapper_laypop type_basic bearing">
+<div class="modals" id="laypop_plantar">
+    <div class="wrapper_laypop type_basic plantar">
+        <div class="inner_laypop">
+            <div class="box_cnt">
+                <div class="seg_data left">
+                  <h3>L</h3>
+                  <p>발끝<span>0%</span></p>
+                  <p>뒤꿈치<span>0%</span></p>
+                </div>
+                <div class="plantar-wrap"><div class="chart"></div></div>
+                <div class="seg_data right">
+                  <h3>R</h3>
+                  <p>발끝<span>0%</span></p>
+                  <p>뒤꿈치<span>0%</span></p>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_plantar');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
+</div>
+<div class="modals" id="laypop_plantarBearing">
+    <div class="wrapper_laypop type_basic plantar_bearing">
         <div class="inner_laypop">
             <div class="box_tit">
               <h1>Left Partial Weight Bearing</h1>
               <div>
-                <p>수술전 기준1</p>
+                <p>수술전 기준</p>
                 <span>L####, 30%</span>
-                <span>R####, 30%</span>
               </div>
             </div>
             <div class="box_cnt">
@@ -736,50 +731,55 @@ $(function(){
                   <div>
                       <p class="tit">족저압</p>
                       <div class="box_data">
-                          <img src="../images/dummy_foot.png" alt="" style="width:100%;">
+                          <div class="plantar-wrap"><div class="chart"></div></div>
                       </div>
                   </div>
                   <div>
                       <p class="tit">그래프</p>
                       <div class="box_data">
-                          <img src="../images/dummy_graph2.png" alt="" style="width:100%;">
+                          <div class="bearing-wrap"><div class="chart"></div></div>
                       </div>
                   </div>
               </div>
-              <div class="player_control">
-                <img src="../images/dummy_control.png" alt="">
-              </div>
             </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player_bearing');"><span class="hidden">창닫기</span></button>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_plantarBearing');"><span class="hidden">창닫기</span></button>
         </div>
     </div>
 </div>
 
-<div class="modals" id="laypop_player_sm">
-    <div class="wrapper_laypop type_basic player_sm">
-        <div class="inner_laypop">
-            <div class="box_cnt">
-                <div class="seg_data">
-                    <p class="tit">발끝</p>
-                    <p class="txt_percent">94%</p>
-                    <p class="txt_direction">L</p>
-                    <p class="tit">뒤꿈치</p>
-                    <p class="txt_percent">6%</p>
-                </div>
-                <div class="seg_video" style="background-color: #000">
-                    비디오 영역
-                </div>
-                <div class="seg_data">
-                    <p class="tit">발끝</p>
-                    <p class="txt_percent">94%</p>
-                    <p class="txt_direction">R</p>
-                    <p class="tit">뒤꿈치</p>
-                    <p class="txt_percent">6%</p>
-                </div>
-            </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player_sm');"><span class="hidden">창닫기</span></button>
-        </div>
-    </div>
-</div>
+
+<script>
+//퍼블 확인용 csv 구문, 개발시 삭제 부탁합니다.
+var linesArray = [];
+$.ajax({
+    url: '../data/vedio3.csv',
+    dataType: 'text',
+}).done(function(allText){
+    var allTextLines = allText.split(/\r\n|\n/);
+    for(var i=3; i<allTextLines.length-1; i++){
+        var data = allTextLines[i].split(',');
+        var tarr = [];
+        for (var j=0; j<data.length; j++) {
+            tarr.push(data[j]);
+        }
+        linesArray.push(tarr);
+    }
+    //plantar.vedioPlantar.init(linesArray);
+    //plantar.plantar.init(linesArray);
+    //plantar.plantarBearing.init('left', 800, linesArray);//(align, standard, data)
+});
+$('.btn_bearing').on('click', function(){
+    hcp.modals_show('laypop_plantarBearing');
+    chart.plantarBearing.init('left', 800, linesArray);//(align, standard, data)
+});
+$('.btn_vedio_plantar').on('click', function(){
+    hcp.modals_show('laypop_VedioPlantar');
+    chart.vedioPlantar.init(linesArray);
+});
+$('.btn_plantar').on('click', function(){
+    hcp.modals_show('laypop_plantar');
+    chart.plantar.init(linesArray);
+});
+</script>
 </body>
 </html>

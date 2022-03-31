@@ -110,9 +110,27 @@
           <div class="over_box">
             <div class="ti mb12">압력 중심 이동 패턴(COP Pattern)</div>
             <div class="cop_pattern_wrap">
-              <img src="../images/cop.png" width="100%" alt="">
+              <div class="plantar-wrap"><div class="chart"></div></div>
               <button class="btn_play">play</button>
             </div>
+            <script>
+              var linesArray = [];
+              $.ajax({
+                  url: '../data/1644630973338.csv',
+                  dataType: 'text',
+              }).done(function(allText){
+                  var allTextLines = allText.split(/\r\n|\n/);
+                  for(var i=3; i<allTextLines.length-1; i++){
+                      var data = allTextLines[i].split(',');
+                      var tarr = [];
+                      for (var j=0; j<data.length; j++) {
+                          tarr.push(data[j]);
+                      }
+                      linesArray.push(tarr);
+                  }
+                  chart.plantar.init(linesArray);
+              });
+            </script>
             <div class="tx c0 mt20">보행 중 압력 중심 패턴이 버터플라이 형태의 양 날개가 균일하게 나타나야 합니다.</div>
           </div>
           <div class="over_box">
