@@ -425,7 +425,7 @@ var chart = chart || {
           }
           _plantarChart.append(ele);
           _plantar.append('<div class="txt"><div class="left"><span>0</span><span>0</span></div><div class="right"><span>0</span><span>0</span></div></div>');
-          this.player();
+          this.draw(dataLength-1);
           this.copPath('.cop_pattern_wrap .plantar-wrap .chart');
           box.addClass('build');
       },
@@ -492,7 +492,7 @@ var chart = chart || {
           var pathString = lineGenerator(chartData);
           //svg
           var svg = d3.select($this).append('svg').attr('width', width).attr('height', height).attr('padding', r);
-              svg.append('path').attr('d', pathString).attr('style', 'fill:none;stroke:#888;stroke-width:2;');
+              svg.append('path').attr('d', pathString).attr('style', 'fill:none;stroke:#7973ba;stroke-width:2;');
           g = svg.selectAll('g').data(chartData).enter().append("g");
           g.append('line')
            .each(function(d, i){
@@ -578,7 +578,7 @@ var chart = chart || {
           if($(".posture_wrap.build").length == 1){return;}
           _copChart.after('<div class="tick"><div class="left"><span>LEFT</span><span>RIGHT</span></div><div class="top"><span>FRONT</span><span>BACK</span></div></div>');
           _copChart.append('<div class="guide" style="top:'+(50-guide.front/2)+'%;bottom:'+(50-guide.back/2)+'%;left:'+(50-guide.left/2)+'%;right:'+(50-guide.right/2)+'%;"></div>');
-          this.player();
+          this.draw(dataLength-1);
           this.copPath('.posture_wrap .cop_pattern .chart');
           box.addClass('build');
       },
@@ -645,7 +645,7 @@ var chart = chart || {
           var pathString = lineGenerator(chartData);
           //svg
           var svg = d3.select($this).append('svg').attr('width', width).attr('height', height).attr('padding', r);
-              svg.append('path').attr('d', pathString).attr('style', 'fill:none;stroke:#888;stroke-width:2;');
+              svg.append('path').attr('d', pathString).attr('style', 'fill:none;stroke:#7973ba;stroke-width:2;');
           g = svg.selectAll('g').data(chartData).enter().append("g");
           g.append('line')
            .each(function(d, i){

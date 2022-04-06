@@ -106,11 +106,47 @@
 $( "#slider" ).slider({
     range: 'min',
     animate: 'fast',
-    max: 36000,
+    max: 939,
     slide: function( event, ui ) {
         $( ".txt" ).text( ui.value );
       }
 });
+
+
+// var start = new Date().getTime();
+// var i = 0;
+// var callback = function() {
+//   var ts = new Date().getTime();
+//   if (ts - 2000 > start) {
+//     console.log('End');
+//   }
+//   else {
+//     i++
+//     console.log(i+' : '+ts);
+
+//     requestAnimationFrame(callback);
+//   }
+// }
+//   requestAnimationFrame(callback);
+
+
+
+var start = null;
+var element = document.getElementById('slider');
+element.style.position = 'absolute';
+
+function step(timestamp) {
+  if (!start) start = timestamp;
+  var progress = timestamp - start;
+  element.style.left = Math.min(progress / 10, 1000) + 'px';
+  if (progress < 20000) {
+    window.requestAnimationFrame(step);
+  }
+}
+
+window.requestAnimationFrame(step);
+
+
 
 
     $.ajax({
@@ -132,13 +168,23 @@ $( "#slider" ).slider({
             timestampArray.push(data[0])
             linesArray.push(tarr);
         }
-        // console.log(timestampArray)
+        var timesLength = timestampArray.length-1,
+            totalTime = timestampArray[timesLength];
         // console.log(linesArray)
-        for (var i=0; i<8; i++){
-            (i == 1 || i == 5) ? alpha = (linesArray[2][i+1]/ 100.0) : alpha = (linesArray[2][i+1]/ 100.0) * 1.5;
-            //console.log(i+' : '+alpha)
-            getGYRAlphaValue(i, alpha)
-        }
+        var i = 1,
+            arr = '';
+        var timer = setInterval(function(){
+          arr = i++;
+          //console.log(arr)
+          for(var j=1; j<=8; j++){
+            (j == 1 || j == 5) ? alpha = (linesArray[arr][j]/ 100.0) : alpha = (linesArray[arr][j]/ 100.0) * 1.5;
+            getGYRAlphaValue(j-1, alpha)
+          }
+        }, 33.3334);
+        setTimeout(function(){
+          console.log(totalTime)
+          clearInterval(timer)
+        }, totalTime);
         //현재 알파값으로 녹/노/빨 알파값을 구하는 함수
         function getGYRAlphaValue($this ,alpha){
             var alphaGYRArray = [];

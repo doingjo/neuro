@@ -13,19 +13,21 @@
   <link rel="stylesheet" href="../css/swiper.min.css">
   <link rel="stylesheet" href="../css/fullcalendar.css">
   <link rel="stylesheet" href="../css/daterangepicker.css">
+  <link rel="stylesheet" href="../css/video-js.css">
   <link rel="stylesheet" href="../css/NotoSansKR.css">
   <link rel="stylesheet" href="../css/Montserrat.css">
   <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
-  <script type="text/javascript" src="../js/jquery-ui.js"></script>
-  <script type="text/javascript" src="../js/jquery.ui.touch-punch.min.js"></script>
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
   <script type="text/javascript" src="../js/fullcalendar.js"></script>
   <script type="text/javascript" src="../js/moment.min.js"></script>
   <script type="text/javascript" src="../js/daterangepicker.js"></script>
+  <script type="text/javascript" src="../js/video.min.js"></script>
   <script type="text/javascript" src="../js/Sortable.js"></script>
   <script type="text/javascript" src="../js/chart.js"></script>
+  <script type="text/javascript" src="../js/plantar.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
+
   <link rel="stylesheet" href="../css/contents.css">
   <title>HCP</title>
 </head>
@@ -62,7 +64,6 @@
     <!-- Header// -->
     <!-- //Contents -->
     <div class="container">
-      <!-- //타이틀영역 -->
       <div class="inner_title">
         <div class="box_title">
           <h2>환자 정보</h2>
@@ -70,11 +71,9 @@
         <div class="box_btn">
           <button type="button" class="btn_cancel">수정</button>
           <button type="button" class="btn_cancel">삭제</button>
-          <button type="button" class="btn_primary">연결 끊기</button><!-- 환자와 매핑되지 않을때는 버튼 삭제 -->
+          <button type="button" class="btn_primary">연결끊기</button>
         </div>
       </div>
-      <!-- 타이틀영역 -->
-      <!-- //컨텐츠 영역 -->
       <div class="cont_both">
             <div class="cont">
                 <div class="tit_cnt">
@@ -168,12 +167,12 @@
             </div>
       </div>
       <div class="cont">
-        <div class="tab_wrap as_tab_wrap">
+        <div class="tab_wrap">
             <div class="tab_top">
-              <ul class="tab_menu as_tab_menu flexible">
-                  <li class="active"><a href="#">문진</a></li>
+              <ul class="tab_menu">
+                  <li><a href="#">문진</a></li>
                   <li><a href="#">Upright Posture</a></li>
-                  <li><a href="#">촬영 검사</a></li>
+                  <li class="active"><a href="#">촬영 검사</a></li>
                   <li><a href="#">운동 기록</a></li>
               </ul>
               <div class="box_search">
@@ -182,321 +181,14 @@
                   </div>
                   <div class="round_select">
                       <select name="" id="" class="">
-                        <option value="" selected disabled hidden>시간선택</option>
-                        <option value="">시간선택1</option>
-                        <option value="">시간선택2</option>
+                        <option value="" disabled selected hidden>시간선택</option>
+                        <option value="">시간선택</option>
                       </select>
                   </div>
                   <button type="button" class="btn_middle color_actprimary">조회</button>
               </div>
             </div>
             <div class="inner_depth">
-                <div class="tab_inner inner_survey">
-                    <p class="txt_date">최근작성 : 2021.11.02 <a href="#" class="modify">수정</a></p>
-                    <p class="tit_question">01. 환자분에게 해당하는 가족력을 모두 선택해 주세요.</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q01" id="q01_chk01">
-                                <label for="q01_chk01">없음</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q01" id="q01_chk02">
-                                <label for="q01_chk02">고혈압</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q01" id="q01_chk03">
-                                <label for="q01_chk03">당뇨</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q01" id="q01_chk04">
-                                <label for="q01_chk04">뇌혈관 질환</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q01" id="q01_chk05">
-                                <label for="q01_chk05">심장 질환</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q01" id="q01_chk06">
-                                <label for="q01_chk06">골다공증</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q01" id="q01_chk07">
-                                <label for="q01_chk07">암</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q01" id="q01_chk08">
-                                <label for="q01_chk08" class="chk_etc">기타</label>
-                            </div>
-                        </div>
-                        <div class="box_textarea">
-                            <textarea name="" id="" placeholder="기타내용을 입력하세요" ></textarea>
-                        </div>
-                    </div>
-                    <p class="tit_question">02. 병원 진단이나 수술을 받은 이력이 있다면 모두 선택해 주세요.</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q02" id="q02_chk01">
-                                <label for="q02_chk01">없음</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q02" id="q02_chk02">
-                                <label for="q02_chk02">고혈압</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q02" id="q02_chk03">
-                                <label for="q02_chk03">당뇨</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q02" id="q02_chk04">
-                                <label for="q02_chk04">뇌혈관 질환</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q02" id="q02_chk05">
-                                <label for="q02_chk05">심장 질환</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q02" id="q02_chk06">
-                                <label for="q02_chk06">골다공증</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q02" id="q02_chk07">
-                                <label for="q02_chk07">암</label>
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q02" id="q02_chk08">
-                                <label for="q02_chk08">기타</label>
-                            </div>
-                        </div>
-                        <div class="box_textarea">
-                            <textarea name="" id="" placeholder="기타내용을 입력하세요" ></textarea>
-                        </div>
-                    </div>
-                    <p class="tit_question">03. 지난 일주일 동안 격렬한 신체활동(무거운 물건 나르기, 달리기, 빠른 속도로 자건저 타기 등)을 며칠 하셨나요?</p>
-                    <p class="txt_notice">※안함을 선택한 경우 5번 항목으로</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox">
-                                <input type="radio" name="q03" id="q03_rdo01">
-                                <label for="q03_rdo01">없음</label>
-                            </div>
-                            <div class="input_chk_txtbox etc">
-                                <input type="radio" name="q03" id="q03_rdo02">
-                                <label for="q03_rdo02" class="etc">기타</label>
-                                <input type="text" class="input_round width_wide" placeholder="숫자를 입력해 주세요.">
-                            </div>
-                        </div>
-                    </div>
-                    <p class="tit_question">04. 3번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox time type_hour">
-                                <input type="number" max="23" min="0" class="input_round" placeholder="시간">
-                            </div>
-                            <div class="input_chk_txtbox time type_minute">
-                                <input type="text" class="input_round" placeholder="분" value="25">
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q04" id="q04_chk01">
-                                <label for="q04_chk01">확실하지 않음</label>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="tit_question">05. 지난 일주일 동안 중간 정도의 신체활동(가벼운 물건 나르기, 복식 테니스, 중간 속도로 자전거 타기 등)을 며칠 하셨나요?</p>
-                    <p class="txt_notice">※안함을 선택한 경우 7번 항목으로 ※걷기는 포함하지 않습니다.</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox">
-                                <input type="radio" name="q05" id="q05_rdo01">
-                                <label for="q05_rdo01">없음</label>
-                            </div>
-                            <div class="input_chk_txtbox etc">
-                                <input type="radio" name="q05" id="q05_rdo02">
-                                <label for="q05_rdo02" class="etc">기타</label>
-                                <input type="text" class="input_round width_wide" placeholder="숫자를 입력해 주세요.">
-                            </div>
-                        </div>
-                    </div>
-                    <p class="tit_question">06. 3번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox time type_hour">
-                                <input type="text" class="input_round" placeholder="시간">
-                            </div>
-                            <div class="input_chk_txtbox time type_minute">
-                                <input type="text" class="input_round" placeholder="분" value="25">
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q06" id="q06_chk01">
-                                <label for="q06_chk01">확실하지 않음</label>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="tit_question">07. 지난 일주일 동안 10분 이상 걸은 날은 며칠인가요?</p>
-                    <p class="txt_notice">※안함을 선택한 경우 9번 항목으로</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox">
-                                <input type="radio" name="q07" id="q07_rdo01">
-                                <label for="q07_rdo01">없음</label>
-                            </div>
-                            <div class="input_chk_txtbox etc">
-                                <input type="radio" name="q07" id="q07_rdo02">
-                                <label for="q07_rdo02" class="etc">기타</label>
-                                <input type="text" class="input_round width_wide" placeholder="숫자를 입력해 주세요.">
-                            </div>
-                        </div>
-                    </div>
-                    <p class="tit_question">08. 7번의 신체 활동은 하루에 얼만큼 하셨나요?</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox time type_hour">
-                                <input type="text" class="input_round" placeholder="시간">
-                            </div>
-                            <div class="input_chk_txtbox time type_minute">
-                                <input type="text" class="input_round" placeholder="분" value="25">
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q08" id="q08_chk01">
-                                <label for="q08_chk01">확실하지 않음</label>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="tit_question">09. 지난 일주일 동안 하루에 평균 몇 시간을 않아 계시나요?</p>
-                    <div class="area_answer">
-                        <div class="grp_chk">
-                            <div class="input_chk_txtbox time type_hour">
-                                <input type="text" class="input_round" placeholder="시간">
-                            </div>
-                            <div class="input_chk_txtbox time type_minute">
-                                <input type="text" class="input_round" placeholder="분" value="25">
-                            </div>
-                            <div class="input_chk_txtbox">
-                                <input type="checkbox" name="q09" id="q09_chk01">
-                                <label for="q09_chk01">확실하지 않음</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab_inner inner_posture">
-                    <p class="txt_date">최근 촬영 : 2021.11.02
-                        <span class="noti-right">* 본 결과지는 정보전달에 목적이 있습니다.</span>
-                    </p>
-                    <div class="inner_posture_data">
-                       <div class="inner_box_data">
-                            <div class="box_posture">
-                                <p class="tit">정면</p>
-                                <div class="area_data">
-                                    <div class="area_video">
-                                        <div class="box_video">
-                                            <img src="" alt="동영상썸네일">
-                                            <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_posture')"><span class="hidden">재생</span></button>
-                                        </div>
-                                    </div>
-                                    <div class="area_input">
-                                        <div class="grp_chk">
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_front" id="pst_front01" checked>
-                                                <label for="pst_front01">정상(이상없음)</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_front" id="pst_front02">
-                                                <label for="pst_front02">전신 왼쪽 편중</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_front" id="pst_front03">
-                                                <label for="pst_front03">어깨 불균형</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_front" id="pst_front04">
-                                                <label for="pst_front04">골반 불균형</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_front" id="pst_front05">
-                                                <label for="pst_front05">O다리</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_front" id="pst_front06">
-                                                <label for="pst_front06">X다리</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                       <div class="inner_box_data">
-                            <div class="box_posture">
-                                <p class="tit">측면</p>
-                                <div class="area_data">
-                                    <div class="area_video">
-                                        <div class="box_video">
-                                            <img src="" alt="동영상썸네일">
-                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                                        </div>
-                                    </div>
-                                    <div class="area_input">
-                                        <div class="grp_chk">
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_side" id="pst_side01">
-                                                <label for="pst_side01">정상(이상없음)</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_side" id="pst_side02">
-                                                <label for="pst_side02">거북목</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_side" id="pst_side03">
-                                                <label for="pst_side03">일자목</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_side" id="pst_side04">
-                                                <label for="pst_side04">골반 전방 변위</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_side" id="pst_side05">
-                                                <label for="pst_side05">골반 후방 변위</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                       <div class="inner_box_data">
-                            <div class="box_posture">
-                                <p class="tit">후면</p>
-                                <div class="area_data">
-                                    <div class="area_video">
-                                        <div class="box_video">
-                                            <img src="" alt="동영상썸네일">
-                                            <button type="button" class="btn_play"><span class="hidden">재생</span></button>
-                                        </div>
-                                    </div>
-                                    <div class="area_input">
-                                        <div class="grp_chk">
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_back" id="pst_back01">
-                                                <label for="pst_back01">정상(이상없음)</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_back" id="pst_back02">
-                                                <label for="pst_back02">견갑골 회전</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_back" id="pst_back03">
-                                                <label for="pst_back03">상부 척추 불균형</label>
-                                            </div>
-                                            <div class="input_chk_smtxt">
-                                                <input type="checkbox" name="pst_back" id="pst_back04">
-                                                <label for="pst_back04">하부 척추 불균형</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                    </div>
-                </div>
                 <div class="tab_inner inner_pdt32px">
                     <p class="txt_date">최근 검사 : 2021.11.02
                         <span class="noti-right">* 본 결과지는 정보전달에 목적이 있습니다.</span>
@@ -521,7 +213,7 @@
                                 <div class="inner_flex2box">
                                     <div class="box_video">
                                         <img src="" alt="동영상썸네일">
-                                        <button type="button" class="btn_play btn_bearing"><span class="hidden">재생</span></button>
+                                        <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player_bearing')"><span class="hidden">재생</span></button>
                                     </div>
                                     <div class="inner_cont">
                                         <p>총 <em>00</em>회의 잘못된 보행이 측정되었습니다.</p>
@@ -534,7 +226,7 @@
                                 <div class="inner_flex2box">
                                     <div class="box_video">
                                         <img src="" alt="동영상썸네일">
-                                        <button type="button" class="btn_play btn_bearing"><span class="hidden">재생</span></button>
+                                        <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player_bearing')"><span class="hidden">재생</span></button>
                                     </div>
                                     <div class="inner_cont no_data"><!-- 데이터가 없을 때 no_data -->
                                         <p>결과지는 준비중에 있습니다.</p>
@@ -547,10 +239,10 @@
                                     <div class="box_flex1box">
                                         <div class="box_video">
                                             <img src="" alt="동영상썸네일">
-                                            <button type="button" class="btn_play btn_vedio_plantar"><span class="hidden">재생</span></button>
+                                            <button type="button" class="btn_play" onclick="hcp.modals_show('laypop_player')"><span class="hidden">재생</span></button>
                                         </div>
                                         <div class="box_video">
-                                            <a href="javascript:void(0)" class="btn_plantar"><img src="" alt="이미지썸네일"></a>
+                                            <img src="" alt="이미지썸네일" onclick="hcp.modals_show('laypop_player_sm')">
                                         </div>
                                     </div>
                                     <div class="box_flex1box">
@@ -943,40 +635,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab_inner inner_record empty">
-                    <p class="tit_error">환자분과 연결되지 않았습니다</p>
-                    <p>처방한 운동 기록을 확인하려면 아래 경로에서 환자 코드를 확인 후<br>“환자 데이터 연결”을 통해 환자의 데이터를 연결해 주세요.</p>
-                    <div class="box_connect_wayto">
-                        <p class="tit_wayto">환자 <em>데이터 연결 코드 확인</em> 방법</p>
-                        <ol class="list_wayto">
-                            <li>
-                                <div class="box_img">
-                                    <img src="../images/ico_record01.svg" alt="썸네일">
-                                </div>
-                                <p>Patient App<br>로그인</p>
-                            </li>
-                            <li>
-                                <div class="box_img">
-                                    <img src="../images/ico_record02.svg" alt="썸네일">
-                                </div>
-                                <p class="line_single">설정</p>
-                            </li>
-                            <li>
-                                <div class="box_img">
-                                    <img src="../images/ico_record03.svg" alt="썸네일">
-                                </div>
-                                <p>센터 / 병원<br>정보</p>
-                            </li>
-                            <li>
-                                <div class="box_img">
-                                    <img src="../images/ico_record04.svg" alt="썸네일">
-                                </div>
-                                <p>'데이터연결'<br>버튼</p>
-                            </li>
-                        </ol>
-                    </div>
-                    <button type="button" class="btn_round color_primary btn_pop" onclick="hcp.modals_show('modals01')">환자 데이터 연결</button>
-                </div>
             </div>
         </div>
       </div>
@@ -996,57 +654,17 @@
     </footer>
     <!-- Footer// -->
   </div>
+  <script>
+      $(function(){
+        var Language = ['일','월','화','수','목','금','토'];
+        hcp.daterangepicker('.datepicker', Language, false, true);
+
+        hcp.modals_show('laypop_VedioPlantar')
+      });
+  </script>
 <!-- layerpop -->
-<div class="modals" id="modals01">
-  <div class="box">
-    <div class="mod_body">
-      <p class="txt_msg">데이터 코드 입력</p>
-      <div>
-          <input type="text" class="input_round" value="" placeholder="코드값을 입력해주세요.">
-      </div>
-    </div>
-    <div class="mod_bott">
-      <div class="tfixed">
-        <div class="tfcell">
-          <button onclick="hcp.modals_close('modals')">취소</button>
-        </div>
-        <div class="tfcell">
-          <button class="txt_actprimary" onclick="hcp.modals_close('modals01'); hcp.modals_show('modals02')">연결</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modals" id="modals02">
-  <div class="box">
-    <div class="mod_body">
-      <p class="txt_msg">환자 연결</p>
-      <div class="box_msg">
-          <p class="txt_actprimary">'이름'과 연결 되었습니다.</p>
-      </div>
-    </div>
-    <div class="mod_bott">
-      <button onclick="hcp.modals_close('modals02'); ">확인</button>
-    </div>
-  </div>
-</div>
-
-<div class="modals" id="laypop_posture">
-    <div class="wrapper_laypop type_basic posture">
-        <div class="inner_laypop">
-            <div class="box_tit">
-              <h1>Upright Posture</h1>
-            </div>
-            <div class="box_cnt scroll_wrap">
-              <img src="../images/dummy_graph.png" alt="">
-            </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_plantarBearing');"><span class="hidden">창닫기</span></button>
-        </div>
-    </div>
-</div>
-
 <div class="modals" id="laypop_VedioPlantar">
-    <div class="wrapper_laypop type_basic vedio_plantar">
+    <div class="wrapper_laypop type_basic vedioPlantar">
         <div class="inner_laypop">
             <div class="box_cnt">
                 <div class="seg_data">
@@ -1059,19 +677,19 @@
                     <div class="tit_data icon_data02">
                         <p class="tit">그래프</p>
                     </div>
-                    <div class="box_data pressure-chart">
-                        <div class="plantar-LR"><div class="chart"></div></div>
-                        <div class="plantar-HT"><div class="chart"></div></div>
+                    <div class="box_data">
+                        <img src="../images/dummy_graph.png" alt="">
                     </div>
                     <div class="tit_data icon_data02">
                         <p class="tit">압력 데이터</p>
                     </div>
-                    <div class="box_data pressure-flow"></div>
+                    <div class="box_data">
+                        13.2
+                    </div>
                 </div>
                 <div class="seg_video">
-                    <video id="video">
-                      <source src="../data/vedio3.mp4" type="video/mp4">
-                      Your browser does not support HTML video.
+                    <video id="myVideo" class="video-js">
+                      <source src="../data/vedio.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -1079,34 +697,34 @@
         </div>
     </div>
 </div>
-<div class="modals" id="laypop_plantar">
-    <div class="wrapper_laypop type_basic plantar">
-        <div class="inner_laypop">
-            <div class="box_cnt">
-                <div class="seg_data left">
-                  <h3>L</h3>
-                  <p>발끝<span>0%</span></p>
-                  <p>뒤꿈치<span>0%</span></p>
-                </div>
-                <div class="plantar-wrap"><div class="chart"></div></div>
-                <div class="seg_data right">
-                  <h3>R</h3>
-                  <p>발끝<span>0%</span></p>
-                  <p>뒤꿈치<span>0%</span></p>
-                </div>
-            </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_plantar');"><span class="hidden">창닫기</span></button>
-        </div>
-    </div>
-</div>
-<div class="modals" id="laypop_plantarBearing">
-    <div class="wrapper_laypop type_basic plantar_bearing">
+<script>
+$.ajax({
+    url: '../data/1644630973338.csv',
+    dataType: 'text',
+}).done(function(allText){
+    var allTextLines = allText.split(/\r\n|\n/);
+    var linesArray = [];
+    for(var i=3; i<allTextLines.length-1; i++){
+        var data = allTextLines[i].split(',');
+        var tarr = [];
+        for (var j=0; j<data.length; j++) {
+            tarr.push(data[j]);
+        }
+        linesArray.push(tarr);
+    }
+    plantar.vedioPlantar2(linesArray);
+});
+</script>
+
+<div class="modals" id="laypop_player_bearing">
+    <div class="wrapper_laypop type_basic bearing">
         <div class="inner_laypop">
             <div class="box_tit">
               <h1>Left Partial Weight Bearing</h1>
               <div>
-                <p>수술전 기준</p>
+                <p>수술전 기준1</p>
                 <span>L####, 30%</span>
+                <span>R####, 30%</span>
               </div>
             </div>
             <div class="box_cnt">
@@ -1114,67 +732,50 @@
                   <div>
                       <p class="tit">족저압</p>
                       <div class="box_data">
-                          <div class="plantar-wrap"><div class="chart"></div></div>
+                          <img src="../images/dummy_foot.png" alt="" style="width:100%;">
                       </div>
                   </div>
                   <div>
                       <p class="tit">그래프</p>
                       <div class="box_data">
-                          <div class="bearing-wrap"><div class="chart"></div></div>
+                          <img src="../images/dummy_graph2.png" alt="" style="width:100%;">
                       </div>
                   </div>
               </div>
+              <div class="player_control">
+                <img src="../images/dummy_control.png" alt="">
+              </div>
             </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_plantarBearing');"><span class="hidden">창닫기</span></button>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player_bearing');"><span class="hidden">창닫기</span></button>
         </div>
     </div>
 </div>
 
-  <script>
-    $(function(){
-        var Language = ['일','월','화','수','목','금','토'];
-        hcp.daterangepicker('.datepicker', Language, false, true);
-
-        $(".list_tab li").on("click", function(){
-            $(this).addClass("on").siblings().removeClass("on");
-        });
-        $(".input_chk_txtbox input[type='text']").on("click", function(){
-            $(this).parent(".input_chk_txtbox").children("label.etc").trigger("click");
-            $(this).focus();
-        });
-        //퍼블 확인용 csv 구문, 개발시 삭제 부탁합니다.
-        var linesArray = [];
-        $.ajax({
-            url: '../data/vedio3.csv',
-            dataType: 'text',
-        }).done(function(allText){
-            var allTextLines = allText.split(/\r\n|\n/);
-            for(var i=3; i<allTextLines.length-1; i++){
-                var data = allTextLines[i].split(',');
-                var tarr = [];
-                for (var j=0; j<data.length; j++) {
-                    tarr.push(data[j]);
-                }
-                linesArray.push(tarr);
-            }
-            //plantar.vedioPlantar.init(linesArray);
-            //plantar.plantar.init(linesArray);
-            //plantar.plantarBearing.init('left', 800, linesArray);//(align, standard, data)
-        });
-        $('.btn_bearing').on('click', function(){
-            hcp.modals_show('laypop_plantarBearing');
-            chart.plantarBearing.init('left', 800, linesArray);//(align, standard, data)
-        });
-        $('.btn_vedio_plantar').on('click', function(){
-            hcp.modals_show('laypop_VedioPlantar');
-            chart.vedioPlantar.init(linesArray);
-        });
-        $('.btn_plantar').on('click', function(){
-            hcp.modals_show('laypop_plantar');
-            chart.plantar.init(linesArray);
-        });
-    });
-  </script>
-
+<div class="modals" id="laypop_player_sm">
+    <div class="wrapper_laypop type_basic player_sm">
+        <div class="inner_laypop">
+            <div class="box_cnt">
+                <div class="seg_data">
+                    <p class="tit">발끝</p>
+                    <p class="txt_percent">94%</p>
+                    <p class="txt_direction">L</p>
+                    <p class="tit">뒤꿈치</p>
+                    <p class="txt_percent">6%</p>
+                </div>
+                <div class="seg_video" style="background-color: #000">
+                    비디오 영역
+                </div>
+                <div class="seg_data">
+                    <p class="tit">발끝</p>
+                    <p class="txt_percent">94%</p>
+                    <p class="txt_direction">R</p>
+                    <p class="tit">뒤꿈치</p>
+                    <p class="txt_percent">6%</p>
+                </div>
+            </div>
+            <button type="button" class="btn_close" onclick="hcp.modals_close('laypop_player_sm');"><span class="hidden">창닫기</span></button>
+        </div>
+    </div>
+</div>
 </body>
 </html>

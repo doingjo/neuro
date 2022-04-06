@@ -111,13 +111,13 @@
             <div class="ti mb12">나의 자세</div>
             <div class="posture_wrap">
               <div class="cop_pattern"><div class="chart"></div></div>
-              <button class="btn_play">play</button>
+              <!-- <button class="btn_play">play</button> -->
             </div>
             <script>
               var linesArray = [];
               var guide = {front:'90',back:'10',left:'20',right:'80'}//가이드영역
               $.ajax({
-                  url: '../data/1644630973338.csv',
+                  url: '../data/vedio3.csv',
                   dataType: 'text',
               }).done(function(allText){
                   var allTextLines = allText.split(/\r\n|\n/);

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi, viewport-fit=cover" />
+  <meta name="author" content="">
+  <meta name="title" content="">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="../css/ini.min.css">
+  <link rel="stylesheet" href="../css/swiper.min.css">
+  <link rel="stylesheet" href="../css/fullcalendar.css">
+  <link rel="stylesheet" href="../css/daterangepicker.css">
+  <link rel="stylesheet" href="../css/NotoSansKR.css">
+  <link rel="stylesheet" href="../css/Montserrat.css">
+  <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../js/jquery.ui.touch-punch.min.js"></script>
+  <script type="text/javascript" src="../js/d3.v5.min.js"></script>
+  <script type="text/javascript" src="../js/swiper.min.js"></script>
+  <script type="text/javascript" src="../js/fullcalendar.js"></script>
+  <script type="text/javascript" src="../js/moment.min.js"></script>
+  <script type="text/javascript" src="../js/daterangepicker.js"></script>
+  <script type="text/javascript" src="../js/Sortable.js"></script>
+  <script type="text/javascript" src="../js/chart.js"></script>
+  <script type="text/javascript" src="../js/ui.js"></script>
+  <link rel="stylesheet" href="../css/contents.css">
+  <title>HCP</title>
+</head>
+<body>
+<style>
+.wrap{padding:100px;}
+.wrap button{margin:10px; border:1px solid #ddd;background-color:rgba(0,0,0,.2)}
+
+.slider{position:relative; width:440px;height:4px; border-radius:2px;background-color:#333;}
+.slider .ui-slider-handle{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%); width:16px;height:16px; border-radius:100%;background-color:#5280e2; cursor:move;}
+.slider .ui-slider-range{height:100%; background-color:#5280e2;}
+
+#box {
+  width: 100px;
+  height: 100px;
+  background: greenyellow;
+}
+</style>
+
+<!-- <div class="bar">
+<div id="dragdiv"></div>
+</div> -->
+<div class="wrap">
+
+
+    <video id="video" width="420" controls>
+        <source src="../data/vedio.mp4" type="video/mp4">
+        Your browser does not support HTML video.
+    </video>
+
+    <div class="slider"></div>
+    <p class="txt">00</p>
+
+
+    <button class="btn-player play">재생</button>
+
+</div>
+
+
+
+<script>
+
+const animate = (cb) => {
+  requestAnimationFrame(cb);
+};
+var rAF,
+    renderCount = 0;
+const makeCb = (duration) => {
+  let fpsInterval = 1000 / 30;
+  let start;
+  let then;
+  return function cb(timestamp) {
+    if(start === undefined && then === undefined){
+      start = window.performance.now();
+      then = window.performance.now();
+    }
+    const elapsed = timestamp - then;
+    if(elapsed >= fpsInterval){
+      // draw
+      then = timestamp - (elapsed % fpsInterval);
+      renderCount++;
+      console.log(renderCount+' : '+timestamp)
+      $( ".slider" ).slider("value", renderCount);
+      $( ".txt" ).text(renderCount);
+    }
+    rAF = requestAnimationFrame(cb);
+    //const totalElapsed = window.performance.now() - start;
+    if(renderCount >= duration){
+      cancelAnimationFrame(rAF);
+      renderCount = 0;
+    }
+  };
+};
+
+
+
+var myVideo = document.getElementById("video");
+myVideo.load();
+
+$('.btn-player').on('click',function(){
+    if (myVideo.paused){
+        animate(makeCb(939));
+        myVideo.play();
+
+    }else{
+        cancelAnimationFrame(rAF);
+        renderCount = renderCount;
+        myVideo.pause();
+    }
+
+
+
+
+});
+
+$( ".slider" ).slider({
+    range: 'min',
+    animate: 'fast',
+    max: 939,
+    slide: function(event, ui) {
+        $( ".txt" ).text( ui.value );
+        renderCount = ui.value;
+        myVideo.currentTime = 10130 / 1000;
+    }
+});
+</script>
+
+</body>
+</html>
