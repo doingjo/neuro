@@ -154,7 +154,7 @@ button{white-space: nowrap;}
 .inner_title.single_right{justify-content:flex-end;}
 .inner_title h2{min-width:65px;font-weight:bold;font-size:22px;line-height:32px;color:#2e5bbb;}
 .inner_title .tit_sub{margin-top:8px;font-size:14px;line-height:20px;color:#999;}
-.inner_title .tit_sub .txt_date{display:inline-block;margin-right:10px;font-weight:bold;font-size:14px;line-height:20px;color:#212529;}
+.inner_title .tit_sub .txt_date{display:inline-block;margin-right:10px;font-weight:bold;font-size:14px;line-height:20px;color:#212529;letter-spacing:-.5px;white-space:nowrap;}
 .inner_title .box_btn{font-size:0;}
 .inner_title .box_btn button{height:40px;padding:9px 20px 11px;font-size:14px;line-height:20px;border-radius:12px;}
 .inner_title .box_btn button + button{margin-left:4px;}
