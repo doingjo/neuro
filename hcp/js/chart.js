@@ -225,7 +225,7 @@ var chart = chart || {
           valueMax = Math.max.apply(null, valueMax);
       for(var i = 0; i < dataSet.length; i++){
         (valueMax === dataSet[i].value)? max = 'max' : max = '';
-        barWRap += '<p class="bar '+max+'"><em class="tick">'+ dataSet[i].day +'</em><span style="height:'+ dataSet[i].value +'%;"></span></p>'
+        barWRap += '<p class="bar '+max+'"><strong class="tick">'+ dataSet[i].day +'</strong><span style="height:'+ dataSet[i].value +'%;"><em>'+ dataSet[i].times +'</em></span></p>'
       }
       box.append('<div class="legend"><p>100</p><p>75</p><p>50</p><p>25</p><p>0</p><p>'+data.tick+'</p></div>');
       box.append('<div class="bar-wrap">'+ barWRap +'</div>');

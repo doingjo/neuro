@@ -1008,7 +1008,10 @@ h4 + .balance_data {margin-top:34px;}
 .achieve-wrap .chart .legend p:last-child::after{display:none}
 .achieve-wrap .chart .bar-wrap{display:flex;flex-direction:row;justify-content:space-between; height:100%;padding:0 60px;}
 .achieve-wrap .chart .bar-wrap .bar{position:relative; width:24px;height:100%;}
-.achieve-wrap .chart .bar-wrap .bar span{display:inline-block;position:absolute;bottom:0; width:100%;min-height:24px; border-radius:12px;background-color:#90b4ff}
+.achieve-wrap .chart .bar-wrap .bar span{display:inline-block;position:absolute;bottom:0; width:100%;min-height:24px; border-radius:12px;background-color:#90b4ff;cursor:pointer;}
+.achieve-wrap .chart .bar-wrap .bar span em{display:inline-block;position:absolute;top:-20px;left:50%;transform:translate(-50%,0); padding:1px 8px 2px; font-size:12px;color:#fff;white-space:nowrap; border-radius:8px; background-color:#212529;opacity:0;transition:all .2s linear}
+.achieve-wrap .chart .bar-wrap .bar span em::after{content:'';display:block;position:absolute;bottom:-4px; width:0;height:0;left:calc(50% - 4px); border-top:4px solid #212529;border-left:4px solid transparent;border-right:4px solid transparent}
+.achieve-wrap .chart .bar-wrap .bar span:hover em{top:-30px;opacity:1;}
 .achieve-wrap .chart .bar-wrap .bar .tick{position:absolute;bottom:-36px;left:0;right:0; font-size:12px;color:#999;font-weight:700;text-align:center;}
 .achieve-wrap .chart .bar-wrap .bar:first-child .tick{color:#fa323c;}
 .achieve-wrap .chart .bar-wrap .bar:last-child .tick{color:#434cff;}

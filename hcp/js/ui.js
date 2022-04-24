@@ -227,7 +227,6 @@ var hcp = hcp || {
         function clickDay(date, tag){
           choiceDay = date;
           scheduleDayChange(choiceDay, date);
-
           console.log(formatDate(date,true));
         }
         function scheduleDayChange(choice, date){
@@ -253,6 +252,7 @@ var hcp = hcp || {
         /* 월간, 주간 tridder */
         $('.btn_today').click(function() {
           $('.fc-today-button').trigger('click');
+          scheduleDayChange(new Date());
         });
         $('.btn_month').on('click', function(){
           $('.time_wrap').hide();
