@@ -91,6 +91,9 @@
                 <div class="box_select">
                     <p class="txt_msg">선택 버튼을 눌러 환자를 추가하세요</p>
                     <button class="btn_small color_whiteborder" onclick="hcp.modals_show('select_patient')">선택</button>
+                    <button class="btn_small color_whiteborder" onclick="hcp.modals_show('select_patient2')">선택</button>
+                    <button class="btn_small color_whiteborder" onclick="hcp.modals_show('select_patient3')">선택</button>
+                    <button class="btn_small color_whiteborder" onclick="hcp.modals_show('select_patient4')">선택</button>
                 </div>
             </div>
             <!-- 환자정보// -->
@@ -110,17 +113,17 @@
           <div class="mod_head">
             <h3>환자 선택</h3>
           </div>
-            <div class="mod_body">
-                <div class="overflow_body">
-                  <div class="inner_search">
-                    <div class="round_select">
-                        <select name="" id="" class="">
-                            <option value="" disabled selected hidden>전체</option>
-                            <option value="">전체</option>
-                        </select>
-                    </div>
-                    <input type="text" class="input_round" placeholder="검색어를 입력하세요">
-                    <button type="button" class="btn_middle color_actprimary">조회</button>
+          <div class="mod_body">
+              <div class="overflow_body">
+                <div class="inner_search">
+                  <div class="round_select">
+                      <select name="" id="" class="">
+                          <option value="" disabled selected hidden>전체</option>
+                          <option value="">전체</option>
+                      </select>
+                  </div>
+                  <input type="text" class="input_round" placeholder="검색어를 입력하세요">
+                  <button type="button" class="btn_middle color_actprimary">조회</button>
                 </div>
                 <div class="inner_result">
                     <p class="txt_msg"><span class="txt_num">35</span>건의 검색결과가 있습니다.</p>
@@ -216,13 +219,173 @@
                     <a href="#none" class="btn_prev"><img src="../images/icon_last.png" alt="마지막 리스트로 이동"></a>
                 </div>
                 <!-- pagination// -->
-                <div class="inner_result empty">
-                    <p class="txt_msg">선택할 환자가 없습니다.</p>
-                </div>
-                </div>
-            </div>
-            <button type="button" class="btn_close" onclick="hcp.modals_close('select_patient')"><span class="hidden">창닫기</span></button>
+              </div>
+          </div>
+          <button type="button" class="btn_close" onclick="hcp.modals_close('select_patient')"><span class="hidden">창닫기</span></button>
         </div>
+    </div>
+    <div class="modals board" id="select_patient2">
+      <div class="box">
+        <div class="mod_head">
+          <h3>환자 선택</h3>
+        </div>
+        <div class="mod_body">
+          <div class="overflow_body">
+            <div class="inner_search">
+              <div class="round_select">
+                  <select name="" id="" class="">
+                      <option value="" disabled selected hidden>전체</option>
+                      <option value="">전체</option>
+                  </select>
+              </div>
+              <input type="text" class="input_round" placeholder="검색어를 입력하세요">
+              <button type="button" class="btn_middle color_actprimary">조회</button>
+            </div>
+            <div class="inner_result">
+                <p class="txt_msg"><span class="txt_num">0</span>건의 검색결과가 있습니다.</p>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn_close" onclick="hcp.modals_close('select_patient2')"><span class="hidden">창닫기</span></button>
+      </div>
+    </div>
+    <div class="modals board" id="select_patient3">
+      <div class="box">
+        <div class="mod_head">
+          <h3>환자 선택</h3>
+        </div>
+        <div class="mod_body">
+          <div class="overflow_body">
+            <div class="inner_search">
+              <div class="round_select">
+                  <select name="" id="" class="">
+                      <option value="" disabled selected hidden>전체</option>
+                      <option value="">전체</option>
+                  </select>
+              </div>
+              <input type="text" class="input_round" placeholder="검색어를 입력하세요">
+              <button type="button" class="btn_middle color_actprimary">조회</button>
+            </div>
+            <table class="tbl_notice type_all_center">
+                <colgroup>
+                    <col style="width:12%;">
+                    <col>
+                    <col style="width:15%">
+                    <col style="width:15%">
+                    <col style="width:15%">
+                    <col style="width:15%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <!-- 디자인을 입히기 위해 div를 한번 감싸줌 -->
+                        <th><div>NO</div></th>
+                        <th><div>이름</div></th>
+                        <th><div>생년월일</div></th>
+                        <th><div>최근 검사</div></th>
+                        <th><div>등록일자</div></th>
+                        <th><div>구분</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><div>100</div></td>
+                        <td><div class="tal">홍길동</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                    </tr>
+                    <tr>
+                        <td><div>99</div></td>
+                        <td><div class="tal"><p>영문처럼 환자명이 길경우 두줄까지 노출 됩니다 영문처럼 환자명이 길경우 두줄까지 노출 됩니다</p></div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                    </tr>
+                    <tr>
+                        <td><div>99</div></td>
+                        <td><div class="tal">홍길동</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                    </tr>
+                    <tr>
+                        <td><div>99</div></td>
+                        <td><div class="tal">홍길동</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                    </tr>
+                    <tr>
+                        <td><div>99</div></td>
+                        <td><div class="tal">홍길동</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                    </tr>
+                    <tr>
+                        <td><div>99</div></td>
+                        <td><div class="tal">홍길동</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div>2021.01.01</div></td>
+                        <td><div><button class="btn_xsmall color_txtprimaryborder"><span>선택</span></button></div></td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- //pagination -->
+            <div class="inner_pagination">
+                <a href="#none" class="btn_first"><img src="../images/icon_first.png" alt="제일 처음 리스트로 이동"></a>
+                <a href="#none" class="btn_prev"><img src="../images/icon_prev.png" alt="이전 리스트로 이동"></a>
+                <ul>
+                    <li class="on"><a href="" class="btn_page">1</a></li>
+                    <li><a href="" class="btn_page">2</a></li>
+                    <li><a href="" class="btn_page">3</a></li>
+                    <li><a href="" class="btn_page">4</a></li>
+                    <li><a href="" class="btn_page">5</a></li>
+                    <li><a href="" class="btn_page">6</a></li>
+                    <li><a href="" class="btn_page">7</a></li>
+                    <li><a href="" class="btn_page">8</a></li>
+                    <li><a href="" class="btn_page">9</a></li>
+                    <li><a href="" class="btn_page">10</a></li>
+                </ul>
+                <a href="#none" class="btn_first"><img src="../images/icon_next.png" alt="다음 리스트로 이동"></a>
+                <a href="#none" class="btn_prev"><img src="../images/icon_last.png" alt="마지막 리스트로 이동"></a>
+            </div>
+            <!-- pagination// -->
+          </div>
+        </div>
+        <button type="button" class="btn_close" onclick="hcp.modals_close('select_patient3')"><span class="hidden">창닫기</span></button>
+      </div>
+    </div>
+    <div class="modals board" id="select_patient4">
+      <div class="box">
+        <div class="mod_head">
+          <h3>환자 선택</h3>
+        </div>
+        <div class="mod_body">
+          <div class="overflow_body">
+            <div class="inner_search">
+              <div class="round_select">
+                  <select name="" id="" class="">
+                      <option value="" disabled selected hidden>전체</option>
+                      <option value="">전체</option>
+                  </select>
+              </div>
+              <input type="text" class="input_round" placeholder="검색어를 입력하세요">
+              <button type="button" class="btn_middle color_actprimary">조회</button>
+            </div>
+            <div class="inner_result empty">
+                <p class="txt_msg">선택할 환자가 없습니다.</p>
+            </div>
+          </div>
+        </div>
+        <button type="button" class="btn_close" onclick="hcp.modals_close('select_patient4')"><span class="hidden">창닫기</span></button>
+      </div>
     </div>
     <!-- //layer popup -->
     <!-- Contents// -->
@@ -244,7 +407,7 @@
       var Language = ['일','월','화','수','목','금','토'];
       hcp.daterangepicker('.main_rangedatepicker', Language, true);
         $(window).on("load", function(){
-            hcp.modals_show('select_patient');
+            hcp.modals_show('select_patient4');
         });
     });
 
