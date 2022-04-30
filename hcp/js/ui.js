@@ -264,12 +264,17 @@ var hcp = hcp || {
         });
 
     },//fullcalendar
-    daterangepicker: function(ele, langArr, type, single){
+    daterangepicker: function(ele, langArr, type, single, page){
       var $this = $(ele),
+          minDateDay = false,
           clickDay = '';
+      if(page == 'schedule'){
+        minDateDay = new Date();
+      }
       $this.daterangepicker({
         autoApply:true,
         inline: type,
+        minDate: minDateDay,
         singleDatePicker: single,
         "locale": {
           "format": "YYYY.MM.DD",
