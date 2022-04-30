@@ -1060,8 +1060,8 @@ div.part_tag{font-size: 0;}
 span.part_tag{display: inline-block;height: 11.1111vw;line-height: 11.1111vw;margin:0 0 2.2222vw 2.2222vw;padding: 0 3.3333vw;border-radius: 2.2222vw;border: solid 1px #e9ecef;font-size: 3.8889vw;font-weight: 500;color: #212529;}
 .sports_way{padding-bottom:13.8889vw;}
 .sports_way .mov{display: block;border-radius: 3.3333vw;background-color: #000;overflow: hidden;position: relative;}
-.sports_way .mov .btn{position: absolute;left:50%;top:50%;transform: translate(-50%, -50%); width: 22.2222vw;height: 22.2222vw;padding: 7.7778vw;border-radius: 11.6667vw;-webkit-backdrop-filter: blur(2.7778vw);backdrop-filter: blur(2.7778vw);background-color: rgba(0, 0, 0, 0.2);    display: flex;flex-direction: column;align-items: center;justify-content: center;text-align: center;}
-.sports_way .mov .btn::after{content: '';width: 6.6667vw;height: 6.6667vw;background:url('../images/icon-ui-play.svg') no-repeat center top;background-size:  100% auto;;}
+.sports_way .mov .btn{position:absolute;top:0;right:0;bottom:0;left:0; background-color: rgba(0, 0, 0, .3);}
+.sports_way .mov .btn::before{content: '';display:flex;align-items:center;justify-content:center; position:absolute;left:50%;top:50%;transform:translate(-50%, -50%); width:22.2222vw;height:22.2222vw; border-radius:100%;background:url('../images/icon-ui-play.svg') no-repeat center;background-size:6.6667vw; -webkit-backdrop-filter: blur(2.7778vw);backdrop-filter: blur(2.7778vw);}
 .sports_way .mov img{width:100%}
 .sports_way .tip{padding: 5.5556vw 6.6667vw 8.8889vw;margin-top:4.4444vw;border-radius: 3.3333vw;background-color: #f8f9fa;}
 .sports_way .tip::before{content: '';display: inline-block;width: 4.4444vw;height: 4.4444vw;background:url('../images/icon-help.svg') no-repeat center top;background-size: 100% auto;}
