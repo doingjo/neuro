@@ -197,7 +197,7 @@ button{white-space: nowrap}
 .deco_select select::-ms-expand,
 .round_select select::-ms-expand {display: none}
 .deco_search{position:relative;margin-left:12px;padding-right:40px;border-radius:28px}
-.deco_search input{width:100%;padding:13px 16px 14px;border:0}
+.deco_search input{width:100%;padding:13px 16px 14px;border:0; font-size:15px}
 .deco_search .btn_search{position:absolute;top:13px;right:24px}
 .inner_title .box_link{font-size:0;text-align: right}
 .inner_title .box_link > a{position:relative;display:inline-block;margin-left:31px;font-weight:500;font-size:16px;line-height:24px;color:#adb5bd}
@@ -425,7 +425,7 @@ footer .inner_logo{margin-top:32px;text-align: center}
 .tbl_notice.type_ask tr th:nth-child(2) > div{padding:22px 40px 21px 20px;text-align: left}
 .tbl_notice th > div{font-weight:500;font-size:15px;line-height:21px}
 .tbl_notice td{border-bottom:1px solid #e9ecef}
-.tbl_notice td > div{overflow:hidden;padding:19px 20px 21px;font-size:13px;line-height:19px;font-weight:500; white-space: nowrap;text-overflow: ellipsis}
+.tbl_notice td > div{overflow:hidden;padding:19px 20px 21px;font-size:13px;line-height:19px;font-weight:500; white-space: nowrap;text-overflow: ellipsis;word-wrap:break-word;word-break:keep-all;}
 .tbl_notice tr td:first-child > div{padding:19px 20px 21px 40px}
 .tbl_notice tr td:last-child > div{padding:19px 40px 21px 20px}
 .tbl_notice.type_data th > div,
@@ -757,7 +757,7 @@ h4 + .balance_data {margin-top:34px}
 .type_basic .control-bar .btn-player.paused:before{background-image:url("../images/icon_pause.png")}
 .type_basic .control-bar .btn-player.refresh:before{background-image:url("../images/icon_refresh.png")}
 .type_basic.select_set .set{width:100%;padding:13px 0; border:0;border-bottom:solid 1px #5e6062; background-color:transparent; font-size:15px;color:#ced4da; cursor:pointer; -webkit-appearance:auto;-moz-appearance:auto;appearance:auto}
-.type_basic.select_set .set option{color:#000;}
+.type_basic.select_set .set option{color:#fff; background-color:#000}
 
 .type_basic.posture .inner_laypop{width:486px;height:894px;padding:50px 40px}
 .type_basic.posture .inner_laypop .box_cnt{margin-top:40px;height:calc(100% - 72px); border-radius:16px;background-color:#424242;overflow-y:auto; justify-content:center;align-items:start}
@@ -961,7 +961,7 @@ h4 + .balance_data {margin-top:34px}
 .piechart-wrap .chart .dot-list li.dot10{right:21.81%;bottom:34.14%}
 .piechart-wrap .chart .dot-list li.dot11{right:18.63%;bottom:18.69%}
 .piechart-wrap .chart .dot-list li.dot12{right:18.18%;bottom:2.43%}
-.piechart-wrap .chart .pin{position:absolute;bottom:6px;left:calc(50% - 6px); transform:rotate(0deg);transform-origin:bottom center}
+.piechart-wrap .chart .pin{position:absolute;bottom:32px;left:calc(50% - 6px); transform:rotate(0deg);transform-origin:bottom center}
 .piechart-wrap .chart .pin::before{content:'';display:inline-block; width:12px;height:41px;margin-bottom:-6px; background:url('../images/chart_pointer.png') no-repeat center center;background-size:100% 100%}
 .piechart-wrap .txt_val{font-weight:bold;font-size:30px;line-height:35px;color:#2f455c;text-align:center; position:absolute;left:50%;bottom:-10px;transform: translateX(-50%)}
 
