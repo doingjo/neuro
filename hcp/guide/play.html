@@ -102,12 +102,13 @@ const makeCb = (duration) => {
 
 
 
+
 var myVideo = document.getElementById("video");
 myVideo.load();
 
 $('.btn-player').on('click',function(){
     if (myVideo.paused){
-        animate(makeCb(939));
+        animate(makeCb(1539, 33));
         myVideo.play();
 
     }else{

@@ -319,8 +319,6 @@ footer .inner_logo{margin-top:32px;text-align: center}
 .box_link + .deco_select select,
 .inner_rule .deco_select select{color: #212529}
 
-
-
 /* 홈 */
 .home .inner_chart{margin-top:40px}
 .home .deco_search{width:480px}
@@ -338,6 +336,7 @@ footer .inner_logo{margin-top:32px;text-align: center}
 .home .box_schedule .box_cnt .txt_rate{margin-left:4px;font-weight:bold;color:#5280e2}
 .home .box_schedule .box_cnt .txt_rate.rowrate{margin-left:4px;font-weight:bold;color:#db3e3e}
 .home .inner_overbox{top:69px;bottom:32px;left:28px;right:12px;padding:0 12px 0 0}
+.home .inner_overbox.no_data{margin:0;padding:0;height:auto; background-color:transparent; font-size:15px;color:#333; overflow:hidden;}
 .home_calendar_wrap .fc .fc-scrollgrid-section-sticky > *{background-color:transparent !important}
 .home_calendar_wrap .fc .fc-col-header-cell-cushion{padding:0 0 13px;width:100%; text-align:center}
 .home_calendar_wrap .fc-theme-standard td{border-top:0}
@@ -1075,7 +1074,7 @@ h4 + .balance_data {margin-top:34px}
 .wrapper.join .inner_join .check_type1{margin-top:10px}
 .wrapper.join .inner_join .check_type1 label{display:inline-block; font-size:13px;line-height:19px;color:#666}
 .wrapper.join .inner_join .check_type1 label em{color:#5280e2}
-.wrapper.join .inner_join .txt_warning{margin:32px 0 20px;padding-left:80px; text-align:left}
+.wrapper.join .inner_join .txt_warning{margin:32px 0 20px; text-align:left}
 .wrapper.join .inner_join .txt_info{font-size:15px;line-height:21px;color:#343a40;font-weight:500}
 .wrapper.join .inner_join .txt_info .txt_name{display: inline-block;color:#5280e2}
 .wrapper.join .inner_join .box_info{margin-top:32px;padding:56px 0;background-color:#f8f9fa;border-radius:8px;text-align: center}
@@ -1085,6 +1084,7 @@ h4 + .balance_data {margin-top:34px}
 .wrapper.join.footer_static .container{height:auto;padding:64px 0 48px}
 .btn_join{width:100%;padding:17px 0;font-size:17px;line-height:20px;background-color:#3b6cd5;color:#fff;border-radius:12px}
 .txt_warning{font-size:13px;line-height:19px;color:#db3e3e}
+.txt_warning a{color:#db3e3e}
 .txt_success{font-size:15px;line-height:18px;color:#5280e2;font-weight:500}
 .link{display: inline-block;font-size:13px;line-height:1;text-decoration:underline;color:#5280e2}
 .box_confirm{position: relative}

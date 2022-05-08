@@ -404,27 +404,32 @@ var chart = chart || {
             });
         },
         video: function(){
-            var _wrap = this;
-            var myVideo = document.getElementById('video');
+            var _wrap = this,
+                videoTime = 0,
+                myVideo = document.getElementById('video'),
+                _fps = Math.floor(dataLength/(dataSet[dataLength-1][0]/1000)),
+                fpsInter = 1000 / _fps;
             myVideo.load();
+            myVideo.addEventListener('loadedmetadata', (event) => {
+              videoTime = myVideo.duration;
+              //video-control-bar
+              _secVideo.find('.control-bar .time span').eq(1).text(this.getTime(videoTime*1000))
+              _secVideo.find('.slider').slider({
+                  range: 'min',
+                  animate: 'fast',
+                  max: Math.floor(videoTime)*_fps,
+                  slide: function(event, ui) {
+                      //console.log(ui.value)
+                      renderCount = ui.value;
+                      myVideo.currentTime = (ui.value*fpsInter) / 1000;
+                      _wrap.draw(ui.value, fpsInter)
+                  }
+              });
+            });
             myVideo.addEventListener('ended', (event) => {
                 cancelAnimationFrame(rAF);
                 renderCount = 0;
                 box.find('.control-bar .btn-player').removeClass('paused').addClass('refresh');
-                // console.log(dataLength)
-                // console.log('fresh')
-            });
-            //video-control-bar
-            _secVideo.find('.control-bar .time span').eq(1).text(this.getTime(dataSet[dataLength-1][0]))
-            _secVideo.find('.slider').slider({
-                range: 'min',
-                animate: 'fast',
-                max: dataLength,
-                slide: function(event, ui) {
-                    renderCount = ui.value;
-                    myVideo.currentTime = dataSet[ui.value-1][0] / 1000;
-                    _wrap.draw(ui.value)
-                }
             });
             const animate = (cb) => {
                 requestAnimationFrame(cb);
@@ -447,16 +452,16 @@ var chart = chart || {
                         // draw
                         then = timestamp - (elapsed % fpsInterval);
                         renderCount++;
-                        _wrap.draw(renderCount)
+                        _wrap.draw(renderCount, fpsInterval)
                         console.log(renderCount+' : '+totalElapsed)
                     }
                     rAF = requestAnimationFrame(cb);
                 };
             };
             box.find('.control-bar .btn-player').on('click', function(){
-                var _fps = Math.floor(dataLength/(dataSet[dataLength-1][0]/1000));
                 if (myVideo.paused){
-                    animate(makeCb(dataSet[dataLength-1][0], _fps));
+                    // animate(makeCb(dataSet[dataLength-1][0], _fps));
+                    animate(makeCb(videoTime*1000, _fps));
                     myVideo.play();
                     $(this).removeClass('refresh').addClass('paused');
                 }else{
@@ -536,8 +541,16 @@ var chart = chart || {
             box.append('<p class="tick1">'+vary[1]+'</p><p class="tick2">'+vary[3]+'</p><p class="hand"><span></span></p>')
             box.after('<div><p class="txt left">'+vary[0]+'<span><em>0</em>%</span></p><p class="txt right">'+vary[2]+'<span><em>0</em>%</span></p></div>')
         },
-        draw: function(count){
-            _secVideo.find('.slider').slider('value', count);
+        draw: function(count, fpsInt){
+            var vedioCount = 0;
+            if(count >= dataLength){
+                vedioCount = count;
+                count = dataLength-1;
+            }else{
+                count = count;
+                vedioCount = count;
+            }
+            _secVideo.find('.slider').slider('value', vedioCount);
             if(count == '0'){
                 _secVideo.find('.control-bar .time span').eq(0).text(this.getTime(dataSet[1][0]))
                 //plantar-wrap
@@ -556,7 +569,7 @@ var chart = chart || {
                 //pressure-flow
                 _pressureFlow.find('.txt.left span, .txt.right span').text('000');
             }else{
-                _secVideo.find('.control-bar .time span').eq(0).text(this.getTime(dataSet[count][0]))
+                _secVideo.find('.control-bar .time span').eq(0).text(this.getTime(vedioCount*fpsInt))
                 //plantar-wrap
                 for(var j=1; j<=8; j++){
                   (j == 1 || j == 5) ? alpha = (dataSet[count][j]/ 100.0) : alpha = (dataSet[count][j]/ 100.0) * 1.5;
