@@ -534,6 +534,7 @@ hr.line_box{border:0;display: block;border-top:1px solid #eaeef0;height:1.1111vw
 .file_list li a i.png{background:url('../images/file-png.svg')no-repeat center center;background-size: 100%;}
 .file_list li a i.jpg{background:url('../images/file-jpg.svg')no-repeat center center;background-size: 100%;}
 .file_list li a i.zip{background:url('../images/file-zip.svg')no-repeat center center;background-size: 100%;}
+.file_list li a i.mov{background:url('../images/file-video.svg')no-repeat center center;background-size: 100%;}
 
 /* 카테고리 */
 .category_tab{margin:6.6667vw -6.6667vw 0;position: relative;}

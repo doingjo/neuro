@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../css/swiper.min.css">
   <link rel="stylesheet" href="../css/fullcalendar.css">
   <link rel="stylesheet" href="../css/daterangepicker.css">
-  <!-- <link rel="stylesheet" href="../css/video-js.css"> -->
+  <link rel="stylesheet" href="../css/Roboto.css">
   <link rel="stylesheet" href="../css/NotoSansKR.css">
   <link rel="stylesheet" href="../css/Montserrat.css">
   <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
@@ -24,11 +24,10 @@
   <script type="text/javascript" src="../js/fullcalendar.js"></script>
   <script type="text/javascript" src="../js/moment.min.js"></script>
   <script type="text/javascript" src="../js/daterangepicker.js"></script>
-  <!-- <script type="text/javascript" src="../js/video.min.js"></script> -->
+  <script type="text/javascript" src="../js/lottie-player.js"></script>
   <script type="text/javascript" src="../js/Sortable.js"></script>
   <script type="text/javascript" src="../js/chart.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
-
   <link rel="stylesheet" href="../css/contents.css">
   <title>HCP</title>
 </head>
@@ -737,7 +736,7 @@
                 </div>
                 <div class="seg_video">
                     <video id="video">
-                      <source src="../data/vedio3.mp4" type="video/mp4">
+                      <source src="../data/vedio2.mp4" type="video/mp4">
                       Your browser does not support HTML video.
                     </video>
                 </div>
@@ -809,7 +808,7 @@
 //퍼블 확인용 csv 구문, 개발시 삭제 부탁합니다.
 var linesArray = [];
 $.ajax({
-    url: '../data/vedio2.csv',
+    url: '../data/vedio3.csv',
     dataType: 'text',
 }).done(function(allText){
     var allTextLines = allText.split(/\r\n|\n/);

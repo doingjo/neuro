@@ -13,14 +13,18 @@
   <link rel="stylesheet" href="../css/swiper.min.css">
   <link rel="stylesheet" href="../css/fullcalendar.css">
   <link rel="stylesheet" href="../css/daterangepicker.css">
+  <link rel="stylesheet" href="../css/Roboto.css">
   <link rel="stylesheet" href="../css/NotoSansKR.css">
   <link rel="stylesheet" href="../css/Montserrat.css">
   <script type="text/javascript" src="../js/jquery.3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../js/jquery.ui.touch-punch.min.js"></script>
   <script type="text/javascript" src="../js/d3.v5.min.js"></script>
   <script type="text/javascript" src="../js/swiper.min.js"></script>
   <script type="text/javascript" src="../js/fullcalendar.js"></script>
   <script type="text/javascript" src="../js/moment.min.js"></script>
   <script type="text/javascript" src="../js/daterangepicker.js"></script>
+  <script type="text/javascript" src="../js/lottie-player.js"></script>
   <script type="text/javascript" src="../js/Sortable.js"></script>
   <script type="text/javascript" src="../js/chart.js"></script>
   <script type="text/javascript" src="../js/ui.js"></script>
@@ -107,10 +111,10 @@
                     <input type="checkbox" name="terms_of_service" id="terms_of_service"><label for="terms_of_service" onclick="hcp.modals_show('pop_terms_of_service')"><em>[필수]</em> 이용약관에 동의합니다.</label>
                 </div>
                 <div class="check_type1">
-                    <input type="checkbox" name="hcp_personal_information" id="hcp_personal_information"><label for="hcp_personal_information" onclick="hcp.modals_show('pop_hcp_personal_information')"><em>[필수]</em> 개인정보 처리방침에 동의합니다.</label>
+                    <input type="checkbox" name="hcp_personal_information" id="hcp_personal_information"><label for="hcp_personal_information" onclick="hcp.modals_show('pop_privacy_policy')"><em>[필수]</em> 개인정보 처리방침에 동의합니다.</label>
                 </div>
                 <div class="check_type1">
-                    <input type="checkbox" name="privacy_policy" id="privacy_policy"><label for="privacy_policy" onclick="hcp.modals_show('pop_privacy_policy')"><em>[필수]</em> 개인정보 수집 및 이용에 동의합니다.</label>
+                    <input type="checkbox" name="privacy_policy" id="privacy_policy"><label for="privacy_policy" onclick="hcp.modals_show('pop_hcp_personal_information')"><em>[필수]</em> 개인정보 수집 및 이용에 동의합니다.</label>
                 </div>
                 <div class="check_type1">
                     <input type="checkbox" name="hcp_marketing_content" id="hcp_marketing_content"><label for="hcp_marketing_content" onclick="hcp.modals_show('pop_hcp_marketing_content')">[선택] 마케팅 정보 수신에 동의합니다.</label>
@@ -145,7 +149,7 @@
         </div>
         <div class="mod_body">
             <div class="overflow_body">
-              <div data-include-path="/common/terms_of_service.html"></div>
+              <div data-include-path="../../common/terms_of_service.html"></div>
             </div>
             <div class="center_btn">
                 <button type="button" class="btn_xlarge color_actprimary">동의</button>
@@ -161,7 +165,7 @@
         </div>
         <div class="mod_body">
             <div class="overflow_body">
-              <div data-include-path="/common/hcp_concent_to_the_collecting_and_processing_of_personal_information.html"></div>
+              <div data-include-path="../../common/hcp_concent_to_the_collecting_and_processing_of_personal_information.html"></div>
             </div>
             <div class="center_btn">
                 <button type="button" class="btn_xlarge color_actprimary">동의</button>
@@ -177,7 +181,7 @@
         </div>
         <div class="mod_body">
             <div class="overflow_body">
-              <div data-include-path="/common/privacy_policy.html"></div>
+              <div data-include-path="../../common/privacy_policy.html"></div>
             </div>
             <div class="center_btn">
                 <button type="button" class="btn_xlarge color_actprimary">동의</button>
@@ -193,7 +197,7 @@
         </div>
         <div class="mod_body">
             <div class="overflow_body">
-              <div data-include-path="/common/hcp_consent_to_receive_marketing_content.html"></div>
+              <div data-include-path="../../common/hcp_consent_to_receive_marketing_content.html"></div>
             </div>
             <div class="center_btn">
                 <button type="button" class="btn_xlarge color_actprimary">동의</button>
