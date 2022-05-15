@@ -343,11 +343,12 @@ footer .inner_logo{margin-top:32px;text-align: center}
 .home_calendar_wrap .fc .fc-col-header-cell-cushion{padding:0 0 13px;width:100%; text-align:center}
 .home_calendar_wrap .fc-theme-standard td{border-top:0}
 .home_calendar_wrap .fc .fc-daygrid-day-frame{height:44px}
-.home_calendar_wrap .fc .fc-daygrid-day-number{height:42px;padding:0;margin:1px; font-size:13px;color:#000;font-weight:700; border-radius:8px; align-items:center;justify-content:center}
+.home_calendar_wrap .fc .fc-daygrid-day-number{height:42px;padding:0;margin:1px; font-size:13px;color:#000;font-weight:700; border-radius:8px; display:flex;align-items:center;justify-content:center}
 .home_calendar_wrap .fc .fc-daygrid .fc-daygrid-day.bg .fc-daygrid-day-number:before{border-radius:8px}
 .home_calendar_wrap .fc .fc-daygrid .fc-day-today .fc-daygrid-day-top::before{top:10px;right:calc(50% - 2px)}
-.home_calendar_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{width:4px; top:32px;right:calc(50% - 2px)}
+.home_calendar_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{width:4px; top:32px;right:calc(50% - 2px);left:auto}
 .home_calendar_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events .fc-daygrid-event{margin:0;padding:0;width:4px;height:4px; text-indent:-9999px; border-radius:100%;background-color:#000}
+.home_calendar_wrap .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events .fc-event-title{font-size:0;height:0;width:0;position:absolute;overflow:hidden;clip:rect(1px 1px 1px 1px)}
 .home_calendar_wrap .fc .fc-daygrid-day-number:hover{box-shadow:0 3px 2px 0 rgb(183 192 227 / 40%)}
 
 /* 설정 */
