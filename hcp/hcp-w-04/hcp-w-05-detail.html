@@ -545,14 +545,21 @@
                                 <div class="tit_cnt02">
                                     <h3>보행 1</h3>
                                 </div>
-                                <div class="inner_flex1box">
+                                <div class="inner_flex1box list01"><!-- list01 순서때문에 들어간 퍼블 확인용 -->
                                     <div class="box_flex1box">
                                         <div class="box_video">
-                                            <img src="" alt="동영상썸네일">
-                                            <button type="button" class="btn_play btn_vedio_plantar"><span class="hidden">재생</span></button>
+                                            <a href="javascript:void(0)" class="btn_play btn_vedio_plantar">
+                                                <div class="plantar-list plantar-pattern">
+                                                    <div class="chart"></div>
+                                                </div>
+                                            </a>
                                         </div>
                                         <div class="box_video">
-                                            <a href="javascript:void(0)" class="btn_plantar"><img src="" alt="이미지썸네일"></a>
+                                            <a href="javascript:void(0)" class="btn_plantar">
+                                                <div class="plantar-list cop-pattern">
+                                                    <div class="chart"></div>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="box_flex1box">
@@ -562,6 +569,26 @@
                                             <p>보행 안정성을 위해서 좀 더 넓은 보폭과 빠른 속도로 걸어보세요.</p>
                                         </div>
                                     </div>
+                                    <script>
+                                      //퍼블 확인용 csv 구문, 개발시 삭제 부탁합니다.
+                                      var linesArray = [];
+                                      $.ajax({
+                                          url: '../data/vedio3.csv',
+                                          dataType: 'text',
+                                      }).done(function(allText){
+                                          var allTextLines = allText.split(/\r\n|\n/);
+                                          for(var i=3; i<allTextLines.length-1; i++){
+                                              var data = allTextLines[i].split(',');
+                                              var tarr = [];
+                                              for (var j=0; j<data.length; j++) {
+                                                  tarr.push(data[j]);
+                                              }
+                                              linesArray.push(tarr);
+                                          }
+                                          chart.plantarList.init('.list01 .plantar-pattern', linesArray);
+                                          chart.plantarList.init('.list01 .cop-pattern', linesArray);
+                                      });
+                                    </script>
                                 </div>
                                 <div class="inner_flex1box">
                                    <div class="box_flex1box">

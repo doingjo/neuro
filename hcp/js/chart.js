@@ -1104,5 +1104,115 @@ var chart = chart || {
                 _plantarChart.find('p').eq(idx+index).css('opacity',element)
             }
         }
-    },
+    },//plantar
+    plantarList:{
+        init: function($id, data){
+            if($($id).length == 0){return;}
+            box = $($id);
+            _chart = box.find('.chart');
+            dataSet = data;
+            dataLength = dataSet.length;
+            ele = '';
+            this.event($id);
+        },
+        event: function(i){
+            box.addClass('plantar-wrap');
+            if(box.hasClass('plantar-pattern')){
+                this.build();
+                this.draw(dataLength-1);
+            }else if(box.hasClass('cop-pattern')){
+                this.copPath(i + ' .chart');
+                this.draw(dataLength-1);
+            }
+        },
+        build: function(){
+            //plantar-wrap
+            for(var i=0; i<=7; i++){
+                ele += '<p class="sensor_'+i+'_g"></p><p class="sensor_'+i+'_y"></p><p class="sensor_'+i+'_r"></p>';
+            }
+            _chart.append(ele);
+        },
+        copPath: function($this){
+            var box = $($this),
+                width = box.width()*.58,
+                height = box.height()*.4486,
+                r = 3,
+                chartData = [],
+                x1 = width/2,
+                y1 = height/2;
+                console.log(dataLength)
+            for(var i=0; i<dataLength; i++){
+                each = [];
+                for(var j=0; j<=1; j++){
+                    (j === 0) ? each.push(dataSet[i][10]*(width/100)) : each.push(dataSet[i][12]*(height/100)) ;
+                }
+                chartData.push(each);
+            }
+            //svg
+            var svg = d3.select($this).append('svg').attr('width', width).attr('height', height).attr('padding', r);
+            g = svg.selectAll('g').data(chartData).enter().append("g");
+            g.append('line')
+             .each(function(d, i){
+                d3.select(this)
+                  .attr('x1', x1)
+                  .attr('y1', y1)
+                  .attr('x2', chartData[i][0])
+                  .attr('y2', chartData[i][1])
+                  .attr('style', 'stroke:#7973ba;stroke-width:2;')
+                  x1 = chartData[i][0];
+                  y1 = chartData[i][1];
+            });
+            g.append('circle')
+             .each(function(d, i){
+                d3.select(this)
+                  .attr('cx', chartData[i][0])
+                  .attr('cy', chartData[i][1])
+                  .attr('r', r)
+                  .attr('style', 'fill:#fff;')
+            });
+        },
+        draw: function(count){
+            if(count == '0'){
+                //plantar-wrap
+                for(var j=1; j<=8; j++){
+                  (j == 1 || j == 5) ? alpha = (0/ 100.0) : alpha = (0/ 100.0) * 1.5;
+                  this.getGYRAlphaValue(j-1, alpha)
+                }
+                //COP
+                _chart.find('svg g').hide();
+            }else{
+                //plantar-wrap
+                for(var j=1; j<=8; j++){
+                  (j == 1 || j == 5) ? alpha = (dataSet[count][j]/ 100.0) : alpha = (dataSet[count][j]/ 100.0) * 1.5;
+                  this.getGYRAlphaValue(j-1, alpha)
+                }
+                //COP
+                _chart.find('svg g:nth-child(n+'+count+'):nth-child(-n+'+dataLength+')').hide();
+                _chart.find('svg g:nth-child(-n+'+(count-1)+')').find('circle').hide();
+                _chart.find('svg g:nth-child(-n+'+count+')').show();
+                _chart.find('svg g:nth-child('+count+')').find('circle').show();
+            }
+          },
+          getGYRAlphaValue: function($this ,alpha){
+            //현재 알파값으로 녹/노/빨 알파값을 구하는 함수
+            var alphaGYRArray = [];
+            var green = (alpha * 2);
+                green = (green > 1.0) ? 1.0 : green;
+            var yellow = alpha - 0.25;
+                yellow = (yellow < 0.0) ? 0.0 : yellow;
+                yellow = (yellow > 0.5) ? 0.5 : yellow;
+                yellow *= 2.0;
+            var red = alpha - 0.6;
+                red = (red < 0.0) ? 0.0 : red;
+                red = (red > 0.5) ? 0.5 : red;
+                red *= 2.0;
+            alphaGYRArray.push(green, yellow, red);
+            alphaGYRArray.forEach(gyrArray)
+            function gyrArray(element, index){
+                idx = $this*3;
+                _chart.find('p').eq(idx+index).css('opacity',element)
+            }
+          }
+
+    },//plantarList
 };
