@@ -29,7 +29,12 @@ var chart = chart || {
       if($($this).length == 0){return}
       var box = $($this),
           dataSet = data,
-          boxWidth = box.width(),
+          dataLength = data.length;
+      if(31 < dataLength){
+        var lengthWidth = box.width();
+        box.css('width', dataLength*(lengthWidth / 31)+'px');
+      }
+      var boxWidth = box.width(),
           boxHeight = Math.round(boxWidth*.2461),
           margin = {top:Math.round(boxWidth*.0307), right:Math.round(boxWidth*.023), bottom:Math.round(boxWidth*.0423), left:Math.round(boxWidth*.0423)},
           width = boxWidth - (margin.left + margin.right),
